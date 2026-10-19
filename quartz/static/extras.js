@@ -1,16 +1,11 @@
-// ─────────────────────────────────────────────────────────────
-//  Septenture — small machines in the walls
-// ─────────────────────────────────────────────────────────────
-;(function () {
-  const LEDGER_KEY = "septenture-ledger"
-  const SEEN_KEY = "septenture-seen"
-  const LEDGER_BASE = 1337
+;(() => {
+  if (window.__septentureExtras) return
+  window.__septentureExtras = true
 
-  const STONE = [
-    "The lower stair is wet again. Take the rail.",
-    "Watch the windows above the Drop.",
-    "Every tunnel has two ends. Ask who keeps the other.",
+  const sayings = [
     "Buy the water first. Ask the questions after.",
+    "The lower stair is wet again. Take the rail.",
+    "Every tunnel has two ends. Ask who keeps the other.",
     "The Watch has your old name, too.",
     "Someone left the lamp on for you.",
     "Pay the guide before the tide turns.",
@@ -18,64 +13,11 @@
     "Leave the rope for the next person.",
     "The gatekeeper knows your cousin.",
     "Your room is paid through morning.",
+    "Watch the windows above the Drop.",
   ]
-
-  function bumpLedger() {
-    const el = document.querySelector("[data-ledger]")
-    if (!el) return
-    let n = 0
-    try {
-      n = parseInt(localStorage.getItem(LEDGER_KEY) || "0", 10) || 0
-      if (!sessionStorage.getItem(SEEN_KEY)) {
-        n += 1
-        sessionStorage.setItem(SEEN_KEY, "1")
-        localStorage.setItem(LEDGER_KEY, String(n))
-      }
-    } catch (e) {
-      n = 0
-    }
-    el.textContent = String(LEDGER_BASE + n).padStart(6, "0")
-  }
-
-  function drawStone() {
-    const el = document.querySelector("[data-stone]")
-    if (!el) return
-    el.textContent = STONE[Math.floor(Math.random() * STONE.length)]
-  }
-
-  function toast(text) {
-    const node = document.createElement("div")
-    node.className = "stone-toast"
-    node.textContent = text
-    document.body.appendChild(node)
-    requestAnimationFrame(() => node.classList.add("show"))
-    setTimeout(() => {
-      node.classList.remove("show")
-      setTimeout(() => node.remove(), 800)
-    }, 2600)
-  }
-
-  document.addEventListener("click", (event) => {
-    const target = event.target
-    if (!(target instanceof Element)) return
-
-    if (target.closest("[data-lamp-toggle]")) {
-      document.body.classList.toggle("lights-out")
-    }
-
-    if (target.closest("[data-stone-draw]")) {
-      drawStone()
-      const box = target.closest(".stone-box")
-      if (box) {
-        box.classList.remove("knocked")
-        void box.offsetWidth
-        box.classList.add("knocked")
-      }
-    }
-  })
-
-  // konami — the old door
-  const SEQ = [
+  let lastSaying = -1
+  let flareTimer
+  const oldCode = [
     "arrowup",
     "arrowup",
     "arrowdown",
@@ -88,41 +30,121 @@
     "a",
   ]
   let cursor = 0
-  document.addEventListener("keydown", (event) => {
-    const key = event.key.length === 1 ? event.key.toLowerCase() : event.key.toLowerCase()
-    if (key === SEQ[cursor]) {
-      cursor += 1
-      if (cursor === SEQ.length) {
-        cursor = 0
-        document.body.classList.add("konami")
-        toast("The stone remembers you.")
-        setTimeout(() => document.body.classList.remove("konami"), 3200)
+
+  function drawStone() {
+    const stone = document.querySelector("[data-stone]")
+    if (!stone) return
+    let index = Math.floor(Math.random() * (sayings.length - 1))
+    if (index >= lastSaying && lastSaying >= 0) index++
+    lastSaying = index
+    stone.textContent = sayings[index]
+  }
+
+  function navigation() {
+    document.querySelector(".site-nav")?.remove()
+    const base = document.body.dataset.basepath || ""
+    const root = `${base}/`
+    const nav = document.createElement("nav")
+    nav.className = "site-nav"
+    nav.setAttribute("aria-label", "Main navigation")
+    const brand = document.createElement("a")
+    brand.className = "site-brand"
+    brand.href = root
+    brand.textContent = "✶ SEPTENTURE"
+    const links = document.createElement("div")
+    links.className = "site-links"
+    for (const [label, path] of [
+      ["THE CHRONICLE", "the-chronicle/"],
+      ["LATEST CHAPTER", "the-chronicle/25-the-courtyard-and-the-wish"],
+    ]) {
+      const link = document.createElement("a")
+      link.href = root + path
+      link.textContent = label
+      if (location.pathname.replace(/\/$/, "") === link.pathname.replace(/\/$/, ""))
+        link.setAttribute("aria-current", "page")
+      links.append(link)
+    }
+    nav.append(brand, links)
+    document.body.prepend(nav)
+  }
+
+  function ledger() {
+    const el = document.querySelector("[data-ledger]")
+    if (!el) return
+    let count = 1
+    try {
+      const stored = Number.parseInt(localStorage.getItem("septenture-reading-visits") || "0", 10)
+      count = Number.isFinite(stored) && stored >= 0 ? stored : 0
+      if (!sessionStorage.getItem("septenture-reading-seen")) {
+        count++
+        localStorage.setItem("septenture-reading-visits", String(count))
+        sessionStorage.setItem("septenture-reading-seen", "yes")
       }
-    } else {
-      cursor = key === SEQ[0] ? 1 : 0
+    } catch {
+      /* The room works with storage disabled. */
+    }
+    el.textContent = String(Math.max(1, count)).padStart(6, "0")
+  }
+
+  function setLamp(dim) {
+    document.body.classList.toggle("lights-out", dim)
+    const lamp = document.querySelector("[data-lamp-toggle]")
+    if (lamp) {
+      lamp.setAttribute("aria-pressed", String(dim))
+      lamp.setAttribute(
+        "aria-label",
+        dim ? "Restore the reading room lights" : "Dim the reading room",
+      )
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return
+    if (event.target.closest("[data-lamp-toggle]"))
+      setLamp(!document.body.classList.contains("lights-out"))
+    if (event.target.closest("[data-stone-draw]")) drawStone()
+    const pause = event.target.closest("[data-ticker-toggle]")
+    if (pause) {
+      const paused = pause.closest(".ticker").classList.toggle("paused")
+      pause.setAttribute("aria-pressed", String(paused))
+      pause.setAttribute("aria-label", paused ? "Resume city wire" : "Pause city wire")
+      pause.textContent = paused ? "▶" : "Ⅱ"
     }
   })
 
-  if (window.console) {
-    console.log(
-      "%c ✦ S E P T E N T U R E ✦ ",
-      "color:#e0a458;background:#12100e;font-size:14px;padding:6px 10px;border:1px solid #e0a45855",
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setLamp(false)
+    if (
+      event.target instanceof Element &&
+      event.target.closest("input, textarea, select, [contenteditable]")
     )
-    console.log(
-      "%cYou found the warren. Try the lamp. Try the old code.",
-      "color:#c2703d;font-style:italic",
-    )
-  }
+      return
+    const key = event.key.toLowerCase()
+    cursor = key === oldCode[cursor] ? cursor + 1 : key === oldCode[0] ? 1 : 0
+    if (cursor !== oldCode.length) return
+    cursor = 0
+    document.body.classList.add("konami")
+    document.querySelector(".stone-toast")?.remove()
+    const toast = document.createElement("div")
+    toast.className = "stone-toast show"
+    toast.setAttribute("role", "status")
+    toast.textContent = "The stone remembers you. Follow the small star."
+    document.body.append(toast)
+    clearTimeout(flareTimer)
+    flareTimer = setTimeout(() => {
+      document.body.classList.remove("konami")
+      toast.remove()
+    }, 4000)
+  })
 
   function boot() {
-    bumpLedger()
+    navigation()
+    ledger()
+    setLamp(false)
     drawStone()
   }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot)
-  } else {
-    boot()
-  }
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", boot, { once: true })
+  else boot()
   document.addEventListener("nav", boot)
 })()

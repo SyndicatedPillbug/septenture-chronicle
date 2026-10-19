@@ -19,25 +19,25 @@ configuration:
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#eef1f2"
-        lightgray: "#dbe0e3"
-        gray: "#8a949b"
-        darkgray: "#38424a"
-        dark: "#1d252b"
-        secondary: "#9a5f1d"
-        tertiary: "#4e7266"
-        highlight: rgba(224, 164, 88, 0.16)
-        textHighlight: "#e0a45866"
+        light: "#10130f"
+        lightgray: "#24291f"
+        gray: "#9b947e"
+        darkgray: "#d2cbb9"
+        dark: "#e5dcc7"
+        secondary: "#c6a460"
+        tertiary: "#9eaf8a"
+        highlight: rgba(198,164,96,0.12)
+        textHighlight: "#c6a46044"
       darkMode:
-        light: "#0f1317"
-        lightgray: "#1b2127"
-        gray: "#5d6a72"
-        darkgray: "#c6cfd4"
-        dark: "#e8edf0"
-        secondary: "#e0a458"
-        tertiary: "#7da293"
-        highlight: rgba(224, 164, 88, 0.10)
-        textHighlight: "#e0a45855"
+        light: "#10130f"
+        lightgray: "#24291f"
+        gray: "#9b947e"
+        darkgray: "#d2cbb9"
+        dark: "#e5dcc7"
+        secondary: "#c6a460"
+        tertiary: "#9eaf8a"
+        highlight: rgba(198,164,96,0.12)
+        textHighlight: "#c6a46044"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -76,7 +76,7 @@ plugins:
     enabled: true
     order: 40
   - source: "@quartz-community/table-of-contents"
-    enabled: true
+    enabled: false
     order: 50
     layout:
       position: right
@@ -151,17 +151,17 @@ plugins:
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 50
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
   - source: "@quartz-community/search"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 20
@@ -169,17 +169,17 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 50
   - source: "@quartz-community/article-title"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 10
   - source: "@quartz-community/content-meta"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 20
@@ -189,24 +189,24 @@ plugins:
       position: beforeBody
       priority: 30
   - source: "@quartz-community/page-title"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 10
   - source: "@quartz-community/darkmode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 30
       group: toolbar
   - source: "@quartz-community/reader-mode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 35
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 5
@@ -220,7 +220,7 @@ plugins:
       position: afterBody
       priority: 10
   - source: "@quartz-community/footer"
-    enabled: true
+    enabled: false
     options:
       links:
         GitHub: https://github.com/jackyzha0/quartz
@@ -231,7 +231,7 @@ plugins:
   - source: "@quartz-community/recent-notes"
     enabled: false
   - source: "@quartz-community/spacer"
-    enabled: true
+    enabled: false
     options: {}
     order: 25
     layout:
@@ -251,7 +251,7 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
+      hidePropertiesView: true
       delimiters: ---
       language: yaml
     order: 5
@@ -260,11 +260,11 @@ plugins:
       priority: 15
       display: all
   - source: github:Requiae/quartz-leaflet-bases-plugin
-    enabled: true
+    enabled: false
     options:
       enableCopyTool: false
   - source: "@quartz-community/obsidian-plugin-excalidraw"
-    enabled: true
+    enabled: false
     options:
       enableInteraction: true
       darkMode: auto
