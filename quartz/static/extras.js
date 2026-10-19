@@ -86,6 +86,38 @@
     el.textContent = String(Math.max(1, count)).padStart(6, "0")
   }
 
+  // A real tally, shared by every visitor. Abacus is a free counter service:
+  // /hit creates-or-increments, /get only reads. One hit per browser session.
+  function globalLedger() {
+    const el = document.querySelector("[data-ledger]")
+    if (!el || typeof fetch !== "function") return
+    let seen = false
+    try {
+      seen = Boolean(sessionStorage.getItem("septenture-global-seen"))
+    } catch {
+      seen = false
+    }
+    const url =
+      "https://abacus.jasoncameron.dev" +
+      (seen ? "/get/septenture/chronicle" : "/hit/septenture/chronicle")
+    fetch(url, { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!data || !Number.isFinite(data.value)) return
+        el.textContent = String(data.value).padStart(6, "0")
+        const plate = el.closest(".lcd")
+        if (plate) plate.title = "Souls entered — all visitors"
+        try {
+          sessionStorage.setItem("septenture-global-seen", "1")
+        } catch {
+          /* storage disabled; the count still shows for this load */
+        }
+      })
+      .catch(() => {
+        /* offline or service down: the local count stands */
+      })
+  }
+
   function setLamp(dim) {
     document.body.classList.toggle("lights-out", dim)
     const lamp = document.querySelector("[data-lamp-toggle]")
@@ -140,6 +172,7 @@
   function boot() {
     navigation()
     ledger()
+    globalLedger()
     setLamp(false)
     drawStone()
   }
