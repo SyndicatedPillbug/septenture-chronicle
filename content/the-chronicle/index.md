@@ -23,6 +23,9 @@ The campaign in the order the party lived it, with stories from the days between
 - **[14 — The Cistern House](c3-14-the-cistern-house)** — the party goes to grant citizenship to wasps, and Legion meets a swarm that is afraid.
 - **[15 — Who Am I](c3-15-who-am-i)** — a new mind asks its first question, and Page finds what the hive is anchored to.
 - **[16 — The Witness in the Basin](c3-16-the-witness-in-the-basin)** — a seamstress with a secret, a brand on a stranger's wrist, and a dozen men in an alley.
+- **[18 — Official Business](c3-18-official-business)** — the fight for the witness ends, and the men who started it turn out to be the city's own.
+- **[23 — Something Else Is Coming](c3-23-something-else-is-coming)** — the cistern answers a call, Hive goes up through the glass, and the party runs for the sluice.
+- **[24 — The Gunslinger](c3-24-the-gunslinger)** — caught between a stranger with two pistols and the militia behind them.
 - **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* A patrol surrenders. The stranger fires again. Ceridwen reaches for Morgath, and the survivors wake high above the sea.
 - **[The Wrong Hunter](the-wrong-hunter)** — *the night after.* Page hides under a root and sends his double out to meet the creature that has followed him through centuries of sleep.
 - **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* The water queue takes the party deeper into Rockside. A body passes on a borrowed door; a boy arrives with a captain's token.

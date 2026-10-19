@@ -32,5 +32,5 @@ Coy smiled at the nearest man, missed a clawed hand by an inch of panic, and tur
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-15-who-am-i"><span class="nav-dir">← Previous</span><span class="nav-title">Who Am I</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
-  <a class="nav-next" href="25-the-courtyard-and-the-wish"><span class="nav-dir">Next →</span><span class="nav-title">The Courtyard and the Wish</span></a>
+  <a class="nav-next" href="c3-18-official-business"><span class="nav-dir">Next →</span><span class="nav-title">Official Business</span></a>
 </nav>

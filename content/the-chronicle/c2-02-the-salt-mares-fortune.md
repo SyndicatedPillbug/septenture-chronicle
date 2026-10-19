@@ -20,7 +20,9 @@ On the day the coast came back, the wind did not so much fail as decide against 
 
 So they walked. The cliff trail ran above the water for the last miles, past the Great Ox-Elevators descending into the rock with their cargo, and down to the inland gate, where the queue of people waiting to enter Latesa took the Five in with everyone else and did not find them interesting.
 
-The city smelled like a fire that had just been put out.
+The gate was still taking travelers, and the queue moved at the speed of paperwork. Above the wall, the city climbed the cliff in steps, with a brown smear of refinery smog lying over its far end like a hand.
+
+The rumors reached them before the gate did. Murders in the Shave. People gone missing out of the cliffside warrens, year after year, nobody counting. Nobody said either of them too loudly.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c2-01-three-weeks-to-corium"><span class="nav-dir">← Previous</span><span class="nav-title">Three Weeks to Corium</span></a>
