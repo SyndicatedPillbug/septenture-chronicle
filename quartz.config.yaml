@@ -5,7 +5,7 @@ configuration:
   enableSPA: true
   enablePopovers: true
   locale: en-US
-  baseUrl: syndicatedpillbug.github.io/septenture
+  baseUrl: syndicatedpillbug.github.io/septenture-chronicle
   ignorePatterns:
     - private
     - templates
@@ -108,12 +108,6 @@ plugins:
     order: 92
   - source: "@quartz-community/quartz-fonts"
     enabled: true
-  - source: "@quartz-themes/core"
-    enabled: true
-    options:
-      theme: its-theme
-      variation: ttrpg-dnd
-      mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/explicit-publish"

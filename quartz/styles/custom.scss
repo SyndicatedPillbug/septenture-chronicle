@@ -145,7 +145,7 @@ a.internal {
     height: 100%;
     object-fit: cover;
     opacity: 0.75;
-    filter: saturate(0.85) contrast(1.05);
+    filter: saturate(0.72) contrast(1.06) brightness(0.94);
   }
 
   &::after {
@@ -154,9 +154,9 @@ a.internal {
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(18, 16, 14, 0.1) 0%,
-      rgba(18, 16, 14, 0.55) 55%,
-      rgba(18, 16, 14, 0.95) 100%
+      rgba(10, 14, 18, 0.12) 0%,
+      rgba(10, 14, 18, 0.58) 55%,
+      rgba(8, 12, 16, 0.96) 100%
     );
   }
 }
@@ -173,13 +173,13 @@ a.internal {
   font-size: clamp(2.4rem, 6vw, 4.2rem);
   letter-spacing: 0.05em;
   line-height: 1;
-  color: #f3ece2;
-  text-shadow: 0 0 30px rgba(224, 164, 88, 0.25);
+  color: #e8edf0;
+  text-shadow: 0 0 30px rgba(224, 164, 88, 0.22);
 }
 
 .hero-tagline {
   margin: 0.6rem 0 0;
-  color: #cdbfae;
+  color: #b9c4cb;
   font-style: italic;
   font-size: 1.05rem;
 }
@@ -254,7 +254,7 @@ body {
   overflow: hidden;
   border-top: 1px solid rgba(224, 164, 88, 0.3);
   border-bottom: 1px solid rgba(224, 164, 88, 0.3);
-  background: rgba(10, 9, 7, 0.7);
+  background: rgba(8, 11, 14, 0.7);
   margin: 0 0 1.4rem 0;
   padding: 0.4rem 0;
 }
@@ -267,7 +267,7 @@ body {
   font-variant: small-caps;
   letter-spacing: 0.08em;
   font-size: 0.85rem;
-  color: #cdbfae;
+  color: #b9c4cb;
 }
 
 .ticker:hover .ticker-track {
@@ -296,10 +296,10 @@ body {
   border: 1px solid rgba(224, 164, 88, 0.5);
   background: repeating-linear-gradient(
     -45deg,
-    #1a1510,
-    #1a1510 12px,
-    #2a2012 12px,
-    #2a2012 24px
+    #12181d,
+    #12181d 12px,
+    #1b232a 12px,
+    #1b232a 24px
   );
   color: #e0a458;
   text-align: center;
@@ -408,7 +408,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid rgba(224, 164, 88, 0.35);
-  color: #a89684;
+  color: #93a1a9;
   padding: 0.25rem 0.45rem;
   background: rgba(224, 164, 88, 0.04);
 }
