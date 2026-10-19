@@ -27,6 +27,6 @@ The festival had two hours left in it.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c1-03-the-hag-in-the-tent"><span class="nav-dir">← Previous</span><span class="nav-title">The Hag in the Tent</span></a>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c1-05-wit-and-words"><span class="nav-dir">Next →</span><span class="nav-title">Wit and Words</span></a>
 </nav>

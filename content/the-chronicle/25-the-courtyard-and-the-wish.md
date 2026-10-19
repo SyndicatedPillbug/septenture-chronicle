@@ -48,6 +48,6 @@ The dream found him there.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-16-the-witness-in-the-basin"><span class="nav-dir">← Previous</span><span class="nav-title">The Witness in the Basin</span></a>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="the-wrong-hunter"><span class="nav-dir">Next →</span><span class="nav-title">The Wrong Hunter</span></a>
 </nav>

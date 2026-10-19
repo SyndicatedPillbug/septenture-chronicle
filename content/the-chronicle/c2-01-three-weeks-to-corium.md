@@ -26,6 +26,6 @@ Bill ate straw. The crew gave the party the sort of looks that crews give passen
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c1-13-the-victory-feast"><span class="nav-dir">← Previous</span><span class="nav-title">The Victory Feast</span></a>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c2-02-the-salt-mares-fortune"><span class="nav-dir">Next →</span><span class="nav-title">The Salt Mare's Fortune</span></a>
 </nav>

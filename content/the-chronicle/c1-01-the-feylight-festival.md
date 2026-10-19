@@ -31,6 +31,6 @@ Simon, meanwhile, had been led to a booth where a hammer and a bell settle all a
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <span class="nav-empty"></span>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c1-02-the-clockwork-stall"><span class="nav-dir">Next →</span><span class="nav-title">The Clockwork Stall</span></a>
 </nav>

@@ -27,6 +27,6 @@ The session ended there, with the chest half full, the stairwell smoking, and th
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c2-02-the-salt-mares-fortune"><span class="nav-dir">← Previous</span><span class="nav-title">The Salt Mare's Fortune</span></a>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-07-bill"><span class="nav-dir">Next →</span><span class="nav-title">Bill</span></a>
 </nav>

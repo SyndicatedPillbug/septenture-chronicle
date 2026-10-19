@@ -25,6 +25,6 @@ The inner sanctum lay beyond. Four crypt alcoves had been smashed open and two s
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c1-07-the-cellar-door"><span class="nav-dir">← Previous</span><span class="nav-title">The Cellar Door</span></a>
-  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c1-09-the-helm-and-the-ring"><span class="nav-dir">Next →</span><span class="nav-title">The Helm and the Ring</span></a>
 </nav>

@@ -62,7 +62,7 @@ def block(i: int) -> str:
     return (
         '\n\n<nav class="chapter-nav" aria-label="Chapter navigation">\n'
         f'  {prev_link}\n'
-        '  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>\n'
+        '  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>\n'
         f'  {next_link}\n'
         '</nav>\n'
     )
