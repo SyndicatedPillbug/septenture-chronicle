@@ -35,6 +35,6 @@ Legion and Ceridwen did not move. When Coy lit a flame, the woman's bones turned
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c1-01-the-feylight-festival"><span class="nav-dir">← Previous</span><span class="nav-title">The Feylight Festival</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c1-03-the-hag-in-the-tent"><span class="nav-dir">Next →</span><span class="nav-title">The Hag in the Tent</span></a>
 </nav>

@@ -27,6 +27,6 @@ Legion, who had felt something the night before and spent the morning hunting th
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-09-the-shrouded-in-the-alley"><span class="nav-dir">← Previous</span><span class="nav-title">The Shrouded in the Alley</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-11-the-bohun-breakfast"><span class="nav-dir">Next →</span><span class="nav-title">The Bohun Breakfast</span></a>
 </nav>

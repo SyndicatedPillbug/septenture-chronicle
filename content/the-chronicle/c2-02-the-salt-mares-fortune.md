@@ -24,6 +24,6 @@ The city smelled like a fire that had just been put out.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c2-01-three-weeks-to-corium"><span class="nav-dir">← Previous</span><span class="nav-title">Three Weeks to Corium</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-05-the-bohun-fire"><span class="nav-dir">Next →</span><span class="nav-title">The Bohun Fire</span></a>
 </nav>

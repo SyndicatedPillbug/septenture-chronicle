@@ -27,6 +27,6 @@ The storm slowed. The swarms came apart. And in the middle of the cistern, the o
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-13-the-loss-of-simon"><span class="nav-dir">← Previous</span><span class="nav-title">The Loss of Simon</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-15-who-am-i"><span class="nav-dir">Next →</span><span class="nav-title">Who Am I</span></a>
 </nav>

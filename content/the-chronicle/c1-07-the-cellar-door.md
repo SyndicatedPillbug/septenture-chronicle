@@ -35,6 +35,6 @@ Then the wail came again, closer, like a metal bird crying, and Coy's stomach tu
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c1-06-dark-dreams-and-propositions"><span class="nav-dir">← Previous</span><span class="nav-title">Dark Dreams and Propositions</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c1-08-if-you-aint-wight"><span class="nav-dir">Next →</span><span class="nav-title">If You Ain't Wight</span></a>
 </nav>

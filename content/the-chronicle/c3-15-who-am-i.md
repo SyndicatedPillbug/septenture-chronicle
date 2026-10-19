@@ -27,6 +27,6 @@ They returned to the estate to gather supplies and report, planning to keep watc
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-14-the-cistern-house"><span class="nav-dir">← Previous</span><span class="nav-title">The Cistern House</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-16-the-witness-in-the-basin"><span class="nav-dir">Next →</span><span class="nav-title">The Witness in the Basin</span></a>
 </nav>

@@ -29,6 +29,6 @@ The blast came out of her fingers and took him in the chest. Necrotic energy, co
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-05-the-bohun-fire"><span class="nav-dir">← Previous</span><span class="nav-title">The Bohun Fire</span></a>
-  <a class="nav-index" href="/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-09-the-shrouded-in-the-alley"><span class="nav-dir">Next →</span><span class="nav-title">The Shrouded in the Alley</span></a>
 </nav>
