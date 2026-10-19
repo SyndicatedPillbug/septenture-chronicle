@@ -32,3 +32,9 @@ Simon warned her about the fey work they had been doing. Fiona admitted the ruin
 They gave her a contract instead of a refusal. The ring to Fiona, unless it proved more than she said. All books to the Bard's College, carried by the Five. Money split even. One item per person, chosen in turn. She signed it while Ceridwen asked questions she did not quite answer.
 
 Page put the entrance under the mayor's house, on the hill that did not look like a hill. They agreed to leave within the hour.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-05-wit-and-words"><span class="nav-dir">← Previous</span><span class="nav-title">Wit and Words</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-07-the-cellar-door"><span class="nav-dir">Next →</span><span class="nav-title">The Cellar Door</span></a>
+</nav>

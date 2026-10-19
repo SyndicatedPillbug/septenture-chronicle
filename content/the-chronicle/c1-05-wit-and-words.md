@@ -34,3 +34,9 @@ He gave the key to Page, the same key the pixies had lost. The glade vanished. T
 Outside, the festival was closing. They pooled eleven tickets into two potions of healing, one of which Simon wanted for reasons of his own. Ceridwen felt a pinprick on her hand and found a map rising red on her skin, pointing the way north. Page checked the compass. It did not point steady.
 
 They reached Lobridge at sunrise with a new job waiting and a trickster's warnings riding along.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-04-moonfire-stew"><span class="nav-dir">← Previous</span><span class="nav-title">Moonfire Stew</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-06-dark-dreams-and-propositions"><span class="nav-dir">Next →</span><span class="nav-title">Dark Dreams and Propositions</span></a>
+</nav>

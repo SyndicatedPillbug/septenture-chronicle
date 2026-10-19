@@ -26,3 +26,9 @@ Her instruction was plain enough to carry out and heavy enough to carry: commune
 They came back to the alley with Bill still braying and a crowd of guards and gawkers staring at a group of people who had apparently been fighting nothing at all. The ioun stones were gone. Legion still held a stick.
 
 Page looked at Ceridwen and told her, in pieces, that he did not blame her, and then fell down with a purple light glowing in the wound her magic had put in his chest.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c3-07-bill"><span class="nav-dir">← Previous</span><span class="nav-title">Bill</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c3-10-the-bohun-estate"><span class="nav-dir">Next →</span><span class="nav-title">The Bohun Estate</span></a>
+</nav>

@@ -26,3 +26,9 @@ The horse stopped on its own. Page came off it and the two of them stood in the 
 Degnr recognized Edreth on sight and reached for his sword, and Page put himself between two men with long histories and told them the enemy was close enough to hear the argument. Edreth kept his mouth shut. The Five took the last of their positions, Coy went back to the Temple as a man again, and the town waited.
 
 The first footfalls came up the road as full dark settled. Then a lot of them.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-10-bad-omens"><span class="nav-dir">← Previous</span><span class="nav-title">Bad Omens</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-12-the-siege-of-lobridge"><span class="nav-dir">Next →</span><span class="nav-title">The Siege of Lobridge</span></a>
+</nav>

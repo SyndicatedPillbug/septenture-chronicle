@@ -28,3 +28,9 @@ Ceridwen said the woman had probably died before someone carried her in, and Bar
 He offered work. Not through the guild. Four days north of the festival there were ruins, and if all went well the trip would be boring, and if it did not go well he wanted to hear about it quickly. He paid in silver tickets, ten of them, good for equipment at the exit, and let them keep what the hag and the corpse had carried. Legion asked about proper money and got a patient answer from a man who had stopped being impressed.
 
 They took the job. Ceridwen would have gone alone if it came to that; the hag had the Coalmyr Gate written all over it and she wanted to know how. Simon sketched the corpse for the record. Barbello called Ceridwen back as they left, and Page stayed with her, and the two of them came out with a page of advice in Ceridwen's hand.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-02-the-clockwork-stall"><span class="nav-dir">← Previous</span><span class="nav-title">The Clockwork Stall</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-04-moonfire-stew"><span class="nav-dir">Next →</span><span class="nav-title">Moonfire Stew</span></a>
+</nav>

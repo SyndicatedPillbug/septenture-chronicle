@@ -38,3 +38,9 @@ You are still holding the day's water when a boy comes down the Rungs three step
 "Up," he says. "You're wanted."
 
 The water drags at your arm on the stairs. Behind you, the queue resumes its talk about the body. You still haven't remembered where you heard that song.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="the-wrong-hunter"><span class="nav-dir">← Previous</span><span class="nav-title">The Wrong Hunter</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <span class="nav-empty"></span>
+</nav>

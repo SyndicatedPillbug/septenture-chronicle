@@ -24,3 +24,9 @@ Morning came with the smell of the household's breakfast and everyone in an unco
 Simon weighed whether to go meet Captain Stross, the family's safest lawful contact, and what it would cost to be seen doing it.
 
 Legion, who had felt something the night before and spent the morning hunting the feeling, found the answer in the gardens. A rival colony of their kind, close by, and awake.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c3-09-the-shrouded-in-the-alley"><span class="nav-dir">← Previous</span><span class="nav-title">The Shrouded in the Alley</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c3-11-the-bohun-breakfast"><span class="nav-dir">Next →</span><span class="nav-title">The Bohun Breakfast</span></a>
+</nav>

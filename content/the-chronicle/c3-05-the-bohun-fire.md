@@ -24,3 +24,9 @@ Then it was work. Coy wore the bear and threw burning logs off people. Simon and
 Upstairs he found a bearded man in a welder's apron choking in the smoke, trying to shovel blueprints and ledgers into a metal sea chest. Page cleared the air around him with a breath of magic, and the two of them packed the chest at a speed that made the shipwright laugh between coughs. Designs and drawings and a city's worth of knowledge went into the box while the floor above smoldered.
 
 The session ended there, with the chest half full, the stairwell smoking, and the table told to write down exactly where everyone stood.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c2-02-the-salt-mares-fortune"><span class="nav-dir">← Previous</span><span class="nav-title">The Salt Mare's Fortune</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c3-07-bill"><span class="nav-dir">Next →</span><span class="nav-title">Bill</span></a>
+</nav>

@@ -32,3 +32,9 @@ She said yes.
 Behind the door, the wailing started up again, and they let Fiona's funeral wait for later. Page carried the master key. The first passage ran long and low, with two doors off it and a larger one at the end. Simon lit the hallway with a stone and stood guard while the others worked the rooms. The north chamber was an embalming room with rites carved into the walls, the sort the old elves wrote before they learned to tolerate humans. Page took rubbings of the letters someone had tried to scrub away. The south room held pedestals with motes of light floating above them, and nothing Legion could provoke by throwing a pebble at one.
 
 Then the wail came again, closer, like a metal bird crying, and Coy's stomach turned over. They put their hands on their weapons and went to meet it.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-06-dark-dreams-and-propositions"><span class="nav-dir">← Previous</span><span class="nav-title">Dark Dreams and Propositions</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-08-if-you-aint-wight"><span class="nav-dir">Next →</span><span class="nav-title">If You Ain't Wight</span></a>
+</nav>

@@ -28,3 +28,9 @@ The mayor's wife came down to the bridge while the fighting stuttered out. Morwe
 Two prisoners survived, both asleep from Ceridwen's charm. The cleanup went late. In the morning the tavern came downstairs to find itself full of cheering people, and Mayor Greyson invited the Five to a party that they politely handed back to the town. Coy and Ceridwen spent the day healing survivors. Simon built a prosthetic leg for a man who had lost his, with a craftsman's patience he had not shown before. Page looked for Edreth and found that he had ridden out in the night, and left word with the local Libertines that the Librarian had come asking.
 
 Coy went through the dead soldiers' pockets and found nothing worth the trouble, except the memory of the coin he had seen on the floor of a watch house. The shark belonged to House Vardon of Raifor.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-11-before-the-storm"><span class="nav-dir">← Previous</span><span class="nav-title">Before the Storm</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-13-the-victory-feast"><span class="nav-dir">Next →</span><span class="nav-title">The Victory Feast</span></a>
+</nav>

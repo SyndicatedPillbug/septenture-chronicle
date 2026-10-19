@@ -22,3 +22,9 @@ Which meant the dead got in anyway, and what followed was the hardest fight the 
 Page's paper blades cut them. Coy's lion shape failed and he answered it as a bear. Legion took a blow that nearly folded them and answered with the wasps again. When the last one fell, it fell to a conjured book across the back of the skull. The party stood in a room full of broken stone and pulled their breath back.
 
 The inner sanctum lay beyond. Four crypt alcoves had been smashed open and two still held their wights behind live warding sigils, thrashing in the dark. In the middle of the room stood a pedestal with a beautiful vase on it, and above the vase, floating in the air, a helmet of a make none of them had seen and all of them wanted.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-07-the-cellar-door"><span class="nav-dir">← Previous</span><span class="nav-title">The Cellar Door</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-09-the-helm-and-the-ring"><span class="nav-dir">Next →</span><span class="nav-title">The Helm and the Ring</span></a>
+</nav>

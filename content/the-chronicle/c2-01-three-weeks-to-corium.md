@@ -23,3 +23,9 @@ Page sold the leavings of the ambush. The merchant yawned at the common vials an
 The tide turned in the afternoon. They loaded the last crate, said goodbye to the road, and watched Corium slide away behind the ship's stern until it was just a smudge of smoke on the coastline.
 
 Bill ate straw. The crew gave the party the sort of looks that crews give passengers who have brought a mule. The Salt Mare's Fortune leaned into the southbound current and put the coast out of sight by the second day.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-13-the-victory-feast"><span class="nav-dir">← Previous</span><span class="nav-title">The Victory Feast</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c2-02-the-salt-mares-fortune"><span class="nav-dir">Next →</span><span class="nav-title">The Salt Mare's Fortune</span></a>
+</nav>

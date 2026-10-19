@@ -17,6 +17,12 @@ The campaign in the order the party lived it, with stories from the days between
 - **[7 — Bill](c3-07-bill)** — a mule goes missing, a butcher gives him back, and the bracelet takes a shot at Page.
 - **[9 — The Shrouded in the Alley](c3-09-the-shrouded-in-the-alley)** — an alley fight that becomes a queen's throne room.
 - **[10 — The Bohun Estate](c3-10-the-bohun-estate)** — shelter behind a family's walls, and a first conversation with one of the dead in the bracelet.
+- **[11 — The Bohun Breakfast](c3-11-the-bohun-breakfast)** — Page wakes with his memory out of true, and Legion finds kin in the garden.
+- **[12 — Stross](c3-12-stross)** — Simon meets the captain and learns how much of the murder case was never written down.
+- **[13 — The Loss of Simon](c3-13-the-loss-of-simon)** — a captain arrives at the estate with news the party understands before he speaks.
+- **[14 — The Cistern House](c3-14-the-cistern-house)** — the party goes to grant citizenship to wasps, and Legion meets a swarm that is afraid.
+- **[15 — Who Am I](c3-15-who-am-i)** — a new mind asks its first question, and Page finds what the hive is anchored to.
+- **[16 — The Witness in the Basin](c3-16-the-witness-in-the-basin)** — a seamstress with a secret, a brand on a stranger's wrist, and a dozen men in an alley.
 - **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* A patrol surrenders. The stranger fires again. Ceridwen reaches for Morgath, and the survivors wake high above the sea.
 - **[The Wrong Hunter](the-wrong-hunter)** — *the night after.* Page hides under a root and sends his double out to meet the creature that has followed him through centuries of sleep.
 - **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* The water queue takes the party deeper into Rockside. A body passes on a borrowed door; a boy arrives with a captain's token.

@@ -294,3 +294,9 @@ Morgath fought her kind. You saw what they did to stop him, and you remember the
 You can still feel the child's fingers against your jaw. She reached out from inside the hag, and for a moment you reached her. You lie still, trying to remember her face.
 
 The lamp needs trimming. Beyond the curtain, someone is awake.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="25-the-courtyard-and-the-wish"><span class="nav-dir">← Previous</span><span class="nav-title">The Courtyard and the Wish</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="interlude-the-stone"><span class="nav-dir">Next →</span><span class="nav-title">The Stone</span></a>
+</nav>

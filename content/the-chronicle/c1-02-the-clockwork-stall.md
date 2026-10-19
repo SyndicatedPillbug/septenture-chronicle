@@ -32,3 +32,9 @@ They walked Ethan back toward the gate, where the Copperfields and Thom waited. 
 It was near midnight when Page brought them to the edge of the grounds. He had found a hole in the festival's perimeter, which should not exist, and the thing that made it had gone to ground in a tent with no show set up. They crossed to it and found Page's warning sign flat on the ground. Inside, in the dark, an old woman stood over a heap on the floor and said there had been an accident. She asked them, smiling, for help.
 
 Legion and Ceridwen did not move. When Coy lit a flame, the woman's bones turned, her eyes went red, and claws slid out of her fingers. "There's no fooling the likes of you," she said.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-01-the-feylight-festival"><span class="nav-dir">← Previous</span><span class="nav-title">The Feylight Festival</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-03-the-hag-in-the-tent"><span class="nav-dir">Next →</span><span class="nav-title">The Hag in the Tent</span></a>
+</nav>

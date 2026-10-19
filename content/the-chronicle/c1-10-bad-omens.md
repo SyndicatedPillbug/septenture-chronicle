@@ -26,3 +26,9 @@ He left Elara to finish the ritual and went to the mayor's house with the news. 
 At the same hour, Page was riding behind a stranger who had been tracking the marching men. The man's name was Edreth, his horse was called Fennel, and he did not care for the guild. Page gave his name as Luerilan and his politics as Libertine, which warmed the conversation considerably. Edreth explained what the marching soldiers were. The Shrouded, servants of powerful magic users, and hard to kill. They were four hours out of Lobridge. Page said he would fight with him, and fell asleep in the saddle.
 
 Then Elara found him with her spell, and the two of them passed messages he was too tired to remember afterward. He told her the town was in danger. She told him his friends would know he was coming. Edreth rode faster.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-09-the-helm-and-the-ring"><span class="nav-dir">← Previous</span><span class="nav-title">The Helm and the Ring</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-11-before-the-storm"><span class="nav-dir">Next →</span><span class="nav-title">Before the Storm</span></a>
+</nav>

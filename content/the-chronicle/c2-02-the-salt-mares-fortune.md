@@ -21,3 +21,9 @@ On the day the coast came back, the wind did not so much fail as decide against 
 So they walked. The cliff trail ran above the water for the last miles, past the Great Ox-Elevators descending into the rock with their cargo, and down to the inland gate, where the queue of people waiting to enter Latesa took the Five in with everyone else and did not find them interesting.
 
 The city smelled like a fire that had just been put out.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c2-01-three-weeks-to-corium"><span class="nav-dir">← Previous</span><span class="nav-title">Three Weeks to Corium</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c3-05-the-bohun-fire"><span class="nav-dir">Next →</span><span class="nav-title">The Bohun Fire</span></a>
+</nav>

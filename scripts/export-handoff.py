@@ -38,6 +38,9 @@ for path in sorted(SRC.glob("*.md")):
     if title_match:
         prose = prose.replace(title_match.group(0), "", 1)
 
+    # Navigation is site furniture, not prose.
+    prose = re.sub(r'<nav class="chapter-nav".*?</nav>', '', prose, flags=re.S)
+
     out = [
         f"# {title}",
         "",

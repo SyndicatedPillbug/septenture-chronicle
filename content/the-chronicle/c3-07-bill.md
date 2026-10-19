@@ -26,3 +26,9 @@ Page and Ceridwen both noticed the same thing as Gordaev turned away: a faded fi
 They walked on with Bill in hand. A few streets along, Ceridwen's bracelet began to glow, and a woman's voice said something about learning to listen. She threw her arms up to vent the magic into the air, and Page stepped in beside her at exactly the wrong moment.
 
 The blast came out of her fingers and took him in the chest. Necrotic energy, cold and purple, tore through leather and skin and threw him backward across the street.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c3-05-the-bohun-fire"><span class="nav-dir">← Previous</span><span class="nav-title">The Bohun Fire</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c3-09-the-shrouded-in-the-alley"><span class="nav-dir">Next →</span><span class="nav-title">The Shrouded in the Alley</span></a>
+</nav>

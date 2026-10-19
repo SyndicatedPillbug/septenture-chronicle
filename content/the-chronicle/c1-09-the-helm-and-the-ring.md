@@ -30,3 +30,9 @@ In the cellar, Coy felt the silence where his friend had been. Legion tested the
 Carly Two-Ton sent them to the Quill and Quillow, where a woman named Elara Nightshade was healing a man who had walked in off the road bleeding. Coy helped with the man and saw that his wounds came from something like a wight. Elara agreed to try to find Page, and needed pieces of him to do it. They gave her a book he had left, notes shaken loose from its pages, a sketch Ceridwen had made of his face, and his canteen.
 
 Some hours later, far from any of that, Page woke alone in an old watch house with his head splitting and half his belongings gone. Anything elvish, anything fey, anything worth carrying had been taken, including books. A coin lay on the floor with a shark on it, familiar in a way he could not place through the fog. He walked out into the grass, found tracks leading toward a road, and started walking after the people who had his things.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a class="nav-prev" href="c1-08-if-you-aint-wight"><span class="nav-dir">← Previous</span><span class="nav-title">If You Ain't Wight</span></a>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-10-bad-omens"><span class="nav-dir">Next →</span><span class="nav-title">Bad Omens</span></a>
+</nav>

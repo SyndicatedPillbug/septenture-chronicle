@@ -28,3 +28,9 @@ Inside, the magic settled over the party like weather. Coy gave way to it. Legio
 He found one, and a fey called While who gave him the directions four left turns deep. The shop belonged to Kajik Buchift, an odd creature with double eyelids and a fine stock. Page traded a promise for a book, due back in a year. He also saw a horned woman across the aisle who looked at him with more interest than the afternoon required. Then he left to find his friends before he did anything about it.
 
 Simon, meanwhile, had been led to a booth where a hammer and a bell settle all arguments. He rang the bell hard enough to empty his head and won a silver ticket for it.
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <span class="nav-empty"></span>
+  <a class="nav-index" href="./"><span class="nav-dir">↑</span> The Chronicle</a>
+  <a class="nav-next" href="c1-02-the-clockwork-stall"><span class="nav-dir">Next →</span><span class="nav-title">The Clockwork Stall</span></a>
+</nav>
