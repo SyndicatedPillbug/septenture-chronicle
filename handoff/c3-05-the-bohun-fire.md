@@ -12,9 +12,9 @@ Then Page and Ceridwen saw the smoke.
 
 It came off the Shave in a black column with grease in it. Page went up a wall and over the rooftops to get a look and found the mold loft burning. The Bohun tracing hall, where the shipwrights keep their drawings, and where Simon's family worked. He sent the warning down the link to Coy, and Coy tried to clear a path through the crowd with a spell and instead started a brawl — which did more for them than the spell would have. The street opened, and the Five ran through it.
 
-The doors at the mold loft gave way when they reached them, and the whole building breathed in and spat fire. Everyone got clear except Page, who put his shoulder into Simon and took the backdraft himself.
+The doors at the mold loft gave way when they reached them, and the backdraft blew fire into the street. Everyone got clear except Page, who put his shoulder into Simon and took it himself.
 
-Then it was work. Coy wore the bear and threw burning logs off people. Simon and Ceridwen dragged the living out of the smoke, and Legion arrived from the street and hauled the unconscious out by their collars, remarking that breathing came first and dignity could wait. Ceridwen caught Page slipping for the stairs and gave him a slap and a heroism before letting him go.
+Then it was work. Coy wore the bear and threw burning logs off people. Simon and Ceridwen dragged the living out of the smoke, and Legion arrived from the street and hauled the unconscious out by their collars. Ceridwen caught Page slipping for the stairs, slapped him, and let him go.
 
 Upstairs he found a bearded man in a welder's apron choking in the smoke, trying to shovel blueprints and ledgers into a metal sea chest. Page cleared the air around him with a breath of magic, and the two of them packed the chest at a speed that made the shipwright laugh between coughs. Designs and drawings and a city's worth of knowledge went into the box while the floor above smoldered.
 

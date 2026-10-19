@@ -13,7 +13,7 @@ tags:
 
 The well's wooden cap crumbled at a touch. Ceridwen found the stolen satyr icon in the grass, followed the way it pointed, and set it into a slot in the stonework. The ground beside the well opened on a staircase.
 
-Coy went first. Legion came last and left crumbs, in case the stairs had opinions about being used. At the bottom waited a cavern with a pool at its center and one flower growing out of it, shimmering in colors that had no business being in one plant. The stairs collapsed behind them. Ceridwen danced clear of the falling stone, which left the party sealed in with whatever lived there.
+Coy went first. Legion came last and left crumbs, so they could find the way back if the stairs closed. At the bottom waited a cavern with a pool at its center and one flower growing out of it, shimmering in colors that did not belong together. The stairs collapsed behind them. Ceridwen danced clear of the falling stone, which left the party sealed in with whatever lived there.
 
 Laughter came out of the dark, and the Merrymaker stepped into the flower's light. He was tall, shaped like a satyr, unclothed, with ram's horns wearing a crown of blooms. He knew their names. He said they were welcome, and did not say they were free to leave.
 

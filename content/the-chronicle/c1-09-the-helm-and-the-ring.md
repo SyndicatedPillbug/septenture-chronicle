@@ -19,7 +19,7 @@ Then the names on the tombs. Simon found one he knew: Rexos, an old Solnokom wor
 
 While every eye was on Rexos's tomb, Fiona had found what she came for. A panel stood open in the wall behind her and the ring was in her hand, and she looked at Coy and Ceridwen like a woman apologizing to someone with no time to hear it. Then the smoke bomb went off.
 
-She was out of the sanctum before the coughing stopped. Legion went after her with the wasps. Page built a telepathic link between himself, Legion, and Coy, and Coy nearly answered it as Mander, from the life he had before Latesa. Page ran next, faster than a librarian ought to run, and caught her in the mayor's own cellar at the edge of a circle she had already drawn.
+She was out of the sanctum before the coughing stopped. Legion went after her with the wasps. Page built a telepathic link between himself, Legion, and Coy, and Coy nearly answered it as Mander, from the life he had before Latesa. Page ran next and caught her in the mayor's own cellar at the edge of a circle she had already drawn.
 
 He lunged. The magic took them anyway. Page held on and went through with her.
 

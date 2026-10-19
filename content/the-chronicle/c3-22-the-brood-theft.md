@@ -13,13 +13,13 @@ tags:
 
 They came up the sluice in the dark, one of the old water tunnels the party had walked when they first took the cistern, and they came for Hive's brood.
 
-They were not sent by anything worse than money. Smugglers and hired muscle, apparently ordinary men with sacks and smoke and a plan, the kind of men who steal larvae for a buyer because a buyer exists. That was the shape of them, and it was enough to bring the party down on the whole plan at once.
+Money had sent them. Smugglers and hired muscle, with sacks and smoke and a buyer waiting somewhere under the city.
 
 The cistern had been prepared for defense. Iron caltrops tore through leather boots in the pitch-dark entrance, a burst of magical light illuminated the stone vault, and a focused gale from Page bowled the lead three intruders backward off their feet. Hive surged forward to defend its brood comb, while the companions struck from their designated defensive points along the gallery. The skirmish was violent and brief.
 
 Legion's part in it was different.
 
-Something in them met the theft the way an old wound meets the weather. These men were doing to a young hive what had once been done to Legion's own — taking the brood, smoking the home, treating a new mind as cargo — and for the first time since Legion became Legion, rage came up out of them with real weight behind it. Not the cold arithmetic of a swarm choosing targets. The heat of a person who had been a theft once, and had just watched somebody try to repeat it in front of them.
+Legion had been a theft once. These men were smoking a young hive and bagging its brood. Rage came up in them, hot, with a person's weight behind it.
 
 Most of the men went down hard. One got away, back down the tunnels, into the dark below the cistern, and the party let him go because there were other things to hold.
 

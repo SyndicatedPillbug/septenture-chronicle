@@ -6,7 +6,7 @@
 
 
 
-Breakfast at the Bohun estate was a quiet, ruined meal. Nobody had slept. Page wore one of Simon's buttons on a string around his neck. Ceridwen held the household together by doing the small useful things, because stopping would have finished her.
+Breakfast at the Bohun estate was a quiet, ruined meal. Nobody had slept. Page wore one of Simon's buttons on a string around his neck. Ceridwen kept moving. She did the small useful things and did not stop.
 
 Ilian took her aside before the tea went cold. The attack on the family's shipping was one move in a larger campaign, he said, and the Bohuns stood in the way of Lord Victor Vardon's plans. Vardon used indirect tools — Clan Cathar among them — to hurt the family without waking the noble council or the guild. Ilian had meant to ask Simon for help. With Simon gone, he asked Ceridwen and the party to be his eyes and hands in the city.
 
@@ -14,7 +14,7 @@ Then Sabhal, Simon's young cousin, confessed something worse than grief. Before 
 
 Captain Selim brought the next lead from Stross: a seamstress named Nara who might have seen something, and who would not talk to the Watch. They took a carriage into the Basin, argued about how to approach a woman with every reason to fear strangers, and sent Ceridwen in first with Simon's torn jacket and a story about a husband.
 
-Nara softened at the jacket and the mending in it. She talked about a city gone dark and a Watch that threatened people instead of protecting them, and admitted she had tried to report what she saw and been frightened into silence.
+Nara softened at the jacket and the mending in it. She talked about neighbors who had vanished, and a Watch that threatened people who tried to report what they saw. She had tried. Someone had frightened her into silence.
 
 Then the street emptied. A man walked in trying not to look up at them, and Selim turned him around and found a black V burned into his wrist, the mark of Vardon's new militia. The man told Selim to go back to his beat.
 

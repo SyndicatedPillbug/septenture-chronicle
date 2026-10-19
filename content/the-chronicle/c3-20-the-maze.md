@@ -17,11 +17,11 @@ Ahead, an uninvited silhouette slipped across the parkland. It skirted the ruine
 
 Page scanned the dark undergrowth and spotted where the figure had breached the perimeter: an opening in the dense yew hedge. Thick branches had been pruned and tied back with hemp twine, creating a narrow run barely wide enough for a crouching adult. Worn earth and broken twigs showed recent, repeated passage.
 
-He pinged Coy on the link and asked the only question the moment had in it: should he go in, or did Coy want the front position himself. They could both see in the dark. Whatever was in the maze could too — the whole shape of the watch was that they were hunting something that hunted as well as they did, in a place built entirely of blind corners.
+He pinged Coy on the link and asked whether he should go in, or whether Coy wanted the front. Both of them could see in the dark. So could whatever had gone into the maze.
 
-They stood at the mouth of the hedge with the wind in their collars, and the grounds behind them stayed quiet, and inside the maze nothing moved that could be heard.
+They stood at the mouth of the hedge with the wind in their collars. The grounds behind them stayed quiet. Inside the maze, nothing moved that they could hear.
 
-The gap was right there. The passage was patient. It had been widened for a reason, and the reason was on the far side.
+The gap was wide enough for a crouching adult. Someone had tied the branches back on purpose.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-19-the-sanctum"><span class="nav-dir">← Previous</span><span class="nav-title">The Sanctum</span></a>

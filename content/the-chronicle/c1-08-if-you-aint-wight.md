@@ -11,7 +11,7 @@ tags:
 
 # 1.8 — If You Ain't Wight
 
-The door at the end of the hall was circular, and something on the other side wanted out. Legion set a trap of fire for whatever came through and went back to watching the side rooms. Page looked at the lock first, because Page always looks at the lock first.
+The door at the end of the hall was circular, and something on the other side wanted out. Legion set a trap of fire for whatever came through and went back to watching the side rooms. Page looked at the lock first.
 
 A disc of suspended sand hung in the center of the door, held by magic, beneath two sets of carved runes. The old Elvish was formal, instructing the reader to raise the wards before opening the seal. The Solnokom text posed a riddle: All deities are powerful, but most compassionate beings are not powerful. Therefore. A blank line to fill in the sand.
 

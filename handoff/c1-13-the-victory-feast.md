@@ -16,7 +16,7 @@ Ceridwen joined the bard Eldragh for a song they both knew, the second oldest in
 
 Then Legion felt the heat signatures coming at a run, and went out the window rather than toward the door. They had been saying all evening that the peace was wrong, and they were right.
 
-The manor's front doors blew in on a spell. A brute of a woman with a short blade looked over the crowd, put her finger on Simon, and shouted that he was the one. Ceridwen put a witch bolt into a swordsman bearing down on the mayor; his chainmail and his own steel did the rest, and he went spinning across the floor like something struck by lightning. Page set his drink on a table and said that this was rude, and put his rapier up under the brute's ribs from behind. Coy answered the men at the back with a swarm of everything the forest keeps quiet about, and knocked the assassin off Simon.
+The manor's front doors blew in on a spell. A brute of a woman with a short blade looked over the crowd, put her finger on Simon, and shouted that he was the one. Ceridwen put a witch bolt into a swordsman bearing down on the mayor; his chainmail and his own steel did the rest, and he went spinning across the floor like something struck by lightning. Page set his drink on a table and said that this was rude, and put his rapier up under the brute's ribs from behind. Coy answered the men at the back with a swarm, and knocked the assassin off Simon.
 
 The fight went on longer than the opening. Legion stopped a mage's mouth with silence and took him out of the evening entirely. Simon answered a knife with dragon's breath and a hand full of lightning. Coy went into his lion shape and helped Page carry a bomb out of a burning room before it could take the manor down.
 

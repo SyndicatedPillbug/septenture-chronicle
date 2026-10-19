@@ -14,7 +14,7 @@ Legion deployed a scout bee and located Bill four minutes later. The mule was ti
 
 Legion stepped forward to reclaim the mule. Gordaev drew an iron cleaver and barked that anything left unattended in the Shave belonged to whoever picked it up. Page claimed the beast belonged to Lord Devereux, but invoking nobility in the lower district only drew angry shouts from neighboring stallholders.
 
-Ceridwen stepped between them. She cast a calming charm across the tent, then sharply rebuked Gordaev for rifling through a lady's personal packs. Confronted by a noblewoman's indignation and subdued by the spell, Gordaev backed down, untied the mule, and offered a ring of smoked sausage as an apology. Legion absorbed the offering into their bandages.
+Ceridwen stepped between them. She cast a calming charm across the tent, then sharply rebuked Gordaev for rifling through a lady's personal packs. Confronted by a noblewoman's indignation and subdued by the spell, Gordaev backed down, untied the mule, and offered a ring of smoked sausage as an apology. Legion ate one, casing and all.
 
 Page and Ceridwen both noticed the same thing as Gordaev turned away: a faded fist tattooed on his neck. Clan Qathr, the same mark they had seen fresh on the murdered carriage driver.
 

@@ -10,7 +10,7 @@ Nobody in Lobridge slept early that night. The Five had an evening to turn a mar
 
 The plan came together in the mayor's front room, mostly without the mayor. Wilherd Greyson heard the first part of it and then took a horse and went looking for his wife, who was due back from her travels and did not come home on time. Legion recruited scouts from the men still sober enough to ride, and put a ranger in the woods who knew his work. Simon woke Coy and Ceridwen and gave them the short version. Carly Two-Ton, who had been feeding this party for days and had a good eye for what a building is for, agreed that the Temple was the only structure worth defending, and started moving the town toward it.
 
-Coy led the walk as a rainbow horse, which is not a sentence anyone planned to say. A parade of nervous townsfolk followed him through the streets, most of them children, with Ceridwen walking behind to gather stragglers. The militia pulled what weapons they had out of what chests they were in. Degnr gave his orders, disliking every one of them.
+Coy led the walk as a rainbow horse. A parade of nervous townsfolk followed him through the streets, most of them children, with Ceridwen walking behind to gather stragglers. The militia pulled what weapons they had out of what chests they were in. Degnr gave his orders, disliking every one of them.
 
 Out on the Old Road, one of the scouts came back with the news that mattered: a body of men had split, some crossing the river at a low spot and others disappearing into the trees to the east. That is the shape of an encirclement, and Legion said so before anyone else did.
 

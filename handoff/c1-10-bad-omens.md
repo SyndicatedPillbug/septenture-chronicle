@@ -8,7 +8,7 @@
 
 He tracked them for an hour before the heat-shimmer ahead dissolved and Fiona came into view with twenty armed men and no intention of stopping. He followed them up the hill and watched them meet a larger force, and then split: the mounted riders galloped south, while the infantry marched north toward Lobridge. His psychic senses pinpointed his stolen book collection with the riders.
 
-He sent Fiona a message through the air, because a man who has just been robbed has opinions to share. No matter how far you run, I will hunt you down. Give me back my books. She answered that she was sorry, that she had not had a choice, and rode on. Page turned and went after the walking men instead, as mist, at a distance, on foot.
+He sent Fiona a message through the air. No matter how far you run, I will hunt you down. Give me back my books. She answered that she was sorry, that she had not had a choice, and rode on. Page turned and went after the walking men instead, as mist, at a distance, on foot.
 
 The rest of the Five were at the Quill and Quillow, where the man on the table was dying in a way Coy had seen before. Coy helped Elara make a narcotic to hold him, and the two of them bought him hours instead of minutes. Legion went scouting, and took a tree for privacy, and came out of it in their true form: a swarm, moving over the southern roads at speed.
 

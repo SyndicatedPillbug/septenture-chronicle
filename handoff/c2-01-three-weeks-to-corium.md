@@ -12,7 +12,7 @@ Corium announced itself by smell: salt, tar, fish, and the particular stink of a
 
 At the docks they found Captain Kellen Voss, who had one eye half shut at all times and hands that had done more rope work than they had ever done anything else. His ship, the Salt Mare's Fortune, carried twelve crew and a reinforced hull, which he mentioned twice and charged for once. Passage came to a hundred silver a head. Bill the mule would ride for free and eat on the party's account.
 
-They were three hours in port and used all of them. The Mercenary Guild medallions opened the local outpost and let them draw against their writs, which is the only kind of banking where the collateral is reputation. Legion carried thirty bundles of straw aboard for Bill over the crew's objections. Coy found an apothecary. Simon bought things to keep his hands busy at sea, on the theory that idle hands aboard a ship find nautical trouble.
+They were three hours in port and used all of them. The Mercenary Guild medallions opened the local outpost and let them draw against their writs. Legion carried thirty bundles of straw aboard for Bill over the crew's objections. Coy found an apothecary. Simon bought small work to keep his hands busy at sea.
 
 Page sold the loot recovered from the assassins. The pawn merchant waved off the common glass vials, offering four silver for the brass calipers and balance weights. Page spotted the cheat immediately, spun a yarn about heirloom master-smith tools, and negotiated the coin up to twenty-two silver before handing over the pouch.
 

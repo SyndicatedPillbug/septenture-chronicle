@@ -25,7 +25,7 @@ Ceridwen paid with a story instead. The tales of the festival belong to it forev
 
 Inside, the magic settled over the party like weather. Coy gave way to it. Legion shook it off and trusted nothing after that. Simon forgot the mission entirely and went shopping. Page wanted a bookshop.
 
-He found one, and a fey called While who gave him the directions four left turns deep. The shop belonged to Kajik Buchift, an odd creature with double eyelids and a fine stock. Page traded a promise for a book, due back in a year. He also saw a horned woman across the aisle who looked at him with more interest than the afternoon required. Then he left to find his friends before he did anything about it.
+He found one, and a fey called While who gave him the directions four left turns deep. The shop belonged to Kajik Buchift, an odd creature with double eyelids and a fine stock. Page traded a promise for a book, due back in a year. He also saw a horned woman across the aisle who watched him longer than she watched the books. Then he left to find his friends before he did anything about it.
 
 Simon, meanwhile, had been led to a booth where a hammer and a bell settle all arguments. He rang the bell hard enough to empty his head and won a silver ticket for it.
 

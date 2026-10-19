@@ -16,7 +16,7 @@ Page knew what it was. He slapped her cheek, told her to attune, and she heard h
 
 Page explained it to them while they dressed. The bracelet makes hags. It eats what a hag has not yet eaten. It had been feeding on Coy all night, and if Ceridwen had failed to attune it, the story would have ended badly for everyone in the room.
 
-Downstairs, porridge from Carly Two-Ton and a quiet table. Legion watched the room. A woman with auburn hair was watching them back, with the patience of someone whose head is doing arithmetic somewhere behind her face. She came over when Legion challenged her.
+Downstairs, porridge from Carly Two-Ton and a quiet table. Legion watched the room. A woman with auburn hair watched them from across it and did not look away. She came over when Legion challenged her.
 
 Fiona Firefoot, of the Mercenary Guild. She had heard what they did for Ethan and she wanted help with something bigger: elvish ruins found near town, and a ring she had been sent to find. Coy made her prove her token. She did. Page read her and found a woman who wanted something and had decided not to lie about all of it.
 

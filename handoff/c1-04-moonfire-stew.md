@@ -10,7 +10,7 @@ With the job agreed, they had hours of festival left and no reason to waste them
 
 Then the buying. Ceridwen found a pixie's paint stall under flowering wisteria and bargained over prices until Simon and Page talked the stallkeeper into accepting a substitute pigment, and Page counted out the coins. Simon haggled red and gold cloth down to something defensible. Page bought bookbinding calfskin and awls.
 
-Legion and Coy went to the menagerie. Coy fell in love four times: a rainbow horse called Whir, a pair of blue foxes who gave him a silver bell and let him run with them in their shape for a while, and a hundred other animals, all of them calmer than animals have any business being. Legion looked at the singing spiders and asked practical questions, and got practical answers about an ancient wizard's experiments.
+Legion and Coy went to the menagerie. Coy fell in love four times: a rainbow horse called Whir, a pair of blue foxes who gave him a silver bell and let him run with them in their shape for a while, and a hundred other animals, all of them calmer than the beasts on the road. Legion looked at the singing spiders and asked practical questions, and got practical answers about an ancient wizard's experiments.
 
 They met outside Eldwyn's Emporium with the night half gone, and made it a few steps toward Kajik's before the pixies hit them. A whole swarm of them, out of their minds. The Key to the Garden of Gleeful Delights had been stolen, and the garden, they said, was what it protected. Ceridwen sang them quiet and got a description out of the noise: a shadow, laughing, gone that way.
 

@@ -11,9 +11,9 @@ tags:
 
 # 1.2 — The Clockwork Stall
 
-The bell had done its work on Simon. He came back to himself with a silver ticket in his hand and no idea where he stood, and the rest of the party spent the next hour getting their bearings. There is no logic to festival streets; there is only traffic. They went north with everyone else.
+The bell had done its work on Simon. He came back to himself with a silver ticket in his hand and no idea where he stood, and the rest of the party spent the next hour getting their bearings. Festival streets had no map. They went north with everyone else.
 
-A thin drow found them in the crowd with a note from Page. The hand was hasty and the map worse, but the message was Page's: he had found something, and they should look for the clockwork stall. Legion paid the messenger with a field rat and Simon added five silver, because someone had to be respectable.
+A thin drow found them in the crowd with a note from Page. The hand was hasty and the map worse, but the message was Page's: he had found something, and they should look for the clockwork stall. Legion paid the messenger with a field rat. Simon added five silver.
 
 The next stall belonged to Alara, a pale full-blooded elf who sold jewelry and knives and never once looked bored. Her prices came from fey law. When Simon asked the way to Ethan, she named a memory as her fee, and he whispered one to her and did not say what it was. She took it and said it might matter later.
 

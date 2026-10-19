@@ -6,16 +6,12 @@
 
 
 
-The city let them have the time, which none of them entirely trusted.
+They got the days. None of them trusted that.
 
-They organized defensive rotations. Two sentries patrolled the cistern perimeters at all hours, checking the drainage sluices, the barred access tunnels, and the repaired gaps in the hedge maze. For eight nights, the drainage culvert remained empty. The iron caltrops strewn across the masonry floor sat undisturbed in the mud. Hive learned the distinctive stride and footfalls of every party member, chirping greetings along the rafters as the guards passed underneath.
+The watch at the cistern ran in rotations, two at a time. They walked the sluice, the tunnel mouths, and the hedge with the widened gap. Nothing came up the sluice. The caltrops in the human entrance went untouched. Hive learned the sound of each of them walking, and started calling them by the shape of their footsteps.
 
-During daylight, the companions drilled their tactical skills. Coy practiced shifting seamlessly between human form and bear claws, striking without losing his tactical awareness. Page honed his atmospheric evocations, practicing focused air lances against the cistern's outer brick arches. Ceridwen spent hours deciphering the resonant whispers of the bone bracelet, mapping the distinct magical conduits offered by Lilliana and Agnes. Legion added new hive drones to their aggregate form, increasing the swarm's density. Simon remained at the Bohun mansion, consulting on shipyard repairs and drafting defensive barricades for the family workshops.
+Coy practiced the bear's bite in short strikes, and stopped when he meant to stop. Page practiced the wind where no Watch patrol could see a librarian do it. Ceridwen worked at the bracelet with Lilliana's instruction in her ear. She hated some of what she learned. She used it. Legion added wasps to the swarm and practiced holding one shape. Nara mended half the party's clothes in the sanctum. She said it kept her hands busy. What she heard the hive learning, she did not repeat.
 
-Nara worked in the dry annex, using needle and thread to repair ripped tunics, torn cloaks, and frayed pack straps. She listened to the hum of the wasp comb without comment, keeping her head down.
+On the ninth night the watch heard scraping in the sluice. It stopped when the wind stopped. It started when the wind did. By dawn it had gone back down the tunnel. The watch wrote it up as a rat, or a stone settling.
 
-On the ninth night, the sentry heard scraping down the drainage sluice.
-
-Something dragged itself along the wet brick, stopping whenever the wind died down, then scraping forward again. By dawn, the sound receded back into the depths without an intruder showing itself. The watch logged it as a sewer badger or settling silt.
-
-On the tenth night, the intruders brought prybars.
+On the tenth night, men came up the sluice.

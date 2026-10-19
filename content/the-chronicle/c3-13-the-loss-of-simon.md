@@ -13,15 +13,15 @@ tags:
 
 Captain Stross came to the Bohun estate with his hat in his hands, and Page and Ceridwen understood before he said a word.
 
-They went to the precinct morgue in the Shave, where the cold room kept its own hours and the sheet on the table had already been arranged by someone. Ceridwen and Page did the identification because they were the ones who could. Three tattoos. A scar on the chest. The awful intimacy of grief made the rest of it unnecessary.
+They went to the precinct morgue in the Shave. The sheet on the table had already been arranged by someone. Ceridwen and Page did the identification because they were the ones who could. Three tattoos. A scar on the chest. That was enough.
 
 Ceridwen stepped back and screamed. The magic came out of her in a wave that took part of the roof with it, and even then she turned it away from the people in the room. Nobody was hurt. The building was. The party stood in the dust and learned what her bracelet could do when she stopped holding it.
 
-They found Stross in his office, surrounded by maps and lists. Page pinned him against the wall and asked him what he had done, and what he had failed to do. Ceridwen put calm into the room before it became something else. Stross, to his credit, did not defend himself; he pointed at the walls instead, at years of missing people and a murder file with holes in it the size of a precinct.
+They found Stross in his office, surrounded by maps and lists. Page pinned him against the wall and asked him what he had done, and what he had failed to do. Ceridwen put calm into the room before it became something else. Stross did not defend himself. He pointed at the walls, at years of missing people and a murder file with holes in it the size of a precinct.
 
-They asked about diamonds. They asked about resurrection, in the guarded cadences of people who cannot afford false hope. Ceridwen felt Morgath stir within the bone bracelet, cold and imperious. The sorcerer's spirit made it clear that speaking with petty shades was beneath his notice, but returning a severed soul to flesh was within his arts. He offered no bargain yet, merely letting her know the power existed.
+They asked about diamonds. Then they asked about resurrection. Ceridwen felt Morgath stir in the bracelet, cold and sure of himself. He could put a soul back in a body. He did not offer a bargain. He let her know the price existed.
 
-By dusk, the party faced an open casket, an investigative trail implicating half the city's magistrate council, and no clear path forward. Stross's boards documented decades of unrecorded burials and disappearances. The killings were not the work of a single rogue knife; they were the intake valve of an industrial butcher shop.
+By dusk they had a body, a file with more names than they could carry, and no plan any of them liked. Stross's boards held years of missing people and a murder file with holes the size of a precinct.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-12-stross"><span class="nav-dir">← Previous</span><span class="nav-title">Stross</span></a>
