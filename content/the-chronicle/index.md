@@ -17,7 +17,10 @@ The campaign in the order the party lived it, with stories from the days between
 
 ## Part II — The Sea Road
 
-The victory feast, the ambush, and the voyage south. Chapters in progress.
+*The road south, the port at Corium, and the voyage to Latesa.*
+
+- **[2.1 — Three Weeks to Corium](c2-01-three-weeks-to-corium)** — a long walk south, a port full of tar and salt, and a captain with a squint.
+- **[2.2 — The Salt Mare's Fortune](c2-02-the-salt-mares-fortune)** — a dead ship with a living crew, an invasion rumor, and a port that will not let them in.
 
 ## Part I — Campaign One: The Feylight Festival
 
@@ -35,3 +38,4 @@ The victory feast, the ambush, and the voyage south. Chapters in progress.
 - **[1.10 — Bad Omens](c1-10-bad-omens)** — a rider named Edreth, a farm full of the dead, and a message for a man named Corvain.
 - **[1.11 — Before the Storm](c1-11-before-the-storm)** — a town arms itself in an evening, and two riders come into Lobridge at a gallop.
 - **[1.12 — The Siege of Lobridge](c1-12-the-siege-of-lobridge)** — the Shrouded come over the river. Ceridwen takes one of them, and the bracelet pays a debt.
+- **[1.13 — The Victory Feast](c1-13-the-victory-feast)** — two days after the siege, Lobridge throws a feast, and the assassins come with the wine.
