@@ -88,12 +88,15 @@
 
   // A real tally, shared by every visitor. Abacus is a free counter service:
   // /hit creates-or-increments, /get only reads. One hit per browser session.
+  let globalRequested = false
   function globalLedger() {
     const el = document.querySelector("[data-ledger]")
-    if (!el || typeof fetch !== "function") return
+    if (!el || typeof fetch !== "function" || globalRequested) return
+    globalRequested = true
     let seen = false
     try {
       seen = Boolean(sessionStorage.getItem("septenture-global-seen"))
+      if (!seen) sessionStorage.setItem("septenture-global-seen", "1")
     } catch {
       seen = false
     }
@@ -103,18 +106,20 @@
     fetch(url, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (!data || !Number.isFinite(data.value)) return
+        if (!data || !Number.isFinite(data.value)) throw new Error("no value")
         el.textContent = String(data.value).padStart(6, "0")
         const plate = el.closest(".lcd")
         if (plate) plate.title = "Souls entered — all visitors"
-        try {
-          sessionStorage.setItem("septenture-global-seen", "1")
-        } catch {
-          /* storage disabled; the count still shows for this load */
-        }
       })
       .catch(() => {
-        /* offline or service down: the local count stands */
+        // Offline or the service is down: the local count stands, and the next
+        // load is allowed to try the shared tally again.
+        try {
+          sessionStorage.removeItem("septenture-global-seen")
+        } catch {
+          /* nothing to clear */
+        }
+        globalRequested = false
       })
   }
 
