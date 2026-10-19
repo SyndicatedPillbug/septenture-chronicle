@@ -1,0 +1,24 @@
+---
+title: "1.8 — If You Ain't Wight"
+description: "A riddle in a locked door, and the dead behind it."
+tags:
+  - chronicle
+  - campaign-one
+  - feylight-festival
+---
+
+<span class="dateline">Oxia 17th, 1396cr · the ruins beneath the hill</span>
+
+# 1.8 — If You Ain't Wight
+
+The door at the end of the hall was circular, and something on the other side wanted out. Legion set a trap of fire for whatever came through and went back to watching the side rooms. Page looked at the lock first, because Page always looks at the lock first.
+
+A disc of sand hung in the middle of the door, held by magic, and two sets of letters had been cut above it. The old elvish was formal and said the wards should be raised before the door was opened, which is the sort of instruction a person finds alarming when they are standing next to the door. The words in Solnokom were a riddle. All deities are powerful, but most compassionate beings are not powerful. Therefore. A blank to fill.
+
+The wights hit the other side of the door while they worked. Page took a rubbing of the letters and told them, with some feeling, that they were not going to be let in. Simon handed him the answer. Ceridwen gave him a nudge of luck. Page wrote on the sand that compassionate beings are not deities, and the wards came up as the door buckled.
+
+Which meant the dead got in anyway, and what followed was the hardest fight the Five had been in. Four wights, two from the side rooms and two head-on, with the wards catching and pinning more of them in their alcoves behind. Simon learned that his ordinary steel did less than nothing against them. Coy learned it as a mountain lion. Legion's wasps went into a wight hard enough to break the ritual table it stood over. Ceridwen pulled a spirit up out of the bracelet and put her dagger through one with the strength behind it, and got a ghostly blow in return that left her holding the wall. Page talked to them about preserving their own crypt, and they called him a desecrator and kept coming.
+
+Page's paper blades cut them. Coy's lion shape failed and he answered it as a bear. Legion took a blow that nearly folded them and answered with the wasps again. When the last one fell, it fell to a conjured book across the back of the skull. The party stood in a room full of broken stone and pulled their breath back.
+
+The inner sanctum lay beyond. Four crypt alcoves had been smashed open and two still held their wights behind live warding sigils, thrashing in the dark. In the middle of the room stood a pedestal with a beautiful vase on it, and above the vase, floating in the air, a helmet of a make none of them had seen and all of them wanted.
