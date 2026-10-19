@@ -3,7 +3,7 @@ title: Septenture
 description: The Latesa Chronicle — a narrative of the Septenture campaign.
 ---
 
-<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown, carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ the Ox-Elevators are checking names &nbsp;·&nbsp; ✦ water share down a quarter at the Marl &nbsp;·&nbsp; ✦ the Hollow Heart has stew and no questions &nbsp;·&nbsp; ✦ one ship riding at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ the stone remembers &nbsp;·&nbsp;</div></div>
+<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown, carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ the Ox-Elevators are checking names &nbsp;·&nbsp; ✦ water share down a quarter at the Marl &nbsp;·&nbsp; ✦ the Hollow Heart has stew and no questions &nbsp;·&nbsp; ✦ one ship riding at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ lost: one boot, Salt End stair, answers to a bell &nbsp;·&nbsp;</div></div>
 
 <div class="hero">
   <img src="static/rockside-lift.png" alt="Rockside, seen from a lift" />
@@ -19,7 +19,7 @@ description: The Latesa Chronicle — a narrative of the Septenture campaign.
   </div>
 </div>
 
-A city cut into a cliff. A guild that stopped answering. A fire in a shipyard, a wish in a courtyard, and a dream that came looking for a bookbinder. This is the campaign, told in order — every session a chapter, every piece of fiction set where it happened.
+This is the record of a table's campaign: five people, a city named Latesa, and the mess they made of a year in it. Chapters follow the sessions in order. The fiction sits where it happened.
 
 <div class="stone-box">
   <span class="stone-label">The stone says</span>
@@ -31,10 +31,10 @@ A city cut into a cliff. A guild that stopped answering. A fire in a shipyard, a
 
 - **[Part I — Campaign One: The Feylight Festival](the-chronicle/)** — the festival, the ruins, the ring, and the box.
 - **[Part II — The Sea Road](the-chronicle/)** — the flashback and the voyage to Latesa.
-- **[Part III — Act Two, Latesa](the-chronicle/)** — the closing arc, the courtyard, the wish, and the dream.
+- **[Part III — Latesa](the-chronicle/)** — the closing arc: the courtyard, the wish, and what came after.
 
 <div class="doc">
-<p><strong>New here?</strong> Start with <a href="the-chronicle/">The Chronicle</a> and read forward. The most recent chapter is <a href="the-chronicle/25-the-courtyard-and-the-wish">25 — The Courtyard and the Wish</a>.</p>
+<p><strong>Reading order:</strong> start at <a href="the-chronicle/">the top of the Chronicle</a>, or jump to the newest pages — <a href="the-chronicle/25-the-courtyard-and-the-wish">25 — The Courtyard and the Wish</a> and the <a href="the-chronicle/interlude-the-stone">interlude below the city</a>.</p>
 </div>
 
 ## Around the fire

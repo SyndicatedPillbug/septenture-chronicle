@@ -42,3 +42,18 @@ The "not X, but Y" template, in all six disguises:
 3. Search for `, …ing` tails at sentence ends.
 4. Check that each paragraph has a body, a place, or an action in it.
 5. Read the first sentence and the last sentence aloud. Both must stand alone.
+
+## AI-tell audit (research-derived, 2026-10-19)
+
+These come from editors' and detectors' public write-ups on what makes prose read as machine-drafted. The pattern *density* is the tell, so each chapter gets a budget.
+
+- **Rule of three.** Triads and "A. B. C." fragment openers. One per chapter, and the third item should change direction. Otherwise cut to two.
+- **Anaphora runs.** "Somebody X. Somebody Y. Somebody Z." / "The Rungs creak. They are always creaking." Break the symmetry.
+- **Kicker density.** Ending paragraphs on polished aphorisms ("the errand is the excuse"). Two per chapter, max; the rest get plain endings.
+- **Metaphor stacking.** More than one image per beat. Keep the best, cut the rest.
+- **Stock personifications.** "The ocean breathed and did not care", "the sky gets on with its business", "the city sleeps". Replace with a named, specific thing (a bell buoy, a gull, a siren).
+- **"The way X is X" similes** ("the way the rock is rock") and "the way people/children/cities verb" constructions. One per piece at most.
+- **Uniform rhythm.** Sentences all 12–18 words long. Vary length hard; let some sentences be four words.
+- **Missing specifics.** Where a person would give a number, a price, a street, or a time, give it.
+- **Em-dash budget.** Use them; sparingly. If a paragraph has three, two are showing off.
+- **Neatness.** Real scenes leave a thread loose. Do not resolve every beat.

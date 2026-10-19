@@ -18,7 +18,7 @@ The Chronicle is being bound chapter by chapter. Part I walks the Feylight Festi
 
 <div class="guestbook">
 
-<div class="guestbook-entry">“Came for the maps. Stayed because the stairs go down and down and I wanted to know.” — a runner, no name given</div>
+<div class="guestbook-entry">“I meant to look at the maps. The stairs kept going, and so did I.” — a runner, no name given</div>
 
 <div class="guestbook-entry">“Prices are on the door. Don't knock twice.” — R.</div>
 
