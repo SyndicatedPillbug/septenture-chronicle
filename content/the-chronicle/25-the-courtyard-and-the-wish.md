@@ -38,6 +38,8 @@ A ledge of wet rock high above the sea, the night wind coming off the water, and
 
 Nobody had a good explanation. The wish had taken the field, and then it had taken them, and it set them down on the cold side of the cliff with the city they had spent a month bleeding in spread out beneath them like a map of somebody else's trouble. The militia were still in the courtyard, asleep or dead or waking into either. The dispatch case was still unopened. The halberdier was still loose in the fog. The two people they had promised to protect were still behind a dry fountain in the middle of all of it.
 
+Page alone had stayed awake through it. The goddess's hand held him up while the wish swept the field — long enough to see the shape at Ceridwen's shoulder for himself, long enough to still be standing when the others dropped. The bill came due at once. When the others began to stir on the cold rock he was already moving, because someone had to be: he hauled them up, pointed them down the cliff face toward the lamplit window, and paid for the rooms with coin he was fairly sure was the last of it. Then he lay down in his boots, and the dream came for him, and eight hours of black sleep carried him to morning.
+
 Page sat down on the ledge because his leg would not hold him, and stayed because the wind was cold and the cold helped. Far below, a lamp burned in a window partway down the cliff face. A curtain moved. Somewhere a pot scraped.
 
 That was the light they followed: one lamp, one curtain, one pot.
