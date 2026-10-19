@@ -32,7 +32,7 @@ She reached for the power she had spent months being afraid of — the cold at h
 
 The fight was over.
 
-Only Coy was awake to see what it cost. He felt the wish coming and fought it — bear-muscle and rage — and it took him anyway; but in the half-second before the grey closed over him, he saw. A low, patient shape standing at Ceridwen's shoulder, an unlit weight with an appetite behind it: Morgath, no longer only a voice in a bracelet. And across the courtyard, where Page lay in the fog, a light — gold and slow, welling up from under his skin like something underneath finally waking.
+Only Coy was awake to see what it cost. He felt the wish coming and fought it — bear-muscle and rage — and it took him anyway; but in the half-second before the grey closed over him, he saw. A low, patient shape at Ceridwen's shoulder, an unlit weight with an appetite behind it: Morgath, wearing a shape of his own at last. And across the courtyard, where Page lay in the fog, a light — gold and slow, welling up from under his skin like something underneath finally waking.
 
 Then the dark took him too.
 
@@ -40,7 +40,7 @@ Then the dark took him too.
 
 They woke on a cliff.
 
-Not the courtyard. Not the Whites, not the alley, not the fog. A ledge of wet rock high above the sea, with the night wind coming off the water and the whole city of Latesa glowing below them — the Basin's lamps, the Rungs, the long grey seam of the cliff face going down and down into its own light. Somewhere out past the breakwater the ocean breathed and did not care.
+A ledge of wet rock high above the sea, with the night wind coming off the water and the whole city of Latesa glowing below them — the Basin's lamps, the Rungs, the long grey seam of the cliff face going down and down into its own light. Somewhere out past the breakwater the ocean breathed and did not care.
 
 Coy was human again. Selim was not there. The gunslinger was, standing a little apart with the sea in her face and her hands loose at her sides, like a woman who has decided to be patient about something and is not yet sure what.
 
@@ -50,7 +50,7 @@ And the two people they had promised to protect were still behind a dry fountain
 
 Page sat down on the ledge because his leg would not hold him, and because the wind was cold and honest and he wanted, for a moment, to feel something that was only weather. The city glowed. The sea went on. Somewhere below, a lamp was burning in a cliffside window, and a curtain moved, and someone put a pot on to scrape.
 
-That was the first light they followed. Not the city's. Just the one.
+That was the light they followed: one lamp, one curtain, one pot put on to scrape.
 
 ---
 
