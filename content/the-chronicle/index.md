@@ -11,6 +11,12 @@ The campaign in the order the party lived it, with stories from the days between
 
 ## Part III — Latesa
 
+*Umbria, 1396cr. The party reaches the city in time to watch the shipyards burn.*
+
+- **[5 — The Bohun Fire](c3-05-the-bohun-fire)** — the party reaches Latesa in time to watch a shipyard burn.
+- **[7 — Bill](c3-07-bill)** — a mule goes missing, a butcher gives him back, and the bracelet takes a shot at Page.
+- **[9 — The Shrouded in the Alley](c3-09-the-shrouded-in-the-alley)** — an alley fight that becomes a queen's throne room.
+- **[10 — The Bohun Estate](c3-10-the-bohun-estate)** — shelter behind a family's walls, and a first conversation with one of the dead in the bracelet.
 - **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* A patrol surrenders. The stranger fires again. Ceridwen reaches for Morgath, and the survivors wake high above the sea.
 - **[The Wrong Hunter](the-wrong-hunter)** — *the night after.* Page hides under a root and sends his double out to meet the creature that has followed him through centuries of sleep.
 - **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* The water queue takes the party deeper into Rockside. A body passes on a borrowed door; a boy arrives with a captain's token.
