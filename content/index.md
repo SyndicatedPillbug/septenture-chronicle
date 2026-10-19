@@ -3,7 +3,7 @@ title: Septenture
 description: The Latesa Chronicle — a narrative of the Septenture campaign.
 ---
 
-<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown, carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ the Ox-Elevators are checking names &nbsp;·&nbsp; ✦ water share down a quarter at the Marl &nbsp;·&nbsp; ✦ the Hollow Heart has stew and no questions &nbsp;·&nbsp; ✦ one ship riding at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ lost: one boot, Salt End stair, answers to a bell &nbsp;·&nbsp;</div></div>
+<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown, carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ the Ox-Elevators are checking names &nbsp;·&nbsp; ✦ water share down a quarter at the Marl &nbsp;·&nbsp; ✦ the Hollow Heart has stew and no questions &nbsp;·&nbsp; ✦ one ship riding at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ lost: one boot, last seen on the Salt End stairs, reward paid in stew &nbsp;·&nbsp;</div></div>
 
 <div class="hero">
   <img src="static/rockside-lift.png" alt="Rockside, seen from a lift" />
