@@ -5,15 +5,14 @@ description: The campaign, session by session, in the order it happened.
 
 # The Chronicle
 
-The campaign in the order the party lived it, with stories from the days between sessions. Each chapter carries its date in the world.
-
-<div class="construction">⚠ the chronicle is under construction — earlier chapters coming soon ⚠</div>
+The campaign in the order the party lived it, with stories from the days between sessions. Each chapter carries its date in the world. Where the table skipped a week, the numbers skip with it.
 
 ## Part III — Latesa
 
 *Umbria, 1396cr. The party reaches the city in time to watch the shipyards burn.*
 
 - **[5 — The Bohun Fire](c3-05-the-bohun-fire)** — the party reaches Latesa in time to watch a shipyard burn.
+- **[6 — The Slow Carriage](c3-06-the-slow-carriage)** — the fire's last room, a performance for the guards, and a carriage that left too calmly.
 - **[7 — Bill](c3-07-bill)** — a mule goes missing, a butcher gives him back, and the bracelet takes a shot at Page.
 - **[9 — The Shrouded in the Alley](c3-09-the-shrouded-in-the-alley)** — an alley fight that becomes a queen's throne room.
 - **[10 — The Bohun Estate](c3-10-the-bohun-estate)** — shelter behind a family's walls, and a first conversation with one of the dead in the bracelet.
@@ -24,6 +23,10 @@ The campaign in the order the party lived it, with stories from the days between
 - **[15 — Who Am I](c3-15-who-am-i)** — a new mind asks its first question, and Page finds what the hive is anchored to.
 - **[16 — The Witness in the Basin](c3-16-the-witness-in-the-basin)** — a seamstress with a secret, a brand on a stranger's wrist, and a dozen men in an alley.
 - **[18 — Official Business](c3-18-official-business)** — the fight for the witness ends, and the men who started it turn out to be the city's own.
+- **[19 — The Sanctum](c3-19-the-sanctum)** — Nara goes somewhere the Watch will not look, and the party uses the quiet to prepare.
+- **[20 — The Maze](c3-20-the-maze)** — a night watch on the overgrown grounds, and a shape that melts into the hedge.
+- **[21 — Ten Quiet Days](c3-21-ten-quiet-days)** — rest, practice, watch rotations, and a sound in the sluice that was not water.
+- **[22 — The Brood Theft](c3-22-the-brood-theft)** — smugglers come up the sluice for Hive's brood, and Legion learns rage.
 - **[23 — Something Else Is Coming](c3-23-something-else-is-coming)** — the cistern answers a call, Hive goes up through the glass, and the party runs for the sluice.
 - **[24 — The Gunslinger](c3-24-the-gunslinger)** — caught between a stranger with two pistols and the militia behind them.
 - **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* A patrol surrenders. The stranger fires again. Ceridwen reaches for Morgath, and the survivors wake high above the sea.

@@ -26,5 +26,5 @@ And in the corner of the room, a prisoner sat very still, knowing just enough to
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-16-the-witness-in-the-basin"><span class="nav-dir">← Previous</span><span class="nav-title">The Witness in the Basin</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
-  <a class="nav-next" href="c3-23-something-else-is-coming"><span class="nav-dir">Next →</span><span class="nav-title">Something Else Is Coming</span></a>
+  <a class="nav-next" href="c3-19-the-sanctum"><span class="nav-dir">Next →</span><span class="nav-title">The Sanctum</span></a>
 </nav>

@@ -28,7 +28,7 @@ They walked on with Bill in hand. A few streets along, Ceridwen's bracelet began
 The blast came out of her fingers and took him in the chest. Necrotic energy, cold and purple, tore through leather and skin and threw him backward across the street.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
-  <a class="nav-prev" href="c3-05-the-bohun-fire"><span class="nav-dir">← Previous</span><span class="nav-title">The Bohun Fire</span></a>
+  <a class="nav-prev" href="c3-06-the-slow-carriage"><span class="nav-dir">← Previous</span><span class="nav-title">The Slow Carriage</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-09-the-shrouded-in-the-alley"><span class="nav-dir">Next →</span><span class="nav-title">The Shrouded in the Alley</span></a>
 </nav>

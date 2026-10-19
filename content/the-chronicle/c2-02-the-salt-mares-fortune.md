@@ -24,7 +24,6 @@ The talk in the queue carried the city's news past them while they waited. Murde
 
 When their turn came, the guards looked at five tired travelers with a mule and found nothing worth writing down. Above the wall, the city climbed the cliff in steps, with a brown smear of refinery smog over its far end.
 
-
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c2-01-three-weeks-to-corium"><span class="nav-dir">← Previous</span><span class="nav-title">Three Weeks to Corium</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>

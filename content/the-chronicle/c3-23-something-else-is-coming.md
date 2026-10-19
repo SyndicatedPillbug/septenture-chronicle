@@ -30,7 +30,7 @@ They ran through grey dawn fog, turned into a quiet courtyard with a star of bri
 It fired, and the lead swordsman of the three militiamen coming up the alley behind them dropped, and a second shot nicked Coy's ear.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
-  <a class="nav-prev" href="c3-18-official-business"><span class="nav-dir">← Previous</span><span class="nav-title">Official Business</span></a>
+  <a class="nav-prev" href="c3-22-the-brood-theft"><span class="nav-dir">← Previous</span><span class="nav-title">The Brood Theft</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
   <a class="nav-next" href="c3-24-the-gunslinger"><span class="nav-dir">Next →</span><span class="nav-title">The Gunslinger</span></a>
 </nav>

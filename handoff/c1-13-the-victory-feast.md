@@ -24,4 +24,4 @@ They took one of the attackers alive, and he talked before morning. Baron Lewis 
 
 She also warned them about what lay under that city, and spoke to each of the Five alone before she let them go. Whatever she told them, they all came out of the room quieter than they went in.
 
-They left Lobridge with their gear repaired, a mule named Bill, and a road south.
+They left Lobridge with their gear repaired, with Bill the mule, and with the road south.
