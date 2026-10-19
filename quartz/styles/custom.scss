@@ -229,3 +229,302 @@ a.internal {
     margin-bottom: 0;
   }
 }
+
+// ─────────────────────────────────────────────────────────────
+//  Small machines in the walls — 90s furniture
+// ─────────────────────────────────────────────────────────────
+
+// tiled stone behind everything
+body {
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(224, 164, 88, 0.07), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23e0a458' stroke-opacity='0.045'%3E%3Cpath d='M0 30h26l9 9h30l8-8h47'/%3E%3Cpath d='M14 96h38l7-7h40'/%3E%3Ccircle cx='86' cy='52' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+// the hero gets a lantern cursor
+.hero {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Ccircle cx='13' cy='13' r='3' fill='%23e0a458'/%3E%3Ccircle cx='13' cy='13' r='9' fill='none' stroke='%23e0a458' stroke-opacity='0.45'/%3E%3C/svg%3E")
+      13 13,
+    auto;
+}
+
+// ── news ticker ─────────────────────────────────────────────
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid rgba(224, 164, 88, 0.3);
+  border-bottom: 1px solid rgba(224, 164, 88, 0.3);
+  background: rgba(10, 9, 7, 0.7);
+  margin: 0 0 1.4rem 0;
+  padding: 0.4rem 0;
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker-scroll 46s linear infinite;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: #cdbfae;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    padding-left: 0;
+    white-space: normal;
+  }
+}
+
+// ── construction bar ────────────────────────────────────────
+.construction {
+  border: 1px solid rgba(224, 164, 88, 0.5);
+  background: repeating-linear-gradient(
+    -45deg,
+    #1a1510,
+    #1a1510 12px,
+    #2a2012 12px,
+    #2a2012 24px
+  );
+  color: #e0a458;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  padding: 0.55rem 0.8rem;
+  margin: 1.2rem 0;
+  font-size: 0.85rem;
+}
+
+// ── the stone speaks ────────────────────────────────────────
+.stone-box {
+  border: 1px dashed rgba(224, 164, 88, 0.4);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+  background: rgba(224, 164, 88, 0.03);
+  position: relative;
+}
+
+.stone-label {
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--tertiary);
+  margin-bottom: 0.35rem;
+}
+
+.stone-box p {
+  margin: 0.2rem 0 0.8rem;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.stone-btn {
+  border: 1px solid rgba(224, 164, 88, 0.45);
+  background: transparent;
+  color: var(--secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.stone-btn:hover {
+  background: rgba(224, 164, 88, 0.12);
+}
+
+.stone-box.knocked {
+  animation: knock 320ms ease;
+}
+
+@keyframes knock {
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+// ── ledger + badges ─────────────────────────────────────────
+.retro-footer {
+  margin: 2.4rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(224, 164, 88, 0.22);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lcd {
+  font-family: "IBM Plex Mono", monospace;
+  background: #080705;
+  color: #7fe08a;
+  border: 1px solid #2a3a2a;
+  border-radius: 3px;
+  padding: 0.35rem 0.7rem;
+  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  text-shadow: 0 0 6px rgba(127, 224, 138, 0.5);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.lcd span {
+  color: #b6ffbf;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(224, 164, 88, 0.35);
+  color: #a89684;
+  padding: 0.25rem 0.45rem;
+  background: rgba(224, 164, 88, 0.04);
+}
+
+.sigil {
+  color: rgba(224, 164, 88, 0.35);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 200ms ease, text-shadow 200ms ease;
+}
+
+.sigil:hover {
+  color: #e0a458;
+  text-shadow: 0 0 12px rgba(224, 164, 88, 0.8);
+}
+
+// ── lights out ──────────────────────────────────────────────
+body.lights-out {
+  background: #070605;
+}
+
+body.lights-out article,
+body.lights-out .page-header,
+body.lights-out .sidebar,
+body.lights-out .ticker,
+body.lights-out .retro-footer,
+body.lights-out .breadcrumb-container {
+  opacity: 0.1;
+  transition: opacity 700ms ease;
+}
+
+body.lights-out .hero img {
+  opacity: 0.08;
+  transition: opacity 900ms ease;
+}
+
+body.lights-out .hero-title {
+  opacity: 0.15;
+  transition: opacity 900ms ease;
+}
+
+body.lights-out .lamp-glow {
+  opacity: 1 !important;
+  transform: translate(-50%, -25%) scale(1.9);
+  transition: transform 900ms ease;
+}
+
+body.lights-out .stone-toast {
+  opacity: 1;
+}
+
+// ── konami ──────────────────────────────────────────────────
+body.konami .lamp-glow {
+  animation: flare 900ms ease;
+}
+
+@keyframes flare {
+  0% {
+    opacity: 0.4;
+    transform: translate(-50%, -25%) scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -25%) scale(2.4);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translate(-50%, -25%) scale(1);
+  }
+}
+
+.stone-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translate(-50%, 1rem);
+  background: #12100e;
+  color: #e0a458;
+  border: 1px solid rgba(224, 164, 88, 0.5);
+  padding: 0.6rem 1.1rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 400ms ease, transform 400ms ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.stone-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+// ── the warren (hidden page) ────────────────────────────────
+.warren {
+  border: 2px ridge #6b4a2a;
+  padding: 1.4rem;
+  background: #0d0b09;
+}
+
+.warren h1 {
+  color: #e0a458;
+  text-shadow: 0 0 18px rgba(224, 164, 88, 0.4);
+}
+
+.guestbook {
+  border-top: 1px dashed rgba(224, 164, 88, 0.35);
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  font-size: 0.92rem;
+}
+
+.guestbook-entry {
+  border-left: 2px solid rgba(224, 164, 88, 0.35);
+  padding-left: 0.8rem;
+  margin: 0.7rem 0;
+  color: #b9a894;
+  font-style: italic;
+}
