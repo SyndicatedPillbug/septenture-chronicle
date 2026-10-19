@@ -18,11 +18,12 @@ The crew argued about Danruian. Some had heard the islands were massing an invas
 
 On the day the coast came back, the wind did not so much fail as decide against them. The city rose out of the haze in layers, a cliff covered in buildings, and the smoke of the Shave sitting on top of it like a hand. The docks were closed. A blockade of writs and soldiers turned the ship away from the harbor and sent it along to a fishing beach to the east, where the passengers could walk.
 
-So they walked. The cliff trail ran above the water for the last miles, past the Great Ox-Elevators descending into the rock with their cargo, and down to the inland gate, where the queue of people waiting to enter Latesa took the Five in with everyone else and did not find them interesting.
+So they walked. The cliff trail ran above the water for the last miles, past the Great Ox-Elevators descending into the rock with their cargo, and down to the inland gate. The gate was still taking travelers, and the queue moved at the speed of paperwork.
 
-The gate was still taking travelers, and the queue moved at the speed of paperwork. Above the wall, the city climbed the cliff in steps, with a brown smear of refinery smog lying over its far end like a hand.
+The talk in the queue carried the city's news past them while they waited. Murders in the Shave. People gone missing out of the cliffside warrens, year after year, with nobody counting them. Nobody said either thing too loudly, and nobody had to.
 
-The rumors reached them before the gate did. Murders in the Shave. People gone missing out of the cliffside warrens, year after year, nobody counting. Nobody said either of them too loudly.
+When their turn came, the guards looked at five tired travelers with a mule and found nothing worth writing down. Above the wall, the city climbed the cliff in steps, with a brown smear of refinery smog over its far end.
+
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c2-01-three-weeks-to-corium"><span class="nav-dir">← Previous</span><span class="nav-title">Three Weeks to Corium</span></a>
