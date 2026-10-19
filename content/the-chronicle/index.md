@@ -12,6 +12,7 @@ The story so far, in the order the party lived it. Each chapter is one session, 
 ## Part III — Latesa
 
 - **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* The fight outside the Whites ends with a bell, a bullet, and a wish. The party wakes on a cliff above the sea.
+- **[The Wrong Hunter](the-wrong-hunter)** — *the nights after.* The dream fight, as played between Page and the DM, posted as it was written.
 - **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* First descent into the lines below the Hollow Heart: the queue, the nations of the stone, a body on a door, and a boy with a captain's token.
 
 ## Part II — The Sea Road

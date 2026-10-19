@@ -44,4 +44,4 @@ That was the light they followed: one lamp, one curtain, one pot.
 
 ---
 
-*Next: what came for Page in his sleep, and the week the city spent closing.*
+*Next: [the Wrong Hunter](the-wrong-hunter) — what came for Page in his sleep — and the week the city spent closing.*

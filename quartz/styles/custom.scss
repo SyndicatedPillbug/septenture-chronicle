@@ -528,3 +528,13 @@ body.konami .lamp-glow {
   color: #b9a894;
   font-style: italic;
 }
+
+// turn marker between played exchanges
+.turnmark {
+  text-align: center;
+  color: var(--secondary);
+  opacity: 0.65;
+  margin: 1.8rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+}
