@@ -6,9 +6,9 @@
 
 
 
-There was nowhere in the city's ordinary geometry to put a frightened witness, so the party took Nara out of the city's geometry entirely. Legion led her through the Whites and over the wall of the old Vahael estate, and down into the cistern house, to the place where the new swarm had its home. She would stay where nobody official would think to look, guarded by a young mind that was itself learning what a stranger was.
+With no secure safehouse available in the lower city, the party brought Nara to the abandoned Vahael cistern. Legion guided her through the quiet lanes of the Whites, over the estate boundary, and down into the subterranean chamber beside Hive's nesting grounds. She took shelter in the hidden brick annex, protected by the sentry wasps.
 
-The rest of the day went into making the cistern into a door with an opinion. Caltrops went into the human entrance. The party walked the sluice line and the tunnel mouths and argued about which of them a man with a lantern would choose, and then made the answer worse for him. Hive, still new to having things, put its own quiet weight behind the work.
+The party spent the remainder of the afternoon reinforcing the cistern against intrusion. Legion strewed iron caltrops across the threshold of the primary surface passage. Page and Coy mapped the old storm drainage sluices and masonry vents, wedging oak crossbars and stone debris into vulnerable tunnels. Hive contributed by posting clusters of guard wasps along the high brick arches.
 
 In between, they talked politics, because the city's arithmetic had stopped adding up any other way. Vardon's reach ran through the militia and the guild's silences and the Bohuns' shipping and the files Stross kept on his walls, and the party was now standing in the middle of that web holding a prisoner nobody had asked for, a witness nobody could protect officially, and a dead friend whose murder was visibly one thread of a much larger knot.
 

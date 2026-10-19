@@ -8,13 +8,13 @@
 
 The fire left them standing in a street full of steam and guards, with a rescued city and no luggage. Their mule, Bill, had gone somewhere in the confusion with everything they owned.
 
-Ceridwen handled the guards by singing at them, which is a sentence that has ended many of her problems, and Coy went into the alleys in bear form before anyone could write his name in a book. They regrouped two streets over, where Coy looked at the burn on Page's shoulder and Ceridwen changed her face for the walk back.
+Ceridwen kept the guards occupied with a street song, drawing their eyes away while Coy slipped down an alley in bear form. They regrouped two streets over, where Coy cast healing magic over the raw burn on Page's shoulder, and Ceridwen used disguise magic to alter her hair and clothing.
 
-Legion put a bee drone in the air and found the mule in four minutes. Bill stood tied behind a canvas awning with a name that promised mystery in the meat trade, and the men inside had already opened the saddlebags. The butcher was immense, blood to the elbows, and pleased with himself. His companion Mick was doing the arithmetic out loud, converting Bill into sausages for the fire relief effort.
+Legion deployed a scout bee and located Bill four minutes later. The mule was tied behind a greasy canvas awning bearing a sign for Gordaev's Mystery Meats, and two men were already unbuckling the saddlebags. Gordaev was a massive butcher with dried blood across his apron; his scrawny assistant, Mick, stood nearby calculating how many links of sausage the animal would yield.
 
-Legion asked for the animal back and got a cleaver waved at them and a lecture about the law of the street. Page tried the name of Lord Devereux and made it worse, because a noble name in the Shave is a match in a hayloft.
+Legion stepped forward to reclaim the mule. Gordaev drew an iron cleaver and barked that anything left unattended in the Shave belonged to whoever picked it up. Page claimed the beast belonged to Lord Devereux, but invoking nobility in the lower district only drew angry shouts from neighboring stallholders.
 
-Ceridwen settled it. She cast calm into the tent, then scolded the butcher for going through a lady's things, and Gordaev — big, guilty, and suddenly aware of his neighbors listening — untied the mule and apologized with a coil of sausage. Legion ate one, apparently including the casing, and the party's gear came back in order.
+Ceridwen stepped between them. She cast a calming charm across the tent, then sharply rebuked Gordaev for rifling through a lady's personal packs. Confronted by a noblewoman's indignation and subdued by the spell, Gordaev backed down, untied the mule, and offered a ring of smoked sausage as an apology. Legion absorbed the offering into their bandages.
 
 Page and Ceridwen both noticed the same thing as Gordaev turned away: a faded fist tattooed on his neck. Clan Qathr, the same mark they had seen fresh on the murdered carriage driver.
 

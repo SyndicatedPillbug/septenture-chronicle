@@ -11,7 +11,7 @@ tags:
 
 # 18 — Official Business
 
-Nara let Ceridwen through the door because of the jacket. She saw the blood and the torn cloth and enough of Ceridwen's grief to understand this was not an errand, and she talked carefully, in the way of a woman who knows the city has ears. People who talked too much in Latesa had a way of vanishing. Whatever she had seen, somebody wanted her quiet about it.
+Nara opened the door upon seeing the blood-soaked jacket. She recognized the cloth and the torn seams, and Ceridwen's grief convinced her to speak. Speaking in whispers, Nara warned that Watch informants watched every street in the Basin, and neighbors who asked questions had vanished without notice. Whatever she had witnessed, someone had threatened her to ensure her silence.
 
 Then the alley outside went sideways. Men came in with clubs and the confidence of muscle backed by the weight of law — and it was law, just not the Watch's. They called Selim a traitor for standing there, and then they made it true by attacking him, and he held the mouth of the alley alone while the party turned the ambush into something harder and uglier than it was meant to be.
 

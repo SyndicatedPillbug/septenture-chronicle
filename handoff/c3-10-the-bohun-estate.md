@@ -8,11 +8,11 @@
 
 They kept Page breathing through the streets and carried him up to the Whites, and there the Bohuns took them in.
 
-Roseem's household did the rest quickly and without fuss: a doctor over Page before the introductions were finished, a room with a door that shut, food that had not been cooked in a gutter. Simon's family turned a public disaster into a private family emergency by deciding, out loud and in front of witnesses, that this was what the house did for its own. The Five slept under a roof for the first time since the sea.
+Roseem's household took charge immediately. A physician examined Page before the introductions finished, servants brought clean linens and warm broth, and the heavy doors were barred against the street. Simon's relatives sheltered the party without hesitation, treating the aftermath of the riot as a family crisis to be handled behind stone walls. The Five slept beneath a secure roof for the first time since leaving the coast.
 
-The cost got entered in the ledger that Simon keeps whether he says so or not. Every hour under that roof tied him tighter to a family that expected its obligations paid, and confirmed that the city's ordinary channels, guild and watch and magistrate alike, stayed too dangerous to trust.
+The shelter carried unspoken obligations. Every hour spent in the mansion drew Simon deeper into Bohun family politics, while confirming that the city's public institutions—the Watch, the magistrates, and the Mercenary Guild—could no longer be trusted with their safety.
 
-Ceridwen spent the night doing what Lilliana told her to do. She reached into the bracelet on purpose, and Agnes Cantar came up out of the dark to meet her: another witness, another soul the hags had failed to finish. Agnes said the same things and said them as facts rather than sermons. The bracelet is a prison. It holds witnesses. It holds power that answers to what its bearer is willing to do, which is a different warning than the one Ceridwen had been carrying.
+That night, Ceridwen deliberately reached into the power of the bone bracelet. Agnes Cantar answered from the dark: another trapped soul the hags had bound into the relic. Agnes spoke plainly. The bracelet was a prison designed to siphon and store human souls, holding stolen power that could be channeled if Ceridwen learned to endure the strain.
 
 Morning came with the smell of the household's breakfast and everyone in an uncomfortable kind of order. Page was alive, unconscious, under a doctor's care, and would stay that way a while. Ceridwen had a real lead on the thing on her wrist and no idea what to do with it. Coy carried two problems for the walk ahead: the healer's worry, and the face of Windhaven Plonnet, a dead friend, walking the streets of a living city.
 

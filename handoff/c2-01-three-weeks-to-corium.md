@@ -6,7 +6,7 @@
 
 
 
-They walked south for nearly three weeks, and nothing tried to kill them, which came as a novelty. The road took them through towns that had never heard of the Five and did not care about their medals, and the Five did small work for small money, and the war they had just survived began to feel like weather that had passed.
+They walked south for nearly three weeks without incident. The road took them through towns that had never heard of the Five, where they took odd escort jobs for silver while the memory of Lobridge settled into a dull ache.
 
 Corium announced itself by smell: salt, tar, fish, and the particular stink of a river meeting a harbor at low tide. The continent is enormous, and the party did the sums in an afternoon and chose the sea. A few weeks of water beat several months of walking, even with the price.
 
@@ -18,4 +18,4 @@ Page sold the leavings of the ambush. The merchant yawned at the common vials an
 
 The tide turned in the afternoon. They loaded the last crate, said goodbye to the road, and watched Corium slide away behind the ship's stern until it was just a smudge of smoke on the coastline.
 
-Bill ate straw. The crew gave the party the sort of looks that crews give passengers who have brought a mule. The Salt Mare's Fortune leaned into the southbound current and put the coast out of sight by the second day.
+Bill munched straw by the hatch while the sailors gave the animal a wide berth. The Salt Mare's Fortune caught the southbound current and put the coast out of sight by the second day.

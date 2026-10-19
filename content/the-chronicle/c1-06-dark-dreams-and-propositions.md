@@ -11,7 +11,7 @@ tags:
 
 # 1.6 — Dark Dreams and Propositions
 
-They slept late in two rented rooms, the way people do after a festival. Coy dreamed of a forest and a girl walking beside him, and then of an ocean, and then of going under. In the other room Ceridwen dreamed of standing at the edge of a black whirlpool with her friends' voices coming up out of it, and of reaching down to save them with hands that wanted to hurt instead.
+They slept late in two rented rooms, worn out from the festival. Coy dreamed of a forest and a girl walking beside him, and then of an ocean, and then of going under. In the other room Ceridwen dreamed of standing at the edge of a black whirlpool with her friends' voices coming up out of it, and of reaching down to save them with hands that wanted to hurt instead.
 
 She woke on the floor. Legion was already awake across the hall, trying to rouse Coy with a waterskin, and getting nowhere. When Ceridwen put a hand on Coy's forehead, his fever pulled her into the dream after him. She stood on water and hauled him back to the surface, and six figures watched them from the dark. A mark glowed on Coy's chest in the shape of the bracelet they had taken off the hag.
 
@@ -27,7 +27,7 @@ Fiona Firefoot, of the Mercenary Guild. She had heard what they did for Ethan an
 
 She was not trusted by the town, she said, on account of a vase. She had fallen out with her old party and did not care to explain. The notes she put on the table had been written by a construction worker she had gotten drunk, and Page read enough of the shorthand to see a pawn-shop mark in Thieves' Cant in the corner. The goddess she was hunting wore three stars above a crescent moon, first pantheon, older than the current one.
 
-Simon warned her about the fey work they had been doing. Fiona admitted the ruins would be full of wights, which was more honesty than they were expecting.
+Simon warned her about the fey work they had been doing. Fiona admitted the ruins held wights.
 
 They gave her a contract instead of a refusal. The ring to Fiona, unless it proved more than she said. All books to the Bard's College, carried by the Five. Money split even. One item per person, chosen in turn. She signed it while Ceridwen asked questions she did not quite answer.
 

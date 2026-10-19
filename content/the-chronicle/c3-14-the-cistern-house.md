@@ -13,7 +13,7 @@ tags:
 
 Stross came back to the estate with a second captain: Selim Varek, white and gold, a believer, and an old ally with orders to protect the party and assist them. Page met him with suspicion. Ceridwen looked longer and found a man who had known loss and wanted to be useful in the face of it. When Legion explained that someone was stealing a sentient hive's larvae, Selim arrived at the first legal puzzle of his new assignment: if the hive is a citizen, the theft of its brood is kidnapping. The party went to grant citizenship to wasps.
 
-They went over the wall into the old Vahael property, which had been noble once and was now a lesson in what happens to a house nobody lives in. Weeds, a dry fountain, statues face down in the grass. At the back stood the cistern house, its iron ribs green with age, its doors disturbed. One hinge had been melted shut with evocation. Something had been bolted across the entrance once and later removed.
+They climbed the stone perimeter wall into the overgrown Vahael estate, an abandoned aristocratic property where briars choked the pathways and broken stone nymphs lay half-buried in dead weeds. Near the back boundary stood the glass-roofed cistern house, its cast-iron ribs oxidized green, the main double doors showing signs of forced entry. One heavy iron hinge had been slagged shut by an evocation flame spell, and mounting holes showed where an iron crossbar had recently been bolted across the frame and later pried loose.
 
 Coy cast and found the whole place soaked in transmutation, spread through stone and soil like a stain. The signature felt like Legion and did not belong to Legion.
 

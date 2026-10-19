@@ -16,7 +16,7 @@ Out on the Old Road, one of the scouts came back with the news that mattered: a 
 
 Edreth and Page reached the town at a gallop, passing the marching column on the way, close enough for Page to count them. A rider came at the town gate fast enough to scare the sentries, and Ceridwen stood in the road with her feet planted because she had told the militia she would stop a horse if she had to.
 
-The horse stopped on its own. Page came off it and the two of them stood in the middle of the street for a moment, which is what people do when the person they thought was dead turns up on a borrowed mount. Then they walked to the green together.
+The horse skidded to a halt in the dust. Page dismounted, and he and Ceridwen caught each other's hands in the middle of the street, relieved to find each other alive. Then they walked to the green together.
 
 Degnr recognized Edreth on sight and reached for his sword, and Page put himself between two men with long histories and told them the enemy was close enough to hear the argument. Edreth kept his mouth shut. The Five took the last of their positions, Coy went back to the Temple as a man again, and the town waited.
 

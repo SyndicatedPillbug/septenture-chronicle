@@ -11,21 +11,19 @@ tags:
 
 # 6 — The Slow Carriage
 
-The rescue went on into the smoke, and the building kept trying to end it.
+The rescue dragged on through blinding smoke as heat buckled the floorboards.
 
-Simon and Coy worked the upper corridor with the scarab darting ahead of them, leading them to the small drafting room where it had found people still inside. The fire had reached the corridor by then. The heat came off the walls like a physical weight, and the smoke was black and oily and close to the floor, and the scarab was the only thing in the building that knew where it was going.
+Simon and Coy navigated the upper corridor with the scarab homunculus darting ahead, leading them toward the back drafting closet where workers were trapped. Black smoke curled thick along the ceiling, and the heat radiated from the walls with stifling force.
 
-They got the door open and the people out of the room and into the stairwell. One of them had breathed so much smoke that he had stopped being anything but weight, and Coy — a druid, and a lifeguard in another life — got under him and hauled him up and out the way you haul a drowning man off the bottom.
+They broke through the jammed door and pulled three coughing apprentices out into the stairwell. One had passed out cold, limp as wet laundry. Coy got under the man's arms, hooked his elbows beneath the shoulders, and hauled him backward down the steps with a firm rescue carry.
 
-Ceridwen had been on the lower floor since the doors blew in, pulling workers out from under burning timber with arms the work was too heavy for, and the smoke had gone into her until she shook with it. Legion was late to the party, and their reason was a slow one. While the rest of them ran at the fire, Legion had watched a carriage drive away from it — unhurried, tidy, out of place — and put a hunter's mark on the driver. They had an hour, and the hour was already burning.
+On the ground floor, Ceridwen dragged workers away from burning timber until the smoke left her trembling and hacking. Legion reached the entrance minutes late, having paused in the street to observe a carriage rolling slowly away from the yard just as the alarm was raised. Legion had placed a hunter's mark upon the driver, giving them a single hour to track him before the magical tether broke.
 
-Page came down the stairs at the end with the bearded shipwright and the metal chest between them, having saved what the family drew its living from. The building was empty of the living by then, and the guards were arriving in numbers, and the guards were asking questions with their hands on their hilts.
+Page emerged from the upper level carrying the metal chest alongside the bearded shipwright, the blueprints secured inside. Down below, City Watch constables were pushing through the crowd with hands on their scabbards, shouting for witnesses.
 
-Ceridwen answered them with a show. She stepped out into the wreckage of the street with her lute and performed like a woman who had every reason to be there, and the guards watched the performance, and while they watched, a large bear left the scene down an alley at an unhurried pace.
+Ceridwen intercepted the patrol with an impromptu ballad, strumming her lute and spinning an elaborate tale of the blaze. The constables stopped to listen, long enough for Coy, still in the shape of a brown bear, to slip down a side alley unnoticed.
 
-Then Legion took Ceridwen by one arm and pointed her out of the crowd, and the two of them ran to find where a slow carriage had gone in a city that had every excuse to be looking at the fire.
-
-The mark was still live. The hour was not.
+Legion took Ceridwen by the elbow and pulled her through the gathering throng to pursue the marked driver before the hour expired.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-05-the-bohun-fire"><span class="nav-dir">← Previous</span><span class="nav-title">The Bohun Fire</span></a>

@@ -10,7 +10,7 @@ They came up the sluice in the dark, one of the old water tunnels the party had 
 
 They were not sent by anything worse than money. Smugglers and hired muscle, apparently ordinary men with sacks and smoke and a plan, the kind of men who steal larvae for a buyer because a buyer exists. That was the shape of them, and it was enough to bring the party down on the whole plan at once.
 
-The cistern was ready for them. The caltrops did their quiet arithmetic in the dark, and magic cracked the tunnel with light, and a strike of wind out of nowhere put the first of them off his feet before he finished standing up. Hive held its ground in the chamber and its brood behind it, and the party came out of the watch positions they had rehearsed across ten quiet nights, and the fight was short and one-sided and very loud.
+The cistern had been prepared for defense. Iron caltrops tore through leather boots in the pitch-dark entrance, a burst of magical light illuminated the stone vault, and a focused gale from Page bowled the lead three intruders backward off their feet. Hive surged forward to defend its brood comb, while the companions struck from their designated defensive points along the gallery. The skirmish was violent and brief.
 
 Legion's part in it was different.
 

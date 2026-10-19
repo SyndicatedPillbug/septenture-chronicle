@@ -13,7 +13,7 @@ tags:
 
 The door at the end of the hall was circular, and something on the other side wanted out. Legion set a trap of fire for whatever came through and went back to watching the side rooms. Page looked at the lock first, because Page always looks at the lock first.
 
-A disc of sand hung in the middle of the door, held by magic, and two sets of letters had been cut above it. The old elvish was formal and said the wards should be raised before the door was opened, which is the sort of instruction a person finds alarming when they are standing next to the door. The words in Solnokom were a riddle. All deities are powerful, but most compassionate beings are not powerful. Therefore. A blank to fill.
+A disc of suspended sand hung in the center of the door, held by magic, beneath two sets of carved runes. The old Elvish was formal, instructing the reader to raise the wards before opening the seal. The Solnokom text posed a riddle: All deities are powerful, but most compassionate beings are not powerful. Therefore. A blank line to fill in the sand.
 
 The wights hit the other side of the door while they worked. Page took a rubbing of the letters and told them, with some feeling, that they were not going to be let in. Simon handed him the answer. Ceridwen gave him a nudge of luck. Page wrote on the sand that compassionate beings are not deities, and the wards came up as the door buckled.
 

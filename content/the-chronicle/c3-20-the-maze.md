@@ -15,7 +15,7 @@ The watch fell to Page and Coy that night, and the two of them crossed the estat
 
 Nearly. It moved ahead of them through the overgrown parkland, keeping its distance, and where the trees opened up it crossed the open ground and folded itself into the far hedge and was gone. The hedge was a wall of vegetation taller than a man, the outermost boundary of a garden maze that had been decorative once and was now just a bad idea with walls.
 
-Page squinted into the dark and found what the shape had used: a gap in the hedge, natural-looking at a glance, the sort of split that deer make by pushing through the same path for years. Worn edges, bent twigs, a passage that somebody had widened on purpose.
+Page scanned the dark undergrowth and spotted where the figure had breached the perimeter: an opening in the dense yew hedge. Thick branches had been pruned and tied back with hemp twine, creating a narrow run barely wide enough for a crouching adult. Worn earth and broken twigs showed recent, repeated passage.
 
 He pinged Coy on the link and asked the only question the moment had in it: should he go in, or did Coy want the front position himself. They could both see in the dark. Whatever was in the maze could too — the whole shape of the watch was that they were hunting something that hunted as well as they did, in a place built entirely of blind corners.
 

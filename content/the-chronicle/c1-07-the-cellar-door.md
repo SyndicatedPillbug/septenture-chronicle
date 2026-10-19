@@ -15,7 +15,7 @@ Legion came back from the woods with a pot of metallic blue wasps and a story ab
 
 The mayor's house sat on a hill that had been built rather than found. Ceridwen got the rest out of Carly Two-Ton over a second breakfast: recent work in the mayor's cellar, a wife devoted to Alleviatira, and money that preferred not to be counted. The Five argued about sneaking in and decided against it.
 
-Simon did the talking, which is what Simon is for. Wilherd Greyson turned out to be a young man in a good coat who liked the sound of his own hospitality, and by the time the tea was cold he had agreed to let them see the cellar. He also took the danger seriously enough to write to the Mercenary Guild and the local magistrate about it, which nobody had asked him to do.
+Simon led the conversation. Wilherd Greyson turned out to be a young man in a tailored coat who invited them in for tea, and within the hour he agreed to let them inspect the cellar. He also took the reported danger seriously enough to write to the Mercenary Guild and the local magistrate about it, urging extra patrols.
 
 The cellar held a circular stone door with elvish letters around its rim, older letters beneath the newer ones, both of them telling the reader to go home. Fiona produced a key that did not match the honesty of the moment: a master key from elvish royalty, which she had gotten from a guildmaster named Cormac and had not mentioned before now.
 
