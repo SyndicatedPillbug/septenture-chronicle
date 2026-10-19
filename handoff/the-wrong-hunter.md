@@ -6,8 +6,6 @@
 
 
 
-*A dream played between Odin and Page's player across nine nights, edited for the Chronicle. The marks separate their turns.*
-
 You are running. Wet leaf mold under your hands, cold air against your eye-teeth, and the animal instinct that drives you: stop running and you die.
 
 This is the old country. You have spent a thousand nights in this hunt, with the same man behind you and the brand he left burning in your memory. He will run until he catches you. Your legs ache at every step.
