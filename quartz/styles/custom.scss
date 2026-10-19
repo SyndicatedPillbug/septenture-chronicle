@@ -1,0 +1,231 @@
+@use "./variables.scss" as *;
+
+// ─────────────────────────────────────────────────────────────
+//  Septenture — the lamp, the stone, the amber dark
+// ─────────────────────────────────────────────────────────────
+
+body {
+  background-image: radial-gradient(
+    ellipse 120% 60% at 50% -10%,
+    rgba(224, 164, 88, 0.07),
+    transparent 60%
+  );
+  background-attachment: fixed;
+}
+
+// links catch the lamp-light
+article a,
+a.internal {
+  text-decoration-color: var(--secondary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition:
+    color 180ms ease,
+    text-shadow 220ms ease;
+
+  &:hover {
+    text-shadow: 0 0 14px rgba(224, 164, 88, 0.5);
+  }
+}
+
+// ── the hanging lamp ────────────────────────────────────────
+.lamp-wrap {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  margin: 1.5rem auto -0.5rem auto;
+  pointer-events: none;
+}
+
+.lamp-cord {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 46px;
+  background: linear-gradient(
+    to bottom,
+    rgba(224, 164, 88, 0.05),
+    rgba(224, 164, 88, 0.55)
+  );
+  transform: translateX(-50%);
+}
+
+.lamp-shade {
+  position: absolute;
+  left: 50%;
+  top: 44px;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-top: 30px solid #3a2c1e;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+}
+
+.lamp-bulb {
+  position: absolute;
+  left: 50%;
+  top: 76px;
+  width: 9px;
+  height: 12px;
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(circle at 50% 35%, #ffe9c4, #e0a458 55%, #8a4b1f);
+  transform: translateX(-50%);
+  box-shadow: 0 0 18px 6px rgba(224, 164, 88, 0.35);
+  animation: lamp-flicker 7s infinite;
+}
+
+.lamp-glow {
+  position: absolute;
+  left: 50%;
+  top: 82px;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -25%);
+  background: radial-gradient(
+    circle,
+    rgba(224, 164, 88, 0.22) 0%,
+    rgba(224, 164, 88, 0.08) 35%,
+    transparent 68%
+  );
+  animation: lamp-flicker 7s infinite;
+}
+
+@keyframes lamp-flicker {
+  0%,
+  16%,
+  20%,
+  24%,
+  52%,
+  58%,
+  100% {
+    opacity: 0.95;
+  }
+  18%,
+  22% {
+    opacity: 0.6;
+  }
+  21% {
+    opacity: 0.35;
+  }
+  54% {
+    opacity: 0.75;
+  }
+  56% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lamp-bulb,
+  .lamp-glow {
+    animation: none;
+    opacity: 0.9;
+  }
+}
+
+// ── hero card ───────────────────────────────────────────────
+.hero {
+  position: relative;
+  min-height: 360px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: #0e0c0a;
+  border: 1px solid rgba(224, 164, 88, 0.18);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    filter: saturate(0.85) contrast(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(18, 16, 14, 0.1) 0%,
+      rgba(18, 16, 14, 0.55) 55%,
+      rgba(18, 16, 14, 0.95) 100%
+    );
+  }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2.2rem 2.2rem;
+  width: 100%;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #f3ece2;
+  text-shadow: 0 0 30px rgba(224, 164, 88, 0.25);
+}
+
+.hero-tagline {
+  margin: 0.6rem 0 0;
+  color: #cdbfae;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+// ── chapter furniture ───────────────────────────────────────
+.dateline {
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--tertiary);
+  margin-bottom: 0.4rem;
+}
+
+// fiction & interludes read like set type
+.interlude {
+  > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--headerFont);
+    font-size: 3.6em;
+    line-height: 0.82;
+    padding: 0.06em 0.1em 0 0;
+    color: var(--secondary);
+  }
+
+  > p {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+// in-world documents
+.doc {
+  border: 1px solid rgba(224, 164, 88, 0.35);
+  background:
+    linear-gradient(rgba(224, 164, 88, 0.04), rgba(224, 164, 88, 0.02)),
+    var(--lightgray);
+  padding: 1.2rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
