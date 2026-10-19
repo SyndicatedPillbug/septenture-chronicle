@@ -1,6 +1,6 @@
 ---
 title: The Warren
-description: A page that is not in the index.
+description: A hidden corner of the Septenture Chronicle, with a guestbook for those who followed the lamp.
 unlisted: true
 ---
 
@@ -8,9 +8,9 @@ unlisted: true
 
 # The Warren
 
-You found a page that is not in the index. Nothing here is required reading. The stone keeps a few things for people who look sideways.
+You followed the lamp down here. Stay a while; the guestbook has room.
 
-The Chronicle is being bound chapter by chapter. Part I walks the Feylight Festival again, Part II comes up the sea road, Part III is already bleeding in a courtyard outside the Whites. When a chapter is ready, it appears in [the Chronicle](../the-chronicle/) without ceremony.
+New chapters appear in [the Chronicle](../the-chronicle/) as they are ready. The earlier volumes will follow the party through the Feylight Festival and along the sea road. For now, you can join them in the courtyard outside the Whites and read what followed the wish.
 
 <div class="construction">⚠ this page is always under construction ⚠</div>
 

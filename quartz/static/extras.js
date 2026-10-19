@@ -7,17 +7,17 @@
   const LEDGER_BASE = 1337
 
   const STONE = [
-    "The stone remembers. The stone does not care.",
-    "Nobody looks up. That is not manners.",
-    "Every tunnel has two ends. One of them is a lie.",
+    "The lower stair is wet again. Take the rail.",
+    "Watch the windows above the Drop.",
+    "Every tunnel has two ends. Ask who keeps the other.",
     "Buy the water first. Ask the questions after.",
-    "The Watch writes names. The stone keeps them.",
-    "A lamp is a promise that somebody is still awake.",
-    "If the route came free, it was not a route.",
-    "Down here, direction is social.",
-    "The Gullets take everything. They give back a little.",
-    "Rockside is a place you leave with permission.",
-    "A quiet room is a debt with interest.",
+    "The Watch has your old name, too.",
+    "Someone left the lamp on for you.",
+    "Pay the guide before the tide turns.",
+    "The ladle hangs beside the empty pot.",
+    "Leave the rope for the next person.",
+    "The gatekeeper knows your cousin.",
+    "Your room is paid through morning.",
   ]
 
   function bumpLedger() {

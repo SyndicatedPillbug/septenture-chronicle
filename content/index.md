@@ -1,9 +1,9 @@
 ---
 title: Septenture
-description: The Latesa Chronicle — a narrative of the Septenture campaign.
+description: Follow the Septenture campaign from the Feylight Festival to Latesa, where five companions face a burning shipyard, missing witnesses, and a city under curfew.
 ---
 
-<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown, carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ the Ox-Elevators are checking names &nbsp;·&nbsp; ✦ water share down a quarter at the Marl &nbsp;·&nbsp; ✦ the Hollow Heart has stew and no questions &nbsp;·&nbsp; ✦ one ship riding at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ lost: one boot, last seen on the Salt End stairs, reward paid in stew &nbsp;·&nbsp;</div></div>
+<div class="ticker"><div class="ticker-track">✦ CITY WATCH: curfew at sundown; carry your papers &nbsp;·&nbsp; ✦ a body recovered at the Flint Seam; the Watch calls it Sickle work &nbsp;·&nbsp; ✦ names checked at the Ox-Elevators &nbsp;·&nbsp; ✦ water shares cut by a quarter at the Marl &nbsp;·&nbsp; ✦ stew on at the Hollow Heart &nbsp;·&nbsp; ✦ one ship at the Salt End under a Bohun pennant &nbsp;·&nbsp; ✦ lost: one boot on the Salt End stairs; reward paid in stew &nbsp;·&nbsp;</div></div>
 
 <div class="hero">
   <img src="static/rockside-lift.png" alt="Rockside, seen from a lift" />
@@ -19,36 +19,36 @@ description: The Latesa Chronicle — a narrative of the Septenture campaign.
   </div>
 </div>
 
-This is the record of a table's campaign: five people, a city named Latesa, and the mess they made of a year in it. Chapters follow the sessions in order. The fiction sits where it happened.
+Five companions came to Latesa. The shipyards were burning when they arrived. This chronicle follows their campaign from the Feylight Festival to the streets and tunnels of the port, with the sessions told in order and the fiction set among them.
 
 <div class="stone-box">
   <span class="stone-label">The stone says</span>
-  <p data-stone>The stone remembers. The stone does not care.</p>
+  <p data-stone>Buy the water first. Ask the questions after.</p>
   <button class="stone-btn" data-stone-draw>knock again</button>
 </div>
 
 ## The Chronicle
 
-- **[Part I — Campaign One: The Feylight Festival](the-chronicle/)** — the festival, the ruins, the ring, and the box.
-- **[Part II — The Sea Road](the-chronicle/)** — the flashback and the voyage to Latesa.
-- **[Part III — Latesa](the-chronicle/)** — the closing arc: the courtyard, the wish, and what came after.
+- **[Part I — Campaign One: The Feylight Festival](the-chronicle/)** — a missing child draws the party through the festival gates and into the trouble beneath Lobridge.
+- **[Part II — The Sea Road](the-chronicle/)** — the victory feast, the ambush, and the voyage south to Latesa.
+- **[Part III — Latesa](the-chronicle/)** — the shipyards burn, witnesses disappear, and the party runs out of safe doors.
 
 <div class="doc">
-<p><strong>Reading order:</strong> start at <a href="the-chronicle/">the top of the Chronicle</a>, or jump to the newest pages — <a href="the-chronicle/25-the-courtyard-and-the-wish">25 — The Courtyard and the Wish</a> and the <a href="the-chronicle/interlude-the-stone">interlude below the city</a>.</p>
+<p><strong>Reading order:</strong> begin with <a href="the-chronicle/">the Chronicle</a>, or read the latest: <a href="the-chronicle/25-the-courtyard-and-the-wish">25 — The Courtyard and the Wish</a>, followed by <a href="the-chronicle/the-wrong-hunter">The Wrong Hunter</a> and <a href="the-chronicle/interlude-the-stone">Interlude — The Stone</a>.</p>
 </div>
 
 ## Around the fire
 
-- *The World* — places, peoples, and powers, as the players have learned them.
-- *The Cast* — the party, and the people still alive around them.
-- *Interludes* — the fiction, set in its place in the timeline.
+- *The World* — the places and powers the party has encountered.
+- *The Cast* — the companions, their friends, and the people looking for them.
+- *Interludes* — fiction from the days between sessions.
 
 <div class="retro-footer">
   <div class="lcd">SOULS ENTERED <span data-ledger>001337</span></div>
   <div class="badges">
     <span class="badge">best viewed by candlelight</span>
     <span class="badge">800×600</span>
-    <span class="badge">no cookies · only candlewax</span>
+    <span class="badge">candlewax included</span>
   </div>
   <a class="sigil" href="the-warren" title="?">✶</a>
 </div>

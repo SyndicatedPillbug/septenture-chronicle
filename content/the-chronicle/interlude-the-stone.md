@@ -1,6 +1,6 @@
 ---
 title: "Interlude — The Stone"
-description: "First descent into the lines below the Hollow Heart."
+description: "A morning in Rockside: reduced water shares, a song at a fry-stall, and a body carried past the queue. Then a boy arrives with a captain's token."
 tags:
   - chronicle
   - act-two
@@ -13,28 +13,28 @@ date: 1396-12-05
 
 # Interlude — The Stone
 
-Morning down here is a rumor the world above keeps to itself. The pot went out an hour ago. The stew is thinner than yesterday, and nobody has pretended otherwise since the soldiers came. So you take the water queue, because that is what there is to do.
+The pot went out an hour ago. Someone has scraped the last stew from its bottom, and the ladle hangs clean on its hook. You take the water queue.
 
-The Hollow Heart hangs a curtain where another place would put a door. It opens on a landing, the landing opens on the stone, and the stone goes on longer than any city has a right to. Tunnels run away in both directions, hung with oil lamps and washing lines. Far above, a straw's width of grey: the sky, minding its own business. The Rungs creak under traffic and never quite stop — ladders and switchback stairs stitching the cliff for miles, climbed the way other cities cross streets, without looking, a hand on the rail. Nobody looks up here. The Drop sits directly overhead, and the barracks empties its slops over the edge.
+Beyond the Hollow Heart's curtain, a landing opens onto tunnels hung with oil lamps and washing lines. Far above, a straw's width of grey sky shows between the buildings. Traffic keeps the Rungs creaking: ladders and switchback stairs fixed to the cliff, a hand on the rail as people pass with baskets, tools, the day's water. Everyone watches their feet here. The Drop sits overhead, and the barracks empties its slops over the edge.
 
-You came down the Great Ox-Elevators yourself, the day you reached this city — the whole cliff face roaring past, the Basin opening below like a cave that learned to be rich. That was weeks ago. You have been back in the city since, but you have never gone *in*: never past the first landing, never where the lamps run out. Down here people live. The proof is everywhere. Laundry, cooking smoke, a chess game abandoned mid-move on a windowsill of rock, a child's chalk marks counting something on the wall.
+You rode the Great Ox-Elevators on the day you reached Latesa, past the cliff face and down toward the Basin's crowded roofs. Since then you have crossed these first landings in a hurry, on your way somewhere else. Now you have time to notice the rooms behind them. Laundry drips over a chess game left on a stone windowsill. Cooking smoke seeps from a shutter. A child has chalked a row of tally marks beside a door.
 
-The queue moves along a channel cut into the floor, cold water running in a groove worn smooth by a hundred years of hands. The wardens have been dwarves for as long as anyone remembers; nobody living hired the first one. The warden on duty keeps her ledger chained to her belt and does her arithmetic like a politeness: you get what the share buys, and the share is thinner this week, because the soldiers above drink like the rain owes them money.
+The queue follows a channel cut into the floor. Water runs cold through the groove, and years of hands and buckets have worn its edge smooth. Dwarves have kept this share for as long as anyone remembers. The warden on duty wears her ledger chained to her belt; she checks a name, measures an allowance, and waits while each person fills their vessel. Shares are down a quarter this week. The soldiers above have first claim.
 
-The market shelf is two turns on, where the Yellow Line widens enough to call itself a square. This is where the stone keeps its nations. A halfling runner-band works the landing with painted message-tubes, beached since the blockade closed the river, their boat-coats going grey on their backs. A gnome sells rescued door-locks off a hand cart and swears every lock opens twice. On the Sea-Lift side a dragonfolk stevedore with brass scales gone green at the joints swings kelp baskets up from the water and never once looks up the cliff. And in the Grey Lines, so the queue says, there is a shop that sells faces — paper ones, cut to fit a checkpoint. Everyone denies using it. The price is common knowledge.
+Two turns on, the Yellow Line widens into a market shelf. A halfling runner-band works the landing with painted message-tubes. The blockade has stranded their boat, and salt still marks the hems of their coats. A gnome sells salvaged door-locks from a handcart and swears every lock opens twice. On the Sea-Lift side, a dragonfolk stevedore hoists baskets of kelp from the water, brass scales green at the joints. Someone in the queue mentions a shop in the Grey Lines that sells paper faces to wear past a checkpoint. Two people know the price. Neither has been.
 
-At the lip of the Gullet, where the rock drops away into the dark that swallows the city's waste, scavengers work the ropes. Illithids. Their people keep cities in the deep cold under the ocean; these few came up generations back and stayed, sorting what the stone throws away — bone, brass, rope-ends — with hands more careful than any butcher's. Children are told to stay away from the Gullets. The children play at the edge anyway, and the scavengers move the rope so the children can.
+At the lip of the Gullet, scavengers work the ropes. Illithids. Their people keep cities in the deep cold beneath the ocean; these few came up generations ago and stayed. They sort bone and brass from the city's waste with delicate, patient hands. Children play close to the edge, where their parents have told them never to go. A scavenger shifts a rope clear of a child's feet and goes back to work.
 
-Two turns past the market, a fry-stall sits at the shelf's edge, oil and onion and the good smell of somebody else's breakfast. The girl working it has the mark: half-pointed ears, the blood showing soft through them. While she works she hums. The song stops you before you know why — the words are old, older than the tune and older than the singer, and they come out small, at a volume for one, the way people sing things they have been told mean nothing. Nobody else in the queue turns a head. You let it go. The wanting to ask stays with you longer than the song does.
+Past the market, a girl tends a fry-stall at the shelf's edge. Onion sizzles in the oil. She has half-pointed ears, pink where the blood shows through, and she hums as she turns the food. The words stop you. You have heard them before, long ago, though the tune belongs to this place and the girl sings barely loud enough to hear over the pan. The queue moves. You go with it, still trying to place the song.
 
 Then the Watch comes through.
 
-Four of them, bright tan and blue, young; behind them, unhurried, in black, with the stamped paper and the book of names, the soldiers. A body comes up from the Flint Seam side on a door off its hinges. Another one. The officer never looks at the body; he looks at the queue, and the queue looks at the stone. By evening the Watch will call it Sickle work, the way they call everything Sickle work. The queue murmurs otherwise, quietly: the wounds were made by somebody with time — somebody who washed up after.
+Four young constables in tan and blue clear a path. Black-coated soldiers follow with a book of names and stamped orders. From the Flint Seam side, two bearers bring a body on a door lifted off its hinges. The officer studies the queue while everyone waits with their buckets. By evening, the Watch will call the killing Sickle work. Close behind you, someone murmurs that the wounds took time to make. Whoever did it washed afterward.
 
-By the time the queue shuffles forward twice, the body is gone off the door. Nobody sees it carried. Collected, then.
+The queue advances twice. When you look back, the door stands empty. You missed whoever took the body.
 
-You are still holding the day's water when a boy comes down the Rungs three at a time, wrong direction, and lands at the end of the queue without spilling. Too thin, too sure of himself, paid to be somewhere. He does not ask for a name. He counts the strangers without appearing to: the tall one with the ears, the one with the guns, the quiet one wearing bone at her wrist. He holds up a clay token with a captain's seal pressed into it.
+You are still holding the day's water when a boy comes down the Rungs three steps at a time and stops at the end of the queue. Too thin for his coat, he catches his breath and looks along the waiting faces. His gaze passes over the tall one with the ears, the one with the guns, and the quiet one wearing bone at her wrist. He holds up a clay token with a captain's seal pressed into it.
 
 "Up," he says. "You're wanted."
 
-You go up. The water is heavy, the stairs are dark, and behind you the queue starts talking again, quietly, about the body on the door.
+The water drags at your arm on the stairs. Behind you, the queue resumes its talk about the body. You still haven't remembered where you heard that song.

@@ -5,20 +5,20 @@ description: The campaign, session by session, in the order it happened.
 
 # The Chronicle
 
-The story so far, in the order the party lived it. Each chapter is one session, dated in-world, written as story.
+The campaign in the order the party lived it, with stories from the days between sessions. Each chapter carries its date in the world.
 
-<div class="construction">⚠ the chronicle is under construction — more sessions being bound ⚠</div>
+<div class="construction">⚠ the chronicle is under construction — earlier chapters coming soon ⚠</div>
 
 ## Part III — Latesa
 
-- **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* The fight outside the Whites ends with a bell, a bullet, and a wish. The party wakes on a cliff above the sea.
-- **[The Wrong Hunter](the-wrong-hunter)** — *the nights after.* The dream fight, as played between Page and the DM, posted as it was written.
-- **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* First descent into the lines below the Hollow Heart: the queue, the nations of the stone, a body on a door, and a boy with a captain's token.
+- **[25 — The Courtyard and the Wish](25-the-courtyard-and-the-wish)** — *Glacies 4th, 1396cr.* A patrol surrenders. The stranger fires again. Ceridwen reaches for Morgath, and the survivors wake high above the sea.
+- **[The Wrong Hunter](the-wrong-hunter)** — *the night after.* Page hides under a root and sends his double out to meet the creature that has followed him through centuries of sleep.
+- **[Interlude — The Stone](interlude-the-stone)** — *Glacies 5th.* The water queue takes the party deeper into Rockside. A body passes on a borrowed door; a boy arrives with a captain's token.
 
 ## Part II — The Sea Road
 
-*The flashback and the voyage to Latesa. Chapters in progress.*
+The victory feast, the ambush, and the voyage south. Chapters in progress.
 
 ## Part I — Campaign One: The Feylight Festival
 
-*Sessions 1–14, 2023–24. The festival, the ruins, the ring, and the box. Chapters in progress.*
+Sessions 1–14, 2023–24. The search for a missing child leads through the festival gates to the ruins beneath Lobridge. Chapters in progress.

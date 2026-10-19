@@ -1,6 +1,6 @@
 ---
 title: "The Wrong Hunter"
-description: "The dream fight, as played between Page and the DM — the fiction, with the dice left out."
+description: "Page sends an illusory double to meet the hunter in his dream and discovers a child buried inside the creature. Fiction from the campaign's play-by-post exchanges."
 tags:
   - chronicle
   - act-two
@@ -9,111 +9,111 @@ tags:
 date: 1396-12-04
 ---
 
-<span class="dateline">the nights after Glacies 4th, 1396cr · a dream</span>
+<span class="dateline">the night after Glacies 4th, 1396cr · a dream</span>
 
 # The Wrong Hunter
 
-*A dream, as played between Odin and Page's player across nine nights, and posted as it was written — minus the dice.*
+*A dream played between Odin and Page's player across nine nights, edited for the Chronicle. The marks separate their turns.*
 
 You are running. Wet leaf mold under your hands, cold air against your eye-teeth, and the animal instinct that drives you: stop running and you die.
 
-This is the old country. The old hunt. You have been here before — a thousand nights of it. A man bent on revenge follows you, filled with a bloodlust as hot as the brand they scorched you with; a man who will stop at nothing until his hands find your throat. And you are tired, so weary, beaten down so that your deepest wells of strength are plumbed.
+This is the old country. You have spent a thousand nights in this hunt, with the same man behind you and the brand he left burning in your memory. He will run until he catches you. Your legs ache at every step.
 
-But the trees lean wrong tonight. The wind comes from the north instead of from the east. The man pursuing you cracks twigs, crunches leaves, and the icy air does not tire him. When you look back, properly look, the hunter is wrong.
+The trees lean wrong tonight. Wind catches you from the north; you remember it blowing from the east. Behind you, the man's boots crack twigs and crush leaves at a steady pace. He has breath enough to shout.
 
-A half mile away, caught in a moment of moonlight. Fingers too long at the second joint. Hair matted, brittle, shaggy, sitting on the head like nest-stuff. Eyes like little pricks of coal set in a swollen, fleshy, wrinkled face. The coat is a Silver Sickle's coat, oh yes, you'd know that garment anywhere. The triangles glint at the throat.
+Half a mile away, moonlight catches him. His fingers stretch too far beyond the second joint. Matted hair clings to his swollen face, and small coal-dark eyes watch from the folds. You know the Silver Sickle's coat. The triangles glint at his throat.
 
-The uniform is right. But the man is not.
-
-<p class="turnmark">✦</p>
-
-He wants to keep running, knows he should, but his body needs but a moment, a moment that perhaps he can carve to his advantage. Muscles are screaming, twitching and sore in every strand, limbs numb at the tips of his fingers and toes from the monumental effort expended in his Sisyphean chase, and Page's eyes were blistered from the cold wind he raced through.
-
-The elf needed to rest. He needed to catch his breath. He needed to know if he could pull another string, pop open a knot, loosen the thread that tethered this relentless hunter to his trail, make it fray, snap, break.
-
-Panting hard through chunks of hardened saliva, Page pauses behind a tree once he's sure that he's dropped line of sight, and perhaps, provided a momentary illusion that he had continued to run. He dislodged a pair of rocks with the nick of his foot, sending it crashing opposite of him, in hopes of creating an auditory distraction that might lead the hunter's attention elsewhere. The elf swallowed his breath and made himself silent, dropping to the earthen lee to spy underneath a lifted root, keeping his body still, his eyes wide. He tried swallowing down the gunk in his throat, the wretched ragged burn that his breathing had raked through his lungs. With his eyes strained and blood shot, he focuses his elvish sight on the distorted shape of his hunter.
+You try to remember the face that belongs above that collar.
 
 <p class="turnmark">✦</p>
 
-At first, as you peer between the gap where root and earth do not quite meet, the distant figure seems the same as you expect: just a man. The worst of men, perhaps, but still a mortal. You hear him shout out, calling in a taunting tone that nevertheless betrays frustration at your continued success in eluding his pursuit.
+Page wanted to keep running, knew he should, yet with his fingers numb and his legs trembling beneath him he could scarcely choose where to put his feet. Cold wind had scoured his eyes until he could barely keep them open. He needed a few seconds out of the hunter's sight.
+
+Somewhere in the wood he might find a place to rest and a chance to study what followed him.
+
+He ducked behind a tree and kicked two stones down the opposite slope. They clattered through the brush. Page dropped into the hollow beneath a lifted root, swallowed the cough scraping at his throat, and peered through the gap. Mud cooled his cheek. He held still.
+
+<p class="turnmark">✦</p>
+
+Through the gap between root and earth, you watch a man come down the hill. Even now you can almost fit him to the hunter you remember. He shouts, and you hear the frustration in his voice.
 
 "Where are you, little tips? Where aaare you? Hide all you fucking like, I am going to find you!"
 
-He stomps down the hillock on which he stood, coming close but clearly unsure which way to go. Your heart hammers. Your palms sweat. In front of you a spider descends on a thin line of string, black eyes glittering in the moonlight. The chill air of the evening has its claws in you and you shiver despite your every effort to remain perfectly still.
+He stomps down the hillock and stops close by, listening. Your palms sweat against the mud. A spider descends in front of you on a fine thread, its black eyes catching the moonlight. Cold works through your wet clothes. You shiver.
 
-In reality, this moment defined a choice that nearly cost you everything. In your dreams, this point always becomes the worst of the nightmare, the part from which you awaken sweating and trembling with anger and fear.
+You remember the choice you made here. In every dream since, you have reached this place and woken furious, your bedding soaked with sweat.
 
-But tonight something new happens. You feel a sudden warmth upon your shoulder, as of a hand there. You imagine it as your father, then your mother; you take comfort in it as a child does when young and a parent holds bulwark against the night.
+Tonight a warm hand settles on your shoulder. For a moment you think of your father, then your mother, and the nights when a parent's presence was enough to let you sleep.
 
-You always longed for this. Some deep part of you always wished Mein en Glad would come, would lift you from the curse of this repeated nightmare. But that dead god had not risen from the afterlife to save you that night, so long ago, nor had he emerged from shadow to bring the peace of change to your cycle of dark dreams. But this, this is exactly how you imagined it might be if he came.
+You used to pray that Mein en Glad would come for you here. You imagined his hand on your shoulder, the hunter gone, the long pursuit at an end. You waited for him through years of these dreams.
 
-But of course, it is not the god of change. It is a goddess, the last living goddess of the old world. And she is with you now.
+You recognize the hand now. Alleviatira, the last living goddess of the old world, rests it on your shoulder.
 
-In that moment, you see with clear eyes.
+You look at the hunter again.
 
-You see seams in the man's skin, like the dotted lines of stitching in the flesh of a doll. And the skin is worn too tight.
+Seams mark his skin: stitches down the jaw and along the wrist, tight enough to pucker the flesh.
 
 "Run," whispers Alleviatira in your ear. "Let this play out."
 
-The chase continues, the forest... bends. It should not bend — you know this ground, every root and hollow of it — but the woods keep rearranging themselves into longer pathways and shorter ravines, and the thing behind you is not tiring.
+The forest bends as the chase resumes. You know every hollow here, yet a path lengthens under your feet and the next ravine narrows enough for your pursuer to step across. His pace holds steady.
 
-And it speaks. In its call it seems as if there are two voices braided. A hunter's rasp you have heard so often in your dreams: "Quick little fucker, you are…" — yet under it, older, softer, worn like a rot buried in the bone: "Come home, child. You were always such a quick little thing."
+Two voices carry through the trees. You know the hunter's rasp: "Quick little fucker, you are…" Beneath it comes an older voice, soft and almost fond. "Come home, child. You were always such a quick little thing."
 
 Then, plainly, in the hunter's voice: "We have all played at this game for generations. We know you all too well."
 
-You have heard that sentence before. You heard it from men with triangles at their throats. Perhaps you thought it was arrogance, simple human cruelty. Now it strikes you with the cadence of a script.
+You have heard that sentence from other men with triangles at their throats. You wonder who taught it to them.
 
-The hunter is getting closer, somehow moving faster than you through the twisting wood.
+The hunter gains on you through the twisting wood.
 
 <p class="turnmark">✦</p>
 
-Page presses himself into the dirt, into the mulch and damp, reveling in the chilly mud against his hot skin, cooling his overheated body. When the lumbering figure draws close, Page swallows his ragged breathing, fighting off the cough that threatened to struggle up through his raw throat. He was terrified and spent, his body screaming for both rest and movement both, so long pushed that it had forgotten what it was like to be anything but possessed of panic and animal instinct. He dared not close his eyes, dare not blink, not with the bulky hunter so close, so...so wrong. He kept himself in silence, kept still, like a salamander in the leafy detritus, cradled in the roots of the ancient tree named after Alleviatira's fallen tears. The gentle hand against his back, warm and reassuring, gave him the strength to think, even as his mind played a cacophonous cantata of chaos and screams of fear. He needed to study this enemy. He needed to know. If anything, his long life, his centuries of living, had taught him one thing:
+Page pressed deeper into the damp leaves. The hunter lumbered close enough that he could hear its clothes brush the branches, and he swallowed another cough. He kept his eyes open. At his back the goddess's hand remained warm and steady; with that small comfort he could begin to think beyond the next breath, to study the thing that followed him. He had survived centuries by learning what pursued him.
 
 Knowledge is power.
 
-Run, Alleviatira had said. Let this play out. Page mouthed a whisper of sound, shapes in his old elvish tongue as magic welled deep within him and spread throughout his body like the numbing grip of warmth. His head sank back into the dirt, and all at once, his consciousness left him, his mind moving into the illusory double that he had conjured, superimposed over his own body. With his physical body left curled and hidden in the roots, mud-soaked and covered with moss and dead leaves, Page lifted his illusory self and began to run again, this time taking care to make deliberate misleading wheezes of noise as he feigned his struggling, his fearful whimpers and ragged draws of breath. His illusory body could move faster than his own, not needing to navigate and negotiate the natural twisting terrain, and so he sprinted through the woods, his ghostly image a corporeal flash through the warping trees, leading his hunter astray.
+Run, Alleviatira had said. Let this play out. Page whispered in old Elvish and conjured a double over his hidden body, felt its shape settle over his own, then shifted his senses into it. He stood and ran. His body stayed curled beneath the roots, mud-soaked and covered with dead leaves, while his image fled noisily through the trees. He gave it wheezing breaths and frightened little cries, enough to persuade the hunter that exhaustion would soon do its work, and sent it over ground his own legs could barely have crossed.
 
-The creature had said, had called, beckoned to him in those long echoed years with the horrid nicknames that he had earned as the hunter's prey, but what frightened him the most was its plea.
+The old insults followed it. Page knew them all. He kept listening for the other voice.
 
 Come home, child.
 
-Whose voice was that? Who wore the skin of the Silver Sickle? Page let his double run far away from his body, towards a gulch, a cenote, he knew to be hidden in the woods, like a shadow-blackened mouth into the forest's grave. His auburn hair, his braids in ragged matted tresses bounced on his shoulders as he wove like a needle through the old growth trees, his ears hot with the pounding of blood in his tipped ears. Grey eyes, wet with fear, cast over his shoulder, searching for the glint of the silver triangles bouncing on the Hunter's neck. Every time he heard the Hunter's howl, heard him growl, he let himself make a terrified sound, hoping to lead the creature on.
+Who wore the Silver Sickle's skin? He sent the double toward the gulch he remembered ahead, where brush concealed a drop into broken rock. Through its eyes he watched for the triangles at the hunter's neck. Whenever a shout came, he answered with a frightened sound.
 
-A gulch, deep and tangled with brush and bush, obscuring the dangerous rocks beneath loomed up in front of him. Page ran to its edge, as if he didn't realize it was there until it was too late, and caught himself on the crumbling edifice, staggering back until he found solid ground again. Panic stricken, Page's double froze within the sights of the Hunter and made of himself a tempting target.
+At the crumbling lip, he made the double stumble and catch itself. It turned toward the approaching hunter and froze in plain sight.
 
-He just needed to get this hunter close.
+Come closer, Page thought.
 
 <p class="turnmark">✦</p>
 
-The double runs. A real body would have faltered on the mossy and fern-covered slope of the ravine but the double does not, because no body runs there — only a lie... and yet the Sickle believes it and follows.
+Your double runs down the mossy slope without a faltering step. The hunter follows. Under the roots, your body lies still.
 
-Through your double's eyes you run, fast as light, and yet the hunter behind you finds the short road every time. A ravine that should cost him five minutes costs him one. A rise that should break his stride does not. The cold does not touch him. You know this nightmare ground the way you know your own hands, but tonight the ground betrays you, opening for him, closing around you as if the woods picked a side long ago and are working with your enemy to hem you in.
+You watch through the double's eyes as he takes the short road at every turn. A ravine that should cost him five minutes costs him one. The ground opens beneath his feet and closes behind him. You remember learning these paths as a child; tonight you can barely recognize them.
 
-The double reaches the gulch. It catches the crumbling lip, staggers, turns. Below it the old cenote yawns, a mouth of brush and broken stone, a black drop with no bottom your gaze can find. The double freezes and becomes what you asked: a spent thing with nowhere left to run.
+The double catches the gulch's crumbling lip, staggers, and turns. Brush hangs over broken stone below. You hold it there with its arms spread for balance, an exhausted fugitive at the edge of a fall.
 
 The hunter climbs to it. And you get your look.
 
 He is worse close.
 
-The skin pulls tight over him. Where it pulls, fine dotted seams run — one down the jaw, one up the wrist, one where the throat meets the collar. The stitching of a doll. The jaw sits wrong, a glove on a smaller hand. The eyes burn small and black and kind in a face swollen and wrinkled and wrong. The coat is a Silver Sickle's coat. The triangles at the throat catch the moon and glint.
+Fine seams run down the jaw, up the wrist, and into the collar. His skin puckers around them. The jaw hangs loose on one side, and those small dark eyes look at you with an affection you remember from another face. The triangles at his throat catch the moon.
 
-And then you see what your fear has hidden all these years. You've hated them, these Silver Sickles and their ilk, but suddenly the hatred clears away like fog before the dawn and you can see the truth unclouded. You called it bigotry. And it was bigotry, true and honest human cruelty against the "other." But now you feel the shape that urged this bigotry on, the hand that gave it power.
+You begin to see how carefully some of the hunts were arranged. The Sickles had plenty of cruelty of their own; you remember the men who enjoyed their work. This creature knew where to direct them, and when to put a little power in their hands.
 
 The hunter stops. Two steps out.
 
-It tilts its head. It sniffs the air, once, slow, like a dog at a fence. A spider drops from its hair on a thread, swings, and scuttles off onto a shoulder. Then it speaks, two voices sharing the mouth. One the man's, your nightmare's voice. The other a groan, like tree limbs twisting under pressure. And then, even deeper, a third voice, younger than the rest, almost a child's.
+It sniffs once, slowly. A spider drops from its hair on a thread and scuttles onto its shoulder. When it speaks, you hear the man's rasp and a groan of timber under strain. Deeper still, a child's lilt catches at the words.
 
 "Quick," rasps the hunter. And under it, the second voice soft and worn and almost kind: "You always did leave such little trails, dear. Even when you didn't mean to."
 
-Then it lifts its head. Not to the double. Past it, out into the black, toward a shape under the roots no eyes should be able to find. You feel its gaze follow the very magic you used to conjure your double, follow that thread of living universe right back through the night to your hiding place.
+It lifts its head toward the roots where your body lies hidden. You feel its attention trace the spell through the dark, all the way back to you.
 
 The hunter smiles.
 
 <p class="turnmark">✦</p>
 
-The double's eyes widen, earnest fear translating through the elf's haggard features as he watches the head of the Silver Sickle turn away from him, its burning coal eyes following the umbilical of magic that connected his projected consciousness to the limp body cradled in the roots so very far away. Even this, though, is an advantage. With the creature turning away, exposing the seams on its neck, the double lurches forward like a seamster, investigating an open tear in the fabric of this monster's reality. Page allows his double to approach that which he dare not, and he closes the distance, an intimate proposition, of a dancer approaching his partner in this sick and twisted waltz. Is there a place where the sewing has broken?
+Fear widened the double's eyes as the hunter turned toward Page's hidden body. Along the exposed neck, the seams pulled taut. Page sent his image closer, a bookbinder leaning over damaged work, and through its eyes studied the stitches for a loose end. How much of the creature could he see before it reached the roots?
 
-Page's keen eyes focus through the double as he very nearly tucks his head against the hunter's neck to whisper.
+The double leaned close to the hunter's neck and whispered.
 
 "What are you? Why do you hunt me? My kind? What could you possibly gain from haunting me and mine all these long centuries? What could you possibly need from this lowly revenant that you would go to such lengths, to wear such a fetid and hateful disguise? Why don't you show yourself, rip off the book's cover?"
 
@@ -121,176 +121,176 @@ Page's keen eyes focus through the double as he very nearly tucks his head again
 
 The whisper leaves your double's mouth. Then you get to work.
 
-Alleviatira's hand rested on you when Morgath and Ceridwen cast the Wish, and you have not yet spent all of what the goddess lent you. You spend it now. This nightmare creature's unnatural dream presses in on you from every side, but in this moment you understand that her spell is also her dream, and a spell is a door left ajar. You set your shoulder to it and push.
+You can still feel what Alleviatira lent you when Morgath and Ceridwen cast the wish. You press that warmth into the dream surrounding you, past the trees and the wet ground, until you find the spell holding it together. Her spell. You push along it toward the mind that made it.
 
-She answers your questions, seemingly unaware of your change in focus, and she is clearly enjoying herself.
+She answers, pleased to have your attention. You keep pressing.
 
 "What am I? I am the dark beyond the first fire. You knew me before your kind knew words. Why do I hunt you? Because you deserve to be hunted for being so weak. What do I gain from it? Such delightful satisfaction.
 
-"Tear off the cover, you say?" The coal eyes crease. "You bind books. I bind people. This cover was never there for the book, little binder. This cover is there to spare whoever opens it." The voice drops. "But come. Look, if you dare."
+"Tear off the cover, you say?" The coal eyes crease. "You bind books. I bind people. This cover spares whoever opens it." The voice drops. "Come. Look, if you dare."
 
 You take her up on it.
 
-The seams give way all at once. Beneath this hunter's face lies another hunter, and beneath him another — centuries of wearings pressed one over the other, flowers kept in a book. The coat has taken a shape of its own around them all. The longpig leather breathes, its surface warm, and under the smell of old sweat lingers the sweet smell of fruit given way to squirming maggots.
+The seams give way. Under this hunter's face you find another, then older faces pressed beneath it. The coat has moulded itself around centuries of wear. Its leather moves against your touch, warm and damp, and you smell sweat beneath the sweeter rot of overripe fruit.
 
-But then you press deeper, past the facade, into the why at the core of this being. And you understand. Entities like her work in the dark, across spans most mortal minds could ever hold... most minds, but not all. Deep in your bloodline, in a time that is myth even to elves, there lies an old defeat — hers, from long before the sea-road brought the elves to this new land — and her kind have never once forgiven it. You understand now that her quarry is memory itself, and her tools are the natural bigotry and fearfulness that has always divided the peoples of the world. She works these like a master smith, bending entire generations to her will.
+You press into the memory she carries beneath those faces. Deep in your bloodline, in a time that has become myth even to elves, your people defeated her kind. Long before the sea-road, before this land. She remembers. Your people remember, too, across lifetimes a human hunter could scarcely imagine. You feel how patiently she has cultivated their enemies, helping a raid succeed here, guiding an informer there, waiting for the people who could tell the old stories to die.
 
-But there are deeper depths to plumb.
+You follow her attention back to you.
 
-You sink into her and the horrible fondness in her voice becomes a pool around you, a pool clear enough for you to see the truth at the bottom... and this one stings. She feels no mockery when she looks at you. She feels recognition.
+The fondness in her voice has troubled you from the first word. Now, inside her thoughts, you feel where it comes from. She recognizes something in the frightened child you were.
 
-You understand now that she loves to stalk the quick, the small, the frightened, the ones who break cover and run. And you can see, as through a mirror sheened in verdigris, that every hunt is a replication of the first hunt, the hunt that made the hag: a child slipping through the dark, looking back, afraid. For four hundred years she has eaten the ones who run, because she is still trying to catch herself. It is longing made manifest in the most abhorrent of ways.
+A child runs through the dark and looks back. You catch the memory over and over beneath four hundred years of hunts. She seeks that same terror in everyone she chases, and every time they break cover she sees herself running again.
 
-That longing is a door. You go through it.
+You follow the child.
 
-The seam at her throat parts. Cold air comes out of her, air that smells of rain and petrichor. And out of this gap, an eye peers out. One eye, wet and wide, the white showing all the way around. Then a cheek presses against the inside of the sagging fleshy facade, and this skin is fresh and young, pale as the underside of a mushroom. As the skin of the hunter deforms and bulges, its neck splitting wider to make room for this thing emerging from inside, long black hair leaks through the opening and hangs, sodden, down the dead skin of the hunter's neck. It drips, and the night is too dark for you to tell if it drips with water or with blood.
+The seam at the hunter's throat parts. Rain-scented air touches your face. From inside the gap, one eye looks out, wide and wet, then a cheek presses against the sagging skin, pale as the underside of a mushroom. The neck splits wider. Long black hair slips through and hangs sodden against the dead collar. Something drips from it, too dark to make out.
 
-A hand pushes out now as well — small, cold, nails bitten to the quick — and quick as winking lays itself flat against the cheek of your double.
+A small hand pushes through, nails bitten to the quick, and presses against the double's cheek.
 
 Hundreds of feet away, hidden in the roots, you feel it. Cold fingers on your jaw.
 
-And now the girl — for it is a young girl, bursting like a tumor from the rotting mass of the hunter's form — looks at you out of the hole in everything she became, and she says two words, her voice strained as if each syllable costs a lifetime of will to voice.
+The girl looks out through the torn throat. Her mouth moves with effort. You lean toward her as she forces out two words.
 
 "Black Nine."
 
-The dream goes silent. No cricket, no drip of water, no wind. The night holds still. The nightmare has momentarily frozen as the power propelling it shudders.
+The dripping stops. Even the spider hangs still on its thread.
 
-You have hurt this entity. And you have frightened her, which is worse. The girl reached for a stranger. You understand, through the dregs of your connection, that for four hundred years she has kept the child buried, until now. And you gave the child the opening through which to speak.
+You feel the creature recoil. For four hundred years she has kept the girl buried, and now the child has reached through her to a stranger. You gave her the opening.
 
-"That was mine," she says, voice a quiver of creaking wood and the moan of bending iron. It shakes in fury.
+"That was mine," she says. Her voice shakes, wood creaking beneath the hunter's rasp.
 
-Then she gathers herself. The coats come back one over the other, the seams returning the hunter to its form, and the coal eyes harden as it peers hard at your illusory double.
+She pulls the worn faces back over the girl. The seams close crookedly, and the hunter's eyes fix on your double.
 
 "You stopped breathing a little while ago," she says, steady now, colder. "I let it go. I wanted to hear you." She pauses. "I should not have."
 
-One long hand rises. The fingers close on the double's throat, and the throat gives like smoke, your magic dispelled.
+Her fingers close on the double's throat. Your image dissolves in their grip.
 
-The dream bends. Far under the roots the bright thread flickers. Space warps and now you are barely sixty feet away from your hunter, laying in the wet leaves as the horrible patchwork face turns toward you.
+The dream bends. Roots flicker past, and you lie exposed in the wet leaves, barely sixty feet from the hunter. The patchwork face turns toward you.
 
-You have but a single breath. Then she follows the lingering thread of your magic home.
-
-<p class="turnmark">✦</p>
-
-In that single breath, wretched with awakening understanding, Page breathes in tandem with the reconstituted hunter. Air, like the ragged and bloody fingers of a starving bard, drags over the strings of his throat and he croaks, miserable and trembling with the song of hate. The elf pushes himself up from the cradle of root, mud, and leaf, his own eyes a frightful churning storm as he narrows his gaze upon the hunter.
-
-"I am the hunt that bests the hunter," Page hisses, his voice quavering, and from his forehead, a bright and hot white horn breaks into the black of the nightmare. It grows, a spectral spear in the shape of an awl, and within that horrid second does Page unleash a psychic lance, made manifest from the terror he had endured, the anguish and fear. He screams as he hurls the spectral white hot spear. He is the unicorn that guts the hunter, the one that fights back.
-
-"Black Nine!! Tell me what it means!" He shrieks, bracing himself against the cradle of roots, as if the body of his dead god was that which held him, protected him, gave him strength. "What is the Black Nine!?"
+You have a breath before she reaches you.
 
 <p class="turnmark">✦</p>
 
-Like struck flint in a cave, the lance that leaves your brow burns white and hot—a narrow awl of thought twisting through dream-fabric like hot iron through paper.
+Page drew it through his raw throat. He pushed himself up against the roots and fixed his eyes on the hunter, shaking with what he had seen.
 
-You drive it straight into the seam: that wet, ragged tear along the throat where the girl's pale cheek pressed out, where sodden black hair clings to the dead collar.
+"I am the hunt that bests the hunter," he hissed. A white horn of light grew from his brow, narrowed to an awl, and flew at the seam where the girl had surfaced. Page screamed with the effort. A unicorn gutting the hunter: he had spent centuries imagining the moment he could turn on his pursuer, and now he put his terror into the strike.
+
+"Black Nine! Tell me what it means!" He braced himself against the roots that cradled him, against what he imagined as the body of his dead god. "What is the Black Nine?"
+
+<p class="turnmark">✦</p>
+
+The lance burns white as it crosses the dark between you.
+
+You drive it into the tear at her throat, where the girl's cheek pressed against the skin.
 
 The lance punches deep into the fissure.
 
-A dull, resonant thrum hums through the dream like an ancient bell struck underwater. It rattles the teeth in your jaw and sends sharp ripples across the stagnant puddles around your knees.
+The impact rattles your teeth. Ripples spread through the puddles at your knees.
 
 And then she screams.
 
-The sound tears the dreamwoods wide open. The hunter's guttural rasp braids violently with a child's shrill shriek, a raw, frantic terror unaccustomed to pain, suddenly undone by four centuries of reckoning arriving in a single second.
+The hunter's rasp breaks under a child's shriek. You hear her breath catch as she tries to draw enough for another scream.
 
-The stitched seams burst across the hunter's frame. The leather coat splits wide, venting an ancient stench of stagnant earth, dried rosemary, and the dank must of forgotten cellar floors. The patchwork flesh sloughs and sags, barely containing the white-hot light fracturing through the tears.
+Stitches burst along the hunter's neck and chest. The coat splits; light shines through the sagging flesh. Damp earth and dried rosemary fill your nostrils.
 
-The hunter crashes hard onto both knees, clawed fingers gouging the muck. The coal-black eyes roll back into its skull, dying down to grey ash. Around you, the nightmare grinds to an absolute halt. The falling leaves freeze in midair. The swaying branches stiffen into stone. The creature remains pinned beneath the weight of your mind, its consciousness reeling in suffocating paralysis.
+She crashes onto both knees, fingers gouging the muck. Her eyes roll back. Around you, leaves hang motionless and the branches hold their last bend. Your will pins her there.
 
-Through the smoking fissure at its throat, the memory spills out as a raw and unbidden violence into which you headlong plunge.
+A memory opens in the smoking fissure. You fall into it.
 
-A battlefield under a sky that bleeds violet. Spires of silver fire and jagged purple lightning tear the earth apart.
+A battlefield under a violet sky. Silver fire strikes the earth between ranks of the Shrouded.
 
-At the center of the storm stands a man, perhaps in his late-thirties (it's always been hard for you to tell with mortals). You are struck at once by the sheer presence of the man; he is regal and terrifying in his fury. Long black hair whips around his shoulders in intricate braids, woven past a high, starched collar. Tendrils of arcane power pulse around him in an octarine fire. He commands through raw will and the universe itself obeys. Every gesture of his hands splinters stone, disintegrating waves of the Shrouded into mist and shearing through towering, antlered briar-beasts summoned from the deepest fey barrows.
+At the centre of the fighting stands a man in a high collar, black braids whipping against his shoulders. Morgath. Octarine fire gathers around his hands, and stone splits where he points. The Shrouded dissolve under his assault. Beyond them, antlered briar-beasts break apart as he advances on the Briar Wife.
 
-He is winning! You feel a desperate fear. Yours? No... you can feel it now; this is not your body, this is hers, the creature from your nightmare. This is her memory; you are watching this battle through her eyes as this sorcerer supreme systematically dismantles the Briar Wife's defenses, pressing the arch-hag back into the dark with an unholy, brilliant majesty. He has come to end her forever.
+He is winning. Fear rises in you, urgent enough to make you crouch lower in the smoke. You feel it in the body whose eyes you share: the creature from your nightmare. She watches Morgath tear through the arch-hag's defences.
 
-But at the edge of the fire-line, you wait in the smoke and shadow, preparing to strike when the moment is right. Then your mind splits and you can at once see with her eyes even as you look at her, this horrible, melancholy thing that has haunted you for so long.
+She waits at the edge of the fire. Then your view shifts, and you see the figure whose fear you have been feeling.
 
-It wears the face of a little girl. And dragged behind her in chains of briar and blackened bone is an older woman with fierce, weeping eyes. You know, from the connection you've made with this hag's mind, that the woman was a mother who recognized her daughter's face in the dark woods and walked straight into the snare. Morgath's mother.
+She wears a little girl's face. Behind her, briar and blackened bone bind an older woman whose eyes stream with tears. Through the hag's memory you know how she caught her: the woman saw her daughter's face in the woods and followed. Morgath's mother.
 
-"Look here, sorcerer! Look upon your family and despair!" These words burst from your mouth, hateful and gleeful all at once. You—the girl, dragging the bound woman—leap forward into the midst of the battle. And you see Morgath turn, see his eyes narrow in fury, then go wide in horror as he understands.
+"Look here, sorcerer! Look upon your family and despair!" The words burst from the girl's mouth, and you feel her pleasure as she drags the woman into the fighting. Morgath turns. His raised hands stop.
 
-And now you understand as well. The Briar Wife planned for this. She broke the assault with a simpler lever than magic. She simply had the daughter he had loved more than anything hold their mother by the hair and place a claw against her throat. The sorcerer's hands freeze mid-invocation. The violet sky goes a dead blue, the color of peeling plaster. The trap snaps shut.
+The girl takes her mother's hair in one fist and puts a claw to her throat. Morgath holds his spell. Across the field, the Briar Wife has time to move.
 
-You are back in your body. The hunter's split form before you.
+You are back in the wet leaves, with the split hunter kneeling before you.
 
-"The boy who called himself an angel of vengeance," the voice wheezes from the ruined throat at your feet, ragged and whistling like wind through a cracked flue. "He burned our harvest twice. He broke the court we built. But my Mother knew... mortals can be made to trade an empire for a daughter's smile..."
+"The boy who called himself an angel of vengeance," she wheezes. Air whistles through her ruined throat. "He burned our harvest twice. He broke the court we built. But my Mother knew… mortals will trade an empire for a daughter's smile."
 
 The seam shudders, and the voice slips into a venomous, ancient chuckle. "They will lay down even their gods for their blood."
 
 "And while he bled himself dry trying to tear my mother's roots from the world, where were you? Ah, yes, you were out in the hills, weren't you, little bookbinder? Running your clever little trails, so certain of yourself, of your mission in life. So certain in the omnipotence of your decaying corpse of a god!" Again, she laughs. The coal in her eyes flickers brighter, hotter. "Leading your gentle elf-folk away in the dark. And you never suspected that the Sickles were our hounds, herding your people into corners—you thought the boy sorcerer was the monster your people needed to fear. You built oh so many roads, oh so many hidey-holes... and what's the problem with a hole? There's no way out."
 
-The realization settles like poisoned lead into your marrow. Morgath... the 'reign of terror'... it was an apex sorcerer waging an all-out, desperate war to burn the hags and their Sickle hounds from the world. He was crushing them until they weaponized his own lost family against him. And as Curaun, you fled his fire, misreading the smoke, believing the propaganda of the victor. And how many of those that you thought saved were really just shepherded directly into the waiting arms of this creature? It makes you physically sick to think.
+You remember what you believed about Morgath, the warnings you passed to the people in your care. Here you have seen him fighting the hags, close enough to victory that they had to bring his family onto the field. As Curaun, you led your people away from his fire. You remember the refuges, the routes you chose, and wonder how much the creature kneeling before you knew about them.
 
-Your breath comes ragged in your throat. You lean over the paralyzed, shuddering horror, your voice trembling with the force of the dead god's root at your back.
+You lean over her. The roots press against your back as you struggle to steady your voice.
 
 "Black Nine! Tell me what it means! What is the Black Nine?!"
 
-The paralyzed thing strains against the psychic spear pinning its thoughts. Slowly, inch by agonizing inch, the head tilts up. The coal eyes ignite with a venomous, lucid fury.
+She strains against your hold and lifts her head inch by inch. The coal eyes burn again.
 
-"You dare demand an account from me?" The voice grinds like millstones, but your will still presses upon her, compelling her to speak. "Nine lines run beneath your stone city. Eight are dead. But the ninth... the ninth is a mouth that hungers for fresh meat, and someone we don't yet know has been feeding it fat."
+"You dare demand an account from me?" Her voice grinds through the torn throat. "Nine lines run beneath your stone city. Eight are dead. The ninth is a mouth that hungers for fresh meat, and someone we don't yet know has been feeding it fat."
 
-A wet, shuddering breath pulls through the split throat, dragging the gaping edges of the coat back together with agonizing slowness. The hag is regrouping her power, pulling her form together bit by bit.
+She draws a wet breath. The coat pulls together a little at the throat. You feel her gathering strength.
 
 "Ask the pale little doctors who tend the deep. They hold the keys. They know the dark down there better than I... they are very old friends of mine."
 
 The creature heaves itself back onto its feet, the shattered seams knitting together crookedly, swollen and angry.
 
-Splitting the ruined face, a crooked, bloody grin pulls wide across the stitches. "You have earned a proper accounting, little binder. Let us speak of bargains."
+A crooked grin pulls at the stitches. "You have earned a proper accounting, little binder. Let us speak of bargains."
 
 The dream darkens around you, narrowing until only the two of you remain.
 
 <p class="turnmark">✦</p>
 
-Page's mind wallows in the billowing curls of the memory, his senses tangled in the smokey vines, struck and sick with the dawning weight of realization. For a moment, he wants to retch, but he swallows back the ochre bile, crawling onto his feet until he's standing stolid and strong above the unraveled mess of his enemy. The arch-hag... A remnant of fables once whispered by his elders, his very own father, a warning to the young elfin that wandered into the wood, lured by the ancient magic of the forest. Be wary, they warned, For the world is full of weeping, that you've yet to understand, weeping reaped by the hags, our ancient foe, who chased us from our ancient home. Ware, the bargain, the blight, and the briar, ware the hag that hunts us still.
+The memory left Page sick. He swallowed, pushed himself upright, and looked down at the creature. His father had told stories about the arch-hag to children drawn too far into the woods. He could still hear the warning: Ware the bargain, the blight, and the briar. Ware the hag that hunts us still.
 
-Hunts us still... As Silver Sickles, in mortal flesh, through mortal means, these wretched creatures chased his kind to the ends of the earth, systematically lancing each life from the surface of the world. Donning the easy guise of mortal hate, fanning a movement of bigotry and genocide, did they work their will on the ancient descendants from the realms of the fey. Centuries of mortals making mince meat of his kin, all beneath the guiding strings of their puppeteer masters. Page feels his cheeks heat, his paper-grey eyes burn. He feels that molten sickened anger well up his gut into his throat, climb through the taut chords of his neck and into the very ears whose tips have been a point of pride for his eternal hunter. The creatures who wrought the world's weeping, who, centuries ago, controlled a narrative of a powerful sorcerer and wrought his doom with bargains and butchery, set him into desperate war while his would-be allies fled the sight of his shadow.
+Hunts us still. The Sickles had carried their own hatred into his people's homes. Some had found those homes with help from creatures like this one. Page felt heat climb his neck to the ears the hunter had wanted for a trophy. He thought of Morgath fighting while his would-be allies fled, and the stories that had made them fear him.
 
-Was it right for him to flee, to ferry his kindred to safe haven? Did any of his roads, his hideaways, did any of his secret warrens provide the peace that he hoped to carve out for his elven kin? Doubt, an insidious poison, grew like a gnarled vine in his guts. Page swallowed back down again the fetid bile that threatened to burn his teeth. No, he couldn't let that doubt take root. Logic was the glove of the gardener's mind and Page ripped up those wretched rotten seeds. He saved many, he told himself. Saved many who would have otherwise been hunted and torn apart, the tips of their elven ears mounted and silvered to be hung on necklaces. Without his intervention, the war would have been more quickly lost, his people, more scattered and lost. He created community, drew thread through the holes that threatened to rip their families apart, bound them together in strength and companionship, created networks that provided a living for his hidden kindred. He never built his warrens without exits. He was not stupid. Page... No. Thurilas... Was kind and clever, sharp and wise. He had survived all these long centuries not only to save his kin, not only to preserve their culture, their knowledge and art. He had survived to do more than simply preserve.
+Had Page led anyone into a trap? He tried to remember each refuge in turn, the people who had stayed, those who had moved on. Doubt made him swallow again. He remembered families reunited and children who had grown old in safety. People had lived because he helped them. His warrens had exits; he had checked them himself. He steadied on that. Page, Curaun, Thurilas: through every name he had kept records, found rooms, and made sure someone knew the road out.
 
-Thurilas had survived to write the end to the tale of his people's torment.
+He could write what he had learned about the hags, too.
 
-Smiling, limpid and pitying, the elven bookbinder gave the stitched guise of his hunter a quiet once over, judgement passing over his face as if he were a teacher, appraising a student's sewing. He shook his head slightly, a sordid smile reflecting the bloody grin turned to him. "Oh," he chided, almost sulking, almost consolatory, "Pretty thing, if only I cared for bargains." His features turned confident then, lofty, even. If it wasn't for the mud and leaves, the twigs in his hair, he would have looked a professional at politics and pandering. Page pulled his smile into a toothy predatory grin.
-
-<p class="turnmark">✦</p>
-
-"There is not a book bound big enough to house all the wretched things I will do to you and your miserable sisters," he crooned, his words sweet as saccharine and strychnine. His grey eyes flashed with delight as he leaned closer, conspiratorial with his intent, his smile pinned on his face. "I'll just have to make one myself. I'll start with your skin. I'll turn your bones into folders, into needles with which I'll sew the string made from your sinew. I'll make ink from your black blood, and I'll write for all to know exactly how to dismantle you and your kind. How to keep your kind small and brittle, how to dispel your bargains and magics, how to make you rot and rage at your own feeble undoing. I'll write your end upon the vellum made from your hide, and trap the history of your miserable demise for all to see and learn from so that your kind will simply thin and fade from memory. I'll make of you such an end as to inspire the very muses themselves with new understandings of oblivion. An anthropodermic bibliographic study in how to kill a hag. After all, I've learnt all from the best in such morbidities. I've learned from you. Thank you."
-
-Another glowing star of light blossoms upon his brow and again, this time at point blank, with as much strength as his magic can muster, Page punches the awl of light again into the horrible hag wearing the hunter's guise. He knows that if she's offering a bargain, that she's on her back foot, and so in his other hand, he readies a counterspell, should she try to warp away. Hags were survivors, too, and made for themselves many exits. Page intended on collapsing each option, until the hag knew what it was like to have her back up against a wall, to know what it was like to be him, hunted and scared and terrified.
-
-"I'm going to be biographer. I'm going to be your end."
+The bookbinder studied the hunter's stitches, his head tilted as though he were appraising a student's sewing. "Oh," he said softly. "Pretty thing. Keep your bargains." He stood straighter, mud on his cheek and twigs in his hair, and gave her a pitying smile.
 
 <p class="turnmark">✦</p>
 
-The second lance leaves your brow at point-blank range, a javelin of thought driving for the ruin of her face.
+"There isn't a book bound big enough for what I will do to you and your miserable sisters," he crooned, sweet as saccharine and strychnine. "I'll have to make one. I'll start with your skin. Your bones will make folders and needles; your sinew will hold the binding. I'll write in your blood, on vellum cut from your hide, exactly how to dismantle you and your kind. Every bargain you offer. Every spell we learn to break. I'll leave copies where your hunters can find them, and everyone who reads one will know a little more about how to keep you small and brittle." He leaned closer. "An anthropodermic bibliographic study in how to kill a hag. I've learned from the best. Thank you."
 
-She watches it come... and the light passes through her.
+Light blossomed on his brow. At point-blank range he drove another psychic lance toward the hag's face and prepared a counterspell in his other hand. She would have an escape; he had survived long enough to expect one. He watched for the spell that would open it.
 
-The hunter's shape comes apart like a reflection disturbed in water. The coat, the coal eyes, and finally the stitched grin, the whole of her shivers and thins into mist before your eyes. Behind you a tree falls and makes no sound. Motes of dust caught by the beam of your spell freeze in mid air. And you remember: this is a dream.
+"I'm going to be your biographer. I'm going to be your end."
 
-"Bargains," the hag says, though the words come from someplace farther away than her fading image's mouth. "Why Bargains? Curiosity, little binder. I wanted to see what you would do with one."
+<p class="turnmark">✦</p>
 
-The mist takes her feet. Her hands. The long fingers.
+The second lance leaves your brow and drives toward her face.
+
+She watches it pass through her.
+
+The hunter's coat thins to mist. Behind you a tree falls silently, and dust stops in the light of your spell. You remember where you are. This is her dream.
+
+"Bargains," she says from somewhere beyond the fading face. "Curiosity, little binder. I wanted to see what you would do with one."
+
+The mist covers her feet and rises to her hands.
 
 "You could have had him, little binder. I would have been true to my end of the deal. The boy on the cold table? I would have shown you the truth... now, perhaps you'll never know."
 
-Her grin is the last thing to go, a crack in the mirror of this dreamworld, a jagged break in the fabric of your mind.
+Her grin lingers after the rest of her face has gone.
 
-"You will never know now. Unless... Unless you ask the little singer what she's hiding from you... well, some of what she's hiding." A wicked laugh echoes around you as the dream world dissolves.
+"Unless you ask the little singer what she's hiding from you… well, some of what she's hiding." Her laugh carries across the dissolving wood.
 
 "Sleep well, Thurilas. Enjoy waking with everything except the one answer you want."
 
 The dream goes out.
 
-You wake in the Hollow Heart, the tavern you've all managed to collapse in after the harrowing ordeal of the battle in the courtyard and Ceri's impossible casting.
+You wake in the Hollow Heart.
 
-Cold stone above you. An amber lamp turned down to a bead. The curtain across the chamber's mouth stirs with someone's breathing. Down the passage a pot scrapes, and the air carries early morning food smells, the must of wet rock, and the smoky residue of that odd tallow they burn in cliffside dwellings.
+Cold stone above you. An amber lamp burns low beside the curtain. Down the passage someone scrapes a pot, and you smell breakfast through the damp rock and tallow smoke.
 
-You are on your back in your boots. Sleep took you without warning; you remember the ledge overlooking the grey winter ocean, the cool of the salty wind, and sitting down for a moment with your back against the stone. The dream arrived on its own.
+You still have your boots on. You remember the ledge above the winter sea, the wait while your companions stirred, the effort of getting them down to the inn. You paid for the rooms. Then you lay down, and the dream took you.
 
-Even though you know the dream is done, you shiver. Then your knuckles crack as anger floods you, hot and electric.
+You flex your hands until the knuckles crack. They have stopped shaking.
 
-The stitched shape mocking all those years of running, hiding, protecting while being unknowingly steered, all in service to a defeat her kind has never forgiven. And with the anger, too, is shame. Morgath's war... how could you have been so wrong? One man, one enemy, his own mother and sister used to break him. And the hag's words: Black Nine. The image of a mouth under the city, gaping, sucking, slavering for flesh appears unbidden in your mind. Something old is down there, something half-dead and buried beneath the petrified stone... and through it, somehow, the night doctors are entering the world.
+Morgath fought her kind. You saw what they did to stop him, and you remember the warnings you once gave about him. There will be time to reckon with that. For now you hold on to the words the girl forced through the seam: Black Nine. Beneath this city, something feeds a mouth through which the Night Doctors enter the world.
 
-And the girl. You shudder at the memory of her eye, her black hair leaking like oil from the fetid wound in the hag-thing's stitching. The buried girl, who looked at you out of the seam with one wet eye. Somehow, she existed deep within the hag. Somehow, she was the hag. And you had reached her... and she had reached back. Black Nine.
+You can still feel the child's fingers against your jaw. She reached out from inside the hag, and for a moment you reached her. You lie still, trying to remember her face.
 
-You went to sleep with a grudge, you have awoken with a map of the war.
+The lamp needs trimming. Beyond the curtain, someone is awake.
