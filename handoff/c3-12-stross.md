@@ -10,7 +10,7 @@ While the others prepared to move on the cistern house, Simon went alone to keep
 
 Stross laid out two problems and made it clear they were one problem. The first was the murders: young women killed in the Shave and the Basin, in ways the city had learned to file under Sickle work and forget. The second was the vanishings — hundreds of names over years, no case structure, no bodies, no paperwork that anyone would own. The Watch had failed at both, and the Guild's patrols had failed at both, and Stross no longer believed the failure was incompetence.
 
-Stross showed Simon the evidence room records. Only one of the murdered victims had received a formal post-mortem examination before the body was quietly moved out of Watch custody; the other five had vanished from morgues within hours. Key witnesses had gone missing, and precinct ledgers had pages sliced out with razors. All six dead women had visited Costella's Music Hall in the days leading up to their deaths, indicating that someone with authority was actively suppressing the investigation.
+Stross showed Simon the precinct logbooks. Only one of the murdered victims had received an autopsy before an armed detachment transferred the body out of Watch custody; the other five had been removed from the morgue within hours of discovery. Informants had gone missing, and case files showed razored gaps where depositions had been removed. All six victims had worked or drank at Costella's Music Hall in the days preceding their deaths, demonstrating deliberate interference from city officials.
 
 He gave Simon copies of the case notes and a live witness to find: a woman named Lamatt Skritav. He asked for help, warning that anyone seen looking into the records would become a target.
 

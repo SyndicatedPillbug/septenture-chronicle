@@ -25,7 +25,7 @@ She cried instead, which was worse, and told them why she had been thrown out. I
 
 Coy asked whether the woman she saw might have been Beryl, who led the Firestarters before him. Fiona could not say. The question sat there and did not get answered.
 
-Page pointed out that Cormac had taken seven relics and kept none of his promises, and that a person with her skills had other uses. Simon offered her a death. His family had ships. If Fiona died here, in a ruin, quietly, then Cedric Vardon's problem with her died too, and she could start again somewhere the guild had never heard of her.
+Page pointed out that Cormac had pocketed seven relics without fulfilling a single term, and that someone with her reconnaissance training had better prospects. Simon offered her a clean exit. His family owned merchant vessels; if Fiona staged her death in the ruins, Cedric Vardon's hunters would drop the trail, leaving her free to take ship under a new name.
 
 She said yes.
 

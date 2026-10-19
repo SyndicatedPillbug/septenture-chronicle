@@ -17,7 +17,7 @@ She tore free of the webbing anyway and gathered herself to fight properly. Then
 
 Coy ended it. He took the last of her with his spider eyes locked onto hers, and the blood orbs went on hovering until five tired people popped each one in turn.
 
-The heap on the floor had been a woman, once. It was deformed now and marked by what had been done to it. Page searched it and found a coin pouch with fifteen silver and a dagger. Legion and Ceridwen searched the rest and found two things worth carrying out: a bracelet made of bones and carved with markings that gave off a palpable necromantic weight, and a small glass vial of iridescent liquid that glowed pale green.
+The heap on the floor had been a woman, once. The corpse was deformed and scored by hag claws. Page searched the clothing and found a coin pouch containing fifteen silver and an iron dagger. Legion and Ceridwen turned over the hag's body and found two items: a bracelet carved from finger bones bearing crude necromantic sigils, and a glass vial filled with luminescent green liquid.
 
 A tall man came through the tent flap before they had settled their hands. Long black hair, red coat, black cravat, an angular face that gave away nothing. Page tried to explain and made a mess of it until Simon took the conversation and guided it to the hole in the perimeter.
 

@@ -19,9 +19,9 @@ Ceridwen stepped back and screamed. The magic came out of her in a wave that too
 
 They found Stross in his office, surrounded by maps and lists. Page pinned him against the wall and asked him what he had done, and what he had failed to do. Ceridwen put calm into the room before it became something else. Stross, to his credit, did not defend himself; he pointed at the walls instead, at years of missing people and a murder file with holes in it the size of a precinct.
 
-They asked about diamonds. They asked about resurrection, in the indirect way people ask when the direct way would break them. Ceridwen felt Morgath's attention turn, lazy and certain, and understood that the thing in the bracelet considered speaking with the dead beneath its dignity and bringing one back well within its power. It did not offer. It let her know the price existed.
+They asked about diamonds. They asked about resurrection, in the guarded cadences of people who cannot afford false hope. Ceridwen felt Morgath stir within the bone bracelet, cold and imperious. The sorcerer's spirit made it clear that speaking with petty shades was beneath his notice, but returning a severed soul to flesh was within his arts. He offered no bargain yet, merely letting her know the power existed.
 
-By the end of the day they had a body, a conspiracy with more names in it than they could carry, and no plan that any of them liked. Stross's files were not the story of one murderer. They were the story of a city that had been quietly feeding something for years.
+By dusk, the party faced an open casket, an investigative trail implicating half the city's magistrate council, and no clear path forward. Stross's boards documented decades of unrecorded burials and disappearances. The killings were not the work of a single rogue knife; they were the intake valve of an industrial butcher shop.
 
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="c3-12-stross"><span class="nav-dir">← Previous</span><span class="nav-title">Stross</span></a>

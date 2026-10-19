@@ -11,7 +11,7 @@ tags:
 
 # 1.10 — Bad Omens
 
-Page tracked them for an hour before the heat-shimmer ahead dissolved and Fiona came into view with twenty armed men and no interest in stopping. He followed them up the hill and watched them meet a larger force, and then split: the ones with horses went south, and the ones on foot turned north, toward Lobridge. He could feel his books. They were with the horses.
+He tracked them for an hour before the heat-shimmer ahead dissolved and Fiona came into view with twenty armed men and no intention of stopping. He followed them up the hill and watched them meet a larger force, and then split: the mounted riders galloped south, while the infantry marched north toward Lobridge. His psychic senses pinpointed his stolen book collection with the riders.
 
 He sent Fiona a message through the air, because a man who has just been robbed has opinions to share. No matter how far you run, I will hunt you down. Give me back my books. She answered that she was sorry, that she had not had a choice, and rode on. Page turned and went after the walking men instead, as mist, at a distance, on foot.
 

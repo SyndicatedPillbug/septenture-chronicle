@@ -6,9 +6,9 @@
 
 
 
-The watch fell to Page and Coy that night, and the two of them crossed the estate grounds at a walk, quietly, in a wind that had an edge on it. This late in the year the cold comes off the water and cuts through a coat like a knife through bread, and the grounds were dark enough that the shape ahead of them was nearly a rumor.
+Page and Coy drew night sentry duty. The two crossed the overgrown estate grounds under a biting wind, moving between dead boxwood rows without speaking. Cold ocean drafts whistled through the high iron gates, cutting through their cloaks, while the moon cast long, distorted shadows across the terrace.
 
-Nearly. It moved ahead of them through the overgrown parkland, keeping its distance, and where the trees opened up it crossed the open ground and folded itself into the far hedge and was gone. The hedge was a wall of vegetation taller than a man, the outermost boundary of a garden maze that had been decorative once and was now just a bad idea with walls.
+Ahead, an uninvited silhouette slipped across the parkland. It skirted the ruined fountain, dashed over the gravel turnaround, and disappeared into a dense wall of shrubbery. The hedge stood ten feet high, the unpruned outer barrier of a topiary maze that had fallen into feral tangles decades ago.
 
 Page scanned the dark undergrowth and spotted where the figure had breached the perimeter: an opening in the dense yew hedge. Thick branches had been pruned and tied back with hemp twine, creating a narrow run barely wide enough for a crouching adult. Worn earth and broken twigs showed recent, repeated passage.
 

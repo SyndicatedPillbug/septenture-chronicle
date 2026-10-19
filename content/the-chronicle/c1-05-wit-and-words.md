@@ -27,11 +27,11 @@ Ceridwen gave him four verses, sitting in a glade that had not been there a mome
 
 Pipifluer applauded and gave her the lute.
 
-Then he paid out the truth, because the game was over. The pixies' Garden of Gleeful Delights had been built to hold something. A god, he said, and the same Great Evil that Barbello had warned them about. He added that Barbello might not be all he seemed, and that many realms lie under the surface of the mind, and that the Five should not let any of them into this one.
+Then he paid out the truth, because the game was over. The pixies' Garden of Gleeful Delights had been built to imprison something. A god, he said, the same Great Evil Barbello had warned them about. He added that Barbello was untrustworthy, that predatory things hunted beneath mortal perception, and that the Five must bar them from this realm.
 
-He gave the key to Page, the same key the pixies had lost. The glade vanished. The stairs were back. As they climbed, Page looked over his shoulder and watched the pool drain and the flower dry up. He dug his hand into the dead flower bed and came up with a small brass compass marked in old elven runes.
+He gave the key to Page, the key the pixies had guarded. The glade vanished. The stairs reappeared. As they climbed, Page looked back and watched the pool drain into dry silt. He dug into the desiccated flower bed and retrieved a brass compass etched with elven runes.
 
-Outside, the festival was closing. They pooled eleven tickets into two potions of healing, one of which Simon wanted for reasons of his own. Ceridwen felt a pinprick on her hand and found a map rising red on her skin, pointing the way north. Page checked the compass. It did not point steady.
+Outside, the festival gates were barring entry. They pooled eleven prize tickets for two glass vials of healing draught, one of which Simon set aside for personal reasons. Ceridwen felt a stinging welt form on her palm, skin rising into an ink-red map that indicated the northern road. Page tapped the compass; the needle spun without catching a pole.
 
 They reached Lobridge at sunrise with a new job waiting and a trickster's warnings riding along.
 

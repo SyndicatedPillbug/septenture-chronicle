@@ -8,9 +8,9 @@
 
 The fog held over the courtyard, and the party stood in it between two dangers: three militia coming up the alley at one end, and at the other the small figure in the red and purple coat that shifted color with the mist, red light burning steady under the wide brim, the stick-and-metal thing clicking at its feet like something built by nobody human.
 
-Ceridwen moved before anyone else found their breath. Something in her, weeks of grief and pressure and training, clicked into a stillness, and the world slowed around her and sharpened. She read the militia in a glance — well-fitted armor, taken by surprise, the gunner's alarm plain on the sliver of face under her partial helm, the spear already dropping, the monopod already snapping out. Professionals.
+Ceridwen drew her rapier before the smoke cleared. Her senses snapped into focus as she assessed the opposing skirmish line. The militia wore black segmented plate, and carried specialized equipment: the gunner dropped to one knee to extend a folding monopod, while the point man planted a broad pavise and readied a ten-foot boarding pike. These were shock troops, disciplined and prepared.
 
-She put everything into a spell meant to finish the gunner, an upcast roaring with the pale energy that has haunted her since the bracelet first stirred. The alley was too narrow for it. The spearman's reach owned the space between them, and a burst of purple light put her into the wall with blood at the corner of her mouth, and the blade came down across her guard, and Ceridwen dropped.
+She channeled a lethal burst of resonant thunder against the kneeling gunner, but the pike reached ten feet across the flagstones. The spearhead slammed into Ceridwen's chest plate, throwing her into the masonry wall with enough force to crack her ribs. Blood sprayed from her lips as she collapsed onto the paving.
 
 Selim went for the spear arm before it could finish what it had started, and cut it across the arm and the shoulder, opening a seam in the black plate. Page answered with the air itself, a howling lance of wind down the throat of the alley that took all three militia off their feet and pinned them there, grinding them back into the ground whenever they tried to rise.
 

@@ -19,7 +19,7 @@ It was afraid, it said. Something came at night and took its larvae. There were 
 
 Page went into the hive tunnel to learn why the swarm could not simply leave. At the back, past the mud nests, he found an old petrified skeleton set into the stone, and the hive's living cord running straight into its open mouth. Inside the skull, when he looked, was a piece of mind stone. It glowed pale gold, the same color as the stones in the queen's vision.
 
-The stone was the anchor, or the thing that made the swarm a mind. The creature did not know whether carrying it would let it move. It knew the stone was its own. Coy said not to put it back where it had been, since whoever attacked the hive had known where to look, and the swarm took it gently and hid it somewhere inside itself.
+The stone was the anchor, the core that sustained the swarm's sentience. The creature did not know whether carrying the relic would grant it mobility outside the nest, but recognized the item as its own property. Coy warned against returning it to the hollow skull, where the previous attackers had clearly known to search, so the swarm drew the stone into the center of its mass and tucked it into an inner comb.
 
 Legion talked with it about travel and leaving and names. The hive understood that naming was not something a person did alone, and asked Legion to come back.
 

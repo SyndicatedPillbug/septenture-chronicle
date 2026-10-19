@@ -15,7 +15,7 @@ Stross came back to the estate with a second captain: Selim Varek, white and gol
 
 They climbed the stone perimeter wall into the overgrown Vahael estate, an abandoned aristocratic property where briars choked the pathways and broken stone nymphs lay half-buried in dead weeds. Near the back boundary stood the glass-roofed cistern house, its cast-iron ribs oxidized green, the main double doors showing signs of forced entry. One heavy iron hinge had been slagged shut by an evocation flame spell, and mounting holes showed where an iron crossbar had recently been bolted across the frame and later pried loose.
 
-Coy cast and found the whole place soaked in transmutation, spread through stone and soil like a stain. The signature felt like Legion and did not belong to Legion.
+Coy cast Detect Magic and found the Vahael grounds saturated in transmutation energy, soaked into the stone flags and loam. The resonance matched Legion's own biological frequency, but covered the entire footprint of the cistern. Something here had undergone artificial cultivation.
 
 Inside, under green-brown light and vines, the old cistern ran dark and deep, with planter beds and cracked paths and a tunnel where the hive had made its home. Legion went in first with honey and peaceful intent. Page reached out along the mental link to say that they meant no harm. The hive had been smoked and drugged and robbed too many times to believe either of them. It came at the party as a living storm.
 

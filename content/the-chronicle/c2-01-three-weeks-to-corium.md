@@ -18,7 +18,7 @@ At the docks they found Captain Kellen Voss, who had one eye half shut at all ti
 
 They were three hours in port and used all of them. The Mercenary Guild medallions opened the local outpost and let them draw against their writs, which is the only kind of banking where the collateral is reputation. Legion carried thirty bundles of straw aboard for Bill over the crew's objections. Coy found an apothecary. Simon bought things to keep his hands busy at sea, on the theory that idle hands aboard a ship find nautical trouble.
 
-Page sold the leavings of the ambush. The merchant yawned at the common vials and offered a price on the brass calipers and weights that would have insulted a stranger. Page read him in one glance, told him a story about a family heirloom, and stood there smiling until the price improved.
+Page sold the loot recovered from the assassins. The pawn merchant waved off the common glass vials, offering four silver for the brass calipers and balance weights. Page spotted the cheat immediately, spun a yarn about heirloom master-smith tools, and negotiated the coin up to twenty-two silver before handing over the pouch.
 
 The tide turned in the afternoon. They loaded the last crate, said goodbye to the road, and watched Corium slide away behind the ship's stern until it was just a smudge of smoke on the coastline.
 
