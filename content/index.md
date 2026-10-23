@@ -29,3 +29,6 @@ description: "The Latesa Chronicle — stories from a campaign in a city under c
   </div>
   <div class="retro-footer"><div class="lcd" title="Visits in this browser">VISITOR LEDGER <span data-ledger>000001</span></div><p>A little light in Rockside.</p><div class="badges"><span class="badge">best viewed by candlelight</span><span class="badge">hand-bound pages</span><span class="badge">mind the stairs</span></div></div>
 </div>
+
+
+<div class="cast-invitation"><a href="the-cast/"><span>✦ THE PARTY WEBRING ✦</span><strong>Everybody gets a little corner.</strong><p>Visit the companions’ personal homepages. Bring your headphones.</p><b>Meet the Cast →</b></a></div>

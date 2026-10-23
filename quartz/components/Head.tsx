@@ -93,6 +93,7 @@ export default (() => {
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
         <script defer src={joinSegments(baseDir, "static/extras.js")} />
+        <script defer src={joinSegments(baseDir, "static/companions.js")} />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
