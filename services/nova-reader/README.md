@@ -7,3 +7,5 @@ Every request verifies the existing player identity and game membership. The fee
 Do not add account credentials, production exports, private story fixtures, or test configuration to this repository.
 
 Journal rows use `entryType: journal`, `group: journal-<id>`, and the Journal shelf. Detail requests include `type: journal`; omitted types retain compatibility with story links. Character links initialize the reader from `?character=<slug>&kind=Stories` or `kind=Journal`. Authoring starts through the existing session bridge with `compose=story` or `compose=journal`.
+
+`identity.php` preserves an existing owned Nova main character during account synchronization. If that character is absent or belongs to another user, synchronization falls back to an owned character. Player credentials and roster handoff files are never stored in this repository.
