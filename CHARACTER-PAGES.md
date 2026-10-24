@@ -45,11 +45,18 @@ https://supabase.com/pricing and https://supabase.com/docs/guides/platform/free-
 ## Content and fallbacks
 
 The static Markdown remains the readable fallback if Supabase is down.
-The database profile overrides editable fields after loading. The Chronicle
-links remain editorial content. Profile moods, first-person introductions,
-keepsake captions, and themes are creative drafts, separate from sourced
-campaign history. Emblems illustrate objects rather than inventing player
-character likenesses.
+The database profile overrides editable fields after loading. Initial profile
+text and scene captions are compiled from the session records documented in
+`content/the-cast/source-notes.md`. The From the Session Records panel and
+source notes remain editorial content when a player edits their About panel
+or pinboard. Themes and ambient music are decorative; they do not establish
+character appearance, inventory, or musical taste. Emblems illustrate objects
+rather than inventing player character likenesses. The checked content data
+is retained in `data/character-session-facts.json`.
+
+Before potentially breaking website or database changes, show Odin the exact
+code diff, explain the effects, and wait for explicit approval before applying
+or deploying it. This review preference was requested on October 23, 2026.
 
 The visitor soundtrack picker previews a file for the current visit. To
 make music permanent for everyone, log in, choose **Edit my page**, upload

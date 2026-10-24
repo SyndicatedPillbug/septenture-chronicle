@@ -25,7 +25,7 @@ Ceridwen took over from there. She talked the ogre down to a payment in kind, on
 
 Ethan came out of the back room wild and ready to run, and only Simon's hand on his collar slowed him. The broken thing sat on the bench: a little brass globe, dented, its gears out of place. Simon looked at it a long moment and saw a map in its dents, larger than any he had seen. He set about memorizing it.
 
-Coy bought a clockwork bird off the counter and gave it to the boy. Page, arriving at last with a book for Ethan under one arm, put it in his hands with the remark that curiosity should always get paid.
+Coy bought a clockwork bird off the counter and gave it to the boy. Page, arriving at last with a book for Ethan under one arm, put it in his hands saying, “curiosity should always be rewarded!”
 
 They walked Ethan back toward the gate, where the Copperfields and Thom waited. Ceridwen had written the parents a letter; Coy made the boy promise to deliver it, and to come find them when he had made something fine. Ethan jumped through to the mortal side. The Five turned back into the festival.
 

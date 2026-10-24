@@ -126,7 +126,7 @@ export async function mount(root, signal) {
     open('Make this corner yours')
     const form=make('form');body.append(form)
     const fields={}
-    for(const [name,label,kind,max] of [['display_name','Display name','text',80],['tagline','Small banner text','text',160],['heading','Banner title','text',160],['mood','Current mood','text',160],['location','Currently / location','text',160],['bio','About me','textarea',5000],['interests','Interests (one per line)','textarea',1200],['music_title','Track title','text',160]]){
+    for(const [name,label,kind,max] of [['display_name','Display name','text',80],['tagline','Small banner text','text',160],['heading','Banner title','text',160],['mood','Status / player update','text',160],['location','Currently / location','text',160],['bio','About me','textarea',5000],['interests','Player pinboard (one per line)','textarea',1200],['music_title','Track title','text',160]]){
       fields[name]=field(form,label,name,profile[name],kind,max)
       if(['display_name','heading','bio'].includes(name))fields[name].required=true
     }
