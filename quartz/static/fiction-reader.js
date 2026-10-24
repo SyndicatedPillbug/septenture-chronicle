@@ -41,7 +41,30 @@ export function safeStory(html){
   }
   for(const node of source.body.childNodes)copy(node,fragment)
   if(fragment.firstElementChild?.tagName==='STRONG'&&fragment.firstElementChild.textContent==='Discord archive'&&[...fragment.querySelectorAll('a')].some(a=>/^Original (thread|channel)$/.test(a.textContent))){while(fragment.firstChild){const node=fragment.firstChild,done=node.nodeName==='HR';node.remove();if(done)break}}
-  return fragment
+  return formatStoryParagraphs(fragment)
+}
+// Imported Discord prose uses single line breaks where an editor would use
+// paragraphs. Give those lines semantic paragraphs without changing the text,
+// inline emphasis, author credits, lists, or preformatted passages.
+export function formatStoryParagraphs(container){
+  const blocks=new Set(['P','DIV','BLOCKQUOTE','UL','OL','LI','PRE','H2','H3','H4','HR'])
+  const output=document.createDocumentFragment();let paragraph=null
+  function flush(){
+    if(paragraph?.textContent.trim()){
+      const prose=[...paragraph.childNodes].some(n=>n.nodeType===Node.TEXT_NODE?n.textContent.trim():!n.classList.contains('fx-credit')&&!n.classList.contains('fx-source-link'))
+      paragraph.className=prose?'fx-prose':'fx-credit-line';output.append(paragraph)
+    }
+    paragraph=null
+  }
+  for(const node of [...container.childNodes]){
+    if(node.nodeName==='BR'){flush();continue}
+    if(blocks.has(node.nodeName)){
+      flush()
+      if(node.nodeName==='P')output.append(formatStoryParagraphs(node))
+      else{if(['DIV','BLOCKQUOTE'].includes(node.nodeName))node.replaceChildren(formatStoryParagraphs(node));output.append(node)}
+    }else{if(!paragraph)paragraph=document.createElement('p');paragraph.append(node)}
+  }
+  flush();return output
 }
 const el=(tag,text,className)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node}
 export async function mount(root,base){

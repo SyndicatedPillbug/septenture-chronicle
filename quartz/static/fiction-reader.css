@@ -3,3 +3,10 @@ body[data-slug="fiction/index"] .page{max-width:1440px}body[data-slug="fiction/i
 
 body[data-slug="fiction/index"] .page-listing{display:none}#fiction-exchange .fx-story{white-space:normal}#fiction-exchange .fx-story pre{white-space:pre-wrap}
 #fiction-exchange .fx-reader-nav{position:sticky;top:0;z-index:3;background:#17131e;padding-top:12px}#fiction-exchange .fx-reader:focus{outline:none}#fiction-exchange input[type=checkbox]{appearance:auto!important;accent-color:#d6b475;padding:0;width:14px;height:14px;background:transparent}
+
+/* Book-like prose, including the line-separated paragraphs in Discord imports. */
+#fiction-exchange .fx-story{line-height:1.8}
+#fiction-exchange .fx-story p.fx-prose{margin:0 0 .7em;text-indent:1.5em;line-height:inherit}
+#fiction-exchange .fx-story p.fx-credit-line{margin:1.6em 0 .9em;text-indent:0;line-height:1.5}
+#fiction-exchange .fx-story.fx-hide-credits .fx-credit-line{display:none}
+#fiction-exchange .fx-story blockquote p,#fiction-exchange .fx-story li p{ text-indent:0 }
