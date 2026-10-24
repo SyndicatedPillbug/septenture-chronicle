@@ -94,6 +94,7 @@ export default (() => {
         <meta name="generator" content="Quartz" />
         <script defer src={joinSegments(baseDir, "static/extras.js")} />
         <script defer src={joinSegments(baseDir, "static/fiction.js")} />
+        <script type="module" src={joinSegments(baseDir, "static/fiction-reader.js")} />
         <script defer src={joinSegments(baseDir, "static/companions.js")} />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
