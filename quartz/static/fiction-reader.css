@@ -10,3 +10,5 @@ body[data-slug="fiction/index"] .page-listing{display:none}#fiction-exchange .fx
 #fiction-exchange .fx-story p.fx-credit-line{margin:1.6em 0 .9em;text-indent:0;line-height:1.5}
 #fiction-exchange .fx-story.fx-hide-credits .fx-credit-line{display:none}
 #fiction-exchange .fx-story blockquote p,#fiction-exchange .fx-story li p{ text-indent:0 }
+
+#fiction-exchange .fx-compose{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end;padding:0 24px 22px}#fiction-exchange .fx-compose a{display:inline-flex;align-items:center;padding:10px 16px;border:1px solid #b392a4;font:12px/1.5 'IBM Plex Mono',monospace;text-decoration:none}#fiction-exchange .fx-compose a:first-child{background:#d6b475;color:#17131e;border-color:#d6b475;font-weight:600}

@@ -56,7 +56,7 @@
     for (const [label, path] of [
       ["THE CHRONICLE", "the-chronicle/"],
       ["THE CAST", "the-cast/"],
-      ["FICTION", "fiction/"],
+      ["THE EXCHANGE", "fiction/"],
       ["LATEST CHAPTER", "the-chronicle/25-the-courtyard-and-the-wish"],
     ]) {
       const link = document.createElement("a")

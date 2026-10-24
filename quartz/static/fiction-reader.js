@@ -16,7 +16,7 @@ export function groupStories(rows){
 }
 export function selectStories(groups,{query='',character='',writer='',kind='',sort='new'}={}){
   const terms=fold(query).trim().split(/\s+/).filter(Boolean)
-  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>c.name===character)))&&(!writer||g.writers.includes(writer))&&(!kind||g.kind===kind)&&terms.every(t=>g.search.includes(t)))
+  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>c.name===character)))&&(!writer||g.writers.includes(writer))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
   found.sort((a,b)=>sort==='old'?a.written-b.written:sort==='short'?a.words-b.words:sort==='long'?b.words-a.words:sort==='az'?a.title.localeCompare(b.title):b.written-a.written||b.id-a.id)
   return found
 }
@@ -70,19 +70,20 @@ const el=(tag,text,className)=>{const node=document.createElement(tag);if(text!=
 export async function mount(root,base){
   if(root.dataset.fxMounted)return
   root.dataset.fxMounted='true'
+  const initialFilters=new URLSearchParams(location.search);let filtersInitialized=false
   const $=name=>root.querySelector('[data-fx-'+name+']')
   let active=true,client,config,groups=[],visible=[],current=null,controller=null,refreshing=false,poll=null,readerRequest=null,readerSize=19
   const gate=$('gate'),library=$('library'),status=$('status'),login=$('login'),panel=$('reader-panel'),story=$('story')
   const handlers=[],listen=(target,event,fn)=>{target.addEventListener(event,fn);handlers.push(()=>target.removeEventListener(event,fn))}
   function setBackgroundInert(value){for(const child of root.children)if(child!==panel)child.inert=value}
   function closeReader(updateHash=true){setBackgroundInert(false);current=null;readerRequest?.abort();panel.hidden=true;document.body.style.overflow='';if(updateHash&&location.hash.startsWith('#story='))history.replaceState(history.state,'',location.pathname+location.search);$('search').focus({preventScroll:true})}
-  function clearPrivate(message){setBackgroundInert(false);groups=[];visible=[];current=null;readerRequest?.abort();controller?.abort();$('cards').replaceChildren();$('friends').replaceChildren();story.replaceChildren();panel.hidden=true;document.body.style.overflow='';library.hidden=true;gate.hidden=false;login.hidden=false;status.textContent=message;$('live').textContent='PLAYER LOGIN REQUIRED'}
+  function clearPrivate(message){setBackgroundInert(false);groups=[];visible=[];current=null;readerRequest?.abort();controller?.abort();$('cards').replaceChildren();$('friends').replaceChildren();story.replaceChildren();panel.hidden=true;document.body.style.overflow='';library.hidden=true;gate.hidden=false;login.hidden=false;$('compose').hidden=true;status.textContent=message;$('live').textContent='PLAYER LOGIN REQUIRED'}
   async function request(payload,signal){
     const {data,error}=await client.auth.getSession()
     if(error||!data.session){const e=new Error('Sign in to open the shelves.');e.status=401;throw e}
     const response=await fetch(config.readerUrl||new URL('/index.php/reader/stories',config.novaUrl).href,{method:'POST',credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,token:data.session.access_token}),signal})
     let body;try{body=await response.json()}catch{throw new Error('The reading shelves are temporarily unavailable. Please try again.')}
-    if(!response.ok){const e=new Error(body.error||'The story could not be opened.');e.status=response.status;throw e}
+    if(!response.ok){const e=new Error(body.error||'The entry could not be opened.');e.status=response.status;throw e}
     return body
   }
   function fillOptions(select,values,all){const previous=select.value;select.replaceChildren();const first=el('option',all);first.value='';select.append(first);for(const value of values){const option=el('option',value);option.value=value;select.append(option)}select.value=values.includes(previous)?previous:''}
@@ -93,22 +94,25 @@ export async function mount(root,base){
     for(const [name,slug,symbol] of people){const button=el('button',undefined,'fx-friend');button.type='button';button.setAttribute('aria-label','Filter by '+name);button.setAttribute('aria-pressed',String($('character').value===name));const face=el('span',symbol);if(slug&&FRIENDS.some(f=>f[1]===slug)){const img=el('img');img.src=base+'static/companions/'+slug+'.svg';img.alt='';img.loading='lazy';face.replaceChildren(img)}button.append(face,el('div',name==='Hervd Angantyr-Bohun'?'Hervd':name==='The Gunslinger'?'Gunslinger':name));button.addEventListener('click',()=>{$('character').value=$('character').value===name?'':name;render()});$('friends').append(button)}
   }
   function render(){
+    const params=new URLSearchParams(location.search)
+    for(const [key,value] of [['q',$('search').value],['character',$('character').value],['writer',$('writer').value],['kind',$('kind').value],['sort',$('sort').value==='new'?'':$('sort').value]]){if(value)params.set(key,value);else params.delete(key)}
+    const query=params.toString();history.replaceState(history.state,'',location.pathname+(query?'?'+query:'')+location.hash)
     visible=selectStories(groups,{query:$('search').value,character:$('character').value,writer:$('writer').value,kind:$('kind').value,sort:$('sort').value})
-    $('cards').replaceChildren();$('count').textContent='('+groups.length+')';$('results').textContent=visible.length+' of '+groups.length+' stories & collections';$('empty').hidden=visible.length!==0
+    $('cards').replaceChildren();$('count').textContent='('+groups.length+')';$('results').textContent=visible.length+' of '+groups.length+' entries & collections';$('empty').hidden=visible.length!==0
     for(const g of visible){
       const card=el('article',undefined,'fx-card'),meta=el('div',undefined,'fx-card-meta');meta.append(el('span',g.kind),el('span',Math.max(1,Math.ceil(g.words/220))+' min read'));const heading=el('h3'),title=el('button',g.title,'fx-story-title');title.type='button';title.addEventListener('click',()=>openStory(g));heading.append(title)
       const chars=el('div',undefined,'fx-card-chars');for(const c of g.characters)chars.append(el('span',c.name));if(!g.characters.length)chars.append(el('span','World & NPC stories'))
-      const bottom=el('div',undefined,'fx-card-bottom');bottom.append(el('span',new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(new Date(g.written*1000))),el('span',g.chapters.length>1?g.chapters.length+' chapters · read together':'OPEN STORY ↗'))
+      const bottom=el('div',undefined,'fx-card-bottom');bottom.append(el('span',new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(new Date(g.written*1000))),el('span',g.chapters.length>1?g.chapters.length+' chapters · read together':g.kind==='Journal'?'OPEN JOURNAL ↗':'OPEN STORY ↗'))
       card.append(meta,heading,el('p',g.writers.join(' · '),'fx-card-byline'),el('p',g.excerpt,'fx-card-excerpt'),chars,bottom);$('cards').append(card)
     }
     renderFriends()
   }
   async function openStory(group,preserve=false){
     readerRequest?.abort();readerRequest=new AbortController();const signal=readerRequest.signal,oldTop=panel.scrollTop
-    current=group.key;panel.hidden=false;setBackgroundInert(true);document.body.style.overflow='hidden';$('reader-title').textContent=group.title;$('reader-kind').textContent=group.kind+' / '+Math.max(1,Math.ceil(group.words/220))+' MIN READ';$('reader-byline').textContent=group.writers.join(' · ');$('reader-timeline').textContent=[group.timeline,group.location].filter(Boolean).join(' · ');$('original').href=group.chapters[0].novaUrl;story.replaceChildren(el('p','Opening the story…'));history.replaceState(history.state,'',location.pathname+location.search+'#story='+encodeURIComponent(group.key));panel.focus({preventScroll:true});panel.scrollTop=preserve?oldTop:0
+    current=group.key;panel.hidden=false;setBackgroundInert(true);document.body.style.overflow='hidden';$('reader-title').textContent=group.title;$('reader-kind').textContent=group.kind+' / '+Math.max(1,Math.ceil(group.words/220))+' MIN READ';$('reader-byline').textContent=group.writers.join(' · ');$('reader-timeline').textContent=[group.timeline,group.location].filter(Boolean).join(' · ');$('original').href=group.chapters[0].novaUrl;story.replaceChildren(el('p','Opening the entry…'));history.replaceState(history.state,'',location.pathname+location.search+'#story='+encodeURIComponent(group.key));panel.focus({preventScroll:true});panel.scrollTop=preserve?oldTop:0
     try{
       const loaded=[]
-      for(const chapter of group.chapters){const data=await request({id:chapter.id},signal);if(!active||signal.aborted||current!==group.key)return;loaded.push(data)}
+      for(const chapter of group.chapters){const data=await request({id:chapter.id,type:chapter.entryType||'story'},signal);if(!active||signal.aborted||current!==group.key)return;loaded.push(data)}
       const content=document.createDocumentFragment()
       for(let i=0;i<loaded.length;i++){if(i>0){content.append(el('hr'));content.append(el('p','Continued', 'fx-credit'))}content.append(safeStory(loaded[i].html))}
       story.replaceChildren(content);story.removeAttribute('role');if(preserve)panel.scrollTop=oldTop;updateProgress()
@@ -125,7 +129,16 @@ export async function mount(root,base){
       if(!active)return
       const before=current?groups.find(g=>g.key===current):null;groups=groupStories(rows)
       const names=[...new Set([...FRIENDS.map(f=>f[0]),...groups.flatMap(g=>g.characters.map(c=>c.name))])].sort();const hadWorld=$('character').value==='world';fillOptions($('character'),names,'Everybody');const world=el('option','World & NPC stories');world.value='world';$('character').append(world);if(hadWorld)$('character').value='world'
-      fillOptions($('writer'),[...new Set(groups.flatMap(g=>g.writers))].sort(),'All writers');gate.hidden=true;library.hidden=false;status.textContent='';$('live').textContent='● '+groups.length+' ENTRIES / LIVE FROM NOVA';render()
+      fillOptions($('writer'),[...new Set(groups.flatMap(g=>g.writers))].sort(),'All writers')
+      if(!filtersInitialized){
+        const requested=initialFilters.get('character'),match=groups.flatMap(g=>g.characters).find(c=>c.slug===requested||c.name===requested)
+        const known=FRIENDS.find(f=>f[1]===requested||f[0]===requested)
+        $('character').value=match?.name||known?.[0]||(requested==='world'?'world':'')
+        $('search').value=initialFilters.get('q')||''
+        for(const name of ['writer','kind','sort']){const value=initialFilters.get(name);if(value&&[...$(name).options].some(o=>o.value===value))$(name).value=value}
+        filtersInitialized=true
+      }
+      gate.hidden=true;library.hidden=false;$('compose').hidden=false;status.textContent='';$('live').textContent='● '+groups.length+' ENTRIES / LIVE FROM NOVA';render()
       if(current){const now=groups.find(g=>g.key===current);if(!now){closeReader();status.textContent='That story is no longer published.'}else if(before&&now.chapters.map(c=>c.revision).join()!==before.chapters.map(c=>c.revision).join())await openStory(now,true)}
       else if(location.hash.startsWith('#story=')){const key=decodeURIComponent(location.hash.slice(7)),found=groups.find(g=>g.key===key);if(found)await openStory(found)}
     }catch(error){if(active){clearPrivate(error.name==='AbortError'?'The shelves took too long to respond. Please try again.':error.message)}}finally{clearTimeout(timeout);refreshing=false;if(active)$('refresh').disabled=false}
@@ -134,7 +147,7 @@ export async function mount(root,base){
   let searchTimer;listen($('search'),'input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(render,120)})
   listen($('reset'),'click',()=>{$('search').value='';for(const n of ['character','writer','kind'])$(n).value='';render()});listen($('all'),'click',()=>{$('character').value='';render()})
   listen($('refresh'),'click',refresh);listen($('random'),'click',()=>{if(visible.length)openStory(visible[Math.floor(Math.random()*visible.length)])})
-  listen($('back'),'click',()=>closeReader());listen(panel,'keydown',e=>{if(e.key==='Escape')closeReader();if(e.key==='Tab'){const nodes=[...panel.querySelectorAll('button:not(:disabled),a[href],input')].filter(n=>n.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});listen(panel,'scroll',updateProgress)
+  listen($('back'),'click',()=>closeReader());listen(panel,'keydown',e=>{if(e.key==='Escape')closeReader();if(e.key==='Tab'){const nodes=[...panel.querySelectorAll('button:not(:disabled),a[href],input')].filter(n=>n.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===panel)){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});listen(panel,'scroll',updateProgress)
   for(const [name,delta]of[['smaller',-1],['larger',1]])listen($(name),'click',()=>{readerSize=Math.max(15,Math.min(28,readerSize+delta));story.style.setProperty('--fx-reading-size',readerSize+'px')})
   listen($('tone'),'click',()=>{const dark=story.classList.toggle('fx-night');$('tone').setAttribute('aria-pressed',String(dark));$('tone').textContent=dark?'Day paper':'Night paper'})
   listen($('credits'),'change',()=>story.classList.toggle('fx-hide-credits',!$('credits').checked))
@@ -146,9 +159,9 @@ export async function mount(root,base){
     const responses=await Promise.all([fetch(base+'static/fiction-config.json',{cache:'no-store'}),fetch(base+'static/community-config.json',{cache:'no-store'})]);if(responses.some(r=>!r.ok))throw new Error('The Exchange is not connected yet. Please try again later.')
     config=await responses[0].json();const account=await responses[1].json();const nova=new URL(config.novaUrl);if(nova.protocol!=='https:'&&!['127.0.0.1','localhost'].includes(nova.hostname))throw new Error('The writing room needs a secure connection.');config.novaUrl=nova.origin
     if(config.readerUrl&&new URL(config.readerUrl).origin!==nova.origin)throw new Error('Invalid reader service configuration.')
-    for(const link of root.querySelectorAll('[data-fx-write]')){link.href=nova.origin+'/index.php/write/index';link.dataset.routerIgnore='true'}
+    for(const link of root.querySelectorAll('[data-fx-write]')){const url=new URL('/index.php/auth/start',nova.origin);if(link.dataset.fxWrite)url.searchParams.set('compose',link.dataset.fxWrite);link.href=url.href;link.dataset.routerIgnore='true'}
     const {createClient}=await import(SDK);client=createClient(account.url,account.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})
-    subscription=client.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT')clearPrivate('You are signed out. Sign in to return to the shelves.')}).data.subscription
+    subscription=client.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT')clearPrivate('You are signed out. Sign in to return to the shelves.');else if(event==='SIGNED_IN')setTimeout(refresh,0)}).data.subscription
     listen(login,'submit',async e=>{e.preventDefault();const button=login.querySelector('button');button.disabled=true;status.textContent='Checking the guest list…';try{const fields=new FormData(login),{error}=await client.auth.signInWithPassword({email:String(fields.get('email')),password:String(fields.get('password'))});login.elements.password.value='';if(error)throw new Error('That sign-in did not work. Check your email and password.');await refresh()}catch(error){status.textContent=error.message}finally{button.disabled=false}})
     listen($('signout'),'click',async()=>{clearPrivate('Signing out…');const {error}=await client.auth.signOut();status.textContent=error?'Sign-out did not complete. Please retry.':'You are signed out.'})
     await refresh();poll=setInterval(()=>{if(!document.hidden)refresh()},60000)

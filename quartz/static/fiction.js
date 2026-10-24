@@ -12,17 +12,21 @@
     const base=(document.body.dataset.basepath||'')+'/'
     try {
       const response=await fetch(base+'static/fiction-config.json',{cache:'no-store'})
-      if(!response.ok)throw new Error('The writing room is not connected yet.')
+      if(!response.ok)throw new Error('The writing desk is temporarily unavailable.')
       const config=await response.json()
       const nova=new URL(config.novaUrl)
-      if(nova.protocol!=='https:'&&!(nova.protocol==='http:'&&['127.0.0.1','localhost'].includes(nova.hostname)))throw new Error('The writing room needs a secure connection.')
+      if(nova.protocol!=='https:'&&!(nova.protocol==='http:'&&['127.0.0.1','localhost'].includes(nova.hostname)))throw new Error('The writing desk is temporarily unavailable.')
       if(character){
         if(!character.querySelector('[data-character-tools]')) {
           const nav=document.createElement('nav');nav.className='pc-browser';nav.dataset.characterTools='true';nav.setAttribute('aria-label','Character sections')
           const current=document.createElement('span');current.textContent='Public profile';current.setAttribute('aria-current','page');nav.append(current)
-          for(const [label,view] of [['Character details','profile'],['Stories','stories'],['Journal','journal']]) {
-            const link=document.createElement('a');link.textContent=label;link.dataset.routerIgnore='true'
-            const destination=new URL('/index.php/auth/start',nova.origin);destination.searchParams.set('character',character.dataset.pc);destination.searchParams.set('view',view);link.href=destination.href;nav.append(link)
+          for(const [label,view] of [['Character details','profile'],['Stories','Stories'],['Journals','Journal']]) {
+            const link=document.createElement('a');link.textContent=label
+            const destination=view==='profile'?new URL('/index.php/auth/start',nova.origin):new URL(base+'fiction/',location.origin)
+            destination.searchParams.set('character',character.dataset.pc)
+            if(view==='profile'){destination.searchParams.set('view',view);link.dataset.routerIgnore='true'}
+            else destination.searchParams.set('kind',view)
+            link.href=destination.href;nav.append(link)
           }
           const banner=character.querySelector('.pc-marquee')||character.querySelector('.pc-browser');banner.after(nav)
         }

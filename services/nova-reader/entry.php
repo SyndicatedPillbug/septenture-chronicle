@@ -79,6 +79,12 @@ try {
                 if (!$character) septenture_fail('Character not found.',404);
                 $_SESSION['return_to']='/index.php/'.$views[$view].(int)$character;
             }
+            if (isset($_GET['compose'])) {
+                $compose=$_GET['compose'];
+                $destinations=['story'=>'write/missionpost','journal'=>'write/personallog'];
+                if (!is_string($compose)||!isset($destinations[$compose])) septenture_fail('Unknown writing destination.',400);
+                $_SESSION['return_to']='/index.php/'.$destinations[$compose];
+            }
             $q=$db->prepare('INSERT INTO nova_septenture_tickets (state_hash,expires_at) VALUES (?,?)');
             $q->execute([hash('sha256',$state),time()+300]);
             septenture_go($site.'/fiction/login/#state='.$state);
@@ -94,7 +100,7 @@ try {
         $q=$db->prepare('DELETE FROM nova_septenture_tickets WHERE state_hash=?');$q->execute([hash('sha256',$state)]);$db->commit();
         $identity=septenture_identity($token);
         $returnTo=$_SESSION['return_to']??'/index.php/write/index';
-        if (!preg_match('~^/index\.php/(?:write/index|personnel/(?:character/|viewposts/c/|viewlogs/c/)[1-9][0-9]*)$~D',$returnTo)) $returnTo='/index.php/write/index';
+        if (!preg_match('~^/index\.php/(?:write/(?:index|missionpost|personallog)|personnel/(?:character/|viewposts/c/|viewlogs/c/)[1-9][0-9]*)$~D',$returnTo)) $returnTo='/index.php/write/index';
         session_regenerate_id(true);$_SESSION=['token'=>$token,'csrf'=>bin2hex(random_bytes(32))];
         septenture_go($base.$returnTo);
     }

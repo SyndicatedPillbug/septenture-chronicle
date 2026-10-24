@@ -1,17 +1,11 @@
 ---
-title: "Sources for the Character Pages"
-description: "Session evidence, editorial boundaries, and references for the Septenture character homepages."
+title: "Character Session References"
+description: "Sessions and Chronicle chapters featuring the companions."
 ---
 
-# Sources for the character pages
+# Character session references
 
-The initial biographies, pinboard entries, and scrapbook captions were checked against session notes, recaps, and the October 19 recording transcript on October 23, 2026. The linked Chronicle chapters give a readable account of the scenes. The primary records named below provide the underlying evidence.
-
-Players can personalize their About panel, status, location, and pinboard. **From the Session Records** and this source page remain editorial records. A player’s later profile changes do not automatically become session canon.
-
-The theme artwork and site-composed ambient loops are decorative. They do not establish character appearance, inventory, musical taste, or music performed during play. The scrapbook captions identify events and objects involved in scenes; a gift is not treated as an item the giver still owns. The Top 8 links form a webring, with no implied character ranking.
-
-Reported beliefs stay attributed. Simon’s page describes the party’s identification at the morgue. The gunslinger’s stated name and allegiance remain her claims. No hidden identities, private DM truth, or proposed future scenes have been added.
+The sessions and chapters behind the companions’ stories.
 
 ## Page
 
@@ -98,10 +92,6 @@ Read the scenes: [The figure in the fog](the-chronicle/c3-24-the-gunslinger); [T
 - *24 Recap, September 21, 2026*: the courtyard, the stranger’s equipment and shots, and Selim’s intervention.
 - *October 19, 2026 transcript and summary*: the Hollow Heart, disguises, the masked newcomer’s account, Legion’s precautions, and the Page–Ceridwen conversation. See the [session record](the-chronicle/session-26-record).
 
-The published *Wrong Hunter* fiction supports Page’s bookbinder description and the account of bringing the party to shelter. It is identified as fiction from the campaign’s play-by-post exchanges.
-
-## Corrections made in this audit
-
-Page promised to return to Kajik in a year. The agreement did not require returning the book; Page gave it to Ethan in the next session. Ceridwen’s letter to Ethan’s parents was written and delivered, rather than an invented unfinished keepsake. Coy’s clockwork bird and Simon’s drawn map replace invented possessions. Generic moods, favorite things, sealed envelopes, and hidden scraps were removed or replaced with recorded actions.
+[The Wrong Hunter](the-chronicle/the-wrong-hunter) follows Page through the night after the wish.
 
 [Back to the Cast](the-cast/)

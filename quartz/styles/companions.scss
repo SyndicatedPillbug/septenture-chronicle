@@ -152,3 +152,5 @@ body .page.page article .pc-space .pc-account-dialog p{font:12px/1.6 monospace;c
 .pc-main .pc-panel-body>p{white-space:pre-line;}
 
 .pc-polaroid figcaption a,.pc-polaroid figcaption a.internal{color:#302818;text-decoration:underline;}
+
+.pc-account-bar a.pc-write-new{display:inline-flex;align-items:center;padding:10px 16px;background:var(--pc-accent,#d6b475);color:#101018;border:1px solid currentColor;font:600 12px/1.5 'IBM Plex Mono',monospace;text-decoration:none;white-space:nowrap}.pc-account-bar a.pc-write-new[hidden]{display:none}.pc-account-bar a.pc-write-new:focus-visible{outline:2px solid var(--pc-accent,#d6b475);outline-offset:4px}

@@ -31,13 +31,18 @@ try {
     septenture_identity($input['token']);
     $db=septenture_db();
     $base=rtrim(septenture_config('NOVA_URL','https://septenture.helioho.st'),'/');
+    $type=$input['type']??'story';
+    if (!in_array($type,['story','journal'],true)) fiction_reply(['error'=>'Invalid entry type.'],400);
     if (isset($input['id'])) {
         if (!is_int($input['id'])||$input['id']<1) fiction_reply(['error'=>'Invalid story.'],400);
-        $q=$db->prepare("SELECT post_id,post_title,post_content,post_last_update FROM nova_posts WHERE post_id=? AND post_status='activated'");
+        $query=$type==='journal'
+            ? "SELECT log_id AS post_id,log_title AS post_title,log_content AS post_content,log_last_update AS post_last_update FROM nova_personallogs WHERE log_id=? AND log_status='activated'"
+            : "SELECT post_id,post_title,post_content,post_last_update FROM nova_posts WHERE post_id=? AND post_status='activated'";
+        $q=$db->prepare($query);
         $q->execute([$input['id']]);$row=$q->fetch(PDO::FETCH_ASSOC);
-        if (!$row) fiction_reply(['error'=>'This story is no longer published.'],404);
+        if (!$row) fiction_reply(['error'=>'This entry is no longer published.'],404);
         fiction_reply(['id'=>(int)$row['post_id'],'title'=>$row['post_title'],'html'=>$row['post_content']??'',
-            'revision'=>hash('sha256',(string)$row['post_content']),'novaUrl'=>$base.'/index.php/sim/viewpost/'.$row['post_id']]);
+            'revision'=>hash('sha256',(string)$row['post_content']),'novaUrl'=>$base.'/index.php/sim/'.($type==='journal'?'viewlog/':'viewpost/').$row['post_id']]);
     }
     $offset=$input['offset']??0;
     if (!is_int($offset)||$offset<0||$offset>100000) fiction_reply(['error'=>'Invalid page.'],400);
@@ -46,9 +51,14 @@ try {
         $chars[(int)$c['charid']]=['id'=>(int)$c['charid'],'name'=>trim(implode(' ',array_filter([$c['first_name'],$c['middle_name'],$c['last_name'],$c['suffix']]))),'slug'=>$c['slug']];
     }
     // Saved and pending posts never enter the catalogue, including for GMs.
-    $rows=$db->query("SELECT post_id,post_title,post_content,post_authors,post_tags,post_words,post_date,post_last_update,post_location,post_timeline FROM nova_posts WHERE post_status='activated' ORDER BY post_id DESC LIMIT 101 OFFSET ".(int)$offset)->fetchAll(PDO::FETCH_ASSOC);
+    $rows=$db->query("SELECT * FROM (
+        SELECT post_id,post_title,post_content,post_authors,post_tags,post_words,post_date,post_last_update,post_location,post_timeline,'story' AS entry_type FROM nova_posts WHERE post_status='activated'
+        UNION ALL
+        SELECT log_id,log_title,log_content,CAST(log_author_character AS CHAR),log_tags,log_words,log_date,log_last_update,'','','journal' AS entry_type FROM nova_personallogs WHERE log_status='activated'
+    ) AS entries ORDER BY post_date DESC,entry_type,post_id DESC LIMIT 101 OFFSET ".(int)$offset)->fetchAll(PDO::FETCH_ASSOC);
     $more=count($rows)>100;$rows=array_slice($rows,0,100);$stories=[];
     foreach($rows as $r) {
+        $isJournal=$r['entry_type']==='journal';
         $plain=html_entity_decode(strip_tags(preg_replace('~<(?:br|hr)\s*/?>~i',"\n",$r['post_content']??'')),ENT_QUOTES|ENT_HTML5,'UTF-8');
         $writers=[];
         if (preg_match('/Original writers:\s*([^\r\n]+)/u',$plain,$m)) $writers=array_values(array_filter(array_map('trim',explode(',',$m[1]))));
@@ -60,17 +70,17 @@ try {
         if(preg_match('/^(.*?)\s+[—–-]\s+Part (\d+) of (\d+)$/u',$title,$m)) {$display=$m[1];$part=(int)$m[2];$parts=(int)$m[3];}
         $tags=array_values(array_filter(array_map('trim',explode(',',$r['post_tags']??''))));
         $sourceId=null;foreach($tags as $tag) if(preg_match('/^discord-(\d+)$/D',$tag,$m)) $sourceId=$m[1];
-        $kind=str_contains(strtolower($title),'backstory')?'Backstory':(str_contains(strtolower($title),'timeline, rules')?'Reference':(in_array('roleplay-archive',$tags,true)?'Roleplay':'Fiction'));
+        $kind=$isJournal?'Journal':(str_contains(strtolower($title),'backstory')?'Backstory':(str_contains(strtolower($title),'timeline, rules')?'Reference':(in_array('roleplay-archive',$tags,true)?'Roleplay':'Fiction')));
         $excerpt=preg_replace('/^Discord archive.*?Original (?:thread|channel)\s*/su','',$plain);
         $excerpt=preg_replace('/^Part \d+ of \d+;[^\n]*\n/u','',$excerpt);
         $excerpt=preg_replace('/[\p{L}\p{N}\x27\x{2019} \/]+ · \d{4}-\d{2}-\d{2}[^\n]*source\s*/u','',$excerpt);
         $excerpt=preg_replace('/\s+/u',' ',trim($excerpt));
         $written=(int)$r['post_date'];if(preg_match('/Discord archive\s*·\s*(\d{4}-\d{2}-\d{2})/u',$plain,$m)) $written=strtotime($m[1].'T12:00:00Z');
-        $stories[]=['id'=>(int)$r['post_id'],'title'=>$title,'displayTitle'=>$display,'group'=>($sourceId?'discord-'.$sourceId:'nova-'.$r['post_id']),
+        $stories[]=['id'=>(int)$r['post_id'],'title'=>$title,'displayTitle'=>$display,'entryType'=>$r['entry_type'],'group'=>($isJournal?'journal-'.$r['post_id']:($sourceId?'discord-'.$sourceId:'nova-'.$r['post_id'])),
             'part'=>$part,'parts'=>$parts,'characters'=>$characters,'writers'=>$writers,'tags'=>$tags,'kind'=>$kind,
             'words'=>(int)$r['post_words'],'published'=>(int)$r['post_date'],'updated'=>(int)$r['post_last_update'],'written'=>$written,
             'timeline'=>$r['post_timeline'],'location'=>$r['post_location'],'excerpt'=>mb_substr($excerpt,0,260),
-            'search'=>$plain,'revision'=>hash('sha256',(string)$r['post_content']),'novaUrl'=>$base.'/index.php/sim/viewpost/'.$r['post_id']];
+            'search'=>$plain,'revision'=>hash('sha256',(string)$r['post_content']),'novaUrl'=>$base.'/index.php/sim/'.($isJournal?'viewlog/':'viewpost/').$r['post_id']];
     }
     fiction_reply(['stories'=>$stories,'nextOffset'=>$more?$offset+100:null]);
 } catch(Throwable $e) {

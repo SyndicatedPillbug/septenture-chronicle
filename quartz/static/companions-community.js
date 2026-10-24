@@ -7,7 +7,7 @@ async function getClient() {
     if (!response.ok) throw new Error('Account configuration could not load.')
     const config = await response.json()
     if (!config.url || !config.publishableKey) return null
-    const {createClient} = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm')
+    const {createClient} = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm')
     return createClient(config.url, config.publishableKey, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})
   })().catch(error => { clientPromise=undefined; throw error })
   return clientPromise
@@ -28,13 +28,14 @@ export async function mount(root, signal) {
   let pending=[]
   let saving=false
   const bar=make('div',undefined,'pc-account-bar')
-  const accountStatus=make('span','Connecting the party’s shared notebook…')
+  const accountStatus=make('span','Opening the guestbook…')
   const login=make('button','Player login')
   login.type='button'
   const edit=make('button','✎ Edit my page'); edit.type='button'; edit.hidden=true
   const invite=make('button','Invite a player'); invite.type='button'; invite.hidden=true
   const password=make('button','Change password');password.type='button';password.hidden=true
-  bar.append(accountStatus,login,edit,invite,password)
+  const write=make('a','✎ Write new content','pc-write-new');write.hidden=true;write.dataset.routerIgnore='true'
+  bar.append(accountStatus,write,login,edit,invite,password)
   root.querySelector('.pc-browser').after(bar)
   const dialog=make('dialog',undefined,'pc-account-dialog')
   const heading=make('h2')
@@ -88,7 +89,7 @@ export async function mount(root, signal) {
   }
   function loginDialog(token) {
     open(token?'Your invitation to the party':'Player login')
-    if(!client){body.append(make('p','The shared notebook has not been connected yet. Please check back soon.'));return}
+    if(!client){body.append(make('p','Player accounts are temporarily unavailable. Please try again later.'));return}
     const form=make('form')
     body.append(form)
     if(token)form.append(make('p','Choose your own email and password. This private invitation can be used once.'))
@@ -204,8 +205,9 @@ export async function mount(root, signal) {
       admin=Boolean(admins?.length)
     }
     if(signal.aborted)return
+    write.hidden=!(session&&(approved||admin)&&write.hasAttribute('href'));
     login.textContent=session?'Log out':'Player login';edit.hidden=!owned;invite.hidden=!admin;password.hidden=!session
-    accountStatus.textContent=session?(approved?'Welcome back. The shared notebook is open.':'Signed in. Ask your DM to assign your character.'):'A shared guestbook. A little corner of your own.'
+    accountStatus.textContent=session?(approved?'Welcome back.':'Signed in. Ask your DM to assign your character.'):'The party guestbook.'
     if(bookForm){bookForm.querySelector('button[type=submit]').disabled=!approved;bookStatus.textContent=approved?'Your note will appear for everyone.':'Log in with your player account to sign the shared guestbook.'}
   }
   async function loadNotes() {
@@ -226,9 +228,11 @@ export async function mount(root, signal) {
     }
   }
   try{
+    const writingConfig=await fetch(new URL('fiction-config.json',here),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    if(writingConfig?.novaUrl){const url=new URL('/index.php/auth/start',writingConfig.novaUrl);if(url.protocol==='https:'||['127.0.0.1','localhost'].includes(url.hostname)){url.searchParams.set('compose','story');write.href=url.href}}
     client=await getClient()
     if(signal.aborted)return
-    if(!client){accountStatus.textContent='Player accounts are coming soon.';return}
+    if(!client){accountStatus.textContent='Player accounts are temporarily unavailable.';return}
     const{data,error}=await client.from('character_profiles').select().eq('slug',slug).single()
     if(error)throw error
     if(signal.aborted)return
@@ -260,6 +264,6 @@ export async function mount(root, signal) {
     const hash=new URLSearchParams(location.hash.slice(1));const token=hash.get('invite')
     if(token){history.replaceState(null,'',location.pathname+location.search);if(/^[a-f0-9]{64}$/.test(token))loginDialog(token)}
   }catch(error){
-    if(!signal.aborted)accountStatus.textContent='The shared notebook is unavailable. The page is still here.'
+    if(!signal.aborted)accountStatus.textContent='The guestbook is temporarily unavailable.'
   }
 }

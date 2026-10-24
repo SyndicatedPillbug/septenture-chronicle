@@ -10,7 +10,7 @@ unlisted: true
 
 You followed the lamp down here. Stay a while; the guestbook has room.
 
-New chapters appear in [the Chronicle](../the-chronicle/) as they are ready. The earlier volumes will follow the party through the Feylight Festival and along the sea road. For now, you can join them in the courtyard outside the Whites and read what followed the wish.
+The road runs from [the Feylight Festival to Latesa](../the-chronicle/). Between adventures, the party’s stories and journals gather in [the Fiction Exchange](../fiction/).
 
 <div class="construction">⚠ this page is always under construction ⚠</div>
 
