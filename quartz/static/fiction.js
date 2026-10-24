@@ -4,7 +4,8 @@
   async function boot() {
     const panel=document.querySelector('[data-fiction-login]')
     const enter=document.querySelector('[data-fiction-enter]')
-    if(!panel&&!enter)return
+    const character=document.querySelector('.pc-space[data-pc]')
+    if(!panel&&!enter&&!character)return
     if(panel?.dataset.bound)return
     if(panel)panel.dataset.bound='true'
     const status=document.querySelector('[data-fiction-status]')
@@ -15,7 +16,19 @@
       const config=await response.json()
       const nova=new URL(config.novaUrl)
       if(nova.protocol!=='https:'&&!(nova.protocol==='http:'&&['127.0.0.1','localhost'].includes(nova.hostname)))throw new Error('The writing room needs a secure connection.')
-      if(enter){enter.href=nova.origin+'/index.php/auth/start';return}
+      if(character){
+        if(!character.querySelector('[data-character-tools]')) {
+          const nav=document.createElement('nav');nav.className='pc-browser';nav.dataset.characterTools='true';nav.setAttribute('aria-label','Character sections')
+          const current=document.createElement('span');current.textContent='Public profile';current.setAttribute('aria-current','page');nav.append(current)
+          for(const [label,view] of [['Character details','profile'],['Stories','stories'],['Journal','journal']]) {
+            const link=document.createElement('a');link.textContent=label;link.dataset.routerIgnore='true'
+            const destination=new URL('/index.php/auth/start',nova.origin);destination.searchParams.set('character',character.dataset.pc);destination.searchParams.set('view',view);link.href=destination.href;nav.append(link)
+          }
+          const banner=character.querySelector('.pc-marquee')||character.querySelector('.pc-browser');banner.after(nav)
+        }
+        return
+      }
+      if(enter){enter.href=nova.origin+'/index.php/auth/start';enter.dataset.routerIgnore='true';return}
       const params=new URLSearchParams(location.hash.slice(1))
       const state=params.get('state')
       history.replaceState(history.state,'',location.pathname+location.search)
@@ -54,7 +67,7 @@
           await handoff(data.session)
         }catch(error){status.textContent=error.message;button.disabled=false}
       })
-    }catch(error){status.textContent=error.message||'The writing room is temporarily unavailable.'}
+    }catch(error){if(status)status.textContent=error.message||'The writing room is temporarily unavailable.'}
   }
   document.addEventListener('nav',boot)
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot()
