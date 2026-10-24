@@ -1,6 +1,14 @@
 const SDK='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm'
 const FRIENDS=[['Page','page','✧'],['Ceridwen','ceridwen','☽'],['Coy','coy','♧'],['Legion','legion','❋'],['Simon','simon','⚔'],['Selim','selim','◇'],['The Gunslinger','the-gunslinger','✦'],['Hervd Angantyr-Bohun',null,'⚓']]
 const fold=value=>String(value||'').normalize('NFKD').toLocaleLowerCase()
+const WRITER_ALIASES=new Map([
+  ['Kim',['Kim','Ceridwen','Ceridwen Glaive']],
+  ['Chelsea',['Chelsea','Page']],
+  ['Brendon',['Brendon','Cendraveil','Cendreveil','Cendreveil / Finn','Cendraveil / Finn','Finn','Simon','Lord Simon Devereux','Selim','The Gunslinger']],
+  ['Dan',['Dan','Coy','Coy Qualdirriar','GM','GM DM','Game Master']],
+  ['Lucas',['Lucas',"Lucas' Legion",'Legion','Hervd','Hervd Angantyr-Bohun']],
+].flatMap(([player,aliases])=>aliases.map(alias=>[fold(alias).trim(),player])))
+export const writerName=value=>WRITER_ALIASES.get(fold(value).trim())||String(value||'').trim()
 export function groupStories(rows){
   const grouped=new Map()
   for(const row of rows){
@@ -8,7 +16,7 @@ export function groupStories(rows){
     if(!group){group={...row,key,title:row.displayTitle,chapters:[],characters:[],writers:[],tags:[],words:0,written:row.written,search:''};grouped.set(key,group)}
     group.chapters.push(row);group.words+=Number(row.words)||0;group.written=Math.min(group.written,row.written);group.updated=Math.max(group.updated,row.updated,row.published)
     for(const c of row.characters)if(!group.characters.some(x=>x.id===c.id))group.characters.push(c)
-    for(const w of row.writers)if(!group.writers.includes(w))group.writers.push(w)
+    for(const alias of row.writers){const w=writerName(alias);if(w&&!group.writers.includes(w))group.writers.push(w)}
     for(const t of row.tags)if(!group.tags.includes(t))group.tags.push(t)
     group.search+=' '+row.search
   }
@@ -16,7 +24,7 @@ export function groupStories(rows){
 }
 export function selectStories(groups,{query='',character='',writer='',kind='',sort='new'}={}){
   const terms=fold(query).trim().split(/\s+/).filter(Boolean)
-  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>c.name===character)))&&(!writer||g.writers.includes(writer))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
+  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>c.name===character)))&&(!writer||g.writers.includes(writerName(writer)))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
   found.sort((a,b)=>sort==='old'?a.written-b.written:sort==='short'?a.words-b.words:sort==='long'?b.words-a.words:sort==='az'?a.title.localeCompare(b.title):b.written-a.written||b.id-a.id)
   return found
 }
@@ -35,7 +43,10 @@ export function safeStory(html){
       try{const url=new URL(node.getAttribute('href')||'',location.origin);if(!['https:','http:'].includes(url.protocol))throw Error();element.href=url.href;element.target='_blank';element.rel='noopener noreferrer';element.referrerPolicy='no-referrer'}catch{element.removeAttribute('href')}
     }
     for(const child of node.childNodes)copy(child,element)
-    if(node.tagName==='STRONG'&&/ · \d{4}-\d{2}-\d{2}/.test(element.textContent))element.className='fx-credit'
+    if(node.tagName==='STRONG'&&/ · \d{4}-\d{2}-\d{2}/.test(element.textContent)){
+      element.className='fx-credit'
+      element.textContent=element.textContent.replace(/^(.*?)((?: · )\d{4}-\d{2}-\d{2}.*)$/s,(_,name,date)=>writerName(name)+date)
+    }
     if(node.tagName==='A'&&element.textContent.trim()==='source')element.className='fx-source-link'
     parent.append(element)
   }
@@ -135,7 +146,7 @@ export async function mount(root,base){
         const known=FRIENDS.find(f=>f[1]===requested||f[0]===requested)
         $('character').value=match?.name||known?.[0]||(requested==='world'?'world':'')
         $('search').value=initialFilters.get('q')||''
-        for(const name of ['writer','kind','sort']){const value=initialFilters.get(name);if(value&&[...$(name).options].some(o=>o.value===value))$(name).value=value}
+        for(const name of ['writer','kind','sort']){const raw=initialFilters.get(name),value=name==='writer'?writerName(raw):raw;if(value&&[...$(name).options].some(o=>o.value===value))$(name).value=value}
         filtersInitialized=true
       }
       gate.hidden=true;library.hidden=false;$('compose').hidden=false;status.textContent='';$('live').textContent='● '+groups.length+' ENTRIES / LIVE FROM NOVA';render()

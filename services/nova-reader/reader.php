@@ -12,6 +12,10 @@ function fiction_reply(array $data, int $status=200): never {
     echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_INVALID_UTF8_SUBSTITUTE|JSON_THROW_ON_ERROR);
     exit;
 }
+function fiction_writer_name(string $name): string {
+    static $aliases=['kim'=>'Kim','ceridwen'=>'Kim','ceridwen glaive'=>'Kim','chelsea'=>'Chelsea','page'=>'Chelsea','brendon'=>'Brendon','cendraveil'=>'Brendon','cendreveil'=>'Brendon','cendreveil / finn'=>'Brendon','cendraveil / finn'=>'Brendon','finn'=>'Brendon','simon'=>'Brendon','lord simon devereux'=>'Brendon','selim'=>'Brendon','the gunslinger'=>'Brendon','dan'=>'Dan','coy'=>'Dan','coy qualdirriar'=>'Dan','gm'=>'Dan','gm dm'=>'Dan','game master'=>'Dan','lucas'=>'Lucas','lucas\' legion'=>'Lucas','legion'=>'Lucas','hervd'=>'Lucas','hervd angantyr-bohun'=>'Lucas'];
+    return $aliases[strtolower(trim($name))] ?? trim($name);
+}
 $site=septenture_config('SITE_URL','https://syndicatedpillbug.github.io/septenture-chronicle');
 $origin=parse_url($site,PHP_URL_SCHEME).'://'.parse_url($site,PHP_URL_HOST).(parse_url($site,PHP_URL_PORT)?':'.parse_url($site,PHP_URL_PORT):'');
 if (($_SERVER['HTTP_ORIGIN']??'')!==$origin) fiction_reply(['error'=>'Untrusted origin.'],403);
@@ -66,6 +70,7 @@ try {
         foreach(explode(',',$r['post_authors']??'') as $id) if(isset($chars[(int)$id])&&$chars[(int)$id]['name']!=='Game Master') $characters[]=$chars[(int)$id];
         if (!$writers) $writers=array_column($characters,'name');
         if (!$writers) $writers=['Game Master'];
+        $writers=array_values(array_unique(array_filter(array_map('fiction_writer_name',$writers))));
         $title=$r['post_title'];$part=1;$parts=1;$display=$title;
         if(preg_match('/^(.*?)\s+[—–-]\s+Part (\d+) of (\d+)$/u',$title,$m)) {$display=$m[1];$part=(int)$m[2];$parts=(int)$m[3];}
         $tags=array_values(array_filter(array_map('trim',explode(',',$r['post_tags']??''))));
