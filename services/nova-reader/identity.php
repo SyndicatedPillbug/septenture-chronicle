@@ -45,6 +45,10 @@ function septenture_provision(array $identity): int {
         }
         $q=$db->prepare('UPDATE nova_users SET access_role=?,is_sysadmin=?,is_game_master=?,is_webmaster=? WHERE userid=?');
         $q->execute([$role,$identity['admin']?'y':'n',$identity['admin']?'y':'n',$identity['admin']?'y':'n',$id]);
+        // SSO bypasses Nova's join form, which normally creates these defaults.
+        // Backfill missing preferences while preserving every explicit opt-out.
+        $q=$db->prepare('INSERT INTO nova_user_prefs_values (prefvalue_user,prefvalue_key,prefvalue_value) SELECT ?,p.pref_key,p.pref_default FROM nova_user_prefs p LEFT JOIN nova_user_prefs_values v ON v.prefvalue_key=p.pref_key AND v.prefvalue_user=? WHERE v.prefvalue_id IS NULL');
+        $q->execute([$id,$id]);
         // Website ownership remains authoritative. GM ownership of every public cast page
         // does not transfer PCs away from their players in Nova.
         if (!$identity['admin']) {
