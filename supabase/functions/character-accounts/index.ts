@@ -1,4 +1,4 @@
-import { createClient } from 'npm:@supabase/supabase-js@2'
+import { createClient } from 'npm:@supabase/supabase-js@2.118.0'
 
 const cors = {
   'Access-Control-Allow-Origin': '*',
@@ -24,10 +24,10 @@ Deno.serve(async req => {
       if (!bearer) return reply({error:'Sign in first.'},401)
       const {data:{user}} = await admin.auth.getUser(bearer)
       if (!user) return reply({error:'Sign in first.'},401)
-      const {data:allowed} = await admin.from('community_admins').select('user_id').eq('user_id',user.id).maybeSingle()
-      if (!allowed) return reply({error:'Only the site owner can create invitations.'},403)
-      const {data:profile} = await admin.from('character_profiles').select('slug').eq('slug',body.slug).maybeSingle()
+      const {data:profile} = await admin.from('character_profiles').select('slug,campaign_id').eq('slug',body.slug).maybeSingle()
       if (!profile) return reply({error:'Choose an existing character.'},400)
+      const {data:membership}=await admin.from('campaign_members').select('role').eq('campaign_id',profile.campaign_id).eq('user_id',user.id).maybeSingle()
+      if(!membership||!['owner','gm'].includes(membership.role))return reply({error:'Only this campaign’s owner or GM can invite players.'},403)
       const token = crypto.randomUUID().replaceAll('-','') + crypto.randomUUID().replaceAll('-','')
       const {error} = await admin.from('community_invites').insert({token_hash:await hash(token),character_slug:profile.slug})
       if (error) throw error
@@ -53,6 +53,11 @@ Deno.serve(async req => {
         : [invitation.character_slug]
       const {error:ownerError} = await admin.from('character_owners').insert(slugs.map(character_slug=>({character_slug,user_id:createdId})))
       if (ownerError) throw ownerError
+      const {data:campaignProfiles,error:campaignError}=await admin.from('character_profiles').select('campaign_id').in('slug',slugs)
+      if(campaignError)throw campaignError
+      const campaigns=[...new Set(campaignProfiles!.map(p=>p.campaign_id))]
+      const {error:memberError}=await admin.from('campaign_members').upsert(campaigns.map(campaign_id=>({campaign_id,user_id:createdId,role:'player'})),{onConflict:'campaign_id,user_id',ignoreDuplicates:true})
+      if(memberError)throw memberError
       if (invitation.is_admin) {
         const {error:adminError} = await admin.from('community_admins').insert({user_id:createdId})
         if (adminError) throw adminError

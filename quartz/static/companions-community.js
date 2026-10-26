@@ -18,6 +18,7 @@ const make = (tag, text, className) => {
   if (className) el.className=className
   return el
 }
+const detailNames=['gender', 'species', 'age', 'height', 'weight', 'hair_color', 'eye_color', 'physical_desc', 'personality', 'strengths', 'ambitions', 'hobbies', 'spouse', 'children', 'father', 'mother', 'brothers', 'sisters', 'other_family', 'service_record']
 const themes=['moon','candle','water','hive','rose','watch','powder']
 const fileTypes={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','audio/mpeg':'mp3','audio/ogg':'ogg','audio/wav':'wav','audio/x-wav':'wav','audio/mp4':'m4a','audio/aac':'aac'}
 
@@ -61,6 +62,13 @@ export async function mount(root, signal) {
   function publicUrl(path) {return client.storage.from('character-media').getPublicUrl(path).data.publicUrl}
   function apply(p) {
     profile=p
+    let detailPanel=root.querySelector('[data-shared-character-details]')
+    if(!detailPanel){detailPanel=make('section',undefined,'pc-panel');detailPanel.dataset.sharedCharacterDetails='';root.querySelector('.pc-main .pc-panel').after(detailPanel)}
+    detailPanel.replaceChildren()
+    const details=make('dl')
+    for(const key of detailNames){const value=p.character_details?.[key];if(typeof value==='string'&&value.trim()){details.append(make('dt',key.replaceAll('_',' ')),make('dd',value))}}
+    detailPanel.hidden=!details.children.length
+    if(details.children.length)detailPanel.append(make('h2','Character details'),details)
     const set=(selector,text)=>{const el=root.querySelector(selector);if(el)el.textContent=text}
     set('.pc-identity h1',p.display_name)
     set('.pc-banner .pc-eyebrow',p.tagline)
@@ -131,6 +139,10 @@ export async function mount(root, signal) {
       fields[name]=field(form,label,name,profile[name],kind,max)
       if(['display_name','heading','bio'].includes(name))fields[name].required=true
     }
+    form.append(make('p','These character details are shared with Nova. Keep private information in your private sheet notes.'))
+    const detailFields={}
+    const details=make('details');details.append(make('summary','Appearance, personality, family and background'));form.append(details)
+    for(const key of detailNames)detailFields[key]=field(details,key.replaceAll('_',' '),key,profile.character_details?.[key]??'','textarea',5000)
     const themeLabel=make('label','Your theme');const theme=make('select');theme.name='theme'
     for(const [value,text] of [['moon','Moonlit bookbinder'],['candle','Candle & bone'],['water','Green water'],['hive','Honeycomb'],['rose','Pressed rose'],['watch','White & gold'],['powder','Violet smoke']]){const option=make('option',text);option.value=value;theme.append(option)}
     theme.value=profile.theme;themeLabel.append(theme);form.append(themeLabel)
@@ -146,7 +158,8 @@ export async function mount(root, signal) {
       event.preventDefault();saving=true;submit.disabled=true;close.disabled=true;status.textContent='Saving your page…'
       let committed=false
       try {
-        const update={theme:theme.value,accent:accent.value}
+        const update={theme:theme.value,accent:accent.value,character_details:{...profile.character_details}}
+        for(const[key,input]of Object.entries(detailFields))update.character_details[key]=input.value.trim()
         for(const[name,input]of Object.entries(fields))update[name]=input.value.trim()
         for(const[key,input]of Object.entries(media)){
           const file=input.files?.[0]
@@ -177,11 +190,13 @@ export async function mount(root, signal) {
       }finally{saving=false;submit.disabled=false;close.disabled=false}
     })
   })
-  on(invite,'click',()=>{
+  on(invite,'click',async()=>{
     open('Invite a player')
     body.append(make('p','Make a private, one-use invitation for a character. Share it directly with that player. It expires in seven days.'))
     const select=make('select')
-    for(const id of ['page','ceridwen','coy','legion','simon','selim','the-gunslinger']){const option=make('option',id);option.value=id;select.append(option)}
+    const{data:cast,error}=await client.from('character_profiles').select('slug,display_name').eq('campaign_id',profile.campaign_id)
+    if(error){status.textContent='Could not load this campaign’s characters.';return}
+    for(const character of cast){const option=make('option',character.display_name);option.value=character.slug;select.append(option)}
     body.append(select)
     button(body,'Create private invitation',async()=>{
       status.textContent='Creating invitation…'
@@ -201,8 +216,8 @@ export async function mount(root, signal) {
       const{data:ownership,error}=await client.from('character_owners').select('character_slug').eq('user_id',session.user.id)
       if(error)throw error
       approved=Boolean(ownership?.length);owned=ownership?.some(o=>o.character_slug===slug) || false
-      const{data:admins}=await client.from('community_admins').select('user_id').eq('user_id',session.user.id)
-      admin=Boolean(admins?.length)
+      const{data:membership}=await client.from('campaign_members').select('role').eq('campaign_id',profile.campaign_id).eq('user_id',session.user.id).maybeSingle()
+      admin=Boolean(membership&&['owner','gm'].includes(membership.role))
     }
     if(signal.aborted)return
     write.hidden=!(session&&(approved||admin)&&write.hasAttribute('href'));
