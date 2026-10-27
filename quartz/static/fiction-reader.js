@@ -25,7 +25,9 @@ export function groupStories(rows,roster=characterRoster()){
 }
 export function selectStories(groups,{query='',character='',writer='',kind='',sort='new'}={}){
   const terms=fold(query).trim().split(/\s+/).filter(Boolean)
-  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>characterKey(c)===character||[c.name,...(c.aliases||[])].some(name=>fold(name)===fold(character)))))&&(!writer||g.writers.includes(writerName(writer)))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
+  const stableKey=CAST.some(c=>c.slug===character)||character.startsWith('nova:')||groups.some(g=>g.characters.some(c=>characterKey(c)===character))
+  const matchesCharacter=c=>stableKey?characterKey(c)===character:[c.name,...(c.aliases||[])].some(name=>fold(name)===fold(character))
+  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(matchesCharacter)))&&(!writer||g.writers.includes(writerName(writer)))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
   found.sort((a,b)=>sort==='old'?a.written-b.written:sort==='short'?a.words-b.words:sort==='long'?b.words-a.words:sort==='az'?a.title.localeCompare(b.title):b.written-a.written||b.id-a.id)
   return found
 }

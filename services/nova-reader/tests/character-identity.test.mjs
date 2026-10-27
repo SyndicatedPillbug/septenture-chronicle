@@ -27,6 +27,8 @@ assert.equal(resolveCharacter('A stranger',people),'','Ambiguous name links must
 assert.equal(people.filter(c=>c.key==='nova:20'||c.key==='nova:21').length,2)
 assert.equal(selectStories(groups,{character:'nova:20'}).length,1)
 assert.equal(selectStories(groups,{character:'simon'}).length,1,'Same player is not the same character')
+const sameNameNPC=groupStories([{...base,group:'npc',characters:[{id:22,name:'Simon',slug:null}]}],roster)
+assert.deepEqual(selectStories([...groups,...sameNameNPC],{character:'simon'}).map(g=>g.key),['story-3'],'Stable PC filters cannot include an unrelated NPC with the same name')
 assert.equal(selectStories(groups,{character:'selim'}).length,1)
 assert.equal(selectStories(groups,{writer:'Brendon'}).length,4)
 const renamed=characterRoster([{slug:'the-gunslinger',display_name:'Future Name'}])
