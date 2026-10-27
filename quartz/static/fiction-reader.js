@@ -1,5 +1,5 @@
+import {CAST,characterKey,characterRoster,canonicalCharacter,characterOptions,resolveCharacter,loadCharacterProfiles} from './character-identity.js'
 const SDK='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm'
-const FRIENDS=[['Page','page','✧'],['Ceridwen','ceridwen','☽'],['Coy','coy','♧'],['Legion','legion','❋'],['Simon','simon','⚔'],['Selim','selim','◇'],['The Gunslinger','the-gunslinger','✦'],['Hervd Angantyr-Bohun',null,'⚓']]
 const fold=value=>String(value||'').normalize('NFKD').toLocaleLowerCase()
 const WRITER_ALIASES=new Map([
   ['Kim',['Kim','Ceridwen','Ceridwen Glaive']],
@@ -9,22 +9,23 @@ const WRITER_ALIASES=new Map([
   ['Lucas',['Lucas',"Lucas' Legion",'Legion','Hervd','Hervd Angantyr-Bohun']],
 ].flatMap(([player,aliases])=>aliases.map(alias=>[fold(alias).trim(),player])))
 export const writerName=value=>WRITER_ALIASES.get(fold(value).trim())||String(value||'').trim()
-export function groupStories(rows){
+export function groupStories(rows,roster=characterRoster()){
   const grouped=new Map()
-  for(const row of rows){
+  for(const original of rows){
+    const row={...original,characters:original.characters.map(c=>canonicalCharacter(c,roster))}
     const key=String(row.group);let group=grouped.get(key)
     if(!group){group={...row,key,title:row.displayTitle,chapters:[],characters:[],writers:[],tags:[],words:0,written:row.written,search:''};grouped.set(key,group)}
     group.chapters.push(row);group.words+=Number(row.words)||0;group.written=Math.min(group.written,row.written);group.updated=Math.max(group.updated,row.updated,row.published)
-    for(const c of row.characters)if(!group.characters.some(x=>x.id===c.id))group.characters.push(c)
+    for(const c of row.characters)if(!group.characters.some(x=>characterKey(x)===characterKey(c)))group.characters.push(c)
     for(const alias of row.writers){const w=writerName(alias);if(w&&!group.writers.includes(w))group.writers.push(w)}
     for(const t of row.tags)if(!group.tags.includes(t))group.tags.push(t)
     group.search+=' '+row.search
   }
-  return [...grouped.values()].map(g=>{const chapters=g.chapters.sort((a,b)=>a.part-b.part);return {...g,chapters,excerpt:chapters[0].excerpt,timeline:chapters[0].timeline,location:chapters[0].location,search:fold([g.title,g.timeline,g.location,...g.writers,...g.characters.map(c=>c.name),...g.tags,g.search].join(' '))}})
+  return [...grouped.values()].map(g=>{const chapters=g.chapters.sort((a,b)=>a.part-b.part);return {...g,chapters,excerpt:chapters[0].excerpt,timeline:chapters[0].timeline,location:chapters[0].location,search:fold([g.title,g.timeline,g.location,...g.writers,...g.characters.flatMap(c=>[c.name,...(c.aliases||[])]),...g.tags,g.search].join(' '))}})
 }
 export function selectStories(groups,{query='',character='',writer='',kind='',sort='new'}={}){
   const terms=fold(query).trim().split(/\s+/).filter(Boolean)
-  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>c.name===character)))&&(!writer||g.writers.includes(writerName(writer)))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
+  const found=groups.filter(g=>(!character||(character==='world'?g.characters.length===0:g.characters.some(c=>characterKey(c)===character||[c.name,...(c.aliases||[])].some(name=>fold(name)===fold(character)))))&&(!writer||g.writers.includes(writerName(writer)))&&(!kind||(kind==='Stories'?g.kind!=='Journal':g.kind===kind))&&terms.every(t=>g.search.includes(t)))
   found.sort((a,b)=>sort==='old'?a.written-b.written:sort==='short'?a.words-b.words:sort==='long'?b.words-a.words:sort==='az'?a.title.localeCompare(b.title):b.written-a.written||b.id-a.id)
   return found
 }
@@ -83,7 +84,7 @@ export async function mount(root,base){
   root.dataset.fxMounted='true'
   const initialFilters=new URLSearchParams(location.search);let filtersInitialized=false
   const $=name=>root.querySelector('[data-fx-'+name+']')
-  let active=true,client,config,groups=[],visible=[],current=null,controller=null,refreshing=false,poll=null,readerRequest=null,readerSize=19
+  let active=true,client,config,groups=[],visible=[],current=null,controller=null,refreshing=false,poll=null,readerRequest=null,readerSize=19,roster=characterRoster(),people=[]
   const gate=$('gate'),library=$('library'),status=$('status'),login=$('login'),panel=$('reader-panel'),story=$('story')
   const handlers=[],listen=(target,event,fn)=>{target.addEventListener(event,fn);handlers.push(()=>target.removeEventListener(event,fn))}
   function setBackgroundInert(value){for(const child of root.children)if(child!==panel)child.inert=value}
@@ -100,9 +101,11 @@ export async function mount(root,base){
   function fillOptions(select,values,all){const previous=select.value;select.replaceChildren();const first=el('option',all);first.value='';select.append(first);for(const value of values){const option=el('option',value);option.value=value;select.append(option)}select.value=values.includes(previous)?previous:''}
   function renderFriends(){
     $('friends').replaceChildren()
-    const people=[...FRIENDS]
-    for(const c of groups.flatMap(g=>g.characters))if(!people.some(p=>p[0]===c.name))people.push([c.name,c.slug,'✧'])
-    for(const [name,slug,symbol] of people){const button=el('button',undefined,'fx-friend');button.type='button';button.setAttribute('aria-label','Filter by '+name);button.setAttribute('aria-pressed',String($('character').value===name));const face=el('span',symbol);if(slug&&FRIENDS.some(f=>f[1]===slug)){const img=el('img');img.src=base+'static/companions/'+slug+'.svg';img.alt='';img.loading='lazy';face.replaceChildren(img)}button.append(face,el('div',name==='Hervd Angantyr-Bohun'?'Hervd':name==='The Gunslinger'?'Gunslinger':name));button.addEventListener('click',()=>{$('character').value=$('character').value===name?'':name;render()});$('friends').append(button)}
+    for(const person of people){
+      const {name,slug,key}=person,button=el('button',undefined,'fx-friend');button.type='button';button.setAttribute('aria-label','Filter by '+name);button.setAttribute('aria-pressed',String($('character').value===key))
+      const face=el('span',person.symbol||'✧');if(CAST.some(c=>c.slug===slug)){const img=el('img');img.src=base+'static/companions/'+slug+'.svg';img.alt='';img.loading='lazy';face.replaceChildren(img)}
+      button.append(face,el('div',name));button.addEventListener('click',()=>{$('character').value=$('character').value===key?'':key;render()});$('friends').append(button)
+    }
   }
   function render(){
     const params=new URLSearchParams(location.search)
@@ -138,13 +141,16 @@ export async function mount(root,base){
       for(let page=0;page<200;page++){const result=await request({offset},controller.signal);rows.push(...result.stories);if(result.nextOffset===null){offset=null;break}offset=result.nextOffset}
       if(offset!==null)throw new Error('This archive is too large to open at once. Please contact the GM.')
       if(!active)return
-      const before=current?groups.find(g=>g.key===current):null;groups=groupStories(rows)
-      const names=[...new Set([...FRIENDS.map(f=>f[0]),...groups.flatMap(g=>g.characters.map(c=>c.name))])].sort();const hadWorld=$('character').value==='world';fillOptions($('character'),names,'Everybody');const world=el('option','World & NPC stories');world.value='world';$('character').append(world);if(hadWorld)$('character').value='world'
+      try{roster=characterRoster(await loadCharacterProfiles())}catch{/* Preserve the last-known roster during an outage. */}
+      if(!active||controller.signal.aborted)return
+      const before=current?groups.find(g=>g.key===current):null;groups=groupStories(rows,roster)
+      people=characterOptions(groups,roster)
+      const previous=$('character').value;fillOptions($('character'),[],'Everybody')
+      for(const person of people){const option=el('option',person.name);option.value=person.key;$('character').append(option)}
+      const world=el('option','World & NPC stories');world.value='world';$('character').append(world);$('character').value=resolveCharacter(previous,people)
       fillOptions($('writer'),[...new Set(groups.flatMap(g=>g.writers))].sort(),'All writers')
       if(!filtersInitialized){
-        const requested=initialFilters.get('character'),match=groups.flatMap(g=>g.characters).find(c=>c.slug===requested||c.name===requested)
-        const known=FRIENDS.find(f=>f[1]===requested||f[0]===requested)
-        $('character').value=match?.name||known?.[0]||(requested==='world'?'world':'')
+        $('character').value=resolveCharacter(initialFilters.get('character')||'',people)
         $('search').value=initialFilters.get('q')||''
         for(const name of ['writer','kind','sort']){const raw=initialFilters.get(name),value=name==='writer'?writerName(raw):raw;if(value&&[...$(name).options].some(o=>o.value===value))$(name).value=value}
         filtersInitialized=true
@@ -184,3 +190,4 @@ if(typeof document!=='undefined'){
   document.addEventListener('nav',boot)
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot()
 }
+

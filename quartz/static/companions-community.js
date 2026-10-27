@@ -62,6 +62,7 @@ export async function mount(root, signal) {
   function publicUrl(path) {return client.storage.from('character-media').getPublicUrl(path).data.publicUrl}
   function apply(p) {
     profile=p
+    window.dispatchEvent(new CustomEvent('septenture:profile-updated',{detail:{slug:p.slug,display_name:p.display_name}}))
     let detailPanel=root.querySelector('[data-shared-character-details]')
     if(!detailPanel){detailPanel=make('section',undefined,'pc-panel');detailPanel.dataset.sharedCharacterDetails='';root.querySelector('.pc-main .pc-panel').after(detailPanel)}
     detailPanel.replaceChildren()
@@ -282,3 +283,4 @@ export async function mount(root, signal) {
     if(!signal.aborted)accountStatus.textContent='The guestbook is temporarily unavailable.'
   }
 }
+
