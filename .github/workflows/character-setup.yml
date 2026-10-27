@@ -1,0 +1,63 @@
+name: Verify automatic character setup
+on:
+  push:
+    paths:
+      - 'services/nova-reader/**'
+      - 'supabase/migrations/**'
+      - '.github/workflows/character-setup.yml'
+  pull_request:
+    paths:
+      - 'services/nova-reader/**'
+      - 'supabase/migrations/**'
+      - '.github/workflows/character-setup.yml'
+permissions:
+  contents: read
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: fixture-only
+          POSTGRES_DB: character_setup_20261027
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: fixture-only
+          MARIADB_DATABASE: character_setup_20261027
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd "healthcheck.sh --connect --innodb_initialized"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install test runtimes
+        run: sudo apt-get update && sudo apt-get install -y php-cli php-mysql php-mbstring postgresql-client mariadb-client
+      - name: Verify PostgreSQL permissions and atomic profile creation
+        env:
+          PGPASSWORD: fixture-only
+        run: |
+          psql -h 127.0.0.1 -U postgres -d character_setup_20261027 -v ON_ERROR_STOP=1 -c 'CREATE ROLE anon NOLOGIN; CREATE ROLE authenticated NOLOGIN;'
+          psql -h 127.0.0.1 -U postgres -d character_setup_20261027 -v ON_ERROR_STOP=1 -f services/nova-reader/tests/character_setup_postgres_bootstrap.sql
+          psql -h 127.0.0.1 -U postgres -d character_setup_20261027 -v ON_ERROR_STOP=1 -f supabase/migrations/20261027182639_automatic_character_setup.sql
+          psql -h 127.0.0.1 -U postgres -d character_setup_20261027 -v ON_ERROR_STOP=1 -f services/nova-reader/tests/character_setup_postgres_checks.sql
+      - name: Verify Nova creation, ownership and interrupted retries
+        env:
+          MYSQL_PWD: fixture-only
+          DB_HOST: 127.0.0.1
+          DB_NAME: character_setup_20261027
+          DB_USER: root
+          DB_PASSWORD: fixture-only
+        run: |
+          mariadb -h 127.0.0.1 -u root character_setup_20261027 < services/nova-reader/tests/character_setup_nova_schema.sql
+          mariadb -h 127.0.0.1 -u root character_setup_20261027 < services/nova-reader/tests/character_setup_provision_schema.sql
+          mariadb -h 127.0.0.1 -u root character_setup_20261027 < services/nova-reader/migrations/005_character_setup.sql
+          mkdir -p /tmp/character-setup-ci/nova/application/septenture /tmp/character-setup-ci/tests
+          cp services/nova-reader/{character_setup,identity,config,campaign}.php /tmp/character-setup-ci/nova/application/septenture/
+          cp services/nova-reader/tests/character_setup_database.php /tmp/character-setup-ci/tests/database.php
+          php /tmp/character-setup-ci/tests/database.php

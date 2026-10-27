@@ -1,0 +1,51 @@
+<?php
+require __DIR__.'/../nova/application/septenture/character_setup.php';
+$db=septenture_db();
+if(septenture_config('DB_NAME')!=='character_setup_20261027')throw new RuntimeException('Disposable database required.');
+$owner='11111111-1111-4111-8111-111111111111';$player='22222222-2222-4222-8222-222222222222';$future='44444444-4444-4444-8444-444444444444';
+$db->exec("INSERT INTO nova_septenture_campaign(singleton,campaign_id) VALUES(1,'septenture')");
+$db->exec("CREATE TABLE nova_septenture_cast(slug VARCHAR(41) PRIMARY KEY,charid INT NOT NULL UNIQUE) ENGINE=InnoDB");
+$db->exec("CREATE TABLE setup_remote_profiles(operation_id CHAR(36) PRIMARY KEY,slug VARCHAR(41),name VARCHAR(80),owner CHAR(36)) ENGINE=InnoDB");
+$identity=['uuid'=>$owner,'admin'=>true,'site_admin'=>true,'campaign'=>'septenture','campaign_role'=>'owner','slugs'=>[]];
+$count=0;function check($ok,$message){global $count;if(!$ok)throw new RuntimeException($message);echo 'PASS '.$message."\n";$count++;}
+function denied(callable $fn,int $code){try{$fn();throw new RuntimeException('Expected denial');}catch(RuntimeException|InvalidArgumentException $e){check($e->getCode()===$code,'Denied with status '.$code);}}
+$remote=new PDO('mysql:host='.septenture_config('DB_HOST').';dbname='.septenture_config('DB_NAME').';charset=utf8mb4',septenture_config('DB_USER'),septenture_config('DB_PASSWORD'),[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]);
+$failAfterRemote=false;
+$rpc=function($action,$input)use($remote,$owner,$player,$future,&$failAfterRemote){
+ if($action==='character_setup_members')return array_map(fn($id)=>['subject'=>$id,'label'=>'Test player'],[$owner,$player,$future]);
+ $slug='pc-'.strtr(str_replace('-','',$input['operation']),'0123456789','ghijklmnop');
+ $q=$remote->prepare('INSERT IGNORE INTO setup_remote_profiles VALUES(?,?,?,?)');$q->execute([$input['operation'],$slug,$input['character_name'],$input['owner_id']]);
+ if($failAfterRemote){$failAfterRemote=false;throw new RuntimeException('Simulated lost RPC response',503);}return $slug;
+};
+$store=new Septenture_character_setup($db,$identity,$rpc);
+$op=fn($name='A new PC',$kind='pc',$who=null)=>['operation'=>septenture_setup_operation(),'name'=>$name,'kind'=>$kind,'owner'=>$who??$player];
+$input=$op();$result=$store->create($input);$repeat=$store->create($input);
+check($result===$repeat,'Double submit returns the same character and profile');
+check((int)$db->query('SELECT COUNT(*) FROM nova_characters')->fetchColumn()===1,'One Nova character created');
+check((int)$remote->query('SELECT COUNT(*) FROM setup_remote_profiles')->fetchColumn()===1,'One canonical profile created');
+check($db->query('SELECT slug FROM nova_septenture_cast')->fetchColumn()===$result['profile_slug'],'Mapping is created in the same Nova transaction');
+$row=$db->query('SELECT user,position_1,position_2,rank FROM nova_characters')->fetch(PDO::FETCH_ASSOC);
+check((int)$row['position_1']===0&&$row['position_2']===null&&$row['rank']===null,'No class, rank or rules build is required');
+$again=$store->create($op());check($again['character_id']!==$result['character_id'],'Equal names do not merge different characters');
+denied(fn()=>$store->create(array_replace($input,['name'=>'Changed replay'])),409);
+$before=(int)$remote->query('SELECT COUNT(*) FROM setup_remote_profiles')->fetchColumn();$npc=$store->create($op('Secret NPC','npc',$owner));
+check($npc['profile_slug']===null&&(int)$remote->query('SELECT COUNT(*) FROM setup_remote_profiles')->fetchColumn()===$before,'Private NPC never creates a public profile');
+$failAfterRemote=true;$lost=$op('Lost response');denied(fn()=>$store->create($lost),503);
+check(count($store->pending($lost['operation']))===1,'Unfinished setup remains recoverable after HTTP response loss');
+$lostDone=$store->create($lost);check($lostDone['profile_slug']!==null,'Retry resumes after the profile already committed remotely');
+$db->exec("CREATE TRIGGER simulate_setup_failure BEFORE INSERT ON nova_characters FOR EACH ROW BEGIN IF NEW.first_name='DB failure' THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Test failure';END IF;END");
+$failed=$op('DB failure','pc',$future);$users=(int)$db->query('SELECT COUNT(*) FROM nova_users')->fetchColumn();denied(fn()=>$store->create($failed),503);
+check((int)$db->query('SELECT COUNT(*) FROM nova_users')->fetchColumn()===$users,'Failed local creation rolls back placeholder user and character');
+check($store->pending($failed['operation'])[0]['character_id']===null,'Failed local transaction preserves the resumable intent');
+$db->exec('DROP TRIGGER simulate_setup_failure');$recovered=$store->create($failed);
+check($recovered['profile_slug']!==null&&$store->pending($failed['operation'])[0]['character_id']===$recovered['character_id'],'Retry completes exactly the original setup after a local database failure');
+$q=$db->prepare('SELECT u.* FROM nova_users u JOIN nova_septenture_identities i ON i.userid=u.userid WHERE i.subject=?');$q->execute([$future]);$newUser=$q->fetch(PDO::FETCH_ASSOC);
+check((int)$newUser['access_role']===4&&$newUser['is_sysadmin']==='n'&&str_ends_with($newUser['email'],'@example.invalid'),'An invited owner can be bound before their first Nova visit without receiving admin privileges');
+$firstLogin=['uuid'=>$future,'email'=>'verified-owner@example.test','admin'=>false,'site_admin'=>false,'campaign'=>'septenture','campaign_role'=>'player','slugs'=>[$recovered['profile_slug']]];
+$userid=septenture_provision($firstLogin);check($userid===(int)$newUser['userid'],'First SSO uses the preassigned owning-player identity');
+check($db->query('SELECT email FROM nova_users WHERE userid='.$userid)->fetchColumn()==='verified-owner@example.test','First SSO replaces the placeholder email with the verified account email');
+denied(fn()=>$store->create($op('Wrong owner','pc','33333333-3333-4333-8333-333333333333')),403);
+denied(fn()=>new Septenture_character_setup($db,array_replace($identity,['admin'=>false,'campaign_role'=>'player']),$rpc),403);
+denied(fn()=>new Septenture_character_setup($db,array_replace($identity,['campaign'=>'another']),$rpc),503);
+check((int)$db->query('SELECT COUNT(*) FROM nova_septenture_character_setup WHERE completed_at IS NULL')->fetchColumn()===0,'All interrupted fixture setups recovered with no abandoned local rows');
+echo json_encode(['checks'=>$count,'scope'=>'isolated local schema only'])."\n";

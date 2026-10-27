@@ -1,0 +1,95 @@
+CREATE TABLE `nova_users` (
+  `userid` int(8) NOT NULL AUTO_INCREMENT,
+  `status` enum('active','inactive','pending') NOT NULL DEFAULT 'active',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(100) NOT NULL DEFAULT '',
+  `password` varchar(40) NOT NULL DEFAULT '',
+  `date_of_birth` varchar(50) NOT NULL DEFAULT '',
+  `instant_message` text DEFAULT NULL,
+  `main_char` int(5) DEFAULT NULL,
+  `access_role` int(5) DEFAULT NULL,
+  `is_sysadmin` enum('y','n') NOT NULL DEFAULT 'n',
+  `is_game_master` enum('y','n') NOT NULL DEFAULT 'n',
+  `is_webmaster` enum('y','n') NOT NULL DEFAULT 'n',
+  `is_firstlaunch` enum('y','n') NOT NULL DEFAULT 'y',
+  `timezone` varchar(5) NOT NULL DEFAULT 'UTC',
+  `daylight_savings` varchar(1) NOT NULL DEFAULT '0',
+  `language` varchar(50) NOT NULL DEFAULT 'english',
+  `join_date` bigint(20) DEFAULT NULL,
+  `leave_date` bigint(20) DEFAULT NULL,
+  `last_post` bigint(20) DEFAULT NULL,
+  `last_login` bigint(20) DEFAULT NULL,
+  `loa` enum('active','loa','eloa') NOT NULL DEFAULT 'active',
+  `display_rank` varchar(100) NOT NULL DEFAULT 'default',
+  `skin_main` varchar(100) NOT NULL DEFAULT 'default',
+  `skin_wiki` varchar(100) NOT NULL DEFAULT 'default',
+  `skin_admin` varchar(100) NOT NULL DEFAULT 'default',
+  `location` text DEFAULT NULL,
+  `interests` text DEFAULT NULL,
+  `bio` text DEFAULT NULL,
+  `security_question` int(5) NOT NULL DEFAULT 1,
+  `security_answer` varchar(40) NOT NULL DEFAULT '',
+  `password_reset` int(1) NOT NULL DEFAULT 0,
+  `moderate_posts` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_logs` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_news` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_post_comments` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_log_comments` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_news_comments` enum('y','n') NOT NULL DEFAULT 'n',
+  `moderate_wiki_comments` enum('y','n') NOT NULL DEFAULT 'n',
+  `my_links` text DEFAULT NULL,
+  `last_update` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `nova_characters` (
+  `charid` int(8) NOT NULL AUTO_INCREMENT,
+  `user` int(8) DEFAULT NULL,
+  `first_name` varchar(500) NOT NULL DEFAULT '',
+  `middle_name` varchar(50) NOT NULL DEFAULT '',
+  `last_name` varchar(50) NOT NULL DEFAULT '',
+  `suffix` varchar(50) NOT NULL DEFAULT '',
+  `crew_type` enum('active','inactive','pending','npc') NOT NULL DEFAULT 'active',
+  `date_activate` bigint(20) DEFAULT NULL,
+  `date_deactivate` bigint(20) DEFAULT NULL,
+  `images` text DEFAULT NULL,
+  `rank` int(10) DEFAULT NULL,
+  `position_1` int(10) NOT NULL DEFAULT 0,
+  `position_2` int(10) DEFAULT NULL,
+  `last_post` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`charid`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `nova_characters_fields` (
+  `field_id` int(10) NOT NULL AUTO_INCREMENT,
+  `field_type` enum('text','select','textarea') DEFAULT 'text',
+  `field_name` varchar(100) NOT NULL DEFAULT '',
+  `field_fid` varchar(100) NOT NULL DEFAULT '',
+  `field_class` text DEFAULT NULL,
+  `field_label_page` text DEFAULT NULL,
+  `field_value` text DEFAULT NULL,
+  `field_order` int(5) NOT NULL,
+  `field_display` enum('y','n') NOT NULL DEFAULT 'y',
+  `field_rows` int(3) NOT NULL DEFAULT 5,
+  `field_section` int(8) NOT NULL DEFAULT 1,
+  `field_help` text DEFAULT NULL,
+  PRIMARY KEY (`field_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `nova_characters_data` (
+  `data_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `data_field` int(10) NOT NULL,
+  `data_char` int(8) NOT NULL,
+  `data_user` int(8) DEFAULT NULL,
+  `data_value` text DEFAULT NULL,
+  `data_updated` bigint(20) NOT NULL,
+  PRIMARY KEY (`data_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `nova_septenture_identities` (
+  `subject` char(36) NOT NULL,
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`subject`),
+  UNIQUE KEY `userid` (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+CREATE TABLE `nova_septenture_campaign` (
+  `singleton` int(11) NOT NULL,
+  `campaign_id` varchar(41) NOT NULL,
+  PRIMARY KEY (`singleton`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
