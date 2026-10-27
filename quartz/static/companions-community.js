@@ -147,7 +147,7 @@ export async function mount(root, signal) {
           if(error)throw error
           pending.push(path);update[key]=path
         }
-        const {data,error}=await client.from('character_profiles').update(update).eq('slug',slug).eq('updated_at',profile.updated_at).select().maybeSingle()
+        const {data,error}=await client.from('character_profiles').update(update).eq('slug',slug).eq('campaign_id',publicConfig.campaignId||'septenture').eq('updated_at',profile.updated_at).select().maybeSingle()
         if(error)throw error
         if(!data)throw new Error('This page changed in another window, or your access changed. Close the editor and reload before trying again.')
         committed=true;pending=[]
@@ -221,7 +221,7 @@ export async function mount(root, signal) {
     client=await getClient()
     if(signal.aborted)return
     if(!client){accountStatus.textContent='Player accounts are temporarily unavailable.';return}
-    const{data,error}=await client.from('character_profiles').select().eq('slug',slug).single()
+    const{data,error}=await client.from('character_profiles').select().eq('slug',slug).eq('campaign_id',publicConfig.campaignId||'septenture').single()
     if(error)throw error
     if(signal.aborted)return
     apply(data)
@@ -261,6 +261,12 @@ export async function mount(root, signal) {
     const hash=new URLSearchParams(location.hash.slice(1));const token=hash.get('invite')
     if(token){history.replaceState(null,'',location.pathname+location.search);if(/^[a-f0-9]{64}$/.test(token))loginDialog(token)}
   }catch(error){
-    if(!signal.aborted)accountStatus.textContent='The guestbook is temporarily unavailable.'
+    if(!signal.aborted){
+      accountStatus.textContent='The shared profile is temporarily unavailable.'
+      if(root.hasAttribute('data-profile-template')&&error.code==='PGRST116'){
+        root.querySelector('.pc-identity h1').textContent='Character unavailable'
+        root.querySelectorAll('.pc-main .pc-panel-body > p')[1].textContent='Choose a character from The Cast.'
+      }
+    }
   }
 }
