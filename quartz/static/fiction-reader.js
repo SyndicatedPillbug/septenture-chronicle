@@ -1,4 +1,4 @@
-import {CAST,characterKey,characterRoster,canonicalCharacter,characterOptions,resolveCharacter,loadCharacterProfiles} from './character-identity.js'
+const {CAST,characterKey,characterRoster,canonicalCharacter,characterOptions,resolveCharacter,loadCharacterProfiles}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
 const SDK='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm'
 const fold=value=>String(value||'').normalize('NFKD').toLocaleLowerCase()
 const WRITER_ALIASES=new Map([

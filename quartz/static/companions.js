@@ -105,7 +105,9 @@
       form.reset()
       guestStatus.textContent = saved ? 'Signed! Your note is saved in this browser’s copy.' : 'Signed for this visit. This browser could not save the note.'
     })
-    import(new URL("companions-community.js", scriptURL).href).then(module => { if (!controller.signal.aborted) return module.mount(root, controller.signal) }).catch(() => {})
+    const communityURL = new URL("companions-community.js", scriptURL)
+    communityURL.search = new URL(scriptURL).search
+    import(communityURL.href).then(module => { if (!controller.signal.aborted) return module.mount(root, controller.signal) }).catch(() => {})
     cleanup = () => { alive = false; controller.abort(); audio.pause(); if (objectUrl) URL.revokeObjectURL(objectUrl); cleanup = () => {} }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true})
@@ -114,3 +116,4 @@
   window.addEventListener('pagehide', () => cleanup())
   window.addEventListener('pageshow', event => { if (event.persisted) boot() })
 })()
+

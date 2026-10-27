@@ -25,6 +25,9 @@ export default (() => {
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
+    const staticScript = (name: string) =>
+      joinSegments(baseDir, `static/${name}`) +
+      (process.env.GITHUB_SHA ? `?v=${process.env.GITHUB_SHA.slice(0, 12)}` : "")
     const iconPath = joinSegments(baseDir, "static/icon.png")
 
     // Url of current page
@@ -92,10 +95,10 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
-        <script defer src={joinSegments(baseDir, "static/extras.js")} />
-        <script defer src={joinSegments(baseDir, "static/fiction.js")} />
-        <script type="module" src={joinSegments(baseDir, "static/fiction-reader.js")} />
-        <script defer src={joinSegments(baseDir, "static/companions.js")} />
+        <script defer src={staticScript("extras.js")} />
+        <script defer src={staticScript("fiction.js")} />
+        <script type="module" src={staticScript("fiction-reader.js")} />
+        <script defer src={staticScript("companions.js")} />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
