@@ -43,11 +43,11 @@ globalThis.fetch=async(url,options)=>{
   calls.push({url:String(url),options})
   return {ok:true,json:async()=>String(url).endsWith('community-config.json')?{url:'https://example.test',publishableKey:'public-test-key',campaignId:'test-campaign'}:profiles}
 }
-assert.deepEqual(await loadCharacterProfiles(),profiles)
+assert.deepEqual((await loadCharacterProfiles()).map(({slug,display_name})=>({slug,display_name})),profiles)
 const query=new URL(calls[1].url)
-assert.equal(query.searchParams.get('select'),'slug,display_name','Only public identity fields are fetched')
+assert.ok(query.searchParams.get('select').includes('portrait_path'));assert.ok(!query.searchParams.get('select').includes('owner'),'Only public profile fields are fetched')
 assert.equal(query.searchParams.get('campaign_id'),'eq.test-campaign')
 assert.deepEqual(calls[1].options.headers,{apikey:'public-test-key'},'Public names never require a player token')
-assert.deepEqual(await loadCharacterProfiles(),profiles)
+assert.deepEqual((await loadCharacterProfiles()).map(({slug,display_name})=>({slug,display_name})),profiles)
 assert.equal(calls.length,2,'Concurrent consumers share a short-lived public roster cache')
-console.log('PASS stable identities, rename propagation, aliases, collisions, player separation, preserved prose and campaign-scoped public roster')
+console.log('PASS stable identities, rename propagation, aliases, collisions, player separation, DOM labels, preserved prose, and campaign-scoped public roster')

@@ -1,4 +1,4 @@
-const {CAST,characterKey,characterRoster,canonicalCharacter,characterOptions,resolveCharacter,loadCharacterProfiles}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
+const {CAST,characterKey,characterRoster,canonicalCharacter,characterOptions,resolveCharacter,loadCharacterProfiles,portraitUrl}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
 const SDK='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm'
 const fold=value=>String(value||'').normalize('NFKD').toLocaleLowerCase()
 const WRITER_ALIASES=new Map([
@@ -105,7 +105,7 @@ export async function mount(root,base){
     $('friends').replaceChildren()
     for(const person of people){
       const {name,slug,key}=person,button=el('button',undefined,'fx-friend');button.type='button';button.setAttribute('aria-label','Filter by '+name);button.setAttribute('aria-pressed',String($('character').value===key))
-      const face=el('span',person.symbol||'✧');if(CAST.some(c=>c.slug===slug)){const img=el('img');img.src=base+'static/companions/'+slug+'.svg';img.alt='';img.loading='lazy';face.replaceChildren(img)}
+      const face=el('span'),img=el('img');img.src=portraitUrl(person);img.onerror=()=>{img.onerror=null;img.src=portraitUrl({...person,portrait_url:null})};img.alt='';img.loading='lazy';face.append(img)
       button.append(face,el('div',name));button.addEventListener('click',()=>{$('character').value=$('character').value===key?'':key;render()});$('friends').append(button)
     }
   }

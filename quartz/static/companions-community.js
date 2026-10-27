@@ -1,11 +1,12 @@
+const {applyProfile,decorateProfile}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
 // The public key identifies the project. Postgres and Storage enforce ownership.
 const here = new URL('.', import.meta.url)
-let clientPromise
+let clientPromise,publicConfig
 async function getClient() {
   if (!clientPromise) clientPromise = (async () => {
     const response = await fetch(new URL('community-config.json', here), {cache:'no-store'})
     if (!response.ok) throw new Error('Account configuration could not load.')
-    const config = await response.json()
+    const config = await response.json();publicConfig=config
     if (!config.url || !config.publishableKey) return null
     const {createClient} = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm')
     return createClient(config.url, config.publishableKey, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})
@@ -62,40 +63,11 @@ export async function mount(root, signal) {
   function publicUrl(path) {return client.storage.from('character-media').getPublicUrl(path).data.publicUrl}
   function apply(p) {
     profile=p
-    window.dispatchEvent(new CustomEvent('septenture:profile-updated',{detail:{slug:p.slug,display_name:p.display_name}}))
-    let detailPanel=root.querySelector('[data-shared-character-details]')
-    if(!detailPanel){detailPanel=make('section',undefined,'pc-panel');detailPanel.dataset.sharedCharacterDetails='';root.querySelector('.pc-main .pc-panel').after(detailPanel)}
-    detailPanel.replaceChildren()
-    const details=make('dl')
-    for(const key of detailNames){const value=p.character_details?.[key];if(typeof value==='string'&&value.trim()){details.append(make('dt',key.replaceAll('_',' ')),make('dd',value))}}
-    detailPanel.hidden=!details.children.length
-    if(details.children.length)detailPanel.append(make('h2','Character details'),details)
-    const set=(selector,text)=>{const el=root.querySelector(selector);if(el)el.textContent=text}
-    set('.pc-identity h1',p.display_name)
-    set('.pc-banner .pc-eyebrow',p.tagline)
-    set('.pc-banner-title',p.heading)
-    set('.pc-status','✦ '+p.mood)
-    set('.pc-facts dd',p.location)
-    set('.pc-main .pc-panel h2','ABOUT '+p.display_name.toUpperCase())
-    const about=root.querySelector('.pc-main .pc-panel-body')
-    about.querySelectorAll(':scope > p')[1].textContent=p.bio
-    const interests=root.querySelector('.pc-likes');interests.replaceChildren()
-    for(const item of p.interests.split('\n').filter(Boolean))interests.append(make('li',item))
-    for(const theme of themes)root.classList.toggle('pc-'+theme,theme===p.theme)
-    if(p.accent)root.style.setProperty('--pc-accent',p.accent)
-    else root.style.removeProperty('--pc-accent')
-    if(p.portrait_path)root.querySelector('.pc-identity img').src=publicUrl(p.portrait_path)
-    const banner=root.querySelector('.pc-banner')
-    if(p.background_path)banner.style.backgroundImage=`linear-gradient(#0006,#0006),url("${publicUrl(p.background_path)}")`
-    if(p.music_path) {
-      const audio=root.querySelector('[data-pc-audio]')
-      const url=publicUrl(p.music_path)
-      if(audio.src!==url){audio.pause();audio.src=url}
-      set('[data-track-title]',p.music_title || 'The player’s chosen track')
-      set('[data-track-credit]','Player soundtrack · shared with all visitors')
-      root.querySelector('[data-play]').setAttribute('aria-label','Play '+(p.music_title || 'the player’s chosen track'))
-    }
+    const shared=decorateProfile(p,publicConfig)
+    applyProfile(root,shared)
+    window.dispatchEvent(new CustomEvent('septenture:profile-updated',{detail:shared}))
   }
+
   function loginDialog(token) {
     open(token?'Your invitation to the party':'Player login')
     if(!client){body.append(make('p','Player accounts are temporarily unavailable. Please try again later.'));return}
@@ -253,6 +225,15 @@ export async function mount(root, signal) {
     if(error)throw error
     if(signal.aborted)return
     apply(data)
+    let refreshingProfile=false
+    async function refreshProfile(){
+      if(signal.aborted||saving||dialog.open||document.hidden||refreshingProfile)return
+      refreshingProfile=true
+      try{const {data,error}=await client.from('character_profiles').select().eq('slug',slug).eq('campaign_id',profile.campaign_id).single();if(!error&&!signal.aborted&&!dialog.open&&!saving&&data.updated_at!==profile.updated_at)apply(data)}finally{refreshingProfile=false}
+    }
+    const profilePoll=setInterval(()=>{refreshProfile().catch(()=>{})},60000)
+    on(document,'visibilitychange',()=>{refreshProfile().catch(()=>{})})
+    signal.addEventListener('abort',()=>clearInterval(profilePoll),{once:true})
     // Replacing the form detaches the static demo's browser-local handlers.
     const localForm=root.querySelector('[data-guest-form]')
     bookForm=localForm.cloneNode(true);localForm.replaceWith(bookForm)
@@ -283,4 +264,3 @@ export async function mount(root, signal) {
     if(!signal.aborted)accountStatus.textContent='The guestbook is temporarily unavailable.'
   }
 }
-

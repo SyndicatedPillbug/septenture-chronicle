@@ -9,6 +9,11 @@
     cleanup()
     const root = document.querySelector('[data-pc]')
     if (!root) return
+    if(root.hasAttribute('data-profile-template')){
+      const slug=new URLSearchParams(location.search).get('character')||''
+      if(!/^[a-z][a-z0-9-]{0,40}$/.test(slug)){root.querySelector('.pc-identity h1').textContent='Choose a character from The Cast';return}
+      root.dataset.pc=slug
+    }
     const controller = new AbortController()
     const on = (el, type, handler) => el?.addEventListener(type, handler, { signal: controller.signal })
     const audio = root.querySelector('[data-pc-audio]')
@@ -57,9 +62,13 @@
       playing(false)
       status.textContent = 'Original loop restored. Press play.'
     })
-    on(root.querySelector('[data-random-companion]'), 'click', () => {
-      const options = roster.filter(id => id !== root.dataset.pc)
-      location.href = new URL(`../${options[Math.floor(Math.random() * options.length)]}/`, location.href).href
+    on(root.querySelector('[data-random-companion]'), 'click', async () => {
+      const url=new URL('character-identity.js',scriptURL);url.search=new URL(scriptURL).search
+      const shared=await import(url.href)
+      let slugs=roster
+      try{slugs=(await shared.loadCharacterProfiles()).map(p=>p.slug)}catch{/* Static companions remain available offline. */}
+      const options=slugs.filter(id=>id!==root.dataset.pc)
+      if(options.length&&!controller.signal.aborted)location.href=shared.profileHref(options[Math.floor(Math.random()*options.length)])
     })
     const key = `septenture-guestbook-v1:${root.dataset.pc}`
     const form = root.querySelector('[data-guest-form]')
@@ -116,4 +125,3 @@
   window.addEventListener('pagehide', () => cleanup())
   window.addEventListener('pageshow', event => { if (event.persisted) boot() })
 })()
-
