@@ -31,7 +31,7 @@ try {
         'accent'=>preg_match('/^#[a-f0-9]{6}$/i',$profile['accent']??'')?$profile['accent']:null,
         'publicUrl'=>$legacy?$site.'/the-cast/'.$slug.'/':$site.'/the-cast/character/?character='.rawurlencode($slug)];
     echo '<script type="application/json" id="septenture-character">'.json_encode($payload,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_THROW_ON_ERROR).'</script>';
-    echo '<script defer src="/assets/profile-live.js?v=20261027"></script>';
+    echo '<script defer src="/assets/profile-live.js?v=20261027b"></script>';
 } catch (Throwable $e) {
     // Profile decoration may fail without taking away the writing tools.
     // Do not print API responses, tokens, database errors, or other user data.
