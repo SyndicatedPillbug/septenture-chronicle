@@ -10,7 +10,7 @@ description: The Septenture fiction archive. Stories, journals, letters, and con
     <div><p class="fx-eyebrow">THE THINGS WE WRITE BETWEEN ADVENTURES</p><h1>The Fiction<br><em>Exchange</em><span aria-hidden="true">✧</span></h1><p class="fx-tagline">Letters. Loose ends. Very questionable company.</p></div>
     <aside class="fx-profile"><div class="fx-profile-seal" aria-hidden="true">✦</div><strong>Septenture</strong><span>“there is always more to the story”</span><p>Private corner of the internet<br>Current mood: <em>one more chapter</em></p><a data-fx-write href="https://septenture.helioho.st/index.php/auth/start">✎ Open the writing desk</a></aside>
   </header>
-  <div class="fx-compose" data-fx-compose hidden><a data-fx-write="story">✎ Write new content</a><a data-fx-write="journal">New journal entry</a></div>
+  <div class="fx-compose" data-fx-compose hidden><a data-fx-write="story">＋ New story</a><a data-fx-write="notes">My private game notes</a></div>
   <div class="fx-ribbon"><span>✧ a place for the stories that wouldn’t fit around the table ✧</span><span class="fx-live" data-fx-live>PLAYER LOGIN REQUIRED</span></div>
   <div class="fx-gate" data-fx-gate>
     <div><span class="fx-eyebrow">YOU’RE ON THE LIST</span><h2>Come in. Pull up a chair.</h2><p>The shelves are open to Septenture players. Sign in with the account you use for your character page.</p></div>

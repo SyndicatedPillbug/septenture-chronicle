@@ -59,6 +59,7 @@
       ["THE EXCHANGE", "fiction/"],
       ["THE TABLE", "tabletop/"],
       ["WRITING DESK", "fiction/login/"],
+      ["＋ NEW STORY", "fiction/login/?compose=story"],
     ]) {
       const link = document.createElement("a")
       link.href = root + path
