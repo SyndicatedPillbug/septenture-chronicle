@@ -57,6 +57,7 @@
       ["THE CHRONICLE", "the-chronicle/"],
       ["THE CAST", "the-cast/"],
       ["THE EXCHANGE", "fiction/"],
+      ["THE TABLE", "tabletop/"],
       ["LATEST CHAPTER", "the-chronicle/25-the-courtyard-and-the-wish"],
     ]) {
       const link = document.createElement("a")
