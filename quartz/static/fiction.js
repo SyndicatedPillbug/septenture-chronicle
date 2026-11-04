@@ -39,8 +39,7 @@
       const accountResponse=await fetch(base+'static/community-config.json')
       if(!accountResponse.ok)throw new Error('Player accounts are temporarily unavailable.')
       const accountConfig=await accountResponse.json()
-      const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm')
-      const client=createClient(accountConfig.url,accountConfig.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})
+      const {getAccount}=await import(new URL(base+'static/campaign-account.js',location.origin));const {client}=await getAccount()
       if(params.get('action')==='logout') {
         const {error}=await client.auth.signOut()
         if(error)throw new Error('The writing desk is closed, but the player account could not be signed out. Please retry from your character page.')

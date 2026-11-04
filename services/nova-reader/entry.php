@@ -70,7 +70,7 @@ try {
         else {
             $state=bin2hex(random_bytes(32));$_SESSION['state']=$state;
             $db=septenture_db();$db->exec('DELETE FROM nova_septenture_tickets WHERE expires_at<'.time());
-            unset($_SESSION['return_to']);
+            unset($_SESSION['return_to'],$_SESSION['compose_character']);
             if (isset($_GET['character'])) {
                 $slug=$_GET['character'];$view=$_GET['view']??'profile';
                 $views=['profile'=>'personnel/character/','stories'=>'personnel/viewposts/c/','journal'=>'personnel/viewlogs/c/'];
@@ -81,9 +81,10 @@ try {
             }
             if (isset($_GET['compose'])) {
                 $compose=$_GET['compose'];
-                $destinations=['story'=>'write/missionpost','journal'=>'write/personallog'];
+                $destinations=['story'=>'write/missionpost','journal'=>'write/personallog','dice'=>'play/desk'];
                 if (!is_string($compose)||!isset($destinations[$compose])) septenture_fail('Unknown writing destination.',400);
                 $_SESSION['return_to']='/index.php/'.$destinations[$compose];
+                if(isset($character))$_SESSION['compose_character']=(int)$character;
             }
             $q=$db->prepare('INSERT INTO nova_septenture_tickets (state_hash,expires_at) VALUES (?,?)');
             $q->execute([hash('sha256',$state),time()+300]);
@@ -100,9 +101,22 @@ try {
         $q=$db->prepare('DELETE FROM nova_septenture_tickets WHERE state_hash=?');$q->execute([hash('sha256',$state)]);$db->commit();
         $identity=septenture_identity($token);
         $returnTo=$_SESSION['return_to']??'/index.php/write/index';
-        if (!preg_match('~^/index\.php/(?:write/(?:index|missionpost|personallog)|personnel/(?:character/|viewposts/c/|viewlogs/c/)[1-9][0-9]*)$~D',$returnTo)) $returnTo='/index.php/write/index';
-        session_regenerate_id(true);$_SESSION=['token'=>$token,'csrf'=>bin2hex(random_bytes(32))];
+        if (!preg_match('~^/index\.php/(?:play/desk|write/(?:index|missionpost|personallog)|personnel/(?:character/|viewposts/c/|viewlogs/c/)[1-9][0-9]*)$~D',$returnTo)) $returnTo='/index.php/write/index';
+        $composeCharacter=$_SESSION['compose_character']??null;
+        session_regenerate_id(true);$_SESSION=['token'=>$token,'subject'=>$identity['uuid'],'csrf'=>bin2hex(random_bytes(32))];
+        if($composeCharacter)$_SESSION['compose_character']=$composeCharacter;
         septenture_go($base.$returnTo);
+    }
+    if ($route==='auth/renew') {
+        $origin=parse_url($base,PHP_URL_SCHEME).'://'.parse_url($base,PHP_URL_HOST).(parse_url($base,PHP_URL_PORT)?':'.parse_url($base,PHP_URL_PORT):'');
+        if($method!=='POST'||($_SERVER['HTTP_ORIGIN']??'')!==$origin||empty($_SESSION['csrf'])||!hash_equals($_SESSION['csrf'],$_SERVER['HTTP_X_PLAY_CSRF']??''))septenture_json(['error'=>'Reopen your writing desk to renew this session.'],403);
+        $raw=file_get_contents('php://input',false,null,0,12289);if(strlen($raw)>12288)septenture_json(['error'=>'Request too large.'],413);
+        $input=json_decode($raw,true);if(!is_array($input)||!is_string($input['token']??null))septenture_json(['error'=>'Provide your player session proof.'],400);
+        $expected=$_SESSION['subject']??null;
+        if(!$expected&&isset($_SESSION['token']))$expected=septenture_identity($_SESSION['token'])['uuid'];
+        $renewed=septenture_identity($input['token']);
+        if(!$expected||!hash_equals($expected,$renewed['uuid']))septenture_json(['error'=>'The signed-in account changed. Reopen the writing desk; unsaved text remains in its current tab.'],409);
+        $_SESSION['token']=$input['token'];$_SESSION['subject']=$expected;septenture_json(['ok'=>true]);
     }
     if ($route==='auth/logout') {
         if ($method==='POST' && hash_equals($_SESSION['csrf']??'',$_POST['csrf']??'') && !empty($_SESSION['csrf'])) {
@@ -115,9 +129,22 @@ try {
     }
     if (empty($_SESSION['token'])) septenture_fail('The writing room is open to Septenture players. Sign in with your existing player account.',401);
     $identity=septenture_identity($_SESSION['token']);
+    $_SESSION['subject']=$identity['uuid'];
     $userid=septenture_provision($identity);
     define('SEPTENTURE_PLAYER_ID',$userid);
+    define('SEPTENTURE_PLAYER_SUBJECT',$identity['uuid']);
+    define('SEPTENTURE_PLAYER_TOKEN',$_SESSION['token']);
     define('SEPTENTURE_PLAYER_ADMIN',$identity['admin']);
+    if($route==='owner/release-status'&&$method==='GET') {
+        if(empty($identity['site_admin'])||!hash_equals(septenture_config('PLAY_ADMIN_SUBJECT'),$identity['uuid']))septenture_fail('Not found.',404);
+        require __DIR__.'/owner_status.php';exit;
+    }
+    if(str_starts_with($route,'play/')) {
+        require_once __DIR__.'/play_api.php';
+        septenture_play_api($route,$method,$identity,$base);
+    }
+    require_once __DIR__.'/shared_profile.php';
+    try{septenture_refresh_profiles($_SESSION['token']);}catch(Throwable $e){$GLOBALS['septenture_profile_refresh_failed']=true;}
     session_write_close();
     // The installer, updater and native account tools are CLI/SSO managed.
     if (preg_match('~^(?:install|update|upgrade|register|join|septenture_setup)(?:/|$)~i',$route)) septenture_fail('This function is managed by the site owner.',403);
@@ -130,6 +157,6 @@ try {
     }
 } catch (Throwable $e) {
     $status=in_array($e->getCode(),[401,403,503])?$e->getCode():503;
-    if ($status===401||$status===403) {$_SESSION=[];session_destroy();}
+    if ($status===403) {$_SESSION=[];session_destroy();}
     septenture_fail($status===503?'The writing room is temporarily unavailable. Your saved work remains on the server.':$e->getMessage(),$status);
 }

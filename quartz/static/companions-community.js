@@ -1,18 +1,8 @@
 const {applyProfile,decorateProfile}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
 // The public key identifies the project. Postgres and Storage enforce ownership.
 const here = new URL('.', import.meta.url)
-let clientPromise,publicConfig
-async function getClient() {
-  if (!clientPromise) clientPromise = (async () => {
-    const response = await fetch(new URL('community-config.json', here), {cache:'no-store'})
-    if (!response.ok) throw new Error('Account configuration could not load.')
-    const config = await response.json();publicConfig=config
-    if (!config.url || !config.publishableKey) return null
-    const {createClient} = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm')
-    return createClient(config.url, config.publishableKey, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})
-  })().catch(error => { clientPromise=undefined; throw error })
-  return clientPromise
-}
+let publicConfig
+async function getClient(){const {getAccount}=await import(new URL('./campaign-account.js',import.meta.url));const account=await getAccount();publicConfig=account.config;return account.client}
 const make = (tag, text, className) => {
   const el=document.createElement(tag)
   if (text !== undefined) el.textContent=text
@@ -217,7 +207,7 @@ export async function mount(root, signal) {
   }
   try{
     const writingConfig=await fetch(new URL('fiction-config.json',here),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
-    if(writingConfig?.novaUrl){const url=new URL('/index.php/auth/start',writingConfig.novaUrl);if(url.protocol==='https:'||['127.0.0.1','localhost'].includes(url.hostname)){url.searchParams.set('compose','story');write.href=url.href}}
+    if(writingConfig?.novaUrl){const url=new URL('/index.php/auth/start',writingConfig.novaUrl);if(url.protocol==='https:'||['127.0.0.1','localhost'].includes(url.hostname)){url.searchParams.set('compose','story');url.searchParams.set('character',slug);write.href=url.href}}
     client=await getClient()
     if(signal.aborted)return
     if(!client){accountStatus.textContent='Player accounts are temporarily unavailable.';return}

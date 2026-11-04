@@ -20,8 +20,7 @@ if(root){
   const response=await fetch(selfHosted?'/session/config':new URL('tabletop-config.json',import.meta.url));if(!response.ok)throw Error('The table is not configured yet.');config=await response.json();
   const table=new URL(config.tabletopUrl);if(table.protocol!=='https:'&&!['localhost','127.0.0.1'].includes(table.hostname))throw Error('The table needs a secure connection.');
   const account=selfHosted?config.account:await (await fetch(new URL('community-config.json',import.meta.url))).json();
-  const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm');
-  client=createClient(account.url,account.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+  if(selfHosted){const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/+esm');client=createClient(account.url,account.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}})}else{const {getAccount}=await import(new URL('./campaign-account.js',import.meta.url));client=(await getAccount()).client}
   form.addEventListener('submit',async e=>{e.preventDefault();button.disabled=true;try{
    const fields=new FormData(form);const {error}=await client.auth.signInWithPassword({email:String(fields.get('email')),password:String(fields.get('password'))});form.elements.password.value='';
    if(error)throw Error('That sign-in did not work. Check your email and password.');await enter();

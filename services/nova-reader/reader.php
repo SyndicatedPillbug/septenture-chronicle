@@ -40,7 +40,7 @@ try {
     if (isset($input['id'])) {
         if (!is_int($input['id'])||$input['id']<1) fiction_reply(['error'=>'Invalid story.'],400);
         $query=$type==='journal'
-            ? "SELECT log_id AS post_id,log_title AS post_title,log_content AS post_content,log_last_update AS post_last_update FROM nova_personallogs WHERE log_id=? AND log_status='activated'"
+            ? "SELECT log_id AS post_id,log_title AS post_title,log_content AS post_content,log_content_format AS post_content_format,log_last_update AS post_last_update FROM nova_personallogs WHERE log_id=? AND log_status='activated'"
             : "SELECT post_id,post_title,post_content,post_last_update FROM nova_posts WHERE post_id=? AND post_status='activated'";
         $q=$db->prepare($query);
         $q->execute([$input['id']]);$row=$q->fetch(PDO::FETCH_ASSOC);

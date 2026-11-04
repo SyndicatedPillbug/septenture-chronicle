@@ -1,0 +1,10 @@
+<?php
+// Read-only deployment diagnostics, called only after the pinned-owner check.
+$files=['application/septenture/entry.php','application/septenture/play_api.php','application/septenture/play_store.php','application/septenture/profile_header.php','application/septenture/reader.php','application/septenture/manual_sheet.php','application/controllers/Write.php','application/controllers/Feed.php','application/models/Personallogs_model.php','application/views/_base_override/admin/pages/story_editor.php','application/views/_base_override/admin/pages/write_personallog.php','assets/play.js','assets/sheet.js','assets/septenture.js','assets/prose-editor.js','assets/manual-sheet.js','assets/manual-sheet.css','assets/journal-editor.js','assets/nova-session.js'];
+$app=dirname(__DIR__,2);$root=dirname($app);$result=['at'=>gmdate('c'),'files'=>[],'public_assets'=>[],'tables'=>[]];
+foreach($files as $file){$result['files'][$file]=is_file($app.'/'.$file)?hash_file('sha256',$app.'/'.$file):null;if(str_starts_with($file,'assets/'))$result['public_assets'][$file]=is_file($root.'/httpdocs/'.$file)?hash_file('sha256',$root.'/httpdocs/'.$file):null;}
+foreach(['template_admin.php','template_main.php','template_login.php','template_wiki.php'] as $file)$result['files']['application/views/default/'.$file]=hash_file('sha256',$app.'/application/views/default/'.$file);
+$db=septenture_db();foreach(['nova_posts','nova_personallogs','nova_play_sheets'] as $table)$result['tables'][$table]=(int)$db->query('SELECT COUNT(*) FROM '.$table)->fetchColumn();
+$result['journal_format_column']=(bool)$db->query("SHOW COLUMNS FROM nova_personallogs LIKE 'log_content_format'")->fetchColumn();
+$result['journal_revision_column']=(bool)$db->query("SHOW COLUMNS FROM nova_personallogs LIKE 'log_revision'")->fetchColumn();
+septenture_json($result);

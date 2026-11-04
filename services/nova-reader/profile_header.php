@@ -3,6 +3,8 @@
 // belongs in this payload, the public profile table, or the public media bucket.
 require_once __DIR__.'/campaign.php';
 echo '<meta name="septenture-site" content="'.htmlspecialchars(rtrim(septenture_config('SITE_URL'),'/').'/',ENT_QUOTES,'UTF-8').'">';
+echo '<meta name="septenture-renew-csrf" content="'.htmlspecialchars($_SESSION['csrf']??'',ENT_QUOTES,'UTF-8').'">';
+echo '<script defer src="/assets/nova-session.js?v=20261104a"></script>';
 $path=parse_url($_SERVER['REQUEST_URI']??'',PHP_URL_PATH);
 if (!preg_match('~/(?:personnel/character|personnel/viewposts/c|personnel/viewlogs/c)/(\d+)(?:/|$)~D',$path,$match)) return;
 try {

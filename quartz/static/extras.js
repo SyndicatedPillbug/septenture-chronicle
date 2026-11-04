@@ -58,7 +58,7 @@
       ["THE CAST", "the-cast/"],
       ["THE EXCHANGE", "fiction/"],
       ["THE TABLE", "tabletop/"],
-      ["LATEST CHAPTER", "the-chronicle/25-the-courtyard-and-the-wish"],
+      ["WRITING DESK", "fiction/login/"],
     ]) {
       const link = document.createElement("a")
       link.href = root + path

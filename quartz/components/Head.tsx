@@ -99,6 +99,8 @@ export default (() => {
         <script defer src={staticScript("fiction.js")} />
         <script type="module" src={staticScript("fiction-reader.js")} />
         <script type="module" src={staticScript("tabletop.js")} />
+        <script type="module" src={staticScript("account.js")} />
+        <link rel="stylesheet" href={staticScript("account.css")} />
         <script defer src={staticScript("companions.js")} />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
