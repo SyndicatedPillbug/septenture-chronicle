@@ -25,16 +25,20 @@ async function boot(){
     addForm('Recover your account',[['email','Email','email']],'Send recovery email',async fields=>{const {error}=await client.auth.resetPasswordForEmail(fields.email.value,{redirectTo:accountPage().href});if(error)throw Error('The recovery email could not be requested. Please try again later.');status.textContent='If that address has an account, a recovery link is on its way. Open it in this browser.'})
     return
    }
-   const characters=el('section');characters.append(el('h2','My characters'));body.append(characters)
-   const {data:assignments,error:ownershipError}=await client.from('character_owners').select('character_slug').eq('user_id',session.user.id)
+   const characters=el('section'),characterHeading=el('h2','Character pages you can edit'),characterDescription=el('p','Public profile editing access. Private sheet ownership and Table control are managed separately.');characters.append(characterHeading,characterDescription);body.append(characters)
+   const [{data:assignments,error:ownershipError},{data:memberships,error:membershipError}]=await Promise.all([
+    client.from('character_owners').select('character_slug').eq('user_id',session.user.id),
+    client.from('campaign_members').select('role').eq('campaign_id',config.campaignId||'septenture').eq('user_id',session.user.id),
+   ])
    if(!active)return
+   if(!membershipError&&memberships?.some(member=>member.role==='owner'||member.role==='gm')){characterHeading.textContent='Campaign character pages';characterDescription.textContent='Your campaign role includes editing these public profiles. Each player’s private sheet ownership and Table controls are managed separately.'}
    if(ownershipError)characters.append(el('p','Your character list could not load. Please try again.'))
    else{
     const {data:profiles,error:profileError}=await client.from('character_profiles').select('slug,display_name').eq('campaign_id',config.campaignId||'septenture')
     if(!active)return
     if(profileError)characters.append(el('p','Character names are temporarily unavailable.'))
     const list=el('ul');for(const assignment of assignments||[]){const profile=profiles?.find(p=>p.slug===assignment.character_slug);if(!profile)continue;const li=el('li');const url=new URL('../the-cast/character/',accountPage());url.searchParams.set('character',profile.slug);li.append(link(profile.display_name,url.href));list.append(li)}
-    characters.append(list);if(!list.children.length)characters.append(el('p','No character profiles are assigned to this account yet.'))
+    characters.append(list);if(!list.children.length)characters.append(el('p','No public character profiles are available to edit with this account yet.'))
    }
    body.append(link('Open the writing desk',new URL('../fiction/login/',accountPage()).href),document.createTextNode(' · '),link('Take your seat at the Table',new URL('../tabletop/',accountPage()).href))
    addForm('Change your password',[['newPassword','New password','password']],'Save new password',async fields=>{const {error}=await client.auth.updateUser({password:fields.newPassword.value});if(error)throw Error('The password could not be changed. Reopen your recovery link or sign in again, then retry.');status.textContent='Your password has been changed.'})
