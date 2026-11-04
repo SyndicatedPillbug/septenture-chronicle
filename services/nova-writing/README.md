@@ -10,7 +10,7 @@ Apply the additive migration before deploying the overlay to `fiction-release`. 
 - Existing published journals remain separate Exchange entries.
 - Collaborators explicitly added to a scene may read and edit its draft. Exact membership guards both editor HTML and draft APIs.
 - Inserting an @name sends nothing and changes no access. Notify writer first saves the draft, then validates the recipient against the current collaborators and saved revision.
-- A unique sender/recipient/revision key suppresses duplicates. An inbox rechecks access after collaborators change. A bounded sender rate and CSRF/origin checks protect mutations.
+- The sender may pause their editing lease when notifying someone so the next writer can take over immediately. A unique sender/recipient/revision key suppresses duplicates. An inbox rechecks access after collaborators change. A bounded sender rate and CSRF/origin checks protect mutations.
 - Notification emails contain a sign-in link and generic turn-taking text, never scene prose, notebook text or the scene title. Hosting SMTP uses the existing default sender and respects system email and saved-post email preferences.
 
 ## Verification

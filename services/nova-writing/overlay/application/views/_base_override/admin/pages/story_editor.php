@@ -80,7 +80,7 @@
 			</p>
 
 			</details>
-<section class="scene-tags" data-scene-tags><h2>Pass the thread</h2><button type="button" data-tag-writer disabled>@ Tag a writer</button><div data-tag-picker hidden><label>Find a scene writer<input type="search" aria-label="Find a scene writer" autocomplete="off"></label><div role="listbox" aria-label="Scene writers"></div><button type="button" data-close-picker>Close picker</button></div><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><button type="button" data-notify-writer disabled>Notify writer</button><p role="status">Loading scene writers…</p></section>
+<section class="scene-tags" data-scene-tags><h2>Pass the thread</h2><button type="button" data-tag-writer disabled>@ Tag a writer</button><div data-tag-picker hidden><label>Find a scene writer<input type="search" aria-label="Find a scene writer" autocomplete="off"></label><div role="listbox" aria-label="Scene writers"></div><button type="button" data-close-picker>Close picker</button></div><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><label><input type="checkbox" data-pass-turn checked> Pause my editing so they can write next</label><button type="button" data-notify-writer disabled>Notify writer</button><p role="status">Loading scene writers…</p></section>
             <details class="scene-details"><summary>Story topics</summary><p>
                 <kbd><?php echo $label['tags'];?></kbd>
 				<?php echo text_output($label['tags_sep'], 'span', 'fontSmall gray bold');?><br />
@@ -179,4 +179,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104a"></script>
+</details></div><script src="/assets/writing-workspace.js?v=20261104c"></script>
