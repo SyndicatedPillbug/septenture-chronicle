@@ -168,7 +168,9 @@ export async function mount(root,base){
   listen($('refresh'),'click',refresh);listen($('random'),'click',()=>{if(visible.length)openStory(visible[Math.floor(Math.random()*visible.length)])})
   listen($('back'),'click',()=>closeReader());listen(panel,'keydown',e=>{if(e.key==='Escape')closeReader();if(e.key==='Tab'){const nodes=[...panel.querySelectorAll('button:not(:disabled),a[href],input')].filter(n=>n.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===panel)){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});listen(panel,'scroll',updateProgress)
   for(const [name,delta]of[['smaller',-1],['larger',1]])listen($(name),'click',()=>{readerSize=Math.max(15,Math.min(28,readerSize+delta));story.style.setProperty('--fx-reading-size',readerSize+'px')})
-  listen($('tone'),'click',()=>{const dark=window.SeptentureTheme?.resolved()!=='dark';window.SeptentureTheme?.set(dark?'dark':'light');$('tone').setAttribute('aria-pressed',String(dark));$('tone').textContent=dark?'Light mode':'Dark mode'})
+  const syncTone=()=>{const dark=window.SeptentureTheme?.resolved()==='dark';$('tone').setAttribute('aria-pressed',String(dark));$('tone').textContent=dark?'Light mode':'Dark mode'}
+  syncTone();listen(document,'themechange',syncTone)
+  listen($('tone'),'click',()=>window.SeptentureTheme?.set(window.SeptentureTheme.resolved()==='dark'?'light':'dark'))
   listen($('credits'),'change',()=>story.classList.toggle('fx-hide-credits',!$('credits').checked))
   for(const [name,delta]of[['prev',-1],['next',1]])listen($(name),'click',()=>{const list=visible.length?visible:groups,index=list.findIndex(g=>g.key===current);if(list.length)openStory(list[(index+delta+list.length)%list.length])})
   listen(document,'visibilitychange',()=>{if(!document.hidden)refresh()})
