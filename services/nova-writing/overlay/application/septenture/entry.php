@@ -5,6 +5,7 @@ if (PHP_SAPI === 'cli') {
     $_SERVER['SCRIPT_NAME']='/index.php'; $_SERVER['HTTP_HOST']='localhost';
     return;
 }
+require_once __DIR__.'/theme_output.php';
 header('Cache-Control: no-store, private');
 header('Referrer-Policy: no-referrer');
 header('X-Content-Type-Options: nosniff');

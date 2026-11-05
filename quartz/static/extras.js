@@ -70,6 +70,7 @@
     }
     nav.append(brand, links)
     document.body.prepend(nav)
+    document.dispatchEvent(new Event("septenture-navigation"))
   }
 
   function ledger() {

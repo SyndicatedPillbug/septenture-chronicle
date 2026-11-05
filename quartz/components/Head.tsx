@@ -95,6 +95,8 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <script src={staticScript("site-theme.js")} />
+        <link rel="stylesheet" href={staticScript("site-theme.css")} />
         <script defer src={staticScript("extras.js")} />
         <script defer src={staticScript("fiction.js")} />
         <script type="module" src={staticScript("fiction-reader.js")} />
