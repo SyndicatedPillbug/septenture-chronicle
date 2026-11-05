@@ -3,7 +3,7 @@
 }?>
 
 <?php if(!$this->uri->segment(3)&&!empty($_SESSION['compose_character'])){$suggested=(int)$_SESSION['compose_character'];foreach(($all_characters??[]) as $group)if(is_array($group)&&array_key_exists($suggested,$group))$authors_selected=[$suggested];} ?>
-<link rel="stylesheet" href="/assets/writing-workspace.css?v=20261104a">
+<link rel="stylesheet" href="/assets/writing-workspace.css?v=20261104f">
 <div class="writing-studio" data-writing-studio><p class="writing-eyebrow">THE SEPTENTURE WRITING ROOM</p>
 <div class="studio-controls"><a href="<?php echo site_url('write/index'); ?>">← My drafts</a><button type="button" data-studio-focus aria-pressed="false">Focus mode</button><button type="button" data-studio-save>Save now</button><button type="button" data-studio-tag disabled>@ Tag writer</button><a href="/index.php/play/notebook" target="_blank" rel="noopener">My private notes ↗</a></div>
 <?php echo text_output($story_id?'Continue the story':'A new scene', 'h1', 'page-head');?>
@@ -49,7 +49,7 @@
 				</div>
 			</div>
 
-<details class="scene-details"><summary>Scene &amp; collaborators</summary><p>Scene collaborators can read and edit this draft. Add someone here before calling them into the scene.</p><div data-collaborators><label>Find a player<input type="search" data-collaborator-search placeholder="Player or character name"></label><div data-collaborator-list></div></div><details><summary>Additional character authors</summary>
+<div class="studio-detail-grid"><details class="scene-details"><summary>People</summary><p>Scene collaborators can read and edit this draft. Add someone here before calling them into the scene.</p><div data-collaborators><label>Find a player<input type="search" data-collaborator-search placeholder="Player or character name"></label><div data-collaborator-list></div></div><details><summary>Additional character authors</summary>
 			<?php if (isset($all_characters) and is_array($all_characters)): ?>
 				<p>
 					<kbd><?php echo $label['authors'];?></kbd>
@@ -69,7 +69,7 @@
 			</p>
 
 			</details>
-<details class="scene-details"><summary>Where &amp; when</summary><p>
+<details class="scene-details"><summary>Setting</summary><p>
 				<kbd><?php echo $label['location'];?></kbd>
 				<?php echo form_input($inputs['location']);?>
 			</p>
@@ -80,13 +80,13 @@
 			</p>
 
 			</details>
-<section class="scene-tags" data-scene-tags><h2>Pass the thread</h2><button type="button" data-tag-writer disabled>@ Tag a writer</button><div data-tag-picker hidden><label>Find a scene writer<input type="search" aria-label="Find a scene writer" autocomplete="off"></label><div role="listbox" aria-label="Scene writers"></div><button type="button" data-close-picker>Close picker</button></div><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><label><input type="checkbox" data-pass-turn checked> Pause my editing so they can write next</label><button type="button" data-notify-writer disabled>Notify writer</button><p role="status">Loading scene writers…</p></section>
-            <details class="scene-details"><summary>Story topics</summary><p>
+
+            <details class="scene-details"><summary>Topics</summary><p>
                 <kbd><?php echo $label['tags'];?></kbd>
 				<?php echo text_output($label['tags_sep'], 'span', 'fontSmall gray bold');?><br />
 				<?php echo form_input($inputs['tags']);?>
 				<?php echo img($images['help']);?>
-			</p></details><br />
+			</p></details></div><section class="scene-tags" data-scene-tags><div class="tagged-update"><button type="button" data-notify-tagged disabled>Save &amp; email tagged writers</button><span data-tagged-summary>Tag a scene writer with @ to choose who gets this update.</span></div><div data-tag-picker hidden><label>Find a scene writer<input type="search" aria-label="Find a scene writer" autocomplete="off"></label><div role="listbox" aria-label="Scene writers"></div><button type="button" data-close-picker>Close picker</button></div><details class="manual-handoff"><summary>Call in a writer or pass your turn</summary><button type="button" data-tag-writer disabled>@ Tag a writer</button><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><label><input type="checkbox" data-pass-turn checked> Pause my editing so they can write next</label><button type="button" data-notify-writer disabled>Notify writer</button></details><p role="status">Loading scene writers…</p></section>
 
 			<p>
 				<?php echo form_button($inputs['post']);?>
@@ -179,4 +179,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104e"></script>
+</details></div><script src="/assets/writing-workspace.js?v=20261104f"></script>

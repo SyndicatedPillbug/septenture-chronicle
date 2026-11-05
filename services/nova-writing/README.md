@@ -24,3 +24,11 @@ Only unconfirmed edits create browser recovery records. Historical generation-ze
 Feature acceptance requires computer-use verification through the human interface: enter real test text, save, leave, reopen, and verify the saved values. Rendering controls and API checks alone do not establish completion. Use isolated accounts for sharing/notification tests, and never publish test prose or notify real players during a smoke test.
 
 Collaborator sharing uses an in-page access confirmation, not a browser popup. Add presents the specific player and character, including read/edit access to existing text; Cancel leaves membership unchanged. Membership changes require an active editable draft and use the existing draft revision/autosave path.
+
+## Targeted scene updates
+
+Tag scene collaborators with @, then choose **Save & email tagged writers**. The recipient list is visible before sending. The action saves first and sends a separate generic inbox/email notification to each tagged collaborator, excluding the sender. Typing and autosave never send mail. The existing notification API validates current collaborator access and revision, respects email preferences, and deduplicates sender/recipient/revision. The optional manual handoff control remains separate; a targeted update keeps the sender's editing lease.
+
+Legacy Nova story save/publication/delete broadcast emails are suppressed by the Write override. Journal and announcement behavior is unchanged. Rich-text tags use plain-text insertion so trailing spaces are retained instead of being consumed by Markdown parsing.
+
+People, Setting and Topics are compact disclosures; manual handoff is collapsed by default. Word count stays in normal document flow with no inherited float clearance. Live rich/source geometry checks confirmed separation from the editor. UI-triggered targeted mail was captured locally, addressed only to a fake recipient and containing no story prose; repeating the action returned already-notified without a second email.

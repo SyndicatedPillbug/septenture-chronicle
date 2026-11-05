@@ -20,6 +20,8 @@ class Write extends Nova_write {
         }
     }
     protected function _email($type,$data) {
+        // Scene mail is targeted through the writing workspace, never broadcast by legacy saves/publication.
+        if(in_array($type,['post','post_pending','post_save','post_delete'],true))return true;
         if(in_array($type,['post','post_pending','post_save','post_delete'],true)&&isset($data['content']))$data['content']=Septenture_story_format::mail($data['content'],septenture_story_request_format($this->uri->segment(3)),$this->mail->mailtype);
         if(in_array($type,['log','log_pending','log_save'],true)&&isset($data['content']))$data['content']=Septenture_story_format::mail($data['content'],$_POST['log_content_format']??'legacy',$this->mail->mailtype);
         return parent::_email($type,$data);

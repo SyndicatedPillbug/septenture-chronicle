@@ -1,0 +1,22 @@
+{
+  "name": "septenture-story-editor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/rich.js --bundle --format=iife --target=es2020 --outfile=../overlay/assets/story-rich.js"
+  },
+  "dependencies": {
+    "@milkdown/kit": "7.22.3",
+    "mdast-util-gfm-strikethrough": "2.0.1",
+    "mdast-util-gfm-table": "2.0.0",
+    "micromark-extension-gfm-strikethrough": "2.1.0",
+    "micromark-extension-gfm-table": "2.1.2",
+    "unified": "11.0.5",
+    "remark-parse": "11.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "fake-indexeddb": "6.2.4",
+    "linkedom": "0.18.12"
+  }
+}
