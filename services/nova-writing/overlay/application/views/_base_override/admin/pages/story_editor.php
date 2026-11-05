@@ -86,7 +86,7 @@
 				<?php echo text_output($label['tags_sep'], 'span', 'fontSmall gray bold');?><br />
 				<?php echo form_input($inputs['tags']);?>
 				<?php echo img($images['help']);?>
-			</p></details></div><section class="scene-tags" data-scene-tags><div class="tagged-update"><button type="button" data-notify-tagged disabled>Save &amp; email tagged writers</button><span data-tagged-summary>Tag a scene writer with @ to choose who gets this update.</span></div><div data-tag-picker hidden><label>Find a scene writer<input type="search" aria-label="Find a scene writer" autocomplete="off"></label><div role="listbox" aria-label="Scene writers"></div><button type="button" data-close-picker>Close picker</button></div><details class="manual-handoff"><summary>Call in a writer or pass your turn</summary><button type="button" data-tag-writer disabled>@ Tag a writer</button><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><label><input type="checkbox" data-pass-turn checked> Pause my editing so they can write next</label><button type="button" data-notify-writer disabled>Notify writer</button></details><p role="status">Loading scene writers…</p></section>
+			</p></details></div><section class="scene-tags" data-scene-tags><div class="tagged-update"><button type="button" data-notify-tagged disabled>Save &amp; email tagged writers</button><span data-tagged-summary>Tag a scene writer with @ to choose who gets this update.</span></div><div data-tag-picker hidden><label>Find a writer or character<input type="search" aria-label="Find a writer or character" autocomplete="off"></label><div role="listbox" aria-label="Writers and characters"></div><button type="button" data-close-picker>Close picker</button></div><details class="manual-handoff"><summary>Call in a writer or pass your turn</summary><button type="button" data-tag-writer disabled>@ Tag a writer</button><label>Whose turn is it?<select aria-label="Writer to notify"><option value="">Choose a scene writer</option></select></label><label><input type="checkbox" data-pass-turn checked> Pause my editing so they can write next</label><button type="button" data-notify-writer disabled>Notify writer</button></details><p role="status">Loading scene writers…</p></section>
 
 			<p>
 				<?php echo form_button($inputs['post']);?>
@@ -179,4 +179,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104f"></script>
+</details></div><script src="/assets/writing-workspace.js?v=20261104g"></script>

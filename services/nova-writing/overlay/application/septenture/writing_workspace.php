@@ -25,7 +25,7 @@ final class Septenture_writing_workspace {
  public function __construct(private PDO $db,private int $user,private bool $admin){}
  private function query(string $sql,array $args=[]): PDOStatement {$q=$this->db->prepare($sql);$q->execute($args);return $q;}
  public function people(): array {
-  $rows=$this->query("SELECT u.userid,u.name,c.charid,TRIM(CONCAT_WS(' ',c.first_name,c.last_name)) AS character_name FROM nova_septenture_identities i JOIN nova_users u ON u.userid=i.userid JOIN nova_characters c ON c.user=u.userid JOIN nova_septenture_cast m ON m.charid=c.charid ORDER BY u.name,c.charid")->fetchAll(PDO::FETCH_ASSOC);
+  $rows=$this->query("SELECT u.userid,u.name,c.charid,TRIM(CONCAT_WS(' ',c.first_name,c.last_name)) AS character_name FROM nova_septenture_identities i JOIN nova_users u ON u.userid=i.userid JOIN nova_characters c ON c.user=u.userid ORDER BY u.name,c.charid")->fetchAll(PDO::FETCH_ASSOC);
   return array_map(fn($r)=>['user_id'=>(int)$r['userid'],'name'=>$r['name'],'character_id'=>(int)$r['charid'],'character_name'=>$r['character_name']],$rows);
  }
  public function inbox(): array {
