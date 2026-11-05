@@ -17,3 +17,7 @@ body[data-slug="fiction/index"] .page-listing{display:none}#fiction-exchange .fx
 #fiction-exchange [data-fx-reader-panel] header, #fiction-exchange .fx-reader-tools { flex-wrap:wrap; gap:.75rem; }
 #fiction-exchange button:focus-visible,#fiction-exchange a:focus-visible{outline:3px solid #d9b65b;outline-offset:3px}
 @media(max-width:600px){#fiction-exchange .fx-reader-tools{display:flex;flex-wrap:wrap}#fiction-exchange button,#fiction-exchange select{min-height:44px}#fiction-exchange [data-fx-reader-panel]{overflow-x:hidden}}
+/* Shared campaign palette for the Exchange's decorative accents and entry action. */
+html[data-septenture-theme] #fiction-exchange :is(h1 em,h1>span,.fx-profile>span,.fx-window>h2>span){color:var(--st-link)!important}
+html[data-septenture-theme] #fiction-exchange :is(.fx-tagline,.fx-profile>p,.fx-live,.fx-story .fx-credit,.fx-story .fx-source-link){color:var(--st-muted)!important}
+html[data-septenture-theme] #fiction-exchange .fx-compose a:first-child{background:var(--st-button)!important;color:var(--st-button-ink)!important;border-color:var(--st-edge)!important}
