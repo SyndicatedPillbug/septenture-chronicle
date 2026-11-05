@@ -45,7 +45,7 @@
         if(error)throw new Error('The writing desk is closed, but the player account could not be signed out. Please retry from your character page.')
         status.textContent='You are signed out of Septenture.';return
       }
-      if(!state||!/^[a-f0-9]{64}$/.test(state)) {const destination=new URL('/index.php/auth/start',nova.origin);const compose=new URLSearchParams(location.search).get('compose');if(['story','notes'].includes(compose))destination.searchParams.set('compose',compose);location.assign(destination.href);return}
+      if(!state||!/^[a-f0-9]{64}$/.test(state)) {const destination=new URL('/index.php/auth/start',nova.origin);const compose=new URLSearchParams(location.search).get('compose');if(['story','notes'].includes(compose))destination.searchParams.set('compose',compose);destination.searchParams.set('theme',window.SeptentureTheme?.get()||'system');location.assign(destination.href);return}
       async function handoff(session) {
         status.textContent='Opening your writing desk…'
         const response=await fetch(nova.origin+'/index.php/auth/ticket',{method:'POST',credentials:'omit',
@@ -54,7 +54,7 @@
         if(!response.ok)throw new Error(result.error||'The writing room could not be opened.')
         const destination=new URL('/index.php/auth/complete',nova.origin)
         destination.searchParams.set('ticket',result.ticket);destination.searchParams.set('state',state)
-        location.replace(destination.href)
+        destination.searchParams.set('theme',window.SeptentureTheme?.get()||'system');location.replace(destination.href)
       }
       const {data,error}=await client.auth.getSession()
       if(error)throw error

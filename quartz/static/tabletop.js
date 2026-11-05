@@ -9,7 +9,7 @@ if(root){
   const {data,error}=await client.auth.getSession();
   if(error||!data.session){form.hidden=false;status.textContent='Sign in with your Septenture account to take your seat.';return;}
   // Full-page POST keeps the access token out of URLs, history, storage and referrers.
-  const post=document.createElement('form');post.method='POST';post.action=new URL('/session/handoff',config.tabletopUrl).href;
+  const post=document.createElement('form');post.method='POST';const entry=new URL('/session/handoff',config.tabletopUrl);entry.searchParams.set('theme',window.SeptentureTheme?.get()||'system');post.action=entry.href;
   for(const [name,value] of Object.entries({token:data.session.access_token,campaign:config.campaign||'septenture'})){
    const field=document.createElement('input');field.type='hidden';field.name=name;field.value=value;post.append(field);
   }
