@@ -3,7 +3,7 @@
 }?>
 
 <?php if(!$this->uri->segment(3)&&!empty($_SESSION['compose_character'])){$suggested=(int)$_SESSION['compose_character'];foreach(($all_characters??[]) as $group)if(is_array($group)&&array_key_exists($suggested,$group))$authors_selected=[$suggested];} ?>
-<link rel="stylesheet" href="/assets/writing-workspace.css?v=20261104f">
+<link rel="stylesheet" href="/assets/writing-workspace.css?v=20261104h">
 <div class="writing-studio" data-writing-studio><p class="writing-eyebrow">THE SEPTENTURE WRITING ROOM</p>
 <div class="studio-controls"><a href="<?php echo site_url('write/index'); ?>">← My drafts</a><button type="button" data-studio-focus aria-pressed="false">Focus mode</button><button type="button" data-studio-save>Save now</button><button type="button" data-studio-tag disabled>@ Tag writer</button><a href="/index.php/play/notebook" target="_blank" rel="noopener">My private notes ↗</a></div>
 <?php echo text_output($story_id?'Continue the story':'A new scene', 'h1', 'page-head');?>
@@ -179,4 +179,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104g"></script>
+</details></div><script src="/assets/writing-workspace.js?v=20261104h"></script>
