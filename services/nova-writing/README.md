@@ -22,3 +22,5 @@ The isolated Nova fixtures passed 26 workspace API/privacy tests, 45 draft tests
 Only unconfirmed edits create browser recovery records. Historical generation-zero records are ignored without deletion. Genuine unsaved writing requires an explicit recovery choice, shown in the editor status; starting a separate draft retains the old copy. IndexedDB opening and transactions have bounded waits so blocked recovery storage cannot leave the editor opening indefinitely.
 
 Feature acceptance requires computer-use verification through the human interface: enter real test text, save, leave, reopen, and verify the saved values. Rendering controls and API checks alone do not establish completion. Use isolated accounts for sharing/notification tests, and never publish test prose or notify real players during a smoke test.
+
+Collaborator sharing uses an in-page access confirmation, not a browser popup. Add presents the specific player and character, including read/edit access to existing text; Cancel leaves membership unchanged. Membership changes require an active editable draft and use the existing draft revision/autosave path.

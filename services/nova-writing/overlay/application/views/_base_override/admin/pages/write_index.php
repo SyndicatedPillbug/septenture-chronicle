@@ -13,4 +13,4 @@
 <?php if($older): ?><details><summary>Older import drafts (<?php echo count($older); ?>)</summary><ul><?php foreach($older as $p): ?><li><a href="<?php echo site_url('write/missionpost/'.(int)$p['post_id']); ?>"><?php echo $esc($p['title']); ?></a></li><?php endforeach; ?></ul></details><?php endif; ?>
 <?php if(!empty($logs_saved)): ?><details><summary>Existing journal drafts</summary><p>Journal entries can be published to the Exchange. Use My private game notes for notes only you can read.</p><ul><?php foreach($logs_saved as $l): ?><li><a href="<?php echo site_url('write/personallog/'.(int)$l['log_id']); ?>"><?php echo $esc($l['title']); ?></a></li><?php endforeach; ?></ul></details><?php endif; ?>
 <?php if(Auth::check_access('write/newsitem',false)): ?><details><summary>Announcements and publishing tools</summary><p><a href="<?php echo site_url('write/newsitem'); ?>">New announcement</a> · <a href="<?php echo site_url('write/personallog'); ?>">New published journal entry</a></p></details><?php endif; ?>
-</article><script src="/assets/writing-workspace.js?v=20261104a"></script>
+</article><script src="/assets/writing-workspace.js?v=20261104e"></script>

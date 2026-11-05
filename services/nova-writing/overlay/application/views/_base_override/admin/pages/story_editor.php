@@ -179,4 +179,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104c"></script>
+</details></div><script src="/assets/writing-workspace.js?v=20261104e"></script>
