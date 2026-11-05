@@ -1,5 +1,6 @@
 const {applyProfile,decorateProfile}=await import(new URL('./character-identity.js'+new URL(import.meta.url).search,import.meta.url).href)
 // The public key identifies the project. Postgres and Storage enforce ownership.
+const proseBase=new URL('.',import.meta.url);
 const here = new URL('.', import.meta.url)
 let publicConfig
 async function getClient(){const {getAccount}=await import(new URL('./campaign-account.js',import.meta.url));const account=await getAccount();publicConfig=account.config;return account.client}
@@ -40,7 +41,7 @@ export async function mount(root, signal) {
   on(dialog,'cancel',event=>{if(saving)event.preventDefault()})
   on(dialog,'close',()=> {if(!saving && client && pending.length){const paths=pending.splice(0);client.storage.from('character-media').remove(paths)}})
   signal.addEventListener('abort',()=>{dialog.close();dialog.remove();bar.remove()},{once:true})
-  function open(title) {body.replaceChildren();status.textContent='';heading.textContent=title;dialog.showModal()}
+  function open(title) {for(const input of body.querySelectorAll('textarea'))input.dispatchEvent(new Event('septenture-destroy'));body.replaceChildren();status.textContent='';heading.textContent=title;dialog.showModal()}
   function field(form,label,name,value='',kind='text',max=160) {
     const wrapper=make('label',label)
     const input=make(kind==='textarea'?'textarea':'input')
@@ -101,11 +102,13 @@ export async function mount(root, signal) {
     for(const [name,label,kind,max] of [['display_name','Display name','text',80],['tagline','Small banner text','text',160],['heading','Banner title','text',160],['mood','Status / player update','text',160],['location','Currently / location','text',160],['bio','About me','textarea',5000],['interests','Player pinboard (one per line)','textarea',1200],['music_title','Track title','text',160]]){
       fields[name]=field(form,label,name,profile[name],kind,max)
       if(['display_name','heading','bio'].includes(name))fields[name].required=true
+      if(name==='bio')window.SeptenturePublicProse.attach(fields[name],proseBase)
     }
     form.append(make('p','These character details are shared with Nova. Keep private information in your private sheet notes.'))
     const detailFields={}
     const details=make('details');details.append(make('summary','Appearance, personality, family and background'));form.append(details)
     for(const key of detailNames)detailFields[key]=field(details,key.replaceAll('_',' '),key,profile.character_details?.[key]??'','textarea',5000)
+    for(const key of ['physical_desc','personality','strengths','ambitions','hobbies','service_record'])window.SeptenturePublicProse.attach(detailFields[key],proseBase)
     const themeLabel=make('label','Your theme');const theme=make('select');theme.name='theme'
     for(const [value,text] of [['moon','Moonlit bookbinder'],['candle','Candle & bone'],['water','Green water'],['hive','Honeycomb'],['rose','Pressed rose'],['watch','White & gold'],['powder','Violet smoke']]){const option=make('option',text);option.value=value;theme.append(option)}
     theme.value=profile.theme;themeLabel.append(theme);form.append(themeLabel)
@@ -197,7 +200,7 @@ export async function mount(root, signal) {
     notes.replaceChildren()
     if(!data.length)notes.append(make('p','The first page is still blank.','pc-fine'))
     for(const note of data){
-      const el=make('div',undefined,'pc-guest-note');el.append(make('strong',note.name),make('p',note.message))
+      const el=make('div',undefined,'pc-guest-note');const prose=make('div');window.SeptenturePublicProse.render(prose,note.message,proseBase);el.append(make('strong',note.name),prose)
       if(session && (owned || note.author_id===session.user.id))button(el,'Remove note',async()=>{
         const{error}=await client.from('character_guestbook').delete().eq('id',note.id)
         if(error)bookStatus.textContent='That note could not be removed.';else await loadNotes()
@@ -230,6 +233,7 @@ export async function mount(root, signal) {
     bookForm.querySelector('button[type=submit]').disabled=true
     bookStatus=bookForm.querySelector('[data-guest-status]')
     bookForm.querySelector('button[type=submit]').textContent='✎ Sign the guestbook'
+    window.SeptenturePublicProse.attach(bookForm.querySelector('[name=message]'),proseBase)
     displayName=bookForm.querySelector('[name=guest]');displayName.value=''
     notes=root.querySelector('[data-guest-entries]')
     root.querySelector('#sign-the-guestbook').closest('.pc-panel').querySelector('.pc-fine').textContent='The shared guestbook. Everyone can read it; players can sign it.'
@@ -242,7 +246,7 @@ export async function mount(root, signal) {
       try{
         const{error}=await client.from('character_guestbook').insert({character_slug:slug,name,message})
         if(error)throw error
-        bookForm.querySelector('[name=message]').value='';await loadNotes();bookStatus.textContent='Signed! Your note is saved for everyone.'
+        bookForm.querySelector('[name=message]').value='';bookForm.querySelector('[name=message]').dispatchEvent(new Event('septenture-reset'));await loadNotes();bookStatus.textContent='Signed! Your note is saved for everyone.'
       }catch(error){bookStatus.textContent=error.message || 'Your note could not be saved.'}finally{submit.disabled=!approved}
     })
     await refreshAuth();await loadNotes()

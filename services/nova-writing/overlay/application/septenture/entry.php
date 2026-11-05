@@ -140,6 +140,7 @@ try {
     define('SEPTENTURE_PLAYER_SUBJECT',$identity['uuid']);
     define('SEPTENTURE_PLAYER_TOKEN',$_SESSION['token']);
     define('SEPTENTURE_PLAYER_ADMIN',$identity['admin']);
+    define('SEPTENTURE_PLAYER_CSRF',$_SESSION['csrf']??'');
     if($route==='owner/release-status'&&$method==='GET') {
         if(empty($identity['site_admin'])||!hash_equals(septenture_config('PLAY_ADMIN_SUBJECT'),$identity['uuid']))septenture_fail('Not found.',404);
         require __DIR__.'/owner_status.php';exit;

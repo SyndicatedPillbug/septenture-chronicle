@@ -9,3 +9,7 @@
 .map-management>.wrapper>.header,.map-management>.wrapper>.navbar,.map-management>.wrapper>.footer{display:none!important}.map-management .wrapper{padding-top:0!important}.map-management .workshop-navigation .septenture-theme-control{margin-left:0}.map-management :is(table,td,th,.panel,.well){background:var(--st-surface)!important;color:var(--st-ink)!important;border-color:var(--st-edge)!important}.map-management .content{padding-top:20px!important}
 
 .board-token-list>p{grid-column:1/-1}
+
+/* Focus enlarges the existing iframe, so map state and its controls stay intact. */
+.campaign-table-shell.board-focus{grid-template-rows:minmax(0,1fr)}.campaign-table-shell.board-focus>.table-shell-header{display:none}.live-board.board-focus .board-toolbar{background:var(--st-surface);border-bottom:1px solid var(--st-edge)}.board-toolbar button[aria-pressed=true]{font-weight:700}
+.board-popup>div>button{margin:.3rem .5rem .5rem 0}#piece-control [data-control-home]{margin-right:1rem}

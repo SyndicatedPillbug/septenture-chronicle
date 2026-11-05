@@ -63,22 +63,7 @@
  window.SeptentureStoryEditor={content:()=>source.value,editable:()=>ready&&(!id||leased)&&!blocked&&!paused&&!viewOnly&&mode!=='preview',insert(text){if(!this.editable())return;if(mode==='rich')rich.insert(text);else{source.setRangeText(text,source.selectionStart,source.selectionEnd,'end');source.dispatchEvent(new Event('input',{bubbles:true}));source.focus()}},selection:()=>({start:source.selectionStart,end:source.selectionEnd}),story:()=>id};
  if(mount.dataset.richText==='0')mount.querySelector('[data-story-rich]').hidden=true;
  for(const name of ['source','rich','preview'])mount.querySelector(`[data-story-${name}]`).addEventListener('click',()=>showMode(name));
- const icons={
- undo:'↶',redo:'↷',bold:'B',italic:'I',strike:'S',bullet:'• ≡',ordered:'1. ≡',quote:'❝',link:'↗',image:'▧',inline:'‹/›',code:'{ }',rule:'―',table:'▦',row:'↧',column:'↦',deleteCells:'⌫',deleteRow:'− ↔',deleteColumn:'− ↕',deleteTable:'× ▦'};
- const groups=[
- [['Undo','undo','Ctrl+Z'],['Redo','redo','Ctrl+Shift+Z']],
- [['Bold','bold','Ctrl+B'],['Italic','italic','Ctrl+I'],['Strikethrough','strike','']],
- [['Bulleted list','bullet',''],['Numbered list','ordered',''],['Blockquote','quote','']],
- [['Insert link','link',''],['Insert image URL','image','']],
- [['Inline code','inline',''],['Code block','code',''],['Horizontal rule','rule','']],
- [['Insert table','table',''],['Add row below','row',''],['Add column after','column',''],['Clear selected cells','deleteCells',''],['Delete row','deleteRow',''],['Delete column','deleteColumn',''],['Delete table','deleteTable','']]
- ];
- const styleGroup=document.createElement('div');styleGroup.className='story-toolbar-group story-toolbar-style';
- const select=document.createElement('select');select.setAttribute('aria-label','Paragraph style');select.title='Paragraph style';for(let i=0;i<=6;i++){const o=document.createElement('option');o.value=i;o.textContent=i?'Heading '+i:'Normal text';select.append(o)}select.addEventListener('change',()=>rich?.command(select.value==='0'?'paragraph':'heading',Number(select.value)));styleGroup.append(select);toolbar.append(styleGroup);
- const svgPaths={undo:'M3 7h9a6 6 0 0 1 0 12H9 M3 7l4-4 M3 7l4 4',redo:'M21 7h-9a6 6 0 0 0 0 12h3 M21 7l-4-4 M21 7l-4 4',bullet:'M9 6h12 M9 12h12 M9 18h12 M3 6h.01 M3 12h.01 M3 18h.01',ordered:'M10 6h11 M10 12h11 M10 18h11 M3 3h1v6 M2 12q4-3 4 0l-4 5h4',link:'M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2 M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2',image:'M3 3h18v18H3z M3 17l6-6 5 5 3-3 4 4 M16 7h.01',table:'M3 3h18v18H3z M3 9h18 M3 15h18 M9 3v18 M15 3v18',row:'M3 3h18v12H3z M3 9h18 M8 3v12 M16 3v12 M12 18v5 M9 21h6',column:'M3 3h12v18H3z M9 3v18 M3 9h12 M3 15h12 M18 12h5 M21 9v6',quote:'M4 7h6v6H6q0 4-3 4 M14 7h6v6h-4q0 4-3 4',rule:'M3 12h18',code:'M8 5L2 12l6 7 M16 5l6 7-6 7 M14 3l-4 18'};
- const extra=document.createElement('details'),extraTitle=document.createElement('summary');extraTitle.textContent='More formatting';extra.className='studio-extra-formatting';extra.append(extraTitle);toolbar.append(extra);
- for(const [groupIndex,group] of groups.entries()){const section=document.createElement('div');section.className='story-toolbar-group';for(const [label,cmd,shortcut] of group){const b=button(icons[cmd],()=>rich?.command(cmd,cmd==='table'?{row:3,col:3}:undefined),section);b.className='story-format-button story-format-'+cmd;b.dataset.command=cmd;if(svgPaths[cmd])b.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="'+svgPaths[cmd]+'"/></svg>';b.setAttribute('aria-label',label);b.title=label+(shortcut?' ('+shortcut+')':'');if(['bold','italic','strike','inline'].includes(cmd))b.setAttribute('aria-pressed','false');b.addEventListener('mousedown',e=>e.preventDefault())}(groupIndex>=4?extra:toolbar).append(section)}
- document.addEventListener('story-selection-change',()=>{if(!rich)return;const state=rich.state();for(const name of ['bold','italic','strike','inline'])toolbar.querySelector(`[data-command="${name}"]`)?.setAttribute('aria-pressed',String(state[name]));select.value=String(state.heading)});
+ const ribbon=()=>window.SeptentureRibbon(toolbar,()=>rich);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ribbon,{once:true});else ribbon();
  form.addEventListener('input',changed);form.addEventListener('change',changed);
  // Nova’s Chosen widgets emit jQuery-only changes, rather than DOM change events.
  if(window.jQuery)window.jQuery(form).on('change.septentureStory','select[name="authors[]"],select[name="mission"]',event=>{if(!event.originalEvent)changed(event)});

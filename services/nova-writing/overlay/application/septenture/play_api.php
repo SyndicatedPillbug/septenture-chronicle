@@ -155,6 +155,7 @@ function septenture_play_api(string $route,string $method,array $identity,string
                 $sheet=$store->sheet($id);$revision=septenture_play_integer($input['revision']??null);
                 if($revision!==$sheet['revision'])throw new RuntimeException('Sheet changed. Reload before saving.',409);
                 $document=$sheet['document'];$document['notes']=septenture_play_text($input['notes']??null,16000);
+                if(isset($input['notes_format'])){if(!in_array($input['notes_format'],['plain','markdown'],true))throw new InvalidArgumentException('Choose plain text or Markdown.',400);$document['notes_format']=$input['notes_format'];}
                 septenture_json(['sheet'=>$store->saveSheet($id,$revision,$document)]);
             }
             if($method==='POST'&&$action==='sources') {

@@ -1,26 +1,70 @@
+// One ribbon for every rich writing surface. Host owns source, revisions and permissions.
+window.SeptentureRibbon=(toolbar,getRich)=>{
+ toolbar.setAttribute('data-rich-toolbar','');toolbar.setAttribute('role','toolbar');toolbar.setAttribute('aria-label','Text formatting');
+ const icons={
+ undo:'↶',redo:'↷',bold:'B',italic:'I',strike:'S',bullet:'• ≡',ordered:'1. ≡',quote:'❝',link:'↗',image:'▧',inline:'‹/›',code:'{ }',rule:'―',table:'▦',row:'↧',column:'↦',deleteCells:'⌫',deleteRow:'− ↔',deleteColumn:'− ↕',deleteTable:'× ▦'};
+ const groups=[
+ [['Undo','undo','Ctrl+Z'],['Redo','redo','Ctrl+Shift+Z']],
+ [['Bold','bold','Ctrl+B'],['Italic','italic','Ctrl+I'],['Strikethrough','strike','']],
+ [['Bulleted list','bullet',''],['Numbered list','ordered',''],['Blockquote','quote','']],
+ [['Insert link','link',''],['Insert image URL','image','']],
+ [['Inline code','inline',''],['Code block','code',''],['Horizontal rule','rule','']],
+ [['Insert table','table',''],['Add row below','row',''],['Add column after','column',''],['Clear selected cells','deleteCells',''],['Delete row','deleteRow',''],['Delete column','deleteColumn',''],['Delete table','deleteTable','']]
+ ];
+ const button=(text,fn,host)=>{const b=document.createElement('button');b.type='button';b.textContent=text;b.addEventListener('click',fn);host.append(b);return b};
+ const styleGroup=document.createElement('div');styleGroup.className='story-toolbar-group story-toolbar-style';
+ const select=document.createElement('select');select.setAttribute('aria-label','Paragraph style');select.title='Paragraph style';for(let i=0;i<=6;i++){const o=document.createElement('option');o.value=i;o.textContent=i?'Heading '+i:'Normal text';select.append(o)}select.addEventListener('change',()=>getRich()?.command(select.value==='0'?'paragraph':'heading',Number(select.value)));styleGroup.append(select);toolbar.append(styleGroup);
+ const svgPaths={undo:'M3 7h9a6 6 0 0 1 0 12H9 M3 7l4-4 M3 7l4 4',redo:'M21 7h-9a6 6 0 0 0 0 12h3 M21 7l-4-4 M21 7l-4 4',bullet:'M9 6h12 M9 12h12 M9 18h12 M3 6h.01 M3 12h.01 M3 18h.01',ordered:'M10 6h11 M10 12h11 M10 18h11 M3 3h1v6 M2 12q4-3 4 0l-4 5h4',link:'M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2 M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2',image:'M3 3h18v18H3z M3 17l6-6 5 5 3-3 4 4 M16 7h.01',table:'M3 3h18v18H3z M3 9h18 M3 15h18 M9 3v18 M15 3v18',row:'M3 3h18v12H3z M3 9h18 M8 3v12 M16 3v12 M12 18v5 M9 21h6',column:'M3 3h12v18H3z M9 3v18 M3 9h12 M3 15h12 M18 12h5 M21 9v6',quote:'M4 7h6v6H6q0 4-3 4 M14 7h6v6h-4q0 4-3 4',rule:'M3 12h18',code:'M8 5L2 12l6 7 M16 5l6 7-6 7 M14 3l-4 18'};
+ const extra=document.createElement('details'),extraTitle=document.createElement('summary');extraTitle.textContent='More formatting';extra.className='studio-extra-formatting';extra.append(extraTitle);toolbar.append(extra);
+ for(const [groupIndex,group] of groups.entries()){const section=document.createElement('div');section.className='story-toolbar-group';for(const [label,cmd,shortcut] of group){const b=button(icons[cmd],()=>getRich()?.command(cmd,cmd==='table'?{row:3,col:3}:undefined),section);b.className='story-format-button story-format-'+cmd;b.dataset.command=cmd;if(svgPaths[cmd])b.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="'+svgPaths[cmd]+'"/></svg>';b.setAttribute('aria-label',label);b.title=label+(shortcut?' ('+shortcut+')':'');if(['bold','italic','strike','inline'].includes(cmd))b.setAttribute('aria-pressed','false');b.addEventListener('mousedown',e=>e.preventDefault())}(groupIndex>=4?extra:toolbar).append(section)}
+ const selection=()=>{if(!getRich())return;const state=getRich().state();for(const name of ['bold','italic','strike','inline'])toolbar.querySelector(`[data-command="${name}"]`)?.setAttribute('aria-pressed',String(state[name]));select.value=String(state.heading)};document.addEventListener('story-selection-change',selection);return()=>document.removeEventListener('story-selection-change',selection);
+
+};
 // Shared Markdown authoring control. Persistence and permissions belong to its host.
-window.SeptentureProse={mount(container,{source='',format='markdown',editable=true,initialMode='source',label='Section prose',preview,onChange=()=>{}}){
+window.SeptentureProse={mount(container,{source='',format='markdown',editable=true,initialMode='rich',label='Section prose',preview,onChange=()=>{}}){
  const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n}
- const toolbar=el('div'),text=el('textarea'),richRoot=el('div'),output=el('div'),status=el('p');status.setAttribute('role','status');text.value=source;text.rows=8;text.readOnly=!editable;text.setAttribute('aria-label',label+' source');richRoot.className='story-rich-surface';output.className='story-preview';richRoot.hidden=true;output.hidden=true;let rich=null,serial=0,destroyed=false
+ container.classList.add('prose-editor');const toolbar=el('div'),text=el('textarea'),richRoot=el('div'),output=el('div'),status=el('p');status.setAttribute('role','status');text.value=source;text.rows=8;text.readOnly=!editable;text.setAttribute('aria-label',label+' source');richRoot.className='story-rich-surface';output.className='story-preview';richRoot.hidden=true;output.hidden=true;let rich=null,serial=0,destroyed=false
  const changed=value=>{if(destroyed)return;text.value=value;serial++;onChange(value,format)}
  text.addEventListener('input',()=>changed(text.value))
- const commandbar=el('div');commandbar.hidden=true
- for(const [name,label]of [['bold','Bold'],['italic','Italic'],['bullet','List'],['quote','Quote'],['link','Link'],['undo','Undo'],['redo','Redo']]){const b=el('button',label);b.type='button';b.addEventListener('click',()=>rich?.command(name));commandbar.append(b)}
- async function mode(next){const original=text.value,ticket=++serial;let candidate=null;status.textContent='';if(rich){await rich.destroy();rich=null}if(destroyed||ticket!==serial)return;text.hidden=false;richRoot.hidden=true;output.hidden=true;commandbar.hidden=true
+ toolbar.className='prose-modebar';toolbar.setAttribute('role','group');toolbar.setAttribute('aria-label','Editor view');const commandbar=el('div');commandbar.className='prose-ribbon';commandbar.hidden=true;const destroyRibbon=window.SeptentureRibbon(commandbar,()=>rich)
+ async function mode(next){for(const b of toolbar.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode===next));const original=text.value,ticket=++serial;let candidate=null;status.textContent='';if(rich){await rich.destroy();rich=null}if(destroyed||ticket!==serial)return;text.hidden=false;richRoot.hidden=true;output.hidden=true;commandbar.hidden=true
   try{if(next==='rich'){
-   if(format!=='markdown')throw Error('This section uses plain text. Keep editing its source to preserve the original formatting.')
+   if(!['markdown','legacy'].includes(format))throw Error('This section uses plain text. Keep editing its source to preserve the original formatting.')
    if(!window.SeptentureRich)throw Error('Rich editing is unavailable. Your source is still editable.')
-   if(/<\/?[A-Za-z!]|\[[ xX]\]\s|\]\(\s*(?:javascript|data|vbscript):/i.test(original))throw Error('This source contains formatting that rich editing cannot preserve. Keep editing its source so nothing is dropped.')
-   let enabled=false;candidate=await window.SeptentureRich.create(richRoot,original,changed,()=>enabled&&editable&&!destroyed)
+   if(format==='markdown'&&(/<\/?[A-Za-z!]|\[[ xX]\]\s|\]\(\s*(?:javascript|data|vbscript):/i.test(original)))throw Error('This source contains formatting that rich editing cannot preserve. Keep editing its source so nothing is dropped.')
+   let enabled=false,legacyHTML=null;if(format==='legacy'){legacyHTML=await preview(original,format);const t=el('template');t.innerHTML=legacyHTML;const allowed=new Set('P BR HR H1 H2 H3 H4 H5 H6 STRONG B EM I DEL S UL OL LI BLOCKQUOTE PRE CODE A IMG TABLE THEAD TBODY TR TH TD'.split(' '));if([...t.content.querySelectorAll('*')].some(n=>!allowed.has(n.tagName)||[...n.attributes].some(a=>!['href','src','alt','title','start','align'].includes(a.name))))throw Error('This text has older formatting. Source mode preserves it exactly.')}
+   candidate=await window.SeptentureRich.create(richRoot,format==='legacy'?'':original,value=>changed(format==='legacy'?rich?.html()||original:value),()=>enabled&&editable&&!destroyed,legacyHTML)
    const proposed=candidate.serialized()
-   if(proposed!==original){const [before,after]=await Promise.all([preview(original,format),preview(proposed,format)]);const canonical=html=>{const t=el('template');t.innerHTML=html;return t.innerHTML.replace(/>\s+</g,'><').trim()};if(canonical(before)!==canonical(after))throw Error('Rich editing would change unsupported formatting. Your exact source has been kept.')}
+   if(format==='markdown'&&proposed!==original){const [before,after]=await Promise.all([preview(original,format),preview(proposed,format)]);const canonical=html=>{const t=el('template');t.innerHTML=html;return t.innerHTML.replace(/>\s+</g,'><').trim()};if(canonical(before)!==canonical(after))throw Error('Rich editing would change unsupported formatting. Your exact source has been kept.')}
    if(destroyed||ticket!==serial||text.value!==original){await candidate.destroy();return}rich=candidate;candidate=null;enabled=true;rich.editable();const surface=richRoot.querySelector('[contenteditable]');if(surface){surface.setAttribute('role','textbox');surface.setAttribute('aria-multiline','true');surface.setAttribute('aria-label',label+' rich text')}text.hidden=true;richRoot.hidden=false;commandbar.hidden=!editable
   }else if(next==='preview'){
    const html=await preview(original,format);if(destroyed||ticket!==serial||text.value!==original)return;output.innerHTML=html;text.hidden=true;output.hidden=false
   }}catch(error){await candidate?.destroy();if(ticket===serial&&!destroyed){status.textContent=error.message;text.hidden=false}}
  }
- for(const [key,label]of [['source','Source'],['rich','Rich text'],['preview','Preview']]){const b=el('button',label);b.type='button';b.addEventListener('click',()=>mode(key));toolbar.append(b)}
+ for(const [key,label]of [['source','Source'],['rich','Rich text'],['preview','Preview']]){const b=el('button',label);b.type='button';b.dataset.mode=key;b.setAttribute('aria-pressed',String(key===initialMode));b.addEventListener('click',()=>mode(key));toolbar.append(b)}
  container.append(toolbar,commandbar,text,richRoot,output,status)
- if(initialMode!=='source')mode(initialMode)
- return {source:()=>text.value,async destroy(){destroyed=true;serial++;await rich?.destroy()}}
+ if(format==='plain'&&editable){const convert=el('button','Enable formatting');convert.type='button';convert.title='Keep the existing text and enable rich formatting';convert.addEventListener('click',()=>{format='markdown';text.value=text.value.replace(/[\\`*_{}[\]()#+.!|>~-]/g,'\\$&');changed(text.value);convert.remove();mode('rich')});toolbar.append(convert)}
+ if(initialMode!=='source'&&['markdown','legacy'].includes(format))mode(initialMode);else for(const b of toolbar.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode==='source'))
+ return {source:()=>text.value,async destroy(){destroyed=true;serial++;destroyRibbon();await rich?.destroy()}}
 }}
+
+;(()=>{if(document.querySelector('#septenture-prose-style'))return;const style=document.createElement('style');style.id='septenture-prose-style';style.textContent=`
+.prose-editor{display:flow-root;min-width:0;margin:.7rem 0}.prose-modebar{display:flex;gap:.25rem;padding:.35rem;background:var(--st-raised,#f2eddf);border:1px solid var(--st-edge,#c7bca3);border-radius:.35rem .35rem 0 0}.prose-modebar button{font:13px system-ui!important;min-height:32px!important;padding:.35rem .7rem!important;border:1px solid transparent!important;background:transparent!important;color:var(--st-ink,#302d38)!important}.prose-modebar button[aria-pressed=true]{background:var(--st-surface,#fffdf5)!important;border-color:var(--st-edge,#c7bca3)!important;font-weight:700!important}
+.prose-ribbon{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem;padding:.35rem;background:var(--st-raised,#f2eddf);border:1px solid var(--st-edge,#c7bca3);border-top:0}.prose-ribbon[hidden]{display:none!important}.prose-ribbon .story-toolbar-group{display:flex;align-items:center;gap:2px;border-right:1px solid var(--st-edge,#c7bca3);padding:0 .35rem;flex-wrap:wrap}.prose-ribbon select{font:13px system-ui!important;max-width:140px;padding:.3rem!important;margin:0!important;min-height:32px!important}.prose-ribbon button.story-format-button{display:inline-flex!important;justify-content:center;align-items:center;min-width:32px!important;min-height:32px!important;padding:3px 6px!important;margin:0!important;background:transparent!important;color:var(--st-ink,#302d38)!important;border:1px solid transparent!important;border-radius:3px!important;font:600 18px/1.2 system-ui!important;box-shadow:none!important}.prose-ribbon button:hover,.prose-ribbon button:focus-visible{border-color:var(--st-focus,#79643f)!important;background:var(--st-surface,#fffdf5)!important}.prose-ribbon button[aria-pressed=true]{background:var(--st-surface,#e6ddc9)!important;border-color:var(--st-focus,#79643f)!important}.prose-ribbon details{font:12px system-ui;margin:0 .3rem}.prose-ribbon details[open]{flex-basis:100%;padding:.5rem}.prose-ribbon details[open] .story-toolbar-group{display:inline-flex}.prose-ribbon summary{cursor:pointer;padding:.35rem}.prose-editor>.story-rich-surface,.prose-editor>textarea,.prose-editor>.story-preview{box-sizing:border-box;width:100%;min-height:10rem;padding:1rem;border:1px solid var(--st-edge,#c7bca3);border-top:0;background:var(--st-surface,#fffdf5);color:var(--st-ink,#302d38);font:1.05rem/1.75 Georgia,serif}.prose-editor .ProseMirror{min-height:8rem;outline:none}.prose-editor .ProseMirror p{margin:.6em 0}.prose-editor [hidden]{display:none!important}.prose-editor>[role=status]:empty{display:none}
+`;document.head.append(style)})();
+
+// Native Nova prose forms keep their established HTML storage and readers.
+(()=>{
+ const path=location.pathname;
+ const enabled=/\/index\.php\/(?:messages\/(?:write|reply)|write\/newsitem|manage\/(?:news|comments)|characters\/(?:bio|create)|main\/viewnews|sim\/(?:viewpost|viewlog))/.test(path);
+ if(!enabled)return;let session;
+ const auth=()=>session??=fetch('/index.php/play/writing/session',{credentials:'same-origin',cache:'no-store'}).then(async r=>{if(!r.ok)throw Error('Sign in again in another tab to use formatting. Your text is kept.');return r.json()}).catch(e=>{session=null;throw e});
+ async function attach(text){if(text.dataset.proseNative||text.readOnly||text.closest('.prose-editor,[data-story-editor],[data-journal-editor],.shared-character-profile'))return;
+  const name=text.name;if(!['message','content','comment_text','news_content','pcomment_content','lcomment_content','ncomment_content','wcomment_content'].includes(name)&&!(/^\d+$/.test(name)&&/\/characters\/bio/.test(path)))return;
+  text.dataset.proseNative='loading';try{const bootstrap=await auth();if(!text.isConnected)return;const host=document.createElement('div');text.after(host);text.hidden=true;text.dataset.proseNative='ready';const label=text.getAttribute('aria-label')||text.labels?.[0]?.textContent.trim().split('\n')[0]||'Writing';
+   window.SeptentureProse.mount(host,{source:text.value,format:'legacy',label,preview:async(content,format)=>{const r=await fetch('/index.php/play/formatting/preview',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-Play-CSRF':bootstrap.csrf},body:JSON.stringify({content,format})});const value=await r.json();if(!r.ok)throw Error(value.error||'Preview could not load.');return value.html},onChange:value=>{text.value=value;text.dispatchEvent(new Event('input',{bubbles:true}))}})
+  }catch(error){text.hidden=false;delete text.dataset.proseNative;const status=document.createElement('p');status.setAttribute('role','status');status.textContent=error.message;text.after(status)}
+ }
+ const scan=()=>document.querySelectorAll('textarea').forEach(attach);
+ const start=()=>{scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true})};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();

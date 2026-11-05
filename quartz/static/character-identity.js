@@ -1,3 +1,5 @@
+import './prose-public.js';
+const proseBase=new URL('.',import.meta.url);
 // A display name can change; the profile slug and Nova character ID cannot.
 export const CAST=[
   ['page','Page','✧'],['ceridwen','Ceridwen','☽'],['coy','Coy','♧'],
@@ -95,14 +97,14 @@ export function applyProfile(root,p){
   set('.pc-identity h1',name);set('.pc-banner .pc-eyebrow',p.tagline);set('.pc-banner-title',p.heading)
   set('.pc-status',p.mood===undefined?undefined:'✦ '+p.mood);set('.pc-facts dd',p.location)
   set('.pc-main .pc-panel h2','ABOUT '+name.toUpperCase());set('.pc-marquee span','✧ welcome to '+name+'’s homepage ✧')
-  const bio=root.querySelectorAll('.pc-main .pc-panel-body > p')[1];if(bio&&p.bio!==undefined)bio.textContent=p.bio
+  const bio=root.querySelectorAll('.pc-main .pc-panel-body > p')[1];if(bio&&p.bio!==undefined)window.SeptenturePublicProse.render(bio,p.bio,proseBase)
   const interests=root.querySelector('.pc-likes')
   if(interests&&p.interests!==undefined){interests.replaceChildren();for(const text of String(p.interests||'').split('\n').filter(Boolean)){const li=document.createElement('li');li.textContent=text;interests.append(li)}}
   if(p.character_details){
     let panel=root.querySelector('[data-shared-character-details]')
     const about=root.querySelector('.pc-main .pc-panel')
     if(!panel&&about){panel=document.createElement('section');panel.className='pc-panel';panel.dataset.sharedCharacterDetails='';about.after(panel)}
-    if(panel){panel.replaceChildren();const dl=document.createElement('dl');for(const key of detailNames){const value=p.character_details[key];if(typeof value==='string'&&value.trim()){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key.replaceAll('_',' ');dd.textContent=value;dl.append(dt,dd)}}panel.hidden=!dl.children.length;if(dl.children.length){const h=document.createElement('h2');h.textContent='Character details';panel.append(h,dl)}}
+    if(panel){panel.replaceChildren();const dl=document.createElement('dl');for(const key of detailNames){const value=p.character_details[key];if(typeof value==='string'&&value.trim()){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key.replaceAll('_',' ');window.SeptenturePublicProse.render(dd,value,proseBase);dl.append(dt,dd)}}panel.hidden=!dl.children.length;if(dl.children.length){const h=document.createElement('h2');h.textContent='Character details';panel.append(h,dl)}}
   }
   if(p.theme)for(const theme of themes)root.classList.toggle('pc-'+theme,theme===p.theme)
   if(p.accent!==undefined){if(/^#[0-9a-f]{6}$/i.test(p.accent||''))root.style.setProperty('--pc-accent',p.accent);else root.style.removeProperty('--pc-accent')}

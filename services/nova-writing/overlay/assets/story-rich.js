@@ -9802,6 +9802,78 @@
     const walk = (node2) => typeof node2.url === "string" && !allowed(node2.url, node2.type === "image") || (node2.children || []).some(walk);
     return walk(parser.parse(source));
   }
+  var parseMarkdown = (source) => parser.parse(source);
+
+  // src/prose-render.js
+  function renderMarkdown(source, allowed) {
+    const tree = parseMarkdown(source), definitions2 = /* @__PURE__ */ new Map();
+    const scan = (n) => {
+      if (n.type === "definition") definitions2.set(n.identifier.toLowerCase(), n);
+      for (const c of n.children || []) scan(c);
+    };
+    scan(tree);
+    const text5 = (value) => document.createTextNode(value || "");
+    function render2(n) {
+      if (n.type === "root") {
+        const f = document.createDocumentFragment();
+        for (const c of n.children || []) f.append(render2(c));
+        return f;
+      }
+      if (["text", "html"].includes(n.type)) return text5(n.value);
+      const tags = { paragraph: "p", heading: "h" + Math.min(6, Math.max(1, n.depth || 1)), strong: "strong", emphasis: "em", delete: "del", blockquote: "blockquote", list: n.ordered ? "ol" : "ul", listItem: "li", break: "br", thematicBreak: "hr", inlineCode: "code", code: "pre", link: "a", linkReference: "a", image: "img", imageReference: "img", table: "table", tableRow: "tr", tableCell: "td" };
+      if (n.type === "definition") return document.createDocumentFragment();
+      const tag = tags[n.type];
+      if (!tag) {
+        const f = document.createDocumentFragment();
+        for (const c of n.children || []) f.append(render2(c));
+        return f;
+      }
+      const el = document.createElement(tag);
+      if (n.type === "code") {
+        const code4 = document.createElement("code");
+        code4.textContent = n.value || "";
+        el.append(code4);
+        return el;
+      }
+      if (n.type === "inlineCode") {
+        el.textContent = n.value || "";
+        return el;
+      }
+      if (n.type === "list" && n.ordered && n.start > 1) el.setAttribute("start", String(n.start));
+      if (["link", "linkReference", "image", "imageReference"].includes(n.type)) {
+        const ref = n.type.endsWith("Reference") ? definitions2.get(n.identifier.toLowerCase()) : n;
+        const image2 = tag === "img";
+        if (ref?.url && allowed(ref.url, image2)) {
+          el.setAttribute(image2 ? "src" : "href", ref.url);
+          if (!image2) el.setAttribute("rel", "noopener noreferrer");
+          if (ref.title) el.title = ref.title;
+        }
+        if (image2) {
+          el.alt = n.alt || "";
+          return el;
+        }
+      }
+      if (n.type === "table") {
+        const head = document.createElement("thead"), body = document.createElement("tbody");
+        for (const [i, row] of (n.children || []).entries()) {
+          const tr = document.createElement("tr");
+          for (const cell of row.children || []) {
+            const td = document.createElement(i ? "td" : "th");
+            for (const c of cell.children || []) td.append(render2(c));
+            tr.append(td);
+          }
+          (i ? body : head).append(tr);
+        }
+        el.append(head, body);
+        return el;
+      }
+      for (const c of n.children || []) el.append(render2(c));
+      return el;
+    }
+    const root3 = document.createElement("div");
+    root3.append(render2(tree));
+    return root3.innerHTML;
+  }
 
   // node_modules/@milkdown/exception/lib/index.js
   var ErrorCode = /* @__PURE__ */ (function(ErrorCode2) {
@@ -31650,7 +31722,7 @@
     }
     return t.innerHTML;
   }
-  window.SeptentureRich = { safeURL, countWords: countStory, async create(root3, source, onChange, canEdit) {
+  window.SeptentureRich = { render: (source) => renderMarkdown(source, safeURL), safeURL, countWords: countStory, async create(root3, source, onChange, canEdit, html2 = null) {
     if (hasUnsafeURL(source, safeURL)) throw new Error("This Markdown contains an unsupported URL. Keep it in source mode or change the URL before rich editing.");
     let initializing = true;
     const safety = $prose((ctx) => new Plugin({ view() {
@@ -31681,13 +31753,23 @@
       } } }));
       ctx.get(listenerCtx);
     }).use(commonmark).use(supportedGfm).use(history2).use(listener).use(clipboard).use(safety).create();
+    if (html2 !== null) editor.action((ctx) => {
+      const v = ctx.get(editorViewCtx), t = document.createElement("div");
+      t.innerHTML = sanitize(html2);
+      const doc4 = DOMParser.fromSchema(v.state.schema).parse(t);
+      v.dispatch(v.state.tr.replaceWith(0, v.state.doc.content.size, doc4.content));
+    });
     initializing = false;
     const command = (c, p) => {
       if (!canEdit()) return;
       editor.action(callCommand(c.key, p));
       editor.action((ctx) => ctx.get(editorViewCtx).focus());
     };
-    return { state: () => editor.action((ctx) => {
+    return { html: () => editor.action((ctx) => {
+      const v = ctx.get(editorViewCtx), t = document.createElement("div");
+      t.append(DOMSerializer.fromSchema(v.state.schema).serializeFragment(v.state.doc.content));
+      return sanitize(t.innerHTML);
+    }), state: () => editor.action((ctx) => {
       const s = ctx.get(editorViewCtx).state, marks = s.storedMarks || s.selection.$from.marks(), active = (name) => marks.some((m) => m.type.name === name);
       return { bold: active("strong"), italic: active("emphasis"), strike: active("strike_through"), inline: active("inlineCode") || active("inline_code"), heading: s.selection.$from.parent.type.name === "heading" ? s.selection.$from.parent.attrs.level : 0 };
     }), serialized: () => editor.action(getMarkdown()), insert: (text5) => {

@@ -27,6 +27,12 @@ function tabletop_route($session,$user): void {
         header('Content-Type: text/html; charset=utf-8');header('Cache-Control: no-store');header('Referrer-Policy: strict-origin');
         echo str_replace('{{CHRONICLE}}',htmlspecialchars($config['site_url'],ENT_QUOTES,'UTF-8'),file_get_contents(__DIR__.'/connect.html'));exit;
     }
+    // Leaving a table must not re-enter the SSO handoff or depend on an external service.
+    if($path==='/session/leave'){
+        if($_SERVER['REQUEST_METHOD']!=='POST'||!isset($_SESSION['tabletop_csrf'])||!hash_equals($_SESSION['tabletop_csrf'],$_POST['csrf']??''))tabletop_response(['error'=>'Use Leave table from your open Table.'],403);
+        unset($_SESSION['tabletop_identity'],$_SESSION['tabletop_context'],$_SESSION['tabletop_pending'],$_SESSION['tabletop_csrf']);$user->logout();
+        tabletop_redirect(rtrim($config['chronicle_url']??$config['site_url'],'/').'/account/');
+    }
     $conn=new mysqli(DB_HOSTNAME,DB_USERNAME,DB_PASSWORD,DB_DATABASE);$conn->set_charset('utf8mb4');
     $svc=new TabletopService($conn);
     $identityValidated=false;
@@ -121,7 +127,7 @@ function tabletop_route($session,$user): void {
             tabletop_response(['error'=>'Enter the table from the campaign website.'],401);
         }
     }catch(Throwable $e){
-        if(!$identityValidated&&isset($_SESSION['tabletop_identity'])){
+        if(!$identityValidated&&in_array($e->getCode(),[401,403],true)&&isset($_SESSION['tabletop_identity'])){
             unset($_SESSION['tabletop_identity'],$_SESSION['tabletop_context']);$user->logout();
         }
         $code=in_array($e->getCode(),[400,401,403,404,413,503],true)?$e->getCode():503;
