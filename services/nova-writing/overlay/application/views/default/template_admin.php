@@ -184,5 +184,5 @@ $alternateLogoSvg = APPFOLDER.'/views/'.$current_skin.'/dist/images/logo.svg';
 				</footer>
 			</main>
 		</div>
-	<script src="<?php echo base_url('assets/play.js?v=9f63af48070d'); ?>"></script><script src="<?php echo base_url('assets/story-rich.js?v=82598df25271'); ?>"></script><script src="<?php echo base_url('assets/story-format.js?v=88b6b1d5b3f8'); ?>"></script><script src="/assets/prose-editor.js?v=df6cf68b51f9"></script><script src="/assets/manual-sheet.js?v=fe6ce2b28d60"></script><script src="<?php echo base_url('assets/sheet.js?v=0540f6f140e5'); ?>"></script><script src="<?php echo base_url('assets/septenture.js?v=ffec9e7304f6'); ?>"></script></body>
+	<script src="<?php echo base_url('assets/play.js?v=9f63af48070d'); ?>"></script><script src="<?php echo base_url('assets/story-rich.js?v=82598df25271'); ?>"></script><script src="<?php echo base_url('assets/story-format.js?v=a98c89514929'); ?>"></script><script src="/assets/prose-editor.js?v=df6cf68b51f9"></script><script src="/assets/manual-sheet.js?v=fe6ce2b28d60"></script><script src="<?php echo base_url('assets/sheet.js?v=0540f6f140e5'); ?>"></script><script src="<?php echo base_url('assets/septenture.js?v=ffec9e7304f6'); ?>"></script></body>
 </html>

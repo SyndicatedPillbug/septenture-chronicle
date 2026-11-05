@@ -16,3 +16,9 @@ Apply the additive migration before deploying the overlay to `fiction-release`. 
 ## Verification
 
 The isolated Nova fixtures passed 26 workspace API/privacy tests, 45 draft tests, 7 explicit-publication tests, 6 preview request tests, and targeted notebook/mention UI tests. A fake SMTP receiver verified the message without sending mail to players. The static-site frontend suite and build also passed. Live deployment and browser evidence are recorded in the Septenture project workspace.
+
+## Draft recovery
+
+Only unconfirmed edits create browser recovery records. Historical generation-zero records are ignored without deletion. Genuine unsaved writing requires an explicit recovery choice, shown in the editor status; starting a separate draft retains the old copy. IndexedDB opening and transactions have bounded waits so blocked recovery storage cannot leave the editor opening indefinitely.
+
+Feature acceptance requires computer-use verification through the human interface: enter real test text, save, leave, reopen, and verify the saved values. Rendering controls and API checks alone do not establish completion. Use isolated accounts for sharing/notification tests, and never publish test prose or notify real players during a smoke test.
