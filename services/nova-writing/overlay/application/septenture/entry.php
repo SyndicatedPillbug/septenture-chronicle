@@ -91,7 +91,9 @@ try {
             }
             $q=$db->prepare('INSERT INTO nova_septenture_tickets (state_hash,expires_at) VALUES (?,?)');
             $q->execute([hash('sha256',$state),time()+300]);
-            septenture_go($site.'/fiction/login/#state='.$state);
+            $theme=$_GET['theme']??null;
+            $themeQuery=is_string($theme)&&in_array($theme,['light','dark','system'],true)?'?theme='.$theme:'';
+            septenture_go($site.'/fiction/login/'.$themeQuery.'#state='.$state);
         }
     }
     if ($route==='auth/complete') {

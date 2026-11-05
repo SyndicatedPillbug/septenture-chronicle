@@ -5,7 +5,7 @@ if(PHP_SAPI!=='cli'&&isset($_GET['theme'])&&is_string($_GET['theme'])&&in_array(
 if(PHP_SAPI!=='cli')ob_start(static function(string $html): string {
  if(!preg_match('~^\s*(?:<!doctype\s+html|<html\b)~i',$html)||str_contains($html,'data-septenture-theme-assets'))return $html;
  foreach(headers_list() as $header)if(str_starts_with(strtolower($header),'content-type:')&&!str_contains(strtolower($header),'text/html'))return $html;
- $assets='<link data-septenture-theme-assets rel="stylesheet" href="/assets/site-theme.css?v=105d99536afb"><script src="/assets/site-theme.js?v=aacda04218d8"></script>';
+ $assets='<link data-septenture-theme-assets rel="stylesheet" href="/assets/site-theme.css?v=510c6e3ce082"><script src="/assets/site-theme.js?v=aacda04218d8"></script>';
  if(stripos($html,'</head>')!==false)return preg_replace('~</head>~i',$assets.'</head>',$html,1);
  return preg_replace('~(<!doctype[^>]*>)~i','$1'.$assets,$html,1);
 });

@@ -36,7 +36,7 @@ div.wrapper > div.header {
 <xsl:for-each select="javascripts/javascript">
 <script type="{@type}" src="{.}"></script><xsl:text>
 </xsl:text></xsl:for-each>
-<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=105d99536afb" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script></head>
+<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=510c6e3ce082" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script></head>
 
 <body>
 <xsl:if test="javascripts/@onload">
