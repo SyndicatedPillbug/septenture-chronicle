@@ -1,5 +1,6 @@
 // Shared public prose stores a format marker; existing unmarked text stays literal.
 (()=>{
+ if(typeof document==='undefined'||typeof window==='undefined')return;
  const marker='<!--septenture:markdown-->\n';let loading;
  const ownScript=document.currentScript?.src;
  const assets=base=>loading??=(async()=>{for(const file of ['story-rich.js','prose-editor.js']){if(file==='story-rich.js'&&window.SeptentureRich||file==='prose-editor.js'&&window.SeptentureProse)continue;await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL(file+'?v=prose20261105a',base||new URL('.',ownScript||location.href));script.onload=resolve;script.onerror=()=>reject(Error('Formatting could not load. Your original text is still available.'));document.head.append(script)})}})().catch(e=>{loading=null;throw e});
