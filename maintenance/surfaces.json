@@ -1,0 +1,83 @@
+{
+  "currentSession": 26,
+  "surfaces": [
+    {
+      "id": "record",
+      "name": "Played session record",
+      "location": "content/the-chronicle/*.md",
+      "review": "Expand the played record; distinguish estimates, suspicions, plans and confirmed events. Keep GM prep and future reveals out."
+    },
+    {
+      "id": "home",
+      "name": "Homepage",
+      "location": "content/index.md",
+      "review": "Update latest-session hero, first recent card, Latesa chapter count and any changed city headline."
+    },
+    {
+      "id": "contents",
+      "name": "Chronicle contents",
+      "location": "content/the-chronicle/index.md",
+      "review": "Add the chapter in reading order, including interludes; keep played date separate from in-world date."
+    },
+    {
+      "id": "navigation",
+      "name": "Previous and next chapters",
+      "location": "content/the-chronicle/*.md",
+      "review": "Connect both directions and the contents link; latest chapter has no invented next chapter."
+    },
+    {
+      "id": "cast",
+      "name": "Public character references",
+      "location": "content/the-cast/*/index.md; content/the-cast/source-notes.md",
+      "review": "Review every affected character and their scene references. Check names and uncertain identities."
+    },
+    {
+      "id": "profiles",
+      "name": "Player-edited public profiles",
+      "location": "character_profiles; quartz/static/character-identity.js",
+      "review": "Live profile data overrides static seeds. Preserve player-authored prose; request or apply only supported, scoped corrections."
+    },
+    {
+      "id": "world",
+      "name": "Public NPC, location and lore pages",
+      "location": "content/the-warren.md; content/",
+      "review": "Review established changes to people, places and open threads. Do not turn unplayed plans into facts."
+    },
+    {
+      "id": "exchange",
+      "name": "Exchange and writing center",
+      "location": "content/fiction/; services/nova-writing/",
+      "review": "Nova owns fiction and its writer/PC/date metadata. Review links and relevant metadata; the static reader mirrors it. Recaps do not require a duplicate fiction post."
+    },
+    {
+      "id": "table",
+      "name": "Table state",
+      "location": "content/tabletop/; local Table service",
+      "review": "Review if maps, tokens or encounter state changed. Preserve live game state; no automatic recap-to-map overwrite."
+    },
+    {
+      "id": "mail",
+      "name": "Notification intent",
+      "location": "services/nova-writing/overlay/application/controllers/Write.php; application/septenture/writing_workspace.php",
+      "review": "Autosaves and legacy story publication are silent. Save & email tagged writers sends targeted turn mail, subject to preferences. Check expected recipients and recorded status; SMTP acceptance is not inbox delivery."
+    },
+    {
+      "id": "generated",
+      "name": "Search, graph and sitemap",
+      "location": "Quartz build output",
+      "review": "Rebuild; verify latest record is discoverable. Never hand-edit generated public output."
+    },
+    {
+      "id": "exports",
+      "name": "Editorial handoff copies",
+      "location": "handoff/; scripts/export-handoff.py",
+      "review": "These are generated editorial exports, not the live source. Refresh only when a handoff is requested; record deliberate deferral."
+    },
+    {
+      "id": "browser",
+      "name": "Human interface verification",
+      "location": "Live Chronicle, cast and Exchange",
+      "review": "Click home \u2192 latest \u2192 previous \u2192 next \u2192 contents and affected character references. Check light/dark and narrow/wide layouts. Record actual results, not merely that controls exist."
+    }
+  ]
+}

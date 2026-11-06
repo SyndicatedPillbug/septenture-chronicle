@@ -1,0 +1,95 @@
+{
+  "session": 26,
+  "title": "At the Hollow Heart",
+  "playedDate": "2026-10-19",
+  "record": "the-chronicle/session-26-record",
+  "previous": "the-chronicle/interlude-the-stone",
+  "partHeading": "Part III \u2014 Latesa",
+  "affectedCharacters": [
+    "page",
+    "ceridwen",
+    "coy",
+    "legion",
+    "the-gunslinger"
+  ],
+  "sources": [
+    {
+      "name": "Session 26 recap and October 19 transcript",
+      "kind": "played-record",
+      "reviewed": true
+    }
+  ],
+  "reviews": {
+    "record": {
+      "status": "updated",
+      "evidence": "Expanded Session 26 using the October 19 played recap and transcript; uncertain claims remain attributed."
+    },
+    "home": {
+      "status": "updated",
+      "evidence": "Latest hero and first card point to Session 26; Latesa shelf count is 22."
+    },
+    "contents": {
+      "status": "updated",
+      "evidence": "Session 26 follows The Stone in the Latesa contents."
+    },
+    "navigation": {
+      "status": "updated",
+      "evidence": "The Stone links forward to Session 26; Session 26 links back to The Stone and the contents."
+    },
+    "cast": {
+      "status": "updated",
+      "evidence": "Added Session 26 references for Ceridwen, Coy and Legion; Page and the gunslinger already had references."
+    },
+    "profiles": {
+      "status": "no-change",
+      "evidence": "This update adds session references rather than replacing player-authored profile prose. No live profile edits are required."
+    },
+    "world": {
+      "status": "no-change",
+      "evidence": "Session 26 introduces no confirmed public lore-page change requiring a separate page. Lockdown, claims and unresolved threads are recorded in the recap."
+    },
+    "exchange": {
+      "status": "no-change",
+      "evidence": "This is a played-session recap, not new player fiction. No scene, writer or journal metadata was changed."
+    },
+    "table": {
+      "status": "no-change",
+      "evidence": "No map or token change requested by this content update; live Table state is outside this release."
+    },
+    "mail": {
+      "status": "reviewed",
+      "evidence": "Chronicle publishing does not send fiction mail. Proton search including Spam/Trash found the October 25 test but no newer fiction alerts. Code suppresses legacy story broadcasts; targeted calls use explicit notification actions. Current server delivery logs have not been checked."
+    },
+    "generated": {
+      "status": "updated",
+      "evidence": "Quartz build completed for 54 content files; GitHub Pages run 42158399675 succeeded."
+    },
+    "exports": {
+      "status": "no-change",
+      "evidence": "No editorial handoff requested. Existing handoff exports remain dated copies, not live content."
+    },
+    "browser": {
+      "status": "reviewed",
+      "evidence": "Live UI verified home/latest, previous/next, contents, character scene reference and both themes. Narrow viewport remains explicitly pending."
+    }
+  },
+  "browserChecks": {
+    "home-latest": "verified",
+    "previous-next": "verified",
+    "contents": "verified",
+    "character-references": "verified",
+    "light-dark": "verified",
+    "narrow-wide": "pending"
+  },
+  "release": {
+    "commit": "eef1d9770b452bb5e65d0240cac2e4498a7da0cf",
+    "run": "https://github.com/SyndicatedPillbug/septenture-chronicle/actions/runs/42158399675"
+  },
+  "browserEvidence": {
+    "previous-next": "Live UI: Session 26 \u2192 The Stone; refreshed older cached page; Next returned to Session 26.",
+    "contents": "Live UI: contents \u2192 Session 26.",
+    "character-references": "Live UI: recap \u2192 character reference index; activated Page\u2019s wrapped At the Hollow Heart link with keyboard \u2192 Session 26.",
+    "light-dark": "Selected Dark and Light in live reader; screenshots inspected at 1265px width.",
+    "narrow-wide": "Wide checked. Narrow viewport not verified: current browser control exposes no viewport resizing capability."
+  }
+}

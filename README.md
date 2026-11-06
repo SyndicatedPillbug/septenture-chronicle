@@ -1,3 +1,7 @@
+# Septenture maintenance
+
+Start with the [post-session audit and site index](maintenance/README.md) when publishing a session update. Run `npm run audit:session` to check the current session across the homepage, contents, reading order and character references.
+
 # Quartz v5
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming

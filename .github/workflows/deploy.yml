@@ -35,6 +35,9 @@ jobs:
       - name: Verify character identity and story filters
         run: node --test services/nova-reader/tests/*.test.mjs
 
+      - name: Verify post-session content consistency
+        run: npm run test:session-audit && npm run audit:session
+
       - name: Build site
         run: npx quartz build
 
