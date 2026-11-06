@@ -7,3 +7,5 @@ The review found two connected defects: native publication prompts stalled brows
 A second private fixture with a blank paragraph and bold text was saved and reopened in rich mode through the browser. Server formatting safety, client rendering, autosave/recovery, writer-picker and notebook tests passed. Test authentication in the isolated Exchange is a fake adapter; production sign-in was not modified.
 
 For subsequent releases, repeat this journey with local fake accounts and captured mail, then verify the deployed confirmation through the live blank editor without posting a test story to real players. Do not substitute successful source checks for browser actions.
+
+Publication also preserves the scene roster saved by the writer. Nova’s older participation filter had removed invited characters who had not written yet. The existing contributor history stays separate. An additional browser publication verified that both selected characters and writer IDs survived while the actual-participant history remained unchanged.
