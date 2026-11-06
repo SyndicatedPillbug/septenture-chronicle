@@ -15,7 +15,7 @@ function septenture_navigation(string $authorizedHtml,string $type,string $curre
             'messages/index'=>'Inbox','messages/write'=>'New message','messages/sent'=>'Sent messages',
         ],
         'Your account'=>[
-            'user/account'=>'Player account','user/options'=>'Writing preferences',
+            'user/account'=>'Player account','play/writing/notifications'=>'Email preferences & delivery','user/options'=>'Other writing preferences',
             'user/status'=>'Availability',
         ],
         'Campaign management'=>[
@@ -70,6 +70,7 @@ function septenture_navigation(string $authorizedHtml,string $type,string $curre
     $list=static function(array $links):string {return '<ul>'.implode('',array_map(static fn($a)=>'<li>'.$a.'</li>',$links)).'</ul>';};
     if($type!=='adminsub')return $list($plain);
     if(defined('SEPTENTURE_PLAYER_ID'))$items['Writing']['write/index'].='<br><a href="/index.php/play/notebook">My private game notes</a>';
+    if(defined('SEPTENTURE_PLAYER_ID'))$items['Your account']['play/writing/notifications']='<a href="/index.php/play/writing/notifications">Email preferences &amp; delivery</a>';
     $hasSiteConfiguration=isset($items['Administration']['site/settings']);
     $out='<div class="campaign-tools" aria-label="Writing and campaign tools">';
     foreach($groups as $group=>$routes) {

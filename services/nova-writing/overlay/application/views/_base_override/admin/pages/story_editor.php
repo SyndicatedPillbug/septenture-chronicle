@@ -180,4 +180,4 @@
 			</div>
 		</div>
 	<?php endif; ?>
-</details></div><script src="/assets/writing-workspace.js?v=20261104h"></script>
+</details><p><a href="/index.php/play/writing/notifications" target="_blank" rel="noopener">Email preferences &amp; delivery</a></p></div><script src="/assets/writing-workspace.js?v=notifications20261106"></script>

@@ -22,7 +22,7 @@ try{
  $opted=$db->prepare("SELECT LOWER(TRIM(email)) FROM nova_users WHERE userid=?");$opted->execute([$one]);$optedEmail=$opted->fetchColumn();$called=[];
  $service->send(900008,function($to)use(&$called){$called[]=$to;return false;});
  if(in_array($optedEmail,$called,true))throw new Exception('Opt-out ignored');
- if(!$called || (int)$db->query("SELECT COUNT(*) FROM nova_publication_mail WHERE story_id=900008 AND status='failed'")->fetchColumn()!==count($called))throw new Exception('Failures not recorded');
+ if(!$called || (int)$db->query("SELECT COUNT(*) FROM nova_publication_mail WHERE story_id=900008 AND status='uncertain'")->fetchColumn()!==count($called))throw new Exception('Failures not recorded');
  $db->exec("UPDATE nova_settings SET setting_value='off' WHERE setting_key='system_email'");if(!($service->send(900006,$deliver)['disabled']??false))throw new Exception('Email-off ignored');
  echo "PASS draft/pending privacy; active subscribed recipients; per-recipient sends; duplicate suppression; opt-outs; recorded failures; email-off. All changes rolled back.\n";
 }finally{$db->rollBack();}

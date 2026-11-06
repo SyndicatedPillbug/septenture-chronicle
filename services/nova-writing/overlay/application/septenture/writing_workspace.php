@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__.'/story_drafts.php';
+require_once __DIR__.'/publication_mail.php';
+require_once __DIR__.'/notification_center.php';
 /** Personal account notes have no administrator bypass and no caller-supplied owner. */
 final class Septenture_notebook {
  public function __construct(private PDO $db,private string $subject) {
@@ -44,7 +46,7 @@ final class Septenture_writing_workspace {
   $this->db->beginTransaction();try{
    $drafts=new Septenture_story_drafts($this->db,$this->user,$this->admin);$row=$drafts->row($story,true);
    if((int)$row['post_revision']!==$in['revision'])throw new RuntimeException('Save your latest changes before calling in a writer.',409);
-   $target=$this->query('SELECT u.email FROM nova_users u JOIN nova_septenture_identities i ON i.userid=u.userid WHERE u.userid=?',[$to])->fetchColumn();
+   $target=$this->query('SELECT u.email FROM nova_users u JOIN nova_septenture_identities i ON i.userid=u.userid WHERE u.userid=? AND u.status=\'active\'',[$to])->fetchColumn();
    if(!$target||!in_array((string)$to,explode(',',(string)$row['post_authors_users']),true))throw new RuntimeException('Add this player as a scene collaborator and save before tagging them.',403);
    $old=$this->query('SELECT * FROM nova_story_turns WHERE id=? OR (story_id=? AND sender=? AND recipient=? AND revision=?)',[$id,$story,$this->user,$to,$in['revision']])->fetch(PDO::FETCH_ASSOC);
    if($old){if((int)$old['sender']!==$this->user||(int)$old['recipient']!==$to||(int)$old['story_id']!==$story||(int)$old['revision']!==$in['revision'])throw new RuntimeException('Notification ID already used.',409);$this->db->commit();return ['ok'=>true,'duplicate'=>true,'email_status'=>$old['email_status']];}
@@ -57,17 +59,13 @@ final class Septenture_writing_workspace {
   // A notebook or unpublished prose is never included in mail. No mail on ordinary autosaves.
   $pref=$this->query("SELECT prefvalue_value FROM nova_user_prefs_values WHERE prefvalue_user=? AND prefvalue_key='email_mission_posts_save'",[$to])->fetchColumn();
   $setting=$this->query("SELECT setting_value FROM nova_settings WHERE setting_key='system_email'")->fetchColumn();
-  $status=$pref==='n'||$setting==='off'?'disabled':($send((string)$target,$story)?'sent':'failed');
-  $this->query('UPDATE nova_story_turns SET email_status=? WHERE id=?',[$status,$id]);return ['ok'=>true,'duplicate'=>false,'email_status'=>$status];
+  try{$status=$pref==='n'||$setting!=='on'?'disabled':septenture_mail_result($send((string)$target,$story));}catch(Throwable $e){$status='uncertain';}
+  $this->query('UPDATE nova_story_turns SET email_status=?,email_attempted_at=UNIX_TIMESTAMP() WHERE id=?',[$status,$id]);return ['ok'=>true,'duplicate'=>false,'email_status'=>$status];
  }
 }
-function septenture_turn_mail(string $to,int $story): bool {
- if(!filter_var($to,FILTER_VALIDATE_EMAIL)||preg_match('/[\r\n]/',$to))return false;
- $db=septenture_db();$q=$db->prepare("SELECT setting_value FROM nova_settings WHERE setting_key='default_email_address'");$q->execute();$from=$q->fetchColumn();
- if(!is_string($from)||!filter_var($from,FILTER_VALIDATE_EMAIL)||preg_match('/[\r\n]/',$from))return false;
+function septenture_turn_mail(string $to,int $story): string {
  $link=rtrim(septenture_config('NOVA_URL'),'/').'/index.php/auth/start?draft='.$story;
- $payload="From: Septenture <".$from.">\r\nTo: ".$to."\r\nSubject: Septenture - your turn to write\r\nDate: ".gmdate('D, d M Y H:i:s O')."\r\nMessage-ID: <".bin2hex(random_bytes(16))."@".parse_url(septenture_config('NOVA_URL'),PHP_URL_HOST).">\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\n\r\nSomeone in your scene has called you in.\r\n\r\nOpen the scene: ".$link."\r\n\r\nSign in with your Septenture account to continue. Your scene is also listed in the writing desk.\r\n";
- $stream=fopen('php://temp','r+');fwrite($stream,$payload);rewind($stream);$ch=curl_init('smtp://127.0.0.1:25');curl_setopt_array($ch,[CURLOPT_MAIL_FROM=>$from,CURLOPT_MAIL_RCPT=>[$to],CURLOPT_UPLOAD=>true,CURLOPT_INFILE=>$stream,CURLOPT_INFILESIZE=>strlen($payload),CURLOPT_RETURNTRANSFER=>true,CURLOPT_CONNECTTIMEOUT=>3,CURLOPT_TIMEOUT=>8]);$ok=curl_exec($ch)!==false;curl_close($ch);fclose($stream);return $ok;
+ return septenture_smtp_mail($to,'Septenture - your turn to write',"Someone in your scene has called you in.\n\nOpen the scene: ".$link."\n\nSign in with your Septenture account to continue. Your scene is also listed in the writing desk.\nManage email preferences: ".rtrim(septenture_config('NOVA_URL'),'/')."/index.php/play/writing/notifications\n");
 }
 function septenture_notebook_page(array $identity,string $csrf): never {
  $esc=fn($v)=>htmlspecialchars($v,ENT_QUOTES,'UTF-8');header('Content-Type: text/html; charset=utf-8');
@@ -75,6 +73,15 @@ function septenture_notebook_page(array $identity,string $csrf): never {
 }
 function septenture_writing_api(string $route,string $method,array $identity,array $input,string $csrf): never {
  $db=septenture_db();$workspace=new Septenture_writing_workspace($db,SEPTENTURE_PLAYER_ID,SEPTENTURE_PLAYER_ADMIN);
+ $center=new Septenture_notification_center($db,SEPTENTURE_PLAYER_ID);
+ if($route==='play/writing/notifications'&&$method==='GET')septenture_notification_page($csrf);
+ if($route==='play/writing/preferences'){
+  if($method==='GET')septenture_json($center->preferences());
+  if($method==='POST')septenture_json($center->savePreferences($input));
+ }
+ if($route==='play/writing/deliveries'&&$method==='GET')septenture_json(['deliveries'=>$center->deliveries()]);
+ if($route==='play/writing/retry'&&$method==='POST')septenture_json($center->retry($input,'septenture_turn_mail','septenture_publication_deliver'));
+
  if($route==='play/notebook'&&$method==='GET')septenture_notebook_page($identity,$csrf);
  if($route==='play/player-notes'){$notes=new Septenture_notebook($db,$identity['uuid']);if($method==='GET')septenture_json(['notes'=>$notes->read(),'account'=>$identity['uuid']]);if($method==='POST')septenture_json(['notes'=>$notes->save($input),'account'=>$identity['uuid']]);}
  if($route==='play/writing/session'&&$method==='GET')septenture_json(['csrf'=>$csrf,'account_subject'=>$identity['uuid'],'user_id'=>SEPTENTURE_PLAYER_ID]);

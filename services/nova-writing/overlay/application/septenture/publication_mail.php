@@ -13,21 +13,29 @@ final class Septenture_publication_mail {
    // Unique recipient/story claim makes reposts and repeated approvals silent.
    $claim=$this->db->prepare("INSERT IGNORE INTO nova_publication_mail(story_id,recipient,status,attempted_at) VALUES(?,?,'pending',?)");$claim->execute([$story,$to,time()]);
    if(!$claim->rowCount()){$out['duplicate']++;continue;}
-   try{$status=$deliver($to,(string)$title,$story)?'sent':'failed';}catch(Throwable $e){$status='failed';error_log('Septenture publication mail failed for story '.$story);}
-   $q=$this->db->prepare('UPDATE nova_publication_mail SET status=? WHERE story_id=? AND recipient=?');$q->execute([$status,$story,$to]);$out[$status]++;
+   try{$result=$deliver($to,(string)$title,$story);$status=septenture_mail_result($result);}catch(Throwable $e){$status='uncertain';error_log('Septenture publication mail failed for story '.$story);}
+   $q=$this->db->prepare('UPDATE nova_publication_mail SET status=? WHERE story_id=? AND recipient=?');$q->execute([$status,$story,$to]);$out[$status==='sent'?'sent':'failed']++;
   }
   return $out;
  }
 }
-function septenture_publication_deliver(string $to,string $title,int $story): bool {
- require_once dirname(__DIR__,2).'/nova/vendor/autoload.php';
+/** Only a confirmed failure before a connection is safe to retry. */
+function septenture_mail_result(mixed $result): string {
+ return $result===true||$result==='sent'?'sent':($result==='retryable'?'retryable':'uncertain');
+}
+function septenture_smtp_mail(string $to,string $subject,string $body): string {
+ if(!filter_var($to,FILTER_VALIDATE_EMAIL)||preg_match('/[\r\n]/',$to))return 'uncertain';
  $db=septenture_db();$from=$db->query("SELECT setting_value FROM nova_settings WHERE setting_key='default_email_address'")->fetchColumn();
- if(!is_string($from)||!filter_var($from,FILTER_VALIDATE_EMAIL))return false;
+ if(!is_string($from)||!filter_var($from,FILTER_VALIDATE_EMAIL)||preg_match('/[\r\n]/',$from))return 'retryable';
+ $payload="From: Septenture <".$from.">\r\nTo: ".$to."\r\nSubject: =?UTF-8?B?".base64_encode($subject)."?=\r\nDate: ".gmdate('D, d M Y H:i:s O')."\r\nMessage-ID: <".bin2hex(random_bytes(16))."@".parse_url(septenture_config('NOVA_URL'),PHP_URL_HOST).">\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n".chunk_split(base64_encode($body));
+ $stream=fopen('php://temp','r+');fwrite($stream,$payload);rewind($stream);$ch=curl_init('smtp://127.0.0.1:25');
+ curl_setopt_array($ch,[CURLOPT_MAIL_FROM=>$from,CURLOPT_MAIL_RCPT=>[$to],CURLOPT_UPLOAD=>true,CURLOPT_INFILE=>$stream,CURLOPT_INFILESIZE=>strlen($payload),CURLOPT_RETURNTRANSFER=>true,CURLOPT_CONNECTTIMEOUT=>3,CURLOPT_TIMEOUT=>8]);
+ $ok=curl_exec($ch)!==false;$error=curl_errno($ch);curl_close($ch);fclose($stream);
+ return $ok?'sent':(in_array($error,[CURLE_COULDNT_CONNECT,CURLE_COULDNT_RESOLVE_HOST],true)?'retryable':'uncertain');
+}
+function septenture_publication_deliver(string $to,string $title,int $story): string {
  $site=rtrim(septenture_config('SITE_URL'),'/');
- $message=(new Swift_Message('Septenture — a new story in the Exchange'))
-  ->setFrom([$from=>'Septenture'])->setTo([$to])
-  ->setBody("A new story has been published: ".$title."\n\nRead it in the Exchange:\n".$site."/fiction/#story=nova-".$story."\n\nSign in with your Septenture player account to read.\nYou can turn publication emails off in Nova’s email preferences.\n",'text/plain');
- return (new Swift_Mailer(new Swift_SmtpTransport('127.0.0.1',25)))->send($message)===1;
+ return septenture_smtp_mail($to,'Septenture — a new story in the Exchange',"A new story has been published: ".$title."\n\nRead it in the Exchange:\n".$site."/fiction/#story=nova-".$story."\n\nSign in with your Septenture player account to read.\nManage email preferences: ".rtrim(septenture_config('NOVA_URL'),'/')."/index.php/play/writing/notifications\n");
 }
 function septenture_notify_publication(int $story): bool {
  try{$result=(new Septenture_publication_mail(septenture_db()))->send($story,'septenture_publication_deliver');return ($result['failed']??0)===0;}

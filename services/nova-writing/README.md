@@ -41,3 +41,5 @@ Focus mode places the same editor and mention picker inside a native modal withi
 
 
 [Writing flow acceptance and paragraph safety](WRITING_FLOW.md) records the November 6 browser journey and its regression coverage.
+
+Notification preferences, sender delivery history and safe retries: [NOTIFICATION_CENTER.md](NOTIFICATION_CENTER.md).
