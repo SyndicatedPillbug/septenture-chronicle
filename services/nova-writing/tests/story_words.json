@@ -1,0 +1,16 @@
+[
+ ["| | |\n|---|---|\n| | |\n", "markdown", 0],
+ ["---\n\n***\n\n... |||", "markdown", 0],
+ ["# The **river** *camp* ~~today~~", "markdown", 4],
+ ["[meet friends](https://example.org/not-a-word-count)", "markdown", 2],
+ ["![An image description](https://example.org/map.png)", "markdown", 0],
+ ["**Qui**et waters", "markdown", 2],
+ ["Ceridwen’s café — 20", "markdown", 3],
+ ["```javascript\n\n```", "markdown", 0],
+ ["```javascript\nconst roll = 20;\n```", "markdown", 3],
+ ["[two words][ref]\n\n[ref]: https://example.org/not-prose", "markdown", 2],
+ ["<p>Hello</p><p>world</p>", "legacy", 2],
+ ["<b>hello</b>", "markdown", 3],
+ ["\\* moon \\*", "markdown", 1],
+ ["It isn't an empty-table count.", "markdown", 5]
+]

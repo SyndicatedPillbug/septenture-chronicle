@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify shared prose rendering and draft recovery
+        run: npm ci --prefix services/nova-writing/editor && npm test --prefix services/nova-writing/editor
+
       - name: Install Quartz plugins
         run: npx quartz plugin install
 

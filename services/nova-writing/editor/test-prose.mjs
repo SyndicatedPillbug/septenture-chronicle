@@ -7,3 +7,11 @@ const html=renderMarkdown('# Heading\n\n**Bold** and *italic*.\n\n| A | B |\n| -
 const node=document.createElement('div');node.innerHTML=html;
 assert.equal(node.querySelector('strong').textContent,'Bold');assert.equal(node.querySelector('em').textContent,'italic');assert.equal(node.querySelectorAll('table tr').length,2);assert.equal(node.querySelectorAll('script,[onclick],a[href^="javascript:"],img[src^="data:"]').length,0);assert.match(node.textContent,/<script>/);
 console.log('PASS shared public Markdown renders formatting and tables, escapes raw HTML, and blocks unsafe link and image schemes');
+const breaks=document.createElement('div');breaks.innerHTML=renderMarkdown('First paragraph.\n\n<br />\n\nSecond paragraph.\n\n`<br />`\n\n```html\n<br />\n```\n\n<br onclick="alert(1)">',allowed);
+assert.equal(breaks.querySelectorAll('br').length,1);
+assert.equal(breaks.querySelectorAll('p').length>=3,true);
+assert.equal(breaks.querySelectorAll('code').length,2);
+assert.ok([...breaks.querySelectorAll('code')].every(c=>c.textContent.includes('<br />')));
+assert.equal(breaks.querySelector('[onclick]'),null);
+assert.ok(breaks.textContent.includes('<br onclick="alert(1)">'));
+console.log('PASS empty rich paragraphs render as breaks; code samples and attributed HTML remain literal');

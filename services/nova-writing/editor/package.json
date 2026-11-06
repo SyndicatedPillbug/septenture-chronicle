@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/rich.js --bundle --format=iife --target=es2020 --outfile=../overlay/assets/story-rich.js"
+    "build": "esbuild src/rich.js --bundle --format=iife --target=es2020 --outfile=../overlay/assets/story-rich.js",
+    "test": "node test-prose.mjs && node test-words.mjs && node test-autosave.mjs"
   },
   "dependencies": {
     "@milkdown/kit": "7.22.3",

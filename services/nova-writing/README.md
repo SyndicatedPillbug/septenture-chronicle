@@ -38,3 +38,6 @@ The @ picker searches all available linked writer characters by player or charac
 ## Distraction-free focus
 
 Focus mode places the same editor and mention picker inside a native modal within the existing form. Only the writing surface, formatting/mode controls, quiet save/error status, Save now and Exit focus are exposed; the page behind it is shaded, blurred and inert. The same source, autosave, form fields, revision and lease remain in use. Escape dismisses the picker first and returns to the text; Escape again or Exit focus restores the original editor position without discarding text. Live UI verification typed and saved in the modal, exited, reopened and confirmed persistence. Local UI checks also covered Markdown-source saving.
+
+
+[Writing flow acceptance and paragraph safety](WRITING_FLOW.md) records the November 6 browser journey and its regression coverage.

@@ -9784,6 +9784,7 @@
   });
   var countText = (text5) => (text5.match(/[\p{L}\p{N}]+(?:[’'\-][\p{L}\p{N}]+)*/gu) || []).length;
   function prose(node2) {
+    if (node2.type === "html" && /^<br\s*\/?\s*>$/i.test(node2.value.trim())) return " ";
     if (["text", "inlineCode", "code", "html"].includes(node2.type)) return node2.value || "";
     if (["image", "definition", "imageReference"].includes(node2.type)) return "";
     const text5 = (node2.children || []).map(prose).join("");
@@ -9813,11 +9814,20 @@
     };
     scan(tree);
     const text5 = (value) => document.createTextNode(value || "");
-    function render2(n) {
+    function render2(n, parent) {
       if (n.type === "root") {
         const f = document.createDocumentFragment();
-        for (const c of n.children || []) f.append(render2(c));
+        for (const c of n.children || []) f.append(render2(c, n.type));
         return f;
+      }
+      if (n.type === "html" && /^<br\s*\/?\s*>$/i.test(n.value.trim())) {
+        const br = document.createElement("br");
+        if (["root", "blockquote", "listItem"].includes(parent)) {
+          const p = document.createElement("p");
+          p.append(br);
+          return p;
+        }
+        return br;
       }
       if (["text", "html"].includes(n.type)) return text5(n.value);
       const tags = { paragraph: "p", heading: "h" + Math.min(6, Math.max(1, n.depth || 1)), strong: "strong", emphasis: "em", delete: "del", blockquote: "blockquote", list: n.ordered ? "ol" : "ul", listItem: "li", break: "br", thematicBreak: "hr", inlineCode: "code", code: "pre", link: "a", linkReference: "a", image: "img", imageReference: "img", table: "table", tableRow: "tr", tableCell: "td" };
@@ -9825,7 +9835,7 @@
       const tag = tags[n.type];
       if (!tag) {
         const f = document.createDocumentFragment();
-        for (const c of n.children || []) f.append(render2(c));
+        for (const c of n.children || []) f.append(render2(c, n.type));
         return f;
       }
       const el = document.createElement(tag);
@@ -9859,7 +9869,7 @@
           const tr = document.createElement("tr");
           for (const cell of row.children || []) {
             const td = document.createElement(i ? "td" : "th");
-            for (const c of cell.children || []) td.append(render2(c));
+            for (const c of cell.children || []) td.append(render2(c, n.type));
             tr.append(td);
           }
           (i ? body : head).append(tr);
@@ -9867,7 +9877,7 @@
         el.append(head, body);
         return el;
       }
-      for (const c of n.children || []) el.append(render2(c));
+      for (const c of n.children || []) el.append(render2(c, n.type));
       return el;
     }
     const root3 = document.createElement("div");
