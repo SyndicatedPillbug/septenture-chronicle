@@ -30,3 +30,24 @@ html[data-septenture-theme] :is(.wrapper,.campaign-tool-dialog) :is(.header,.tit
 html[data-septenture-theme] :is(.pc-space,.pc-directory){--pc-bg:var(--st-bg);--pc-panel:var(--st-surface);--pc-accent:var(--st-accent);--pc-gold:var(--st-link);--pc-text:var(--st-ink);--pc-muted:var(--st-muted);--pc-border:var(--st-edge)}
 html[data-septenture-theme] :is(.pc-browser,.pc-marquee,.pc-panel h2,.pc-display,.pc-banner-stamp,.pc-authbar){background-color:var(--st-raised)!important;color:var(--st-ink)!important;border-color:var(--st-edge)!important}
 html[data-septenture-theme] .pc-banner:not(.pc-moon .pc-banner){background:var(--st-raised)!important}html[data-septenture-theme] .pc-banner-title{text-shadow:none!important;color:var(--st-ink)!important}
+
+/* Use complete foreground/background pairs on pages originally designed only for candlelight. */
+html[data-septenture-theme] .page article{background:var(--st-surface)!important;color:var(--st-ink)!important;border-color:var(--st-edge)!important;box-shadow:0 0 0 5px var(--st-bg),0 0 0 6px var(--st-edge)!important}
+html[data-septenture-theme] .portal{box-shadow:0 0 0 4px var(--st-bg),0 0 0 5px var(--st-edge)!important}
+html[data-septenture-theme] .panel{box-shadow:inset 0 0 0 3px var(--st-raised)!important}
+html[data-septenture-theme] :is(.cast-invitation,.lcd,.badge){background:var(--st-raised)!important;color:var(--st-ink)!important;border-color:var(--st-edge)!important}
+html[data-septenture-theme] :is(.portal-mast,.portal-mast>span,.ticker-track,.shelf-link small,.volume,.section-label>span,.chapter-card small,.stamp,.notice-signature,.rumor>span,.badge,.retro-footer,.lcd){color:var(--st-muted)!important}
+html[data-septenture-theme] :is(.chapter-card strong,.lcd span,.cast-invitation strong){color:var(--st-ink)!important}
+html[data-septenture-theme] .cast-invitation :is(span,b){color:var(--st-link)!important}
+html[data-septenture-theme] :is(a.portal-button,.writing-actions a.primary){background:var(--st-button)!important;color:var(--st-button-ink)!important;border-color:var(--st-edge)!important}
+html[data-septenture-theme] :is(a.portal-button,.writing-actions a.primary) :is(span,strong,em){color:inherit!important}
+html[data-septenture-theme] #fiction-exchange{background:var(--st-bg)!important;box-shadow:0 0 0 3px var(--st-bg),0 0 0 4px var(--st-edge),0 25px 80px #0002!important}
+html[data-septenture-theme] #fiction-exchange :is(.fx-mast,.fx-compose){background:var(--st-raised)!important;color:var(--st-ink)!important}
+html[data-septenture-theme] #fiction-exchange h1{text-shadow:none!important}
+html[data-septenture-theme] #fiction-exchange :is(h1 em,h1>span,.fx-profile>span,.fx-live,.fx-window>h2>span){color:var(--st-link)!important}
+html[data-septenture-theme] #fiction-exchange .fx-tagline{color:var(--st-muted)!important}
+html[data-septenture-theme] .page article a:not(.portal-button){background-color:transparent}
+html[data-septenture-theme] .writing-actions a:not(.primary){background:var(--st-surface)!important;color:var(--st-link)!important;border-color:var(--st-edge)!important}
+html[data-septenture-theme] :is(input,textarea)::placeholder{color:var(--st-muted)!important;opacity:1}
+html[data-septenture-theme] #fiction-exchange :is(.fx-empty,.fx-results-line,.fx-gate p,.fx-card-byline,.fx-card-excerpt,.fx-card-meta,.fx-card-meta>span,.fx-search>span,.fx-reader>header>p,.fx-reader-tools>span){color:var(--st-muted)!important}
+html[data-septenture-theme] #fiction-exchange .fx-reader>header>h2{color:var(--st-ink)!important}
