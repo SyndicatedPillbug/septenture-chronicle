@@ -12,6 +12,7 @@
 	<?php echo text_output($label['no_mission'], 'p', 'bold');?>
 <?php else: ?>
 
+	<p class="publication-mail-note">Publishing notifies players who have new-story emails enabled. Draft saves stay private; use “Save &amp; email tagged writers” to call in your collaborators.</p>
 	<div id="editable">
 		<?php echo form_open($form_action, array('id' => 'writepost'));?>
 			<p>

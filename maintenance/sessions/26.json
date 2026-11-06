@@ -58,7 +58,7 @@
     },
     "mail": {
       "status": "reviewed",
-      "evidence": "Chronicle publishing does not send fiction mail. Proton search including Spam/Trash found the October 25 test but no newer fiction alerts. Code suppresses legacy story broadcasts; targeted calls use explicit notification actions. Current server delivery logs have not been checked."
+      "evidence": "Chronicle publishing does not send fiction mail. Proton search including Spam/Trash found the October 25 test but no newer fiction alerts. Code suppresses legacy story broadcasts; targeted calls use explicit notification actions. Current server delivery logs have not been checked. Follow-up on November 6: new-publication notices restored for active subscribed players; one administrator-only verification arrived in Proton inbox at 15:16 America/New_York. Draft notifications remain targeted."
     },
     "generated": {
       "status": "updated",

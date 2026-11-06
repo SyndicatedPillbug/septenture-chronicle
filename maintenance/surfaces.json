@@ -59,7 +59,7 @@
       "id": "mail",
       "name": "Notification intent",
       "location": "services/nova-writing/overlay/application/controllers/Write.php; application/septenture/writing_workspace.php",
-      "review": "Autosaves and legacy story publication are silent. Save & email tagged writers sends targeted turn mail, subject to preferences. Check expected recipients and recorded status; SMTP acceptance is not inbox delivery."
+      "review": "New fiction publications notify active players who opted into publication emails, individually, with an authenticated Exchange link. Draft autosaves stay silent; explicit tagged-writer calls send targeted updates. Inspect the publication ledger or turn status if an expected message is missing; confirm actual inbox delivery."
     },
     {
       "id": "generated",
