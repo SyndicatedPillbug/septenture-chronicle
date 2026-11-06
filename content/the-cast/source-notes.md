@@ -25,7 +25,7 @@ Read the scenes: [A promise, then a gift](the-chronicle/c1-02-the-clockwork-stal
 - Cistern-house and hive recaps: the song and the three trap nodes.
 - October 19, 2026 transcript and summary: Sending and Zone of Truth.
 
-Read the scenes: [A story for admission](the-chronicle/c1-01-the-feylight-festival); [A hundred-year debt](the-chronicle/c1-02-the-clockwork-stall); [The campfire song](the-chronicle/c3-14-the-cistern-house).
+Read the scenes: [A story for admission](the-chronicle/c1-01-the-feylight-festival); [A hundred-year debt](the-chronicle/c1-02-the-clockwork-stall); [The campfire song](the-chronicle/c3-14-the-cistern-house); [At the Hollow Heart](the-chronicle/session-26-record).
 
 [Visit Ceridwen’s page](the-cast/ceridwen/).
 
@@ -36,7 +36,7 @@ Read the scenes: [A story for admission](the-chronicle/c1-01-the-feylight-festiv
 - Cistern-house recap and 15 Recap: transmutation, the toxin, dispelling, and Shape Water.
 - October 19, 2026 transcript and summary: the examination and healer plans.
 
-Read the scenes: [A bird for Ethan](the-chronicle/c1-02-the-clockwork-stall); [Remember yourself](the-chronicle/c3-14-the-cistern-house); [Clearing the passage](the-chronicle/c3-15-who-am-i).
+Read the scenes: [A bird for Ethan](the-chronicle/c1-02-the-clockwork-stall); [Remember yourself](the-chronicle/c3-14-the-cistern-house); [Clearing the passage](the-chronicle/c3-15-who-am-i); [At the Hollow Heart](the-chronicle/session-26-record).
 
 [Visit Coy’s page](the-cast/coy/).
 
@@ -47,7 +47,7 @@ Read the scenes: [A bird for Ethan](the-chronicle/c1-02-the-clockwork-stall); [R
 - 15 Recap: caltrops, identity, travel, and names.
 - October 19, 2026 transcript · 01:44:09 onward: clay, goodberries, and animal messengers.
 
-Read the scenes: [Peace with a weasel](the-chronicle/c1-01-the-feylight-festival); [Memories of Simon](the-chronicle/c3-14-the-cistern-house); [The question of a name](the-chronicle/c3-15-who-am-i).
+Read the scenes: [Peace with a weasel](the-chronicle/c1-01-the-feylight-festival); [Memories of Simon](the-chronicle/c3-14-the-cistern-house); [The question of a name](the-chronicle/c3-15-who-am-i); [At the Hollow Heart](the-chronicle/session-26-record).
 
 [Visit Legion’s page](the-cast/legion/).
 

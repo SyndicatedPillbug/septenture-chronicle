@@ -42,5 +42,5 @@ The water drags at your arm on the stairs. Behind you, the queue resumes its tal
 <nav class="chapter-nav" aria-label="Chapter navigation">
   <a class="nav-prev" href="the-wrong-hunter"><span class="nav-dir">← Previous</span><span class="nav-title">The Wrong Hunter</span></a>
   <a class="nav-index" href="https://syndicatedpillbug.github.io/septenture-chronicle/the-chronicle/"><span class="nav-dir">↑</span> The Chronicle</a>
-  <span class="nav-empty"></span>
+  <a class="nav-next" href="session-26-record"><span class="nav-dir">Next →</span><span class="nav-title">At the Hollow Heart</span></a>
 </nav>
