@@ -8,7 +8,7 @@
  const main=el('div');main.className='nav-main-tools';const fixed=el('div');fixed.className='nav-fixed-tools';
  const button=(name,run)=>{const b=el('button',name);b.type='button';b.addEventListener('click',async()=>{if(b.disabled)return;b.disabled=true;try{await run()}catch(e){window.dispatchEvent(new CustomEvent('septenture:connection',{detail:{state:'action-failed',message:e.message}}))}finally{b.disabled=false}});return b};
  const open=run=>{window.dispatchEvent(new CustomEvent('septenture:tool-start',{detail:{owner:'dialog'}}));return run()};
- const ruler=button('Ruler',()=>window.SeptentureStage.beginMeasurement());ruler.title='Measure between two map points';ruler.className='nav-ruler';
+ const ruler=button('Ruler',()=>window.SeptentureStage.toggleRuler());ruler.setAttribute('aria-label','Ruler');ruler.className='nav-ruler';const syncRuler=state=>{ruler.textContent=state?.active?'Ruler · On':'Ruler';ruler.setAttribute('aria-pressed',String(!!state?.active));ruler.title=state?.active?'Turn ruler off and remove your ruler lines':'Turn ruler on and measure between two map points'};addEventListener('septenture:ruler-state',e=>syncRuler(e.detail));syncRuler(window.SeptentureStage?.rulerState?.());
  const templates=button('Templates',()=>open(()=>window.SeptentureStage.open('quick-measure')));templates.title='Circle, cone and rectangle';
  const dice=byName('Dice'),sheet=byName('Sheets'),chat=byName('Chat & rolls');if(sheet)sheet.textContent=gm?'Sheets':'My sheet';
  for(const node of [dice,sheet])node?.addEventListener('click',()=>window.dispatchEvent(new CustomEvent('septenture:tool-start',{detail:{owner:'dialog'}})),true);
@@ -27,7 +27,4 @@
  window.SeptentureNavigation={invoke:key=>{const target=original[key];if(!target)throw Error('That control is unavailable in this view.');if(key==='draw'){if(!document.body.classList.contains('show-sketch'))original.sketch?.click();target.hidden=false}target.click()}};
  // The duplicate shortcuts remain wired for existing dialogs, outside the visible bar.
  const quick=document.querySelector('.kit-quickbar');if(quick){for(const node of quick.children)if(node.tagName==='BUTTON'&&['Sheets','My sheet','Play tools'].includes(node.textContent))node.classList.add('nav-duplicate');}
- let activeOwner='';addEventListener('septenture:tool-start',e=>{activeOwner=e.detail?.owner||'';ruler.setAttribute('aria-pressed',String(activeOwner==='stage'&&e.detail?.shape==='ruler'));});
- // A finished or cancelled measurement clears the pressed state without affecting focus.
- new MutationObserver(()=>{if(activeOwner==='stage'&&!document.querySelector('.stage-picking'))ruler.setAttribute('aria-pressed','false')}).observe(play,{attributes:true,attributeFilter:['class']});
 });})();
