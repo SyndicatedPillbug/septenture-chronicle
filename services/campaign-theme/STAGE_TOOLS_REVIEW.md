@@ -4,7 +4,7 @@ The Table adds manual measurement, exploration, reusable media and private sessi
 
 ## Play and preparation
 
-**Measure** opens a ruler and circle, fixed 60° cone, or rectangle templates. Click two map points; Escape cancels. Distance uses the map's chosen distance per square and unit, with straight-line ruler measurements. Templates start private. Sharing is explicit, and owners can remove their own templates. Templates are scoped to the active map.
+**Ruler** starts a two-point measurement directly from the top bar. **Templates** opens a compact circle, fixed 60° cone, or rectangle picker. Click two map points; visible Cancel tool or Escape cancels. Distance uses the map's chosen distance per square and unit, with straight-line ruler measurements. Templates start private. Sharing is explicit, and owners can remove their own templates. Templates are scoped to the active map.
 
 GM **Exploration** offers whole-map cover, reveal/conceal rectangles, shown/daylight/night sight, door state, and light state/radius without opening Map Workshop. Advanced geometry stays in Map Workshop. Player map pixels, piece records, resource requests, drawing checkpoints, event snapshots and location signals are checked on the server. Hidden geometry and shape-change library metadata are omitted while exploration is active. A token is visible only when its complete occupied footprint is visible. Player sight/light changes require the GM while exploration is active. A player with no visible character still gets a valid board.
 
@@ -41,3 +41,15 @@ Automated local checks: 61 new tools cases, 17 additional concealment/boundary c
 Back up database, campaign resources and affected source, then apply additive `migrations/008_stage_tools.sql` before the matching overlay. Deploy PHP, JavaScript, CSS and both content-hashed XSL includes together. Existing account, notebook and sheet permissions do not change. No test data is copied to the live service. The existing database/resource backup schedule covers the new tables and protected map files.
 
 Native model/controller overrides are based on pinned Cauldron revision `e7217c10a45916d703d962a894c8902f6e1c2402`, with existing integration patches retained. Review them when changing the pinned upstream. Cauldron-derived files retain its GPL v2 license; see `table-overlay/COPYING.cauldron`.
+
+## Navigation and range-label follow-up — November 7
+
+The compact play bar keeps Dice, Ruler, Templates, Sheets and Chat together. Tools opens a searchable, grouped menu that preserves native Sketch, tokens and advanced preparation. Submenus return to the same menu. On narrow screens, the play actions scroll while Tools and Exit focus stay pinned. Active drawing exposes Stop drawing. Selecting another tool cancels pending placement/drawing rather than leaving two map actions armed.
+
+Escape closes dialogs or cancels active tools; it never exits board focus. Exit focus is an explicit, visible action. Pending ruler, ping and token placement have visible Cancel tool controls.
+
+Every measurement label includes feet and an approximate Daggerheart fictional distance band: up to 5 feet Melee, 10 Very Close, 30 Close, 100 Far, 300 Very Far, then Out of Range. The 5-foot Melee boundary is a practical estimate for touching distance. These are approximate fictional ranges, not the optional defined-grid rules; the GM adjudicates context. Circle labels describe radius, cone labels reach, and rectangle labels both dimensions. Metric and yard scales convert to feet; unrecognized units require a feet scale rather than inventing a conversion. Existing saved templates receive labels without rewriting stored data.
+
+Source: [official Daggerheart SRD 2.0, page 51](https://www.daggerheart.com/wp-content/uploads/2026/08/DH_SRD_2_2026_08_25.pdf).
+
+Human UI checks used isolated GM and player accounts, dark/light desktop and 390×844 layouts. They exercised direct ruler creation, circle/cone/rectangle selection, cone and rectangle creation, cancellation, repeated Escape retaining focus, explicit focus exit, tool search, role filtering, drawing-to-ruler transition, ping/token cancellation, and submenu return. Automated tests cover range boundaries, metric conversion, actual SVG labels, private defaults and focus behavior. This follow-up changes client navigation and presentation only; no migration or account/sheet/notebook permission changes.

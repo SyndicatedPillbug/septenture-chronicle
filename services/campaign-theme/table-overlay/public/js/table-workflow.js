@@ -13,7 +13,7 @@
    const focus=active=>{document.body.classList.toggle('board-focus',active);shell.contentWindow.postMessage({type:'septenture-board-focus-state',active},location.origin)};
    addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow)return;if(e.data?.type==='septenture-scene-backdrop'){const url=e.data.url;if(url===null||typeof url==='string'&&/^\/session\/scene\/image\?revision=[a-f0-9]{32}$/.test(url)){document.body.style.setProperty('--scene-backdrop',url?'url("'+url+'")':'none')}}if(e.data?.type==='septenture-board-focus')focus(e.data.active===true);if(e.data?.type==='septenture-tools-home'){control?.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)}});
    control?.querySelector('[data-control-home]')?.addEventListener('click',()=>{control.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)});
-   addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('board-focus'))focus(false)});
+   // Focus ends only through its visible Exit focus control.
    addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow||e.data?.type!=='septenture-piece-control'||!control)return;opener=document.activeElement;control.showModal();refreshPieces()});
    control?.querySelector('[data-close-control]').addEventListener('click',()=>control.close());
    control?.addEventListener('close',()=>opener?.focus());
@@ -36,15 +36,16 @@
   const dm=play.getAttribute('is_dm')==='yes',nativeMenu=document.querySelector('div.topbar div.menu');
   const modal=make('dialog');modal.className='campaign-tool-dialog board-popup';modal.setAttribute('aria-labelledby','board-popup-title');const heading=make('h2');heading.id='board-popup-title';const close=button('Close',()=>modal.close()),body=make('div');modal.append(close,heading,body);document.body.append(modal);let opener;
   modal.addEventListener('keydown',e=>e.stopPropagation());modal.addEventListener('close',()=>opener?.focus());
-  function open(title,source){setPainting(false);opener=source||document.activeElement;heading.textContent=title;if(nativeMenu?.parentElement===body)document.body.append(nativeMenu);body.replaceChildren();if(title!=='GM tools'&&title!=='Table tools')body.append(button('← Back to GM tools',()=>tools(source)));if(!modal.open)modal.showModal()}
+  function open(title,source){setPainting(false);opener=source||document.activeElement;heading.textContent=title;if(nativeMenu?.parentElement===body)document.body.append(nativeMenu);body.replaceChildren();if(title!=='GM tools'&&title!=='Table tools')body.append(button('← Back to tools',()=>{modal.close();if(window.SeptenturePlayKit)window.SeptenturePlayKit.open('home');else tools(source)}));if(!modal.open)modal.showModal()}
   function nativeAction(selector){document.querySelector(selector)?.click()}
   const status=make('div');status.className='board-placement';status.hidden=true;status.setAttribute('role','status');const message=make('span');status.append(message);document.body.append(status);let pending=null,tokenRequest=0;
   let painting=false,virtualControl=false,paintButton;
-  function setPainting(active){painting=active===true;if(paintButton){paintButton.textContent=painting?'Stop drawing':'Draw on map';paintButton.setAttribute('aria-pressed',String(painting))}play.classList.toggle('painting-map',painting);if(!painting&&virtualControl){window.ctrl_down=false;virtualControl=false}}
+  function setPainting(active){if(active===true)window.dispatchEvent(new CustomEvent('septenture:tool-start',{detail:{owner:'sketch'}}));painting=active===true;if(paintButton){paintButton.textContent=painting?'Stop drawing':'Draw on map';paintButton.setAttribute('aria-pressed',String(painting))}play.classList.toggle('painting-map',painting);if(!painting&&virtualControl){window.ctrl_down=false;virtualControl=false}}
   play.addEventListener('mousedown',event=>{if(!dm||!painting||event.button!==0)return;virtualControl=!event.ctrlKey;if(virtualControl)window.ctrl_down=true},true);
   addEventListener('mouseup',event=>{if(virtualControl){window.ctrl_down=event.ctrlKey;virtualControl=false}});
   addEventListener('blur',()=>setPainting(false));
   addEventListener('keydown',event=>{if(event.key==='Escape'&&painting){setPainting(false);event.preventDefault();event.stopImmediatePropagation()}},true);
+  addEventListener('septenture:tool-start',e=>{if(e.detail?.owner!=='sketch')setPainting(false);if(e.detail?.owner!=='library')cancelPlacement()});
   function cancelPlacement(){pending=null;status.hidden=true;play.classList.remove('placing-token')}
   status.append(button('Cancel placement',cancelPlacement));
   play.addEventListener('click',event=>{if(!pending)return;event.preventDefault();event.stopImmediatePropagation();const icon=pending;cancelPlacement();if(typeof window.object_create==='function')window.object_create(window.jQuery(icon),event.clientX,event.clientY)},true);
@@ -53,7 +54,7 @@
    let icons=[...document.querySelectorAll('div.library img.icon')];const loading=make('p','Loading token library…');loading.setAttribute('role','status');list.append(loading);
    try{const response=await fetch('/adventure/'+play.getAttribute('adventure_id')+'?library='+Date.now(),{credentials:'same-origin',cache:'no-store'});if(!response.ok)throw Error();const html=new DOMParser().parseFromString(await response.text(),'text/html');const library=html.querySelector('div.library');if(library)icons=[...library.querySelectorAll('img.icon')]}catch{/* The loaded library remains usable during a transient outage. */}
    if(request!==tokenRequest||!modal.open||heading.textContent!=='Place a token')return;list.replaceChildren();
-   for(const icon of icons){const name=icon.parentElement.querySelector('.name')?.textContent||'Token';const item=button(name,()=>{pending=icon;modal.close();message.textContent='Place '+name+': click the map. ';status.hidden=false;play.classList.add('placing-token')});const preview=icon.cloneNode();preview.removeAttribute('style');preview.removeAttribute('class');preview.alt='';item.prepend(preview);item.dataset.tokenName=name.toLowerCase();list.append(item)}
+   for(const icon of icons){const name=icon.parentElement.querySelector('.name')?.textContent||'Token';const item=button(name,()=>{window.dispatchEvent(new CustomEvent('septenture:tool-start',{detail:{owner:'library'}}));pending=icon;modal.close();message.textContent='Place '+name+': click the map. ';status.hidden=false;play.classList.add('placing-token')});const preview=icon.cloneNode();preview.removeAttribute('style');preview.removeAttribute('class');preview.alt='';item.prepend(preview);item.dataset.tokenName=name.toLowerCase();list.append(item)}
    if(!icons.length)list.append(make('p','Your token library is empty. Add reusable tokens in Token Library, then reopen this popup to place them.'));
    filter.addEventListener('input',()=>{for(const item of list.querySelectorAll('button'))item.hidden=!item.dataset.tokenName.includes(filter.value.toLowerCase())});const library=link('Manage Token Library','/vault/token');library.target='_blank';library.rel='noopener';body.append(library);
   }
@@ -70,12 +71,13 @@
   if(dm){paintButton=button('Draw on map',()=>setPainting(!painting));paintButton.hidden=true;paintButton.setAttribute('aria-pressed','false');paintButton.title='Choose a color or terrain brush, then drag on the map. Stop drawing to pan again.';const sketch=button('Sketch tools',()=>{const shown=document.body.classList.toggle('show-sketch');sketch.setAttribute('aria-pressed',String(shown));paintButton.hidden=!shown;if(!shown)setPainting(false)});sketch.setAttribute('aria-pressed','false');toolbar.append(sketch,paintButton)}
   const activity=button('Chat & rolls',()=>{const shown=document.body.classList.toggle('show-activity');activity.setAttribute('aria-pressed',String(shown))});activity.setAttribute('aria-pressed','false');toolbar.append(activity,button(dm?'GM tools':'Table tools',e=>tools(e.currentTarget)));
   if(dm){const workshopLink=link('Map Workshop ↗','/vault/map');workshopLink.target='_blank';workshopLink.rel='noopener';toolbar.append(workshopLink)}
-  addEventListener('septenture-tools-home',()=>tools());
+  const returnToTools=()=>{modal.close();if(window.SeptenturePlayKit)window.SeptenturePlayKit.open('home');else tools()};
+  addEventListener('septenture-tools-home',returnToTools);
   addEventListener('septenture-open-token-library',()=>tokens());
   let focused=false;const setFocus=active=>{focused=active;document.body.classList.toggle('board-focus',active);expand.textContent=active?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(active));window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active}}));if(parent!==self)parent.postMessage({type:'septenture-board-focus',active},location.origin)};
   const expand=button('Focus board',()=>setFocus(!focused));expand.className='board-focus-toggle';expand.setAttribute('aria-pressed','false');toolbar.append(expand);
   try{if(sessionStorage.getItem('septenture-return-focus')==='1'){sessionStorage.removeItem('septenture-return-focus');setFocus(true)}}catch{}
-  addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent)return;if(e.data?.type==='septenture-board-focus-state'){const changed=focused!==(e.data.active===true);focused=e.data.active===true;document.body.classList.toggle('board-focus',focused);expand.textContent=focused?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(focused));if(changed)window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active:focused}}))}if(e.data?.type==='septenture-tools-home')tools()});
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&focused&&!document.querySelector('dialog[open]')){setFocus(false);e.preventDefault()}},true);
+  addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent)return;if(e.data?.type==='septenture-board-focus-state'){const changed=focused!==(e.data.active===true);focused=e.data.active===true;document.body.classList.toggle('board-focus',focused);expand.textContent=focused?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(focused));if(changed)window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active:focused}}))}if(e.data?.type==='septenture-tools-home')returnToTools()});
+  // Escape is reserved for dismissing the current tool or dialog.
  });
 })();

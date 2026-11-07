@@ -10,7 +10,7 @@
   const nova=new URL(config.novaUrl),site=new URL(config.chronicleUrl);if(nova.protocol!=='https:'&&!['localhost','127.0.0.1'].includes(nova.hostname))return
   const destination=(compose)=>{const url=new URL('/index.php/auth/start',nova);if(compose)url.searchParams.set('compose',compose);return url.href}
   let ready
-  const ensureTools=()=>{if(window.SeptentureTableTools)return Promise.resolve();if(!ready)ready=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/js/table-tools.js?v=c241939571d7';script.onload=resolve;script.onerror=reject;document.head.append(script)}).catch(error=>{ready=null;throw error});return ready}
+  const ensureTools=()=>{if(window.SeptentureTableTools)return Promise.resolve();if(!ready)ready=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/js/table-tools.js?v=60992850dc97';script.onload=resolve;script.onerror=reject;document.head.append(script)}).catch(error=>{ready=null;throw error});return ready}
   const openTools=(kind,control)=>ensureTools().then(()=>window.SeptentureTableTools.open(kind,control)).catch(()=>window.dispatchEvent(new CustomEvent('septenture:connection',{detail:{state:'action-failed',message:'Table tools could not load. Try Dice or Sheets again.'}})))
   ensureTools().catch(()=>{})
   for(const file of ['manual-sheet.css','table-tools.css']){const css=document.createElement('link');css.rel='stylesheet';css.href='/css/'+file+'?v=repairs20261105b';document.head.append(css)}
