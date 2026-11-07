@@ -8,7 +8,7 @@ if(PHP_SAPI!=='cli')ob_start(static function(string $html): string {
  $html=preg_replace_callback('~/assets/(story-rich|story-format|prose-editor)\.js(?:\?v=[a-zA-Z0-9_-]+)?~',static fn($m)=>'/assets/'.$m[1].'.js?v='.substr(hash_file('sha256',__DIR__.'/../../assets/'.$m[1].'.js'),0,12),$html);
  if(str_contains($html,'data-septenture-theme-assets'))return $html;
  $scripts='';foreach(['story-rich.js','prose-editor.js','prose-public.js'] as $file)if(!str_contains($html,'/assets/'.$file))$scripts.='<script src="/assets/'.$file.'?v='.substr(hash_file('sha256',__DIR__.'/../../assets/'.$file),0,12).'"></script>';if($scripts&&stripos($html,'</body>')!==false)$html=str_ireplace('</body>',$scripts.'</body>',$html);
- $assets='<link data-septenture-theme-assets rel="stylesheet" href="/assets/site-theme.css?v=e7ec77bb74af"><script src="/assets/site-theme.js?v=aacda04218d8"></script>';
+ $assets='<link data-septenture-theme-assets rel="stylesheet" href="/assets/site-theme.css?v=' .substr(hash_file('sha256',__DIR__.'/../../assets/site-theme.css'),0,12). '"><script src="/assets/site-theme.js?v=aacda04218d8"></script>';
  if(stripos($html,'</head>')!==false)return preg_replace('~</head>~i',$assets.'</head>',$html,1);
  return preg_replace('~(<!doctype[^>]*>)~i','$1'.$assets,$html,1);
 });

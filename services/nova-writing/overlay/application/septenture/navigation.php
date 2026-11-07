@@ -72,7 +72,7 @@ function septenture_navigation(string $authorizedHtml,string $type,string $curre
     if(defined('SEPTENTURE_PLAYER_ID'))$items['Writing']['write/index'].='<br><a href="/index.php/play/notebook">My private game notes</a>';
     if(defined('SEPTENTURE_PLAYER_ID'))$items['Your account']['play/writing/notifications']='<a href="/index.php/play/writing/notifications">Email preferences &amp; delivery</a>';
     $hasSiteConfiguration=isset($items['Administration']['site/settings']);
-    $out='<div class="campaign-tools" aria-label="Writing and campaign tools">';
+    $out='<details class="mobile-writing-menu"><summary>Writing &amp; character tools</summary><div class="campaign-tools" aria-label="Writing and campaign tools">';
     foreach($groups as $group=>$routes) {
         if(empty($items[$group]))continue;
         $links=[];foreach($routes as $route=>$label)if(isset($items[$group][$route]))$links[]=$items[$group][$route];
@@ -84,5 +84,5 @@ function septenture_navigation(string $authorizedHtml,string $type,string $curre
     }
     if($advanced)$out.='<details class="campaign-menu-disclosure"><summary>Additional tools</summary>'.$list($advanced).'</details>';
     if($old&&$hasSiteConfiguration)$out.='<details class="campaign-menu-disclosure legacy-tools"><summary>Legacy Nova setup</summary><p>Older roster and setting tools. These do not manage D&amp;D classes, levels, or character sheets.</p>'.$list($old).'</details>';
-    return $out.'</div>';
+    return $out.'</div></details><script>(function(d){var q=matchMedia("(max-width:700px)");function fit(){d.open=!q.matches}fit();q.addEventListener("change",fit)})(document.currentScript.previousElementSibling);</script>';
 }
