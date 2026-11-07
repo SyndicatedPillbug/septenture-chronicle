@@ -53,3 +53,11 @@ Every measurement label includes feet and an approximate Daggerheart fictional d
 Source: [official Daggerheart SRD 2.0, page 51](https://www.daggerheart.com/wp-content/uploads/2026/08/DH_SRD_2_2026_08_25.pdf).
 
 Human UI checks used isolated GM and player accounts, dark/light desktop and 390×844 layouts. They exercised direct ruler creation, circle/cone/rectangle selection, cone and rectangle creation, cancellation, repeated Escape retaining focus, explicit focus exit, tool search, role filtering, drawing-to-ruler transition, ping/token cancellation, and submenu return. Automated tests cover range boundaries, metric conversion, actual SVG labels, private defaults and focus behavior. This follow-up changes client navigation and presentation only; no migration or account/sheet/notebook permission changes.
+
+## Context-menu and marker repair — November 7
+
+Native **Measure distance** now anchors the first point at the original right-click and uses the same private saved ruler as the toolbar, including visible feet/bands and reload persistence. The legacy area-template submenu now opens the supported Templates picker instead of sending rejected spell-overlay events. Context **Manage measurements** and the Templates panel expose saved measurements and owner/GM removal directly, with explicit success feedback. The server permission boundary is unchanged.
+
+**Set marker** uses the original context-click in scrolled map coordinates for both the local marker and shared event. The pin tip is anchored at that point. The transient marker image cannot initiate a browser image drag, and internal board drags are excluded from the scene file-drop handlers in both board and wrapper. Genuine external file drops retain their preview-before-sharing flow.
+
+Isolated GM/player human UI checks exercised context-menu ruler creation, reload persistence, owner-only removal, supported circle creation through the context menu, marker placement and dragging across the marker without opening the scene uploader. Unit regressions verify origin coordinates, shared/private defaults, removal refresh, legacy-callback bypass, marker coordinates, and internal/external drop separation. The earlier live private ruler was removed at the user's request through the existing management UI before deployment.

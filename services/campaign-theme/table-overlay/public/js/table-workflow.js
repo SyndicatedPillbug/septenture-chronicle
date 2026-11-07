@@ -8,8 +8,9 @@
   const shell=document.querySelector('.campaign-board');
   if(shell){
    const control=document.querySelector('#piece-control');let opener;
-   addEventListener('dragover',e=>{if([...e.dataTransfer.types].includes('Files'))e.preventDefault()});
-   addEventListener('drop',e=>{if(![...e.dataTransfer.types].includes('Files'))return;e.preventDefault();const image=e.dataTransfer.files[0];if(image)shell.contentWindow.postMessage({type:'septenture-scene-drop',image},location.origin)});
+   let internalDrag=false;addEventListener('dragstart',()=>{internalDrag=true},true);addEventListener('dragend',()=>{internalDrag=false},true);
+   addEventListener('dragover',e=>{if(!internalDrag&&[...e.dataTransfer.types].includes('Files'))e.preventDefault()});
+   addEventListener('drop',e=>{if(internalDrag||![...e.dataTransfer.types].includes('Files'))return;e.preventDefault();const image=e.dataTransfer.files[0];if(image)shell.contentWindow.postMessage({type:'septenture-scene-drop',image},location.origin)});
    const focus=active=>{document.body.classList.toggle('board-focus',active);shell.contentWindow.postMessage({type:'septenture-board-focus-state',active},location.origin)};
    addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow)return;if(e.data?.type==='septenture-scene-backdrop'){const url=e.data.url;if(url===null||typeof url==='string'&&/^\/session\/scene\/image\?revision=[a-f0-9]{32}$/.test(url)){document.body.style.setProperty('--scene-backdrop',url?'url("'+url+'")':'none')}}if(e.data?.type==='septenture-board-focus')focus(e.data.active===true);if(e.data?.type==='septenture-tools-home'){control?.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)}});
    control?.querySelector('[data-control-home]')?.addEventListener('click',()=>{control.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)});
