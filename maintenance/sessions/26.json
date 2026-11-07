@@ -70,7 +70,7 @@
     },
     "browser": {
       "status": "reviewed",
-      "evidence": "Live UI verified home/latest, previous/next, contents, character scene reference and both themes. Narrow viewport remains explicitly pending."
+      "evidence": "Live UI verified home/latest, previous/next, contents, character scene reference, light/dark, and narrow/wide recap layouts. November 7 mobile pass closes the remaining viewport check."
     }
   },
   "browserChecks": {
@@ -79,7 +79,7 @@
     "contents": "verified",
     "character-references": "verified",
     "light-dark": "verified",
-    "narrow-wide": "pending"
+    "narrow-wide": "verified"
   },
   "release": {
     "commit": "eef1d9770b452bb5e65d0240cac2e4498a7da0cf",
@@ -90,6 +90,6 @@
     "contents": "Live UI: contents \u2192 Session 26.",
     "character-references": "Live UI: recap \u2192 character reference index; activated Page\u2019s wrapped At the Hollow Heart link with keyboard \u2192 Session 26.",
     "light-dark": "Selected Dark and Light in live reader; screenshots inspected at 1265px width.",
-    "narrow-wide": "Wide checked. Narrow viewport not verified: current browser control exposes no viewport resizing capability."
+    "narrow-wide": "November 7 live browser: Session 26 read at 390px and 320px (document width equals viewport); refreshed navigation uses the mobile grid. Desktop recap also inspected. See maintenance/MOBILE_REVIEW.md."
   }
 }
