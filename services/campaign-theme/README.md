@@ -7,3 +7,5 @@ Light: parchment, forest and brass. Dark: forest charcoal, parchment text and br
 Run node --test services/campaign-theme/theme.test.mjs and verify all three services through the UI. Deploy the Chronicle bridge first, then the Nova and Table overlays. Keep server backups and do not overwrite service configurations.
 
 The Table overlay also includes the play/workshop separation: a viewport-filling wrapper, compact play controls, native modal token selection, a current DM-only NPC-control list with CSRF-protected in-place saves, optional Activity/Sketch panels, and a separate Map Workshop with return navigation. `table-workflow.js/css` must be deployed together with both XSL layout includes and `integration/table.php` / `control.php`. Asset query values are content hashes. Token creation and movement still use the native guarded object routes; no permission or private-sheet policy changes are introduced.
+
+See [Table workflow review](TABLE_WORKFLOW_REVIEW.md) for the November 7 acceptance scope, fixes, and remaining limits.

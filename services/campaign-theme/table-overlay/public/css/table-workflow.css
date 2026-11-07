@@ -13,3 +13,5 @@
 /* Focus enlarges the existing iframe, so map state and its controls stay intact. */
 .campaign-table-shell.board-focus{grid-template-rows:minmax(0,1fr)}.campaign-table-shell.board-focus>.table-shell-header{display:none}.live-board.board-focus .board-toolbar{background:var(--st-surface);border-bottom:1px solid var(--st-edge)}.board-toolbar button[aria-pressed=true]{font-weight:700}
 .board-popup>div>button{margin:.3rem .5rem .5rem 0}#piece-control [data-control-home]{margin-right:1rem}
+
+.board-toolbar [hidden]{display:none!important}.painting-map{cursor:crosshair}.painting-map canvas{cursor:crosshair}

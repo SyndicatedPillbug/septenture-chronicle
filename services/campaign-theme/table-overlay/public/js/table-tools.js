@@ -4,7 +4,7 @@
  const button=(label,action)=>{const b=el('button',label);b.type='button';b.addEventListener('click',action);return b}
  const dialog=el('dialog');dialog.className='campaign-tool-dialog';dialog.setAttribute('aria-labelledby','table-tool-title')
  const title=el('h2');title.id='table-tool-title';const close=button('Close tools',()=>dialog.close()),status=el('p'),body=el('div');status.setAttribute('role','status');dialog.append(close,title,status,body);document.body.append(dialog)
- const home=button('GM / Table tools',()=>{dialog.close();window.dispatchEvent(new Event('septenture-tools-home'))});dialog.insertBefore(home,title)
+ const home=button(document.querySelector('div.playarea')?.getAttribute('is_dm')==='yes'?'← Back to GM tools':'← Back to Table tools',()=>{dialog.close();window.dispatchEvent(new Event('septenture-tools-home'))});dialog.insertBefore(home,title)
  let generation=0,opener,view=null,manual=null,notesEditor=null,notesFormat='plain',selected=null,sheets=[],dirty=false,sectionDirty=false,notesDirty=false,saving=false,notesDraft='',draft=null
  dialog.addEventListener('close',()=>opener?.focus());dialog.addEventListener('keydown',e=>e.stopPropagation());dialog.addEventListener('submit',e=>e.preventDefault())
  window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue=''}})

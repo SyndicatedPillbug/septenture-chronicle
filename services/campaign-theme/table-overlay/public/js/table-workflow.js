@@ -34,9 +34,15 @@
   const dm=play.getAttribute('is_dm')==='yes',nativeMenu=document.querySelector('div.topbar div.menu');
   const modal=make('dialog');modal.className='campaign-tool-dialog board-popup';modal.setAttribute('aria-labelledby','board-popup-title');const heading=make('h2');heading.id='board-popup-title';const close=button('Close',()=>modal.close()),body=make('div');modal.append(close,heading,body);document.body.append(modal);let opener;
   modal.addEventListener('keydown',e=>e.stopPropagation());modal.addEventListener('close',()=>opener?.focus());
-  function open(title,source){opener=source||document.activeElement;heading.textContent=title;if(nativeMenu?.parentElement===body)document.body.append(nativeMenu);body.replaceChildren();if(title!=='GM tools'&&title!=='Table tools')body.append(button('← Back to GM tools',()=>tools(source)));if(!modal.open)modal.showModal()}
+  function open(title,source){setPainting(false);opener=source||document.activeElement;heading.textContent=title;if(nativeMenu?.parentElement===body)document.body.append(nativeMenu);body.replaceChildren();if(title!=='GM tools'&&title!=='Table tools')body.append(button('← Back to GM tools',()=>tools(source)));if(!modal.open)modal.showModal()}
   function nativeAction(selector){document.querySelector(selector)?.click()}
   const status=make('div');status.className='board-placement';status.hidden=true;status.setAttribute('role','status');const message=make('span');status.append(message);document.body.append(status);let pending=null,tokenRequest=0;
+  let painting=false,virtualControl=false,paintButton;
+  function setPainting(active){painting=active===true;if(paintButton){paintButton.textContent=painting?'Stop drawing':'Draw on map';paintButton.setAttribute('aria-pressed',String(painting))}play.classList.toggle('painting-map',painting);if(!painting&&virtualControl){window.ctrl_down=false;virtualControl=false}}
+  play.addEventListener('mousedown',event=>{if(!dm||!painting||event.button!==0)return;virtualControl=!event.ctrlKey;if(virtualControl)window.ctrl_down=true},true);
+  addEventListener('mouseup',event=>{if(virtualControl){window.ctrl_down=event.ctrlKey;virtualControl=false}});
+  addEventListener('blur',()=>setPainting(false));
+  addEventListener('keydown',event=>{if(event.key==='Escape'&&painting){setPainting(false);event.preventDefault();event.stopImmediatePropagation()}},true);
   function cancelPlacement(){pending=null;status.hidden=true;play.classList.remove('placing-token')}
   status.append(button('Cancel placement',cancelPlacement));
   play.addEventListener('click',event=>{if(!pending)return;event.preventDefault();event.stopImmediatePropagation();const icon=pending;cancelPlacement();if(typeof window.object_create==='function')window.object_create(window.jQuery(icon),event.clientX,event.clientY)},true);
@@ -59,7 +65,7 @@
   }
   if(dm)toolbar.append(button('Tokens',e=>tokens(e.currentTarget)));
   for(const [label,kind]of [['Dice','dice'],['Sheets','sheets']])toolbar.append(button(label,e=>window.SeptentureTableTools?.open(kind,e.currentTarget)));
-  if(dm){const sketch=button('Sketch tools',()=>{const shown=document.body.classList.toggle('show-sketch');sketch.setAttribute('aria-pressed',String(shown))});sketch.setAttribute('aria-pressed','false');toolbar.append(sketch)}
+  if(dm){paintButton=button('Draw on map',()=>setPainting(!painting));paintButton.hidden=true;paintButton.setAttribute('aria-pressed','false');paintButton.title='Choose a color or terrain brush, then drag on the map. Stop drawing to pan again.';const sketch=button('Sketch tools',()=>{const shown=document.body.classList.toggle('show-sketch');sketch.setAttribute('aria-pressed',String(shown));paintButton.hidden=!shown;if(!shown)setPainting(false)});sketch.setAttribute('aria-pressed','false');toolbar.append(sketch,paintButton)}
   const activity=button('Activity',()=>{const shown=document.body.classList.toggle('show-activity');activity.setAttribute('aria-pressed',String(shown))});activity.setAttribute('aria-pressed','false');toolbar.append(activity,button(dm?'GM tools':'Table tools',e=>tools(e.currentTarget)));
   if(dm){const workshopLink=link('Map Workshop ↗','/vault/map');workshopLink.target='_blank';workshopLink.rel='noopener';toolbar.append(workshopLink)}
   addEventListener('septenture-tools-home',()=>tools());
