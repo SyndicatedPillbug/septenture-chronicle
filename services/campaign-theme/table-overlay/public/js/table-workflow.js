@@ -8,8 +8,10 @@
   const shell=document.querySelector('.campaign-board');
   if(shell){
    const control=document.querySelector('#piece-control');let opener;
+   addEventListener('dragover',e=>{if([...e.dataTransfer.types].includes('Files'))e.preventDefault()});
+   addEventListener('drop',e=>{if(![...e.dataTransfer.types].includes('Files'))return;e.preventDefault();const image=e.dataTransfer.files[0];if(image)shell.contentWindow.postMessage({type:'septenture-scene-drop',image},location.origin)});
    const focus=active=>{document.body.classList.toggle('board-focus',active);shell.contentWindow.postMessage({type:'septenture-board-focus-state',active},location.origin)};
-   addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow)return;if(e.data?.type==='septenture-board-focus')focus(e.data.active===true);if(e.data?.type==='septenture-tools-home'){control?.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)}});
+   addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow)return;if(e.data?.type==='septenture-scene-backdrop'){const url=e.data.url;if(url===null||typeof url==='string'&&/^\/session\/scene\/image\?revision=[a-f0-9]{32}$/.test(url)){document.body.style.setProperty('--scene-backdrop',url?'url("'+url+'")':'none')}}if(e.data?.type==='septenture-board-focus')focus(e.data.active===true);if(e.data?.type==='septenture-tools-home'){control?.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)}});
    control?.querySelector('[data-control-home]')?.addEventListener('click',()=>{control.close();shell.contentWindow.postMessage({type:'septenture-tools-home'},location.origin)});
    addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('board-focus'))focus(false)});
    addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==shell.contentWindow||e.data?.type!=='septenture-piece-control'||!control)return;opener=document.activeElement;control.showModal();refreshPieces()});
@@ -66,12 +68,12 @@
   if(dm)toolbar.append(button('Tokens',e=>tokens(e.currentTarget)));
   for(const [label,kind]of [['Dice','dice'],['Sheets','sheets']])toolbar.append(button(label,e=>window.SeptentureTableTools?.open(kind,e.currentTarget)));
   if(dm){paintButton=button('Draw on map',()=>setPainting(!painting));paintButton.hidden=true;paintButton.setAttribute('aria-pressed','false');paintButton.title='Choose a color or terrain brush, then drag on the map. Stop drawing to pan again.';const sketch=button('Sketch tools',()=>{const shown=document.body.classList.toggle('show-sketch');sketch.setAttribute('aria-pressed',String(shown));paintButton.hidden=!shown;if(!shown)setPainting(false)});sketch.setAttribute('aria-pressed','false');toolbar.append(sketch,paintButton)}
-  const activity=button('Activity',()=>{const shown=document.body.classList.toggle('show-activity');activity.setAttribute('aria-pressed',String(shown))});activity.setAttribute('aria-pressed','false');toolbar.append(activity,button(dm?'GM tools':'Table tools',e=>tools(e.currentTarget)));
+  const activity=button('Chat & rolls',()=>{const shown=document.body.classList.toggle('show-activity');activity.setAttribute('aria-pressed',String(shown))});activity.setAttribute('aria-pressed','false');toolbar.append(activity,button(dm?'GM tools':'Table tools',e=>tools(e.currentTarget)));
   if(dm){const workshopLink=link('Map Workshop ↗','/vault/map');workshopLink.target='_blank';workshopLink.rel='noopener';toolbar.append(workshopLink)}
   addEventListener('septenture-tools-home',()=>tools());
-  let focused=false;const setFocus=active=>{focused=active;document.body.classList.toggle('board-focus',active);expand.textContent=active?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(active));if(parent!==self)parent.postMessage({type:'septenture-board-focus',active},location.origin)};
+  let focused=false;const setFocus=active=>{focused=active;document.body.classList.toggle('board-focus',active);expand.textContent=active?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(active));window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active}}));if(parent!==self)parent.postMessage({type:'septenture-board-focus',active},location.origin)};
   const expand=button('Focus board',()=>setFocus(!focused));expand.setAttribute('aria-pressed','false');toolbar.append(expand);
-  addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent)return;if(e.data?.type==='septenture-board-focus-state'){focused=e.data.active===true;document.body.classList.toggle('board-focus',focused);expand.textContent=focused?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(focused))}if(e.data?.type==='septenture-tools-home')tools()});
+  addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent)return;if(e.data?.type==='septenture-board-focus-state'){const changed=focused!==(e.data.active===true);focused=e.data.active===true;document.body.classList.toggle('board-focus',focused);expand.textContent=focused?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(focused));if(changed)window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active:focused}}))}if(e.data?.type==='septenture-tools-home')tools()});
   addEventListener('keydown',e=>{if(e.key==='Escape'&&focused&&!document.querySelector('dialog[open]')){setFocus(false);e.preventDefault()}},true);
  });
 })();

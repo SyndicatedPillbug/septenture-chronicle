@@ -97,6 +97,7 @@ function tabletop_route($session,$user): void {
             if(str_starts_with($path,'/object/'))tabletop_guard_object($svc,$_SESSION['tabletop_context'],$path);
             if($path==='/session/control')tabletop_control($svc,$_SESSION['tabletop_context']);
             if($path==='/session/events')tabletop_events($svc,$_SESSION['tabletop_context']);
+            if(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)){require_once __DIR__.'/scene.php';tabletop_scene($svc,$_SESSION['tabletop_context'],$path);}
             if(preg_match('#^/(resources|files)/#',$path))tabletop_asset($path,$svc,$user,$_SESSION['tabletop_context']);
             if(preg_match('#^/session/table/([a-z0-9-]+)$#D',$path,$match)){
                 if($match[1]!==$grant['campaign'])throw new RuntimeException('This is another campaign.',403);
@@ -122,6 +123,8 @@ function tabletop_route($session,$user): void {
             if(!in_array($path,$allowed,true)&&!preg_match('#^/object/[a-z_]+$#D',$path))throw new RuntimeException('This route is outside your tabletop session.',403);
         }elseif(preg_match('#^/(resources|files)/#',$path)){
             tabletop_asset($path,$svc,$user,null);
+        }elseif(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)){
+            tabletop_response(['error'=>'Enter the Table to view this campaign.'],401);
         }elseif(!($config['local_test_mode']??false)){
             // Fail closed for native logins on the integrated public installation.
             tabletop_response(['error'=>'Enter the table from the campaign website.'],401);

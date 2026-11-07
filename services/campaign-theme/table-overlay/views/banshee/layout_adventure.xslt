@@ -35,7 +35,7 @@
 <xsl:for-each select="javascripts/javascript">
 <script type="{@type}" src="{.}"></script><xsl:text>
 </xsl:text></xsl:for-each>
-<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=e7ec77bb74af" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script><link rel="stylesheet" href="/css/table-workflow.css?v=b86543d53840" /><script src="/js/table-workflow.js?v=252b68b29468"><xsl:text> </xsl:text></script></head>
+<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=e7ec77bb74af" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script><link rel="stylesheet" href="/css/table-workflow.css?v=09e558f8cc59" /><script src="/js/table-workflow.js?v=ef43bcbab3fa"><xsl:text> </xsl:text></script><script src="/js/table-scene.js?v=766bb9fb7a82"><xsl:text> </xsl:text></script></head>
 
 <body hostname="{/output/hostname}">
 <xsl:if test="javascripts/@onload">
