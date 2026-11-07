@@ -73,6 +73,7 @@
   addEventListener('septenture-tools-home',()=>tools());
   let focused=false;const setFocus=active=>{focused=active;document.body.classList.toggle('board-focus',active);expand.textContent=active?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(active));window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active}}));if(parent!==self)parent.postMessage({type:'septenture-board-focus',active},location.origin)};
   const expand=button('Focus board',()=>setFocus(!focused));expand.setAttribute('aria-pressed','false');toolbar.append(expand);
+  try{if(sessionStorage.getItem('septenture-return-focus')==='1'){sessionStorage.removeItem('septenture-return-focus');setFocus(true)}}catch{}
   addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent)return;if(e.data?.type==='septenture-board-focus-state'){const changed=focused!==(e.data.active===true);focused=e.data.active===true;document.body.classList.toggle('board-focus',focused);expand.textContent=focused?'Exit focus':'Focus board';expand.setAttribute('aria-pressed',String(focused));if(changed)window.dispatchEvent(new CustomEvent('septenture-focus',{detail:{active:focused}}))}if(e.data?.type==='septenture-tools-home')tools()});
   addEventListener('keydown',e=>{if(e.key==='Escape'&&focused&&!document.querySelector('dialog[open]')){setFocus(false);e.preventDefault()}},true);
  });

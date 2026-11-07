@@ -37,4 +37,22 @@ check('chat bounded to 60 rows',len(messages)<=60)
 check('anonymous conversation denied',anon.req('/session/chat')[0] in (401,403))
 rec=Client();code,_,_=rec.req('/session/handoff',url.urlencode({'token':'recorder-'+'x'*40,'campaign':'septenture'}).encode(),{'Origin':'http://localhost:8802'})
 check('recorder cannot retrieve chat',rec.req('/session/chat')[0] in (401,403));check('recorder cannot retrieve art',rec.req(image)[0] in (401,403))
-print('16 scene/chat checks passed')
+
+
+# The GM can use the same picker path to replace the actual map, not just an overlay.
+check('player map replacement denied',player.post('map',fixture)[0]==403)
+check('map replacement requires CSRF',gm.post('map',fixture,csrf='bad')[0]==403)
+check('GM quick map upload',gm.post('map',fixture)[0]==200)
+page=gm.req('/adventure/1')[1]
+asset=re.search(rb'/resources/[a-zA-Z0-9_-]+/maps/scene-[a-f0-9]{32}[.]png',page)
+check('new map is used by the active board',bool(asset))
+check('player can read active map art',player.req(asset[0].decode())[1]==fixture.read_bytes())
+check('anonymous map art denied',anon.req(asset[0].decode())[0] in (401,403,404))
+# Reload notices should never become conversation; normal text remains visible.
+announcement={'action':'say','name':None,'mesg':'Fixture GM entered the session, being the Dungeon Master.'}
+for _ in range(3):
+ code,_,_=gm.req('/session/events',json.dumps(announcement).encode(),{'Content-Type':'application/json','X-Tabletop-CSRF':gm.csrf})
+ assert code==200
+messages=json.loads(gm.req('/session/chat')[1])['messages']
+check('reload announcements are absent from conversation',all('entered the session, being the' not in m['text'] for m in messages))
+print('23 scene/chat/map checks passed')
