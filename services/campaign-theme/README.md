@@ -29,3 +29,7 @@ The Dice dialog has an explicit Private / Public to Table choice, defaulting to 
 The GM image dialog now has Show as scene, Use as backdrop, and Use as map. The map choice replaces only the current map image URL and pixel dimensions, preserving the map ID, grid settings, pieces and their positions. It uses a new protected resource filename, retains the original image file, notifies current players to reload, and returns from a scene overlay to the board. The previous map file remains in the campaign resources and backups. Existing active-map asset and recorder guards apply. This feature changes map art only when the GM explicitly chooses Use as map.
 
 Acceptance was exercised through the isolated GM UI: public and private rolls, public result in conversation, saved scene art applied as the actual map, existing pieces/grid retained, and focus restored. The HTTP suite includes player/CSRF denial and protected active-map image access. No test map or public roll was sent to the live campaign.
+
+## Manual play kit
+
+See [Manual play kit review](PLAY_KIT_REVIEW.md) for saved scenes, quick tokens, canonical private notes, handouts, recovery, attention, ambience and manual counters. Apply migration 007 before deploying the matching overlay.

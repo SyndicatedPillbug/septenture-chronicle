@@ -34,9 +34,9 @@ div.wrapper > div.header {
 <xsl:value-of select="inline_css" />
 </style>
 <xsl:for-each select="javascripts/javascript">
-<script type="{@type}" src="{.}"></script><xsl:text>
+<xsl:choose><xsl:when test="contains(.,'tabletop-transport.js')"><script src="/js/tabletop-transport.js?v=11542ec939ef"><xsl:text> </xsl:text></script></xsl:when><xsl:when test="contains(.,'campaign-tools.js')"><script src="/js/campaign-tools.js?v=01b16a0152a7"><xsl:text> </xsl:text></script></xsl:when><xsl:otherwise><script type="{@type}" src="{.}"></script></xsl:otherwise></xsl:choose><xsl:text>
 </xsl:text></xsl:for-each>
-<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=e7ec77bb74af" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script><link rel="stylesheet" href="/css/table-workflow.css?v=6bd982469479" /><script src="/js/table-workflow.js?v=66408e3ca54e"><xsl:text> </xsl:text></script><script src="/js/table-scene.js?v=deb7a5b574dc"><xsl:text> </xsl:text></script></head>
+<xsl:comment>data-septenture-theme-assets</xsl:comment><link rel="stylesheet" href="/js/site-theme.css?v=e7ec77bb74af" /><script src="/js/site-theme.js?v=aacda04218d8"><xsl:text> </xsl:text></script><link rel="stylesheet" href="/css/table-workflow.css?v=6bd982469479" /><script src="/js/table-workflow.js?v=1ca4c865b965"><xsl:text> </xsl:text></script><script src="/js/table-scene.js?v=01a569cb916f"><xsl:text> </xsl:text></script><link rel="stylesheet" href="/css/play-kit.css?v=7a7afedf3274" /><script src="/js/play-kit.js?v=6205a667c696"><xsl:text> </xsl:text></script></head>
 
 <body>
 <xsl:if test="javascripts/@onload">

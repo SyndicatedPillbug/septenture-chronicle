@@ -7,6 +7,7 @@ require_once __DIR__.'/assets.php';
 require_once __DIR__.'/events.php';
 require_once __DIR__.'/object-guard.php';
 require_once __DIR__.'/control.php';
+require_once __DIR__.'/play-kit.php';
 function tabletop_response(array $data,int $code=200): never {
     http_response_code($code);header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: private, no-store');header('Referrer-Policy: no-referrer');
@@ -97,6 +98,7 @@ function tabletop_route($session,$user): void {
             if(str_starts_with($path,'/object/'))tabletop_guard_object($svc,$_SESSION['tabletop_context'],$path);
             if($path==='/session/control')tabletop_control($svc,$_SESSION['tabletop_context']);
             if($path==='/session/events')tabletop_events($svc,$_SESSION['tabletop_context']);
+            if(str_starts_with($path,'/session/kit/'))tabletop_play_kit($svc,$_SESSION['tabletop_context'],substr($path,strlen('/session/kit/')));
             if(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)){require_once __DIR__.'/scene.php';tabletop_scene($svc,$_SESSION['tabletop_context'],$path);}
             if(preg_match('#^/(resources|files)/#',$path))tabletop_asset($path,$svc,$user,$_SESSION['tabletop_context']);
             if(preg_match('#^/session/table/([a-z0-9-]+)$#D',$path,$match)){
@@ -123,7 +125,7 @@ function tabletop_route($session,$user): void {
             if(!in_array($path,$allowed,true)&&!preg_match('#^/object/[a-z_]+$#D',$path))throw new RuntimeException('This route is outside your tabletop session.',403);
         }elseif(preg_match('#^/(resources|files)/#',$path)){
             tabletop_asset($path,$svc,$user,null);
-        }elseif(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)){
+        }elseif(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)||str_starts_with($path,'/session/kit/')){
             tabletop_response(['error'=>'Enter the Table to view this campaign.'],401);
         }elseif(!($config['local_test_mode']??false)){
             // Fail closed for native logins on the integrated public installation.
@@ -133,7 +135,7 @@ function tabletop_route($session,$user): void {
         if(!$identityValidated&&in_array($e->getCode(),[401,403],true)&&isset($_SESSION['tabletop_identity'])){
             unset($_SESSION['tabletop_identity'],$_SESSION['tabletop_context']);$user->logout();
         }
-        $code=in_array($e->getCode(),[400,401,403,404,413,503],true)?$e->getCode():503;
+        $code=in_array($e->getCode(),[400,401,403,404,409,413,429,503],true)?$e->getCode():503;
         tabletop_response(['error'=>$code===503?'The tabletop account service is temporarily unavailable.':$e->getMessage()],$code);
     }
 }

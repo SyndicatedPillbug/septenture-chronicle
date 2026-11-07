@@ -29,8 +29,8 @@ function tabletop_events(TabletopService $svc,array $ctx): never {
         // Cauldron emits this on every frame load, not only a new human arrival.
         // A typed chat message has a name or no name key; startup explicitly sends null.
         if($action==='say'&&array_key_exists('name',$data)&&$data['name']===null&&is_string($data['mesg']??null)){
-            $prefix=$ctx['display_name'].' entered the session, ';
-            if($data['mesg']===$prefix.'being the Dungeon Master.'||str_starts_with($data['mesg'],$prefix.'playing '))tabletop_response(['ok'=>true]);
+            $nativeName=$svc->rows('SELECT fullname FROM users WHERE id=?',[$uid])[0]['fullname']??$ctx['display_name'];
+            foreach(array_unique([$ctx['display_name'],$nativeName]) as $name){$prefix=$name.' entered the session, ';if($data['mesg']===$prefix.'being the Dungeon Master.'||str_starts_with($data['mesg'],$prefix.'playing '))tabletop_response(['ok'=>true]);}
         }
         if($dm&&in_array($action,['create','delete','hide','show','known','shape','alternate','zone_create','zone_delete','light_create','light_delete'],true))$action='reload';
         $common=['say','move','rotate','marker','request_init','pong'];
@@ -40,6 +40,7 @@ function tabletop_events(TabletopService $svc,array $ctx): never {
         if(in_array($action,['move','rotate'],true)){
             $instance=$data['instance_id']??'';
             if(!is_string($instance)||!tabletop_instance($svc,$ctx,$instance,true))tabletop_response(['error'=>'You do not control that piece.'],403);
+            if((new TabletopPlayKit($svc,$ctx))->isLocked($instance))tabletop_response(['error'=>'This piece is locked. Ask the GM to unlock it.'],403);
         }
         // Keep only fields used by the supported events. Identity is always server-derived.
         $out=['action'=>$action,'adventure_id'=>$adventure,'map_id'=>$map,'from_user_id'=>$uid];
@@ -109,7 +110,7 @@ function tabletop_events(TabletopService $svc,array $ctx): never {
         if((int)$row['sender_id']===$uid||($row['recipient_id']!==null&&(int)$row['recipient_id']!==$uid))continue;
         if((int)$row['map_id']!==$map)continue;
         if($row['instance_id']!==null&&!tabletop_instance($svc,$ctx,$row['instance_id'],false))continue;
-        $events[]=json_decode($row['payload'],true);
+        $payload=json_decode($row['payload'],true);$payload['event_id']=(int)$row['id'];$events[]=$payload;
     }
     tabletop_response(['cursor'=>$cursor,'events'=>$events,'mapId'=>$map,'pieces'=>$snapshot]);
 }

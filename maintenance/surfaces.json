@@ -52,8 +52,8 @@
     {
       "id": "table",
       "name": "Table state",
-      "location": "content/tabletop/; local Table service",
-      "review": "Review if maps, tokens or encounter state changed. Preserve live game state; no automatic recap-to-map overwrite."
+      "location": "content/tabletop/; services/campaign-theme/table-overlay/; local Table service",
+      "review": "Review if maps, tokens or encounter state changed. Nova owns private notebooks and sheets; the Table owns saved scenes, handouts, artwork, manual turns and counters. Preserve live play state and private unrevealed material. Session recap publication must never automatically reveal or replace a scene, handout, map or token. Review any scene preparations deliberately with the GM."
     },
     {
       "id": "mail",

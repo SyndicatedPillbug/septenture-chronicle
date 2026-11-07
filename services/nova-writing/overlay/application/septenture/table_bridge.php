@@ -3,8 +3,8 @@
 try {
     if(isset($_SERVER['HTTP_ORIGIN']))throw new RuntimeException('Use the Table tools.',403);
     $target=substr($route,strlen('table-api/'));
-    $allowed=($method==='GET'&&preg_match('~^play/(?:bootstrap|rolls|sheets/[1-9][0-9]*(?:/print)?)$~D',$target))
-        ||($method==='POST'&&preg_match('~^play/(?:rolls|formatting/preview|sheets/[1-9][0-9]*/(?:manual|notes))$~D',$target));
+    $allowed=($method==='GET'&&preg_match('~^play/(?:bootstrap|rolls|player-notes|sheets/[1-9][0-9]*(?:/print)?)$~D',$target))
+        ||($method==='POST'&&preg_match('~^play/(?:rolls|player-notes|formatting/preview|sheets/[1-9][0-9]*/(?:manual|notes))$~D',$target));
     if(!$allowed)throw new RuntimeException('Table tool unavailable.',404);
     $token=$_SERVER['HTTP_X_SEPTENTURE_PROOF']??'';
     if(!is_string($token))throw new RuntimeException('Please sign in again.',401);

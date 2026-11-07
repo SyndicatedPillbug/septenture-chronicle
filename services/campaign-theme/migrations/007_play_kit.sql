@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS septenture_kit_state (
+ campaign_key VARCHAR(64) PRIMARY KEY, revision INT UNSIGNED NOT NULL DEFAULT 0,
+ document MEDIUMTEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_media (
+ id CHAR(32) PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL, title VARCHAR(120) NOT NULL,
+ mime VARCHAR(40) NOT NULL, image MEDIUMBLOB NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ KEY campaign_media(campaign_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_scenes (
+ id CHAR(32) PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL, revision INT UNSIGNED NOT NULL DEFAULT 1,
+ title VARCHAR(120) NOT NULL, document MEDIUMTEXT NOT NULL, archived TINYINT NOT NULL DEFAULT 0,
+ updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, KEY campaign_scenes(campaign_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_handouts (
+ id CHAR(32) PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL, revision INT UNSIGNED NOT NULL DEFAULT 1,
+ title VARCHAR(120) NOT NULL, source TEXT NOT NULL, media_id CHAR(32) NULL,
+ revealed TINYINT NOT NULL DEFAULT 0, archived TINYINT NOT NULL DEFAULT 0,
+ updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, KEY campaign_handouts(campaign_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_preferences (
+ campaign_key VARCHAR(64) NOT NULL, subject CHAR(36) NOT NULL, revision INT UNSIGNED NOT NULL DEFAULT 0,
+ document TEXT NOT NULL, PRIMARY KEY(campaign_key,subject)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_history (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL,
+ subject CHAR(36) NOT NULL, kind VARCHAR(24) NOT NULL, target VARCHAR(80) NOT NULL, label VARCHAR(120) NOT NULL,
+ before_json MEDIUMTEXT NOT NULL, after_json MEDIUMTEXT NOT NULL, undone_at TIMESTAMP NULL,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, KEY campaign_history(campaign_key,id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_kit_signals (
+ id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL,
+ subject CHAR(36) NOT NULL, kind VARCHAR(20) NOT NULL, document TEXT NOT NULL,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, KEY campaign_signals(campaign_key,id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_roll_labels (
+ campaign_key VARCHAR(64) NOT NULL, subject CHAR(36) NOT NULL, roll_id CHAR(32) NOT NULL,
+ label VARCHAR(120) NOT NULL, PRIMARY KEY(campaign_key,subject,roll_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
