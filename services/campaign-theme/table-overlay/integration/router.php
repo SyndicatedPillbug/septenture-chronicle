@@ -8,6 +8,7 @@ require_once __DIR__.'/events.php';
 require_once __DIR__.'/object-guard.php';
 require_once __DIR__.'/control.php';
 require_once __DIR__.'/play-kit.php';
+require_once __DIR__.'/stage.php';
 function tabletop_response(array $data,int $code=200): never {
     http_response_code($code);header('Content-Type: application/json; charset=utf-8');
     header('Cache-Control: private, no-store');header('Referrer-Policy: no-referrer');
@@ -83,6 +84,7 @@ function tabletop_route($session,$user): void {
             $identityValidated=true;
             $_SESSION['tabletop_context']=$m+['subject'=>$id['subject'],'purpose'=>$id['purpose'],'owned_keys'=>$id['owned_keys']??[]];
             $_SESSION['tabletop_csrf']??=bin2hex(random_bytes(32));
+            TabletopStage::$request=new TabletopStage($svc,$_SESSION['tabletop_context']);
 
 
             if($path==='/logout')return;
@@ -98,6 +100,7 @@ function tabletop_route($session,$user): void {
             if(str_starts_with($path,'/object/'))tabletop_guard_object($svc,$_SESSION['tabletop_context'],$path);
             if($path==='/session/control')tabletop_control($svc,$_SESSION['tabletop_context']);
             if($path==='/session/events')tabletop_events($svc,$_SESSION['tabletop_context']);
+            if(str_starts_with($path,'/session/stage/'))tabletop_stage($svc,$_SESSION['tabletop_context'],substr($path,strlen('/session/stage/')));
             if(str_starts_with($path,'/session/kit/'))tabletop_play_kit($svc,$_SESSION['tabletop_context'],substr($path,strlen('/session/kit/')));
             if(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)){require_once __DIR__.'/scene.php';tabletop_scene($svc,$_SESSION['tabletop_context'],$path);}
             if(preg_match('#^/(resources|files)/#',$path))tabletop_asset($path,$svc,$user,$_SESSION['tabletop_context']);
@@ -125,7 +128,7 @@ function tabletop_route($session,$user): void {
             if(!in_array($path,$allowed,true)&&!preg_match('#^/object/[a-z_]+$#D',$path))throw new RuntimeException('This route is outside your tabletop session.',403);
         }elseif(preg_match('#^/(resources|files)/#',$path)){
             tabletop_asset($path,$svc,$user,null);
-        }elseif(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)||str_starts_with($path,'/session/kit/')){
+        }elseif(in_array($path,['/session/scene','/session/scene/image','/session/chat'],true)||str_starts_with($path,'/session/kit/')||str_starts_with($path,'/session/stage/')){
             tabletop_response(['error'=>'Enter the Table to view this campaign.'],401);
         }elseif(!($config['local_test_mode']??false)){
             // Fail closed for native logins on the integrated public installation.

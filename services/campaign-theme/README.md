@@ -33,3 +33,7 @@ Acceptance was exercised through the isolated GM UI: public and private rolls, p
 ## Manual play kit
 
 See [Manual play kit review](PLAY_KIT_REVIEW.md) for saved scenes, quick tokens, canonical private notes, handouts, recovery, attention, ambience and manual counters. Apply migration 007 before deploying the matching overlay.
+
+## Measurement, exploration, media and private moments
+
+See [Table tools review](STAGE_TOOLS_REVIEW.md) for measurement templates, server-masked exploration, the GM media shelf, uploaded scene audio, grid calibration and owner-only bookmark exports. Apply migration 008 with its matching overlay; the group rehearsal remains a separate acceptance step.

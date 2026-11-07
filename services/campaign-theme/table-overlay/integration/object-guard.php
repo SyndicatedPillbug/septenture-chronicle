@@ -5,10 +5,12 @@ function tabletop_guard_object(TabletopService $svc,array $ctx,string $path): vo
     $action=substr($path,strlen('/object/'));
     if($ctx['purpose']==='player'){
         if(!in_array($action,['move','rotate','damage','hitpoints','armor_class','character_custom_value','token_custom_value','light','vision'],true))tabletop_response(['error'=>'This action needs the DM.'],403);
+        if(in_array($action,['vision','light'],true)&&TabletopStage::$request?->sight()->active())tabletop_response(['error'=>'Ask the GM to change sight or light while exploration is active.'],403);
         $instance=$_POST['instance_id']??'';
         if(!is_string($instance)||!tabletop_instance($svc,$ctx,$instance,true))tabletop_response(['error'=>'You do not control that piece.'],403);
     }
     if(in_array($action,['move','rotate'],true)&&is_string($_POST['instance_id']??null)){
+        if($action==='move'&&$ctx['purpose']==='player'&&isset($_POST['pos_x'],$_POST['pos_y'])&&!(TabletopStage::$request?->visible((float)$_POST['pos_x'],(float)$_POST['pos_y'])??true))tabletop_response(['error'=>'That area has not been revealed to you.'],403);
         $kit=new TabletopPlayKit($svc,$ctx);
         if($kit->isLocked($_POST['instance_id']))tabletop_response(['error'=>'This piece is locked. Ask the GM to unlock it.'],403);
         if($action==='move')$kit->recordNativeMove($_POST['instance_id']);

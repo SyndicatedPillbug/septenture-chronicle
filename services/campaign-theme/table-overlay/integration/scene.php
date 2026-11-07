@@ -43,6 +43,7 @@ function tabletop_scene(TabletopService $svc,array $ctx,string $path): never {
                 if(!$map)throw new RuntimeException('Choose an active map first.',400);
                 $beforeMap=$kit->snapshot($map);
                 $svc->rows('UPDATE maps SET url=?,width=?,height=? WHERE id=? AND adventure_id=?',[$url,$size[0],$size[1],$map,$ctx['cauldron_adventure_id']]);
+                TabletopStage::$request?->validateActiveMap();
                 $svc->rows("UPDATE septenture_scene SET mode='board' WHERE campaign_key=?",[$campaign]);
                 $payload=['action'=>'reload','adventure_id'=>(int)$ctx['cauldron_adventure_id'],'map_id'=>$map,'from_user_id'=>(int)$ctx['cauldron_user_id']];
                 $svc->rows('INSERT INTO septenture_table_events(campaign_key,adventure_id,map_id,sender_id,payload) VALUES(?,?,?,?,?)',[$campaign,$ctx['cauldron_adventure_id'],$map,$ctx['cauldron_user_id'],json_encode($payload,JSON_THROW_ON_ERROR)]);

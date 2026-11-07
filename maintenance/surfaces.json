@@ -53,7 +53,7 @@
       "id": "table",
       "name": "Table state",
       "location": "content/tabletop/; services/campaign-theme/table-overlay/; local Table service",
-      "review": "Review if maps, tokens or encounter state changed. Nova owns private notebooks and sheets; the Table owns saved scenes, handouts, artwork, manual turns and counters. Preserve live play state and private unrevealed material. Session recap publication must never automatically reveal or replace a scene, handout, map or token. Review any scene preparations deliberately with the GM."
+      "review": "Review if maps, tokens or encounter state changed. Nova owns private notebooks and sheets; the Table owns saved scenes, handouts, artwork, manual turns and counters. Preserve live play state and private unrevealed material. Session recap publication must never automatically reveal or replace a scene, handout, map or token. Review any scene preparations deliberately with the GM. The Table also owns manual exploration cover, measurement templates, a private GM media shelf and owner-only session bookmarks. Selected bookmark exports are private writing preparation; review them before making a recap or story. Never include hidden map geometry, GM shelf previews or another player\u2019s bookmarks in published content."
     },
     {
       "id": "mail",

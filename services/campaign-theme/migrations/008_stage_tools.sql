@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS septenture_stage_state (
+ campaign_key VARCHAR(64) PRIMARY KEY, revision INT UNSIGNED NOT NULL DEFAULT 0, document MEDIUMTEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_stage_media (
+ media_id CHAR(32) PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL, kind VARCHAR(16) NOT NULL DEFAULT 'image', tags VARCHAR(240) NOT NULL DEFAULT '', archived TINYINT NOT NULL DEFAULT 0,
+ KEY campaign_media(campaign_key,kind)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE IF NOT EXISTS septenture_stage_bookmarks (
+ id CHAR(32) PRIMARY KEY, campaign_key VARCHAR(64) NOT NULL, subject CHAR(36) NOT NULL, revision INT UNSIGNED NOT NULL DEFAULT 1,
+ map_title VARCHAR(120) NOT NULL, title VARCHAR(120) NOT NULL, source MEDIUMTEXT NOT NULL, archived TINYINT NOT NULL DEFAULT 0,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ KEY private_bookmarks(campaign_key,subject)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

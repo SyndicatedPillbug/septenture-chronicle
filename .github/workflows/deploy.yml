@@ -39,7 +39,7 @@ jobs:
         run: node --test services/nova-reader/tests/*.test.mjs
 
       - name: Verify Table interaction guards and shared theme
-        run: node --test services/campaign-theme/theme.test.mjs services/campaign-theme/tests/escape-overlay.mjs services/campaign-theme/tests/scene-interactions.mjs services/campaign-theme/tests/dice-visibility.mjs
+        run: node --test services/campaign-theme/theme.test.mjs services/campaign-theme/tests/*.mjs
 
       - name: Verify post-session content consistency
         run: npm run test:session-audit && npm run audit:session

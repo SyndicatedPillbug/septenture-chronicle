@@ -9,6 +9,7 @@ function tabletop_instance(TabletopService $svc,array $ctx,string $instance,bool
     $args=$isToken?[$ctx['campaign_key'],$ctx['subject'],$m[2],$ctx['cauldron_adventure_id']]:[$m[2],$ctx['cauldron_adventure_id']];
     $r=$svc->rows($sql,$args);if(count($r)!==1)return false;$r=$r[0];
     if((int)$r['dm_id']===(int)$ctx['cauldron_user_id'])return true;
+    if(class_exists('TabletopStage')&&TabletopStage::$request){$position=$svc->rows(($isToken?"SELECT i.pos_x,i.pos_y,t.width,t.height FROM map_token i JOIN tokens t ON t.id=i.token_id WHERE i.id=?":"SELECT pos_x,pos_y FROM map_character WHERE id=?"),[$m[2]])[0]??null;if($position&&!TabletopStage::$request->visible((float)$position['pos_x'],(float)$position['pos_y'],(float)($position['width']??1),(float)($position['height']??1)))return false;}
     if($r['hidden']||(int)$r['active_map_id']!==(int)$r['map_id'])return false;
     if($control&&!$isToken){
         $keys=$svc->rows('SELECT character_key FROM septenture_characters WHERE campaign_key=? AND cauldron_character_id=?',[$ctx['campaign_key'],$r['character_id']]);
@@ -95,8 +96,8 @@ function tabletop_events(TabletopService $svc,array $ctx): never {
     if($_SERVER['REQUEST_METHOD']!=='GET')tabletop_response(['error'=>'Use GET or POST.'],405);
     $visible=$dm?'':' AND i.hidden=0';
     $snapshot=[];
-    foreach($svc->rows('SELECT i.id,i.pos_x,i.pos_y,i.rotation,i.armor_class,i.hitpoints,i.damage,i.hidden FROM map_token i WHERE i.map_id=?'.$visible,[$map]) as $r)$snapshot[]=['id'=>'token'.$r['id']]+$r;
-    foreach($svc->rows('SELECT i.id,i.pos_x,i.pos_y,i.rotation,c.armor_class,c.hitpoints,c.damage,i.hidden FROM map_character i JOIN characters c ON c.id=i.character_id WHERE i.map_id=?'.$visible,[$map]) as $r)$snapshot[]=['id'=>'character'.$r['id']]+$r;
+    foreach($svc->rows('SELECT i.id,i.pos_x,i.pos_y,i.rotation,i.armor_class,i.hitpoints,i.damage,i.hidden,t.width,t.height FROM map_token i JOIN tokens t ON t.id=i.token_id WHERE i.map_id=?'.$visible,[$map]) as $r)if(TabletopStage::$request?->visible((float)$r['pos_x'],(float)$r['pos_y'],(float)($r['width']??1),(float)($r['height']??1))??true)$snapshot[]=['id'=>'token'.$r['id']]+$r;
+    foreach($svc->rows('SELECT i.id,i.pos_x,i.pos_y,i.rotation,c.armor_class,c.hitpoints,c.damage,i.hidden FROM map_character i JOIN characters c ON c.id=i.character_id WHERE i.map_id=?'.$visible,[$map]) as $r)if(TabletopStage::$request?->visible((float)$r['pos_x'],(float)$r['pos_y'],(float)($r['width']??1),(float)($r['height']??1))??true)$snapshot[]=['id'=>'character'.$r['id']]+$r;
     if(isset($_GET['init'])){
         $max=$svc->rows('SELECT COALESCE(MAX(id),0) AS event_cursor FROM septenture_table_events WHERE campaign_key=?',[$campaign]);
         tabletop_response(['csrf'=>$_SESSION['tabletop_csrf'],'cursor'=>(int)$max[0]['event_cursor'],'events'=>[],'mapId'=>$map,'pieces'=>$snapshot]);
@@ -110,7 +111,7 @@ function tabletop_events(TabletopService $svc,array $ctx): never {
         if((int)$row['sender_id']===$uid||($row['recipient_id']!==null&&(int)$row['recipient_id']!==$uid))continue;
         if((int)$row['map_id']!==$map)continue;
         if($row['instance_id']!==null&&!tabletop_instance($svc,$ctx,$row['instance_id'],false))continue;
-        $payload=json_decode($row['payload'],true);$payload['event_id']=(int)$row['id'];$events[]=$payload;
+        $payload=json_decode($row['payload'],true);if(!$dm&&TabletopStage::$request?->sight()->active()&&(str_starts_with($payload['action']??'','draw_')||in_array($payload['action']??'',['fill_texture','door_state','window_state','turn'],true)||($payload['action']??'')==='marker'&&!TabletopStage::$request->visible((float)($payload['pos_x']??0),(float)($payload['pos_y']??0))))continue;$payload['event_id']=(int)$row['id'];$events[]=$payload;
     }
     tabletop_response(['cursor'=>$cursor,'events'=>$events,'mapId'=>$map,'pieces'=>$snapshot]);
 }
