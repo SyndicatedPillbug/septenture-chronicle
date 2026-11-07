@@ -24,3 +24,5 @@
 html body.live-board.board-focus aside.scene-chat :is(h2,p,strong,span,label){color:#f3ead7!important}html body.live-board.board-focus aside.scene-chat :is(input,button){background:#213a30!important;color:#f3ead7!important;border-color:#869a82!important}html body.live-board.board-focus :is(.wrapper,.content,.container){background:transparent!important;background-image:none!important}
 
 html body.live-board.board-focus #scene-chat :is(input,button){background:#213a30!important;color:#f3ead7!important;border-color:#869a82!important}html body.live-board.board-focus #scene-chat input::placeholder{color:#bfccbd!important}
+
+html body.live-board.board-focus div.playarea{background-color:#0c1914!important}html body.live-board.board-focus.has-scene-backdrop div.playarea{background-color:transparent!important}
