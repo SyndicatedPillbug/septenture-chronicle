@@ -35,7 +35,7 @@ jobs:
           --health-cmd "healthcheck.sh --connect --innodb_initialized"
           --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install test runtimes
         run: sudo apt-get update && sudo apt-get install -y php-cli php-mysql php-mbstring postgresql-client mariadb-client
       - name: Verify PostgreSQL permissions and atomic profile creation
